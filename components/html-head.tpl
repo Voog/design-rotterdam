@@ -11,16 +11,13 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="{{ images_path }}/{{ page.data.touchicon }}"> <!-- TODO: Add image location data tag -->
 
-{% stylesheet_link "main.css" %}
+{% stylesheet_link "main.css?1" %}
+{% stylesheet_link "fonts.css?1" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css?1" %}<![endif]-->
 
 <script src="{{ javascripts_path }}/modernizr.js?1"></script>
-<!-- http://modernizr.com/download/ - Check for updates -->
 
 <title>{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}</title>
 
-<!-- Page specific opengraph tags are located in each page template -->
-<meta property="fb:admins" content="XXXXXXXXXX"> <!--Site admin's Facebook user id -->
-<!-- http://graph.facebook.com/"username" - Replace "username" with site admin's username to get admin's ID) -->
+<meta property="fb:admins" content="XXXXXXXXXX">
 <meta property="og:type" content="website">
-<!-- https://developers.facebook.com/tools/debug - Debug after each modification -->
