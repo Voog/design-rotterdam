@@ -3,7 +3,7 @@
   <head>
     {% include "html-head" %}
   </head>
-
+  
   <body class="common-page">
     <div class="container">
       {% include "header" %}
