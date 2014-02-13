@@ -114,15 +114,150 @@ body {
   color: #333;
 }
 
+.lang-menu-toggle {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 20px;
+  height: 13px;
+  margin-top: 5px;
+  font-size: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.lang-menu-toggle:hover {
+}
+.lang-menu-toggle:after,
+.lang-menu li .lang-flag:after{
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 13px;
+  content: '';
+  background-image: url('../images/flag-sprite.png');
+  background-repeat: no-repeat;
+}
+.lang-menu-toggle:after {
+  top: 0;
+  left: 0;
+}
+
+.lang-menu {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  height: 13px;
+  padding-left: 13px;
+  line-height: 1.1;
+}
+.lang-menu-popover {
+  display: none;
+}
+.lang-menu-popover.expanded {
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  padding: 6px 0;
+  min-width: 121px;
+  font-size: 12px;
+  box-shadow: 0 0 1px #b2b2b2;
+}
+.lang-menu .menu {
+}
+.lang-menu .menu .untranslated {
+}
+.lang-menu .menu .untranslated:hover {
+}
+.lang-menu .menu li {
+}
+.lang-menu .menu li:last-child {
+}
+.lang-menu .menu .add-lang-btn {
+  margin-top: 5px;
+}
+.lang-menu .menu li a {
+  position: relative;
+  padding: 5px 4px 3px 30px;
+}
+.lang-menu .menu li a:hover,
+.lang-menu .menu .active a {
+  background: #f3f3f3;
+}
+.lang-menu .menu li .edy-menu-langadd {
+  margin-right: 5px;
+}
+.lang-menu .menu li a:after {
+  top: 5px;
+  left: 5px;
+}
+.lang-menu .menu .active a,
+.lang-menu .menu .active a:hover {
+  color: #fff;
+  background: #333;
+}
+
+.sq:after { background-position: 0 0; }/*Albanian*/
+.hy:after { background-position: -20px 0; }/*Armenia*/
+.bn:after { background-position: -40px 0; }/*Bangladesh*/
+.pt:after { background-position: -60px 0; }/*Brazil*/
+.bg:after { background-position: -80px 0; }/*Bulgaria*/
+.zh:after { background-position: -100px 0; }/*China*/
+.hr:after { background-position: -120px 0; }/*Croatia*/
+.da:after { background-position: -140px 0; }/*Denmark*/
+.cs:after { background-position: -160px 0; }/*Czech Republic*/
+.et:after { background-position: -180px 0; }/*Estonia*/
+
+.fi:after { background-position: 0 -14px; }/*Finland*/
+.fr:after { background-position: -20px -14px; }/*France*/
+.ka:after { background-position: -40px -14px; }/*Georgia*/
+.de:after { background-position: -60px -14px; }/*Germany*/
+.el:after { background-position: -80px -14px; }/*Grecee*/
+.hu:after { background-position: -100px -14px; }/*Hungary*/
+.is:after { background-position: -120px -14px; }/*Iceland*/
+.hi:after { background-position: -140px -14px; }/*India*/
+.id:after { background-position: -160px -14px; }/*Indonesia*/
+.fa:after { background-position: -280px -14px; }/*Iran*/
+
+.he:after { background-position: 0 -27px; }/*Israel*/
+.it:after { background-position: -20px -27px; }/*Italy*/
+.ja:after { background-position: -40px -27px; }/*Japan*/
+.ko:after { background-position: -60px -27px; }/*Korea, South*/
+.lv:after { background-position: -80px -27px; }/*Latvia*/
+.lt:after { background-position: -100px -27px; }/*Lithuania*/
+.ms:after { background-position: -120px -27px; }/*Malaysia*/
+.nl:after { background-position: -140px -27px; }/*Netherlands*/
+.no:after { background-position: -160px -27px; }/*Norway*/
+.ur:after { background-position: -280px -27px; }/*Pakistan*/
+
+.fil:after { background-position: 0 -41px; }/*Philipines*/ /*tl?*/
+.pl:after { background-position: -20px -41px; }/*Poland*/
+.ro:after { background-position: -40px -41px; }/*Romania*/
+.ru:after { background-position: -60px -41px; }/*Russia*/
+.ar:after { background-position: -80px -41px; }/*Saudi Arabia*/
+.lt:after { background-position: -100px -41px; }/*Slovakia*/
+.sk:after { background-position: -120px -41px; }/*Slovenia*/
+.es:after { background-position: -140px -41px; }/*Spain*/
+.sv:after { background-position: -160px -41px; }/*Sweden*/
+.tr:after { background-position: -180px -41px; }/*Turkey*/
+
+.uk:after { background-position: 0px -54px; }/*Ukraine*/
+.en:after { background-position: -20px -54px; }/*USA*/
+
 /* HEADER */
 .header {
   margin-bottom: 40px;
   font-family: "Nexa", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.header-banner {
-  
+.header-top {
+  display: table;
 }
 .header-title {
+  display: table-cell;
+  vertical-align: top;
+  min-width: 244px;
+  max-width: 810px;
   margin: 0;
   font-weight: 700;
   font-size: 24px;
@@ -280,6 +415,93 @@ body {
 }
 .post-date {
   text-transform: uppercase;
+}
+
+/* FORMS */
+.container form {
+  margin-bottom: 35px;
+  font-family: "Nexa", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+.form_field_error {
+  font-weight: 700;
+  color: #c33;
+}
+.form_field {
+  margin-bottom: 15px;
+}
+.form_field label {
+  display: block;
+  margin-bottom: 3px;
+  color: #919191;
+}
+.form_field label,
+.form_field_textfield,
+.form_field_textarea,
+.form_field_select,
+.form_field_file,
+.form_submit input {
+  font-family: inherit;
+  font-size: 16px;
+}
+.form_field_textfield,
+.form_field_textarea,
+.form_field_file {
+  margin: 0;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form_field_textarea,
+.form_field_textfield {
+  border-bottom: 1px solid #848484;
+}
+.form_field_textarea {
+  width: 30%;
+  max-width: 100%;
+  border-top: 1px solid #848484;
+}
+.form_field_size_medium {
+  width: 60%;
+}
+.form_field_size_large {
+  width: 100%;
+}
+.form_submit input {
+  margin: 0;
+  padding: 5px 12px;
+  color: #848484;
+  background: #dadada;
+  border: none;
+  cursor: pointer;
+}
+
+/* COMMENTS */
+.comments {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  max-width: 313px;
+  margin-left: 42px;
+}
+.comments-title {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Nexa", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+.comment-form .form_field_textfield,
+.comment-form .form_field_textarea {
+  width: 100%;
+}
+
+.comment {
+  font-size: 12px;
+}
+.comment-author {
+  font-weight: 700;
 }
 
 /* FOOTER */
