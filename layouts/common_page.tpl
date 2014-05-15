@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ page.language_code }}">
-<head>
-  {% include "html-head" %}
-  <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:title" content="{{ site.name }}">
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:image" content="{{ site.url }}{{ photos_path }}/{{ page.data.fbimage }}"><!-- TODO: Add image location data tag -->
-</head>
+  <head>
+    {% include "html-head" %}
+    <meta property="og:url" content="{{ site.url }}/{{ page.path }}">
+    <meta property="og:title" content="{{ page.title }} — {{ site.name }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ site.url }}{{ photos_path }}/{{ page.data.fbimage }}"><!-- TODO: Add image location data tag -->
+  </head>
 
-<body class="blog-page">
-  {% include "topbar" %}
-  <div class="container">
+  <body class="common-page">
+    {% include "topbar" %}
     {% include "header" %}
-    <main class="content" role="main">
-      {% for article in site.latest_articles %}
-        <article class="post">
-          <header class="post-header">
-            <h1 class="post-title"><a href="{{ article.url }}">{{ article.title }}</a></h1>
-            <time datetime="{{ article.created_at | date : "%Y-%m-%d" }}" class="post-date">{{ article.created_at | date : "%b %d, %Y" }}</time>
-          </header>
-
-          <section class="post-content">
-            <div class="post-excerpt content-formatted cfx">{{ article.excerpt }}</div>
-          </section>
-        </article>
-      {% endfor %}
-    </main>
-    {% include "footer" %}
-  </div>
-  {% include "javascripts" %}
-</body>
+    <div class="container">
+      <section class="content-header content-formatted cfx">{% contentblock name="content_heading_test" %}<h1>How do we love like our coffee?</h1>{% endcontentblock %}</section>
+      <main class="content" role="main">
+        <div class="content-top">
+          {% include "sidebar-left" %}
+          <section class="content-body content-first content-formatted">{% content %}</section>
+          {% include "sidebar-right" %}
+        </div>
+        <div class="content-bottom">
+          <section class="content-body content-second content-formatted">{% content name="content_bottom_test" %}</section>
+        </div>
+      </main>
+      {% include "footer" %}
+    </div>
+    {% include "javascripts" %}
+    <script>site.initCommonPage();</script>
+    <script src="{{ javascripts_path }}/autogrow.js"></script>
+    <script>$('.form_field_textarea').autogrow();</script>
+  </body>
 </html>
