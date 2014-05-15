@@ -116,6 +116,13 @@
       "file": "components/tags-blog.tpl",
       "layout_name": "tags-blog",
       "title": "tags-blog"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/topbar.tpl",
+      "layout_name": "topbar",
+      "title": "topbar"
     }
   ],
   "assets": [
@@ -192,6 +199,30 @@
       "filename": "nexa_light.woff"
     },
     {
+      "content_type": "image/png",
+      "file": "images/flag-sprite.png",
+      "kind": "images",
+      "filename": "flag-sprite.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/flag-sprite@2x.png",
+      "kind": "images",
+      "filename": "flag-sprite@2x.png"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/autogrow.js",
+      "kind": "javascripts",
+      "filename": "autogrow.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/formPlaceholders.js",
+      "kind": "javascripts",
+      "filename": "formPlaceholders.js"
+    },
+    {
       "content_type": "application/javascript",
       "file": "javascripts/jquery.js",
       "kind": "javascripts",
@@ -211,9 +242,27 @@
     },
     {
       "content_type": "application/javascript",
+      "file": "javascripts/overthrow.js",
+      "kind": "javascripts",
+      "filename": "overthrow.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/placeholder.js",
+      "kind": "javascripts",
+      "filename": "placeholder.js"
+    },
+    {
+      "content_type": "application/javascript",
       "file": "javascripts/retina.js",
       "kind": "javascripts",
       "filename": "retina.js"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/fonts.css",
+      "kind": "stylesheets",
+      "filename": "fonts.css"
     },
     {
       "content_type": "text/css",
