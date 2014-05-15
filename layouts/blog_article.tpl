@@ -26,7 +26,7 @@
         <aside class="comments">
           <h2 class="comments-title">{% case article.comments_count %}{% when 0 %}{{ "no_comments" | lc }}{% else %}<span class="comments-count">{{ article.comments_count }} </span>{{ "comments_for_count" | lc }}{% endcase %}</h2>
 
-          {% include "commentform" %}
+          {% include "comment-form" %}
 
           {% for comment in article.comments %}
             <div class="comment">
