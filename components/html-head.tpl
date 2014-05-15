@@ -11,6 +11,7 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="{{ images_path }}/{{ page.data.touchicon }}"> <!-- TODO: Add image location data tag -->
 
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 {% stylesheet_link "main.css?1" %}
 {% stylesheet_link "fonts.css?1" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css?1" %}<![endif]-->

@@ -1,23 +1,8 @@
-/* GENERAL */
+/* COMMENTS */
+.comment-form .placeholder {
+  color: #919191;
+}
 
-/* MENUS */
-
-/* HEADER */
-
-/* CONTENT */
-
-/* FRONT PAGE */
-
-/* COMMON PAGE */
-
-/* BLOG & BLOG ARTICLE */
-
-/* GALLERY */
-
-/* TABLES */
-
-/* FORMS */
-
-/* SEARCH */
-
-/* FOOTER /*
+.comment-form .form_field_textfield {
+  min-height: 25px;
+}

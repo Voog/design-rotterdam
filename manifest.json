@@ -1,0 +1,231 @@
+{
+  "description": "New design",
+  "name": "New design",
+  "preview_medium": "",
+  "preview_small": "",
+  "author": "",
+  "layouts": [
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/blog___news.tpl",
+      "layout_name": "page_default",
+      "title": "Blog & News"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/blog_article.tpl",
+      "layout_name": "page_default",
+      "title": "Blog article"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/common_page.tpl",
+      "layout_name": "page_default",
+      "title": "Common page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl",
+      "layout_name": "page_default",
+      "title": "Front page"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/comment-form.tpl",
+      "layout_name": "comment-form",
+      "title": "comment-form"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/footer.tpl",
+      "layout_name": "footer",
+      "title": "footer"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/header.tpl",
+      "layout_name": "header",
+      "title": "header"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/html-head.tpl",
+      "layout_name": "html-head",
+      "title": "html-head"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/javascripts.tpl",
+      "layout_name": "javascripts",
+      "title": "javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/lang-menu.tpl",
+      "layout_name": "lang-menu",
+      "title": "lang-menu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/nav-menu.tpl",
+      "layout_name": "nav-menu",
+      "title": "nav-menu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/search.tpl",
+      "layout_name": "search",
+      "title": "search"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/sidebar-left.tpl",
+      "layout_name": "sidebar-left",
+      "title": "sidebar-left"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/sidebar-right.tpl",
+      "layout_name": "sidebar-right",
+      "title": "sidebar-right"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/tags-article.tpl",
+      "layout_name": "tags-article",
+      "title": "tags-article"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/tags-blog.tpl",
+      "layout_name": "tags-blog",
+      "title": "tags-blog"
+    }
+  ],
+  "assets": [
+    {
+      "content_type": "application/vnd.ms-fontobject",
+      "file": "assets/MinionPro-Regular.eot",
+      "kind": "assets",
+      "filename": "MinionPro-Regular.eot"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/MinionPro-Regular.svg",
+      "kind": "assets",
+      "filename": "MinionPro-Regular.svg"
+    },
+    {
+      "content_type": "application/x-font-truetype",
+      "file": "assets/MinionPro-Regular.ttf",
+      "kind": "assets",
+      "filename": "MinionPro-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/MinionPro-Regular.woff",
+      "kind": "assets",
+      "filename": "MinionPro-Regular.woff"
+    },
+    {
+      "content_type": "application/vnd.ms-fontobject",
+      "file": "assets/nexa_bold.eot",
+      "kind": "assets",
+      "filename": "nexa_bold.eot"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/nexa_bold.svg",
+      "kind": "assets",
+      "filename": "nexa_bold.svg"
+    },
+    {
+      "content_type": "application/x-font-truetype",
+      "file": "assets/nexa_bold.ttf",
+      "kind": "assets",
+      "filename": "nexa_bold.ttf"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/nexa_bold.woff",
+      "kind": "assets",
+      "filename": "nexa_bold.woff"
+    },
+    {
+      "content_type": "application/vnd.ms-fontobject",
+      "file": "assets/nexa_light.eot",
+      "kind": "assets",
+      "filename": "nexa_light.eot"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/nexa_light.svg",
+      "kind": "assets",
+      "filename": "nexa_light.svg"
+    },
+    {
+      "content_type": "application/x-font-truetype",
+      "file": "assets/nexa_light.ttf",
+      "kind": "assets",
+      "filename": "nexa_light.ttf"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/nexa_light.woff",
+      "kind": "assets",
+      "filename": "nexa_light.woff"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/jquery.js",
+      "kind": "javascripts",
+      "filename": "jquery.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/main.js",
+      "kind": "javascripts",
+      "filename": "main.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/modernizr.js",
+      "kind": "javascripts",
+      "filename": "modernizr.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/retina.js",
+      "kind": "javascripts",
+      "filename": "retina.js"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/ie8.css",
+      "kind": "stylesheets",
+      "filename": "ie8.css"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/main.css",
+      "kind": "stylesheets",
+      "filename": "main.css"
+    }
+  ]
+}
