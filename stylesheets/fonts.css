@@ -20,9 +20,9 @@
 @font-face {
   font-family: 'Minion';
   src: url('../assets/MinionPro-Regular.ttf') format('truetype'),
-  url('../assets/MinionPro-Regulasr.svg') format('svg'),
-  url('../assets/MinionPro-Regular.eot'),
-  url('../assets/MinionPro-Regular.woff') format('woff');
+       url('../assets/MinionPro-Regular.svg') format('svg'),
+       url('../assets/MinionPro-Regular.eot'),
+       url('../assets/MinionPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
