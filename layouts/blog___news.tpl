@@ -14,6 +14,7 @@
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
+      <div class="scrollpos"></div>
       {% for article in articles %}
         <article class="post">
           <header class="post-header">
@@ -23,6 +24,7 @@
 
           <section class="post-content">
             <div class="post-excerpt content-formatted cfx">{{ article.excerpt }}</div>
+            <div class="post-body content-formatted cfx">{{ article.body }}</div>
           </section>
         </article>
       {% endfor %}
@@ -30,5 +32,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
+  <script type="text/javascript">site.initBlogPage();</script>
 </body>
 </html>

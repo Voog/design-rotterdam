@@ -123,9 +123,7 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
-    },
-    null,
-    null
+    }
   ],
   "assets": [
     {
@@ -151,18 +149,6 @@
       "file": "assets/MinionPro-Regular.woff",
       "kind": "assets",
       "filename": "MinionPro-Regular.woff"
-    },
-    {
-      "content_type": "application/x-font-opentype",
-      "file": "assets/nexa_bold.otf",
-      "kind": "assets",
-      "filename": "nexa_bold.otf"
-    },
-    {
-      "content_type": "application/x-font-opentype",
-      "file": "assets/nexa_light.otf",
-      "kind": "assets",
-      "filename": "nexa_light.otf"
     },
     {
       "content_type": "application/vnd.ms-fontobject",
@@ -271,6 +257,12 @@
       "file": "javascripts/retina.js",
       "kind": "javascripts",
       "filename": "retina.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/steady.js",
+      "kind": "javascripts",
+      "filename": "steady.js"
     },
     {
       "content_type": "text/css",

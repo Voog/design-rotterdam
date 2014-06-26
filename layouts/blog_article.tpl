@@ -14,9 +14,9 @@
     {% include "header" %}
     <main class="content" role="main">
       <article class="post">
-        <header class="post-header">
+        <header class="post-header content-formatted cfx">
           <h1 class="post-title">{% editable article.title %}</h1>
-          <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | date : "%B %d, %Y" }}</time>
+          <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | format_date : "%B %d, %Y" }}</time>
         </header>
         <section class="post-content">
           <div class="post-excerpt content-formatted cfx">{% editable article.excerpt %}</div>
@@ -32,7 +32,7 @@
             <div class="comment">
               <div class="comment-header">
                 <span class="comment-author">{{ comment.author }}</span>
-                <span class="comment-date">{{ comment.created_at | date : "%b %d, %Y" }}</span>
+                <span class="comment-date">{{ comment.created_at | format_date : "%b %d, %Y" }}</span>
               </div>
               <div class="comment-body">{{ comment.body }}</div>
             </div>
