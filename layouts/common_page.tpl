@@ -12,7 +12,9 @@
     {% include "topbar" %}
     <div class="container">
       {% include "header" %}
-      <section class="content-header content-formatted cfx"><h1>{% contentblock name="content_heading" %}How do we love like our coffee?{% endcontentblock %}</h1></section>
+      <section class="content-header content-formatted cfx">
+        {% contentblock name="content_heading" %}How do we love like our coffee?{% endcontentblock %}
+      </section>
       <main class="content" role="main">
         {% include "sidebar-left" %}
         <section class="content-body content-formatted">{% content %}</section>

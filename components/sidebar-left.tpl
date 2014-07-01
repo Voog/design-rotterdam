@@ -2,9 +2,11 @@
   {% if item.selected? and item.children? or editmode %}
     <aside class="sidebar sidebar-left">
       <section class="content-formatted cfx">
-        <h1>{% contentblock name="content_sidebar_header" %}
-            OVERVIEW
-        {% endcontentblock %}</h1>
+        <div class="sidebar-header">
+          {% contentblock name="content_sidebar_header" %}
+              {{ item.title }}
+          {% endcontentblock %}
+        </div>
 
         <nav class="sub-menu">
           <ul class="menu nav-menu">

@@ -115,37 +115,37 @@
             header = $('.header'),
             headerStaticArea = $(header).height() + 90,
             headerStaticHeight = headerStaticArea + 40;
-
         var s = new Steady({
             conditions: {
                 'min-scrollY': 0
             },
             throttle: 25,
             handler: function (values, done) {
-                var posts = this.tracked;
-                if (window.innerWidth > 750) {
-                    if (!startScroll) {
-                        startScroll = $(window).scrollTop();
-                    } else {
-                        endScroll = $(window).scrollTop();
-                        scrolled = endScroll - startScroll;
+                if (!startScroll) {
+                    startScroll = $(window).scrollTop();
+                } else {
+                    endScroll = $(window).scrollTop();
+                    scrolled = endScroll - startScroll;
 
-                        // Scrolling down and offset is larger than
-                        if (scrolled > 5 && startScroll > headerStaticArea) {
-                            $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
-                            $(container).css({'margin-top' : headerStaticArea});
+                    // Scrolling down and offset is larger than
+                    if (scrolled > 5 && startScroll > headerStaticArea) {
+                        $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
+                        $(container).css({'margin-top' : headerStaticArea});
 
-                        // Up and fixed area
-                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
-                            $(header).addClass('header-fixed header-animated').css({'top' : 0});
+                    // Up and fixed area
+                    } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                        $(header).addClass('header-fixed header-animated').css({'top' : 0});
 
-                        // Up, static area and header is fixed
-                        } else if (scrolled < 0 && startScroll <= 50 && $(header).hasClass('header-fixed') === true) {
-                            $(header).removeClass('header-fixed header-animated');
-                            $(container).css({'margin-top' : 0});
-                        }
-                        startScroll = 0;
+                    // Up, static area and header is fixed
+                    } else if (scrolled < 0 && startScroll <= 50 && $(header).hasClass('header-fixed') === true) {
+                        $(header).removeClass('header-fixed header-animated');
+                        $(container).css({'margin-top' : 0});
                     }
+                    startScroll = 0;
+                }
+
+                if ($(window).innerWidth > 640) {
+                    var posts = this.tracked;
                     $('.post').each(function(n, el) {
                         var offset = 30;
                         var $header = $(el).find('.post-header');
@@ -169,8 +169,8 @@
                             $(el).removeClass('fixed-header');
                         }
                     });
-                    done();
                 }
+                done();
             }
         });
 
@@ -181,12 +181,12 @@
             });
         });
 
-        $(window).on('load', function() {s.handler({}, function(){});})
-
         s.stop();
         setTimeout(function() {
             s.resume();
         }, 200);
+
+        $(window).on('load', function() {s.handler({}, function(){});})
     };
 
 
@@ -203,7 +203,7 @@
     };
 
     window.site = $.extend(window.site || {}, {
-        initCommonPage: initFrontPage,
+        initFrontPage: initFrontPage,
         initCommonPage: initCommonPage,
         initBlogPage: initBlogPage,
         initArticlePage: initArticlePage
