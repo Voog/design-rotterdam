@@ -8,11 +8,12 @@
   <meta property="og:image" content="{{ site.url }}{{ photos_path }}/{{ page.data.fbimage }}"><!-- TODO: Add image location data tag -->
 </head>
 
-<body class="blog-page">
+<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
   {% include "topbar" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
+      <section class="content-body content-formatted">{% content %}</section>
       {% for article in site.latest_articles %}
         <article class="post">
           <header class="post-header">
@@ -29,5 +30,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
+  <script type="text/javascript">site.initBlogPage();</script>
 </body>
 </html>

@@ -18,9 +18,13 @@
     };
 
     var handlePopoverMenuHide = function() {
-        $("html").click(function() {
-            if ($("#toggleable-lang-menu").hasClass("expanded")) {
-                $("#toggleable-lang-menu").removeClass("expanded");
+        $("html").click(function(event) {
+            var $t = $(event.target);
+            if ((!$t.closest('.mobile-menu').length > 0) && (!$t.closest('.toggle-btn').length > 0)) {
+                if ($(".mobile-menu").hasClass('expanded')) {
+                    $(".mobile-menu").removeClass('expanded');
+                    $('.js-menu-toggle').removeClass('open');
+                }
             }
         });
     };
@@ -118,57 +122,57 @@
             },
             throttle: 25,
             handler: function (values, done) {
-                var pos = this.tracked;
-                if (!startScroll) {
-                    startScroll = $(window).scrollTop();
-                } else {
-                    endScroll = $(window).scrollTop();
-                    scrolled = endScroll - startScroll;
+                var posts = this.tracked;
+                if (window.innerWidth > 750) {
+                    if (!startScroll) {
+                        startScroll = $(window).scrollTop();
+                    } else {
+                        endScroll = $(window).scrollTop();
+                        scrolled = endScroll - startScroll;
 
-                    // Scrolling down and offset is larger than
-                    if (scrolled > 5 && startScroll > headerStaticArea) {
-                        $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
-                        $(container).css({'margin-top' : headerStaticArea});
+                        // Scrolling down and offset is larger than
+                        if (scrolled > 5 && startScroll > headerStaticArea) {
+                            $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
+                            $(container).css({'margin-top' : headerStaticArea});
 
-                    // Up and fixed area
-                    } else if (scrolled < -5 && startScroll > headerStaticArea) {
-                        $(header).addClass('header-fixed header-animated').css({'top' : 0});
+                        // Up and fixed area
+                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                            $(header).addClass('header-fixed header-animated').css({'top' : 0});
 
-                    // Up, static area and header is fixed
-                    } else if (scrolled < 0 && startScroll <= 50 && $(header).hasClass('header-fixed') === true) {
-                        $(header).removeClass('header-fixed header-animated');
-                        $(container).css({'margin-top' : 0});
+                        // Up, static area and header is fixed
+                        } else if (scrolled < 0 && startScroll <= 50 && $(header).hasClass('header-fixed') === true) {
+                            $(header).removeClass('header-fixed header-animated');
+                            $(container).css({'margin-top' : 0});
+                        }
+                        startScroll = 0;
                     }
-                    startScroll = 0;
-                }
-                $('.post').each(function(n, el) {
-                    var offset = 30;
-                    var $header = $(el).find('.post-header');
-                    var topBoundary = 0 + offset
-                    var bottomBoundary = -($(el).height() - offset - $header.height());
-                    // scroll is between top and bottom of the .post
+                    $('.post').each(function(n, el) {
+                        var offset = 30;
+                        var $header = $(el).find('.post-header');
+                        var topBoundary = 0 + offset
+                        var bottomBoundary = -($(el).height() - offset - $header.height());
+                        // scroll is between top and bottom of the .post
 
-                    if (pos[n].cb() < topBoundary) {
-                        // scroll is inside .post
-                        if (pos[n].cb() > bottomBoundary) {
-                            $header.removeClass('top bottom');
-                            $(el).addClass('fixed-header');
-                        // scroll is below .post
+                        if (posts[n].cb() < topBoundary) {
+                            // scroll is inside .post
+                            if (posts[n].cb() > bottomBoundary) {
+                                $header.removeClass('top bottom');
+                                $(el).addClass('fixed-header');
+                            // scroll is below .post
+                            } else {
+                                $header.addClass('bottom').removeClass('top');
+                                $(el).removeClass('fixed-header');
+                            }
+                        // scroll is above .post
                         } else {
-                            $header.addClass('bottom').removeClass('top');
+                            $header.addClass('top').removeClass('bottom');
                             $(el).removeClass('fixed-header');
                         }
-                    // scroll is above .post
-                    } else {
-                        $header.addClass('top').removeClass('bottom');
-                        $(el).removeClass('fixed-header');
-                    }
-                });
-                done();
+                    });
+                    done();
+                }
             }
         });
-
-        window.steady = s;
 
         $('.post').each(function(n, el) {
             s.addTracker(n, function(window) {
@@ -176,6 +180,8 @@
                 return rect.top;
             });
         });
+
+        $(window).on('load', function() {s.handler({}, function(){});})
 
         s.stop();
         setTimeout(function() {
@@ -188,7 +194,6 @@
         toggleMainMenu();
         toggleLangMenu();
         handlePopoverMenuHide();
-        handleHeaderPosition();
         handleWindowResize();
         wrapTables();
         if ($('.table-container').length > 0) {

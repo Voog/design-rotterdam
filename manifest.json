@@ -127,6 +127,12 @@
   ],
   "assets": [
     {
+      "content_type": "image/svg+xml",
+      "file": "assets/loader.svg",
+      "kind": "assets",
+      "filename": "loader.svg"
+    },
+    {
       "content_type": "application/vnd.ms-fontobject",
       "file": "assets/MinionPro-Regular.eot",
       "kind": "assets",
@@ -151,52 +157,16 @@
       "filename": "MinionPro-Regular.woff"
     },
     {
-      "content_type": "application/vnd.ms-fontobject",
-      "file": "assets/nexa_bold.eot",
+      "content_type": "image/svg+xml",
+      "file": "assets/search.svg",
       "kind": "assets",
-      "filename": "nexa_bold.eot"
+      "filename": "search.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/nexa_bold.svg",
+      "file": "assets/search_close.svg",
       "kind": "assets",
-      "filename": "nexa_bold.svg"
-    },
-    {
-      "content_type": "application/x-font-truetype",
-      "file": "assets/nexa_bold.ttf",
-      "kind": "assets",
-      "filename": "nexa_bold.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/nexa_bold.woff",
-      "kind": "assets",
-      "filename": "nexa_bold.woff"
-    },
-    {
-      "content_type": "application/vnd.ms-fontobject",
-      "file": "assets/nexa_light.eot",
-      "kind": "assets",
-      "filename": "nexa_light.eot"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/nexa_light.svg",
-      "kind": "assets",
-      "filename": "nexa_light.svg"
-    },
-    {
-      "content_type": "application/x-font-truetype",
-      "file": "assets/nexa_light.ttf",
-      "kind": "assets",
-      "filename": "nexa_light.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/nexa_light.woff",
-      "kind": "assets",
-      "filename": "nexa_light.woff"
+      "filename": "search_close.svg"
     },
     {
       "content_type": "image/png",
@@ -209,6 +179,18 @@
       "file": "images/flag-sprite@2x.png",
       "kind": "images",
       "filename": "flag-sprite@2x.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/search-close.png",
+      "kind": "images",
+      "filename": "search-close.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/search.png",
+      "kind": "images",
+      "filename": "search.png"
     },
     {
       "content_type": "application/javascript",
@@ -257,6 +239,12 @@
       "file": "javascripts/retina.js",
       "kind": "javascripts",
       "filename": "retina.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/search.js",
+      "kind": "javascripts",
+      "filename": "search.js"
     },
     {
       "content_type": "application/javascript",

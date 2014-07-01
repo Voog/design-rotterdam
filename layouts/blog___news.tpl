@@ -14,7 +14,7 @@
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
-      <div class="scrollpos"></div>
+      {% if editmode %}<div style="padding-bottom: 10px">{% addbutton %}</div>{% endif %}
       {% for article in articles %}
         <article class="post">
           <header class="post-header">

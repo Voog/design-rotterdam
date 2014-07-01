@@ -10,14 +10,12 @@
 
   <body class="common-page">
     {% include "topbar" %}
-    {% include "header" %}
     <div class="container">
+      {% include "header" %}
       <section class="content-header content-formatted cfx"><h1>{% contentblock name="content_heading" %}How do we love like our coffee?{% endcontentblock %}</h1></section>
       <main class="content" role="main">
         {% include "sidebar-left" %}
-        <section class="content-body content-first content-formatted">{% content %}</section>
-        {% include "sidebar-right" %}
-        <section class="content-body content-second content-formatted">{% content name="content_bottom" %}</section>
+        <section class="content-body content-formatted">{% content %}</section>
       </main>
       {% include "footer" %}
     </div>
