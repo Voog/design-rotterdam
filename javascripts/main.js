@@ -103,18 +103,55 @@
     };
 
     // Initiations
-    var initFrontPage = function() {};
-    var initCommonPage = function() {};
-    var initArticlePage = function() {};
+    var initFrontPage = function() {
+        initStickyElements({
+            stickyHeader: true,
+            stickyMobileMenu: true,
+            stickyFooter: true,
+            stickyPostHeaders: true
+        });
+    };
+    var initCommonPage = function() {
+        initStickyElements({
+            stickyHeader: true,
+            stickyMobileMenu: true,
+            stickyFooter: false,
+            stickyPostHeaders: false
+        });
+    };
+    var initArticlePage = function() {
+        initStickyElements({
+            stickyHeader: true,
+            stickyMobileMenu: true,
+            stickyFooter: false,
+            stickyPostHeaders: false
+        });
+    };
     var initBlogPage = function() {
+        initStickyElements({
+            stickyHeader: true,
+            stickyMobileMenu: true,
+            stickyFooter: true,
+            stickyPostHeaders: true
+        });
+    };
+
+    var initStickyElements = function(opts) {
+        var stickyHeader = opts.stickyHeader || false;
+        var stickyMobileMenu = opts.stickyMobileMenu || false;
+        var stickyFooter = opts.stickyFooter || false;
+        var stickyPostHeaders = opts.stickyPostHeaders || false;
         var startScroll,
             toHandler,
             endScroll,
             scrolled,
             container = $('.container'),
             header = $('.header'),
+            footer = $('.footer'),
             headerStaticArea = $(header).height() + 90,
-            headerStaticHeight = headerStaticArea + 40;
+            headerStaticHeight = headerStaticArea + 40,
+            footerStaticArea = $(footer).height() + 90,
+            footerStaticHeight = footerStaticArea + 40;
         var s = new Steady({
             conditions: {
                 'min-scrollY': 0
@@ -126,25 +163,48 @@
                 } else {
                     endScroll = $(window).scrollTop();
                     scrolled = endScroll - startScroll;
-
+                    if (window.innerWidth < 640 && stickyMobileMenu) {
+                        if (scrolled > 5 && startScroll > headerStaticArea) {
+                            $('.topbar').addClass('fixed').css({'top' : -headerStaticArea});
+                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                            $('.topbar').addClass('fixed').css({'top' : 0});
+                        } else if (scrolled < 0 && startScroll <= 100 && $('.topbar').hasClass('fixed') === true) {
+                            $(container).css({'margin-top' : 0});
+                            $('.topbar').removeClass('fixed');
+                        }
+                    }
+                    if (window.innerWidth > 640 && stickyFooter) {
+                        // up and above footer
+                        if (scrolled < -5 && (startScroll + window.innerHeight) < ($('html').height())) {
+                            $(footer).addClass('footer-fixed footer-animated').css({'bottom' : 0});
+                            $(footer).css({'left' : $('.container').offset().left});
+                            $(container).css({'margin-bottom' : footerStaticArea});
+                        // down and above footer
+                        } else if (scrolled > 5 && (startScroll + window.innerHeight) < ($('html').height())) {
+                            $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
+                            $('body').removeClass('voog-search-visible');
+                            $(container).css({'margin-bottom' : 0});
+                        }
+                    }
                     // Scrolling down and offset is larger than
-                    if (scrolled > 5 && startScroll > headerStaticArea) {
-                        $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
-                        $(container).css({'margin-top' : headerStaticArea});
+                    if (stickyHeader) {
+                        if (scrolled > 5 && startScroll > headerStaticArea) {
+                            $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
+                            $(container).css({'margin-top' : headerStaticArea});
 
-                    // Up and fixed area
-                    } else if (scrolled < -5 && startScroll > headerStaticArea) {
-                        $(header).addClass('header-fixed header-animated').css({'top' : 0});
+                        // Up and fixed area
+                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                            $(header).addClass('header-fixed header-animated').css({'top' : 0});
 
-                    // Up, static area and header is fixed
-                    } else if (scrolled < 0 && startScroll <= 50 && $(header).hasClass('header-fixed') === true) {
-                        $(header).removeClass('header-fixed header-animated');
-                        $(container).css({'margin-top' : 0});
+                        // Up, static area and header is fixed
+                        } else if (scrolled < 0 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
+                            $(header).removeClass('header-fixed header-animated');
+                            $(container).css({'margin-top' : 0});
+                        }
                     }
                     startScroll = 0;
                 }
-
-                if ($(window).innerWidth > 640) {
+                if (window.innerWidth > 640 && stickyPostHeaders) {
                     var posts = this.tracked;
                     $('.post').each(function(n, el) {
                         var offset = 30;

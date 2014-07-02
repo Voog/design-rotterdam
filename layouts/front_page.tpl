@@ -9,7 +9,6 @@
 </head>
 
 <body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
-  {% include "topbar" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -30,6 +29,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
-  <script type="text/javascript">site.initBlogPage();</script>
+  <script type="text/javascript">site.initFrontPage();</script>
 </body>
 </html>

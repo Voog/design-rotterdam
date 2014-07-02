@@ -26,6 +26,7 @@ body {
   .container .horizontal-line {
     margin-bottom: 12px;
     width: 220px;
+    max-width: 100%;
     height: 2px;
     background: #555;
     background: rgba(0,0,0,.65); }
@@ -111,9 +112,9 @@ body {
   line-height: 1.2em; }
   .sub-menu li a {
     color: #888;
+    word-break: break-word;
     font-weight: 300;
-    font-size: 16px;
-    word-break: break-word; }
+    font-size: 16px; }
   .sub-menu li a.untranslated {
     color: #c33; }
 .mobile-menu {
@@ -486,8 +487,7 @@ body {
   overflow: auto;
   min-height: 86px;
   max-width: 100%;
-  width: 30%;
-  border-top: 1px solid #dadada; }
+  width: 30%;; }
 .form_field_size_medium {
   width: 60%; }
 .form_field_size_large {
@@ -530,9 +530,10 @@ body {
     color: rgba(0,0,0,.8);
     line-height: 1.6; }
   .comment-form .form_field_textarea {
-    padding: 6px 0px;
+    padding: 8px 0 6px 0px;
     min-height: 30px;
-    line-height: 1.1; }
+    line-height: 1.1;
+    margin-top: -5px; }
 .comment {
   margin-bottom: 15px;
   font-size: 14px; }
@@ -562,6 +563,8 @@ body {
   transition: border-bottom-color 0.1s; }
 .search .search-box.search-box-focus {
   border-top: 2px solid rgba(0,0,0,.65); }
+#mobile-search .search {
+  width: 100%; }
 #mobile-search .search-box.search-box-focus {
   border-top: 2px solid transparent; }
 #mobile-search .search .search-box {
@@ -569,7 +572,7 @@ body {
   right: 0;
   left: 0;
   padding-right: 50px;
-  padding-left: 30px;
+  padding-left: 25px;
   max-width: 100%; }
 .search .search-input {
   margin: 0;
@@ -626,6 +629,12 @@ body {
   margin-top: -15px;
   width: 30px;
   height: 30px; }
+#mobile-search .search-submit,
+#mobile-search .search-close {
+  position: absolute;
+  right: 0;
+  left: initial;
+}
 .search .search-submit {
   display: block;
   background: url("../images/search.png") no-repeat center center; }
@@ -822,6 +831,23 @@ body.mobilesearch-open {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .blog-page .footer {
   max-width: 220px; }
+.footer.footer-fixed {
+  position: fixed;
+  bottom: -200px;
+  right: 0;
+  left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  width: 24%;
+  background: white; }
+.footer-animated {
+  -webkit-transition:  bottom 0.2s ease-in-out;
+          transition:  bottom 0.2s ease-in-out; }
+.footer .search {
+  max-width: 100%;
+}
 
 /* TABLET VIEW */
 @media screen and (max-width: 999px) {
@@ -976,8 +1002,8 @@ body.mobilesearch-open {
   .header {
     padding: 10px 50px 10px 0; }
     .header.header-fixed {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 7px;
+      padding-bottom: 7px;
     }
   .header .main-menu {
     display: none; }
@@ -987,8 +1013,16 @@ body.mobilesearch-open {
 
   /* TOPBAR */
   .topbar {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: block;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .topbar.fixed .toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   .topbar .toggle-btn {
     position: relative;
     z-index: 3;
@@ -1030,9 +1064,23 @@ body.mobilesearch-open {
   .topbar .main-menu {
     top: 40px;
     right: 0; }
-  .topbar .lang-menu {
+  .topbar.fixed .lang-menu {
+    position: absolute;
+    top: 0;
     right: 40px;
     height: 40px; }
+  .topbar.fixed .main-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+
+  .footer {
+    padding: 10px 50px 10px 0; }
+    .footer.footer-fixed {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
 
   /* BLOG & BLOG ARTICLE */
   .blog-page .post-header,

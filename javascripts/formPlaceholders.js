@@ -15,6 +15,13 @@
                         $(field).find('input[type="text"]').placeholder();
                     }
                 }
+                if ($(field).find('textarea').length > 0) {
+                    $(field).find('textarea').attr('placeholder', $(field).find('label').text());
+                    $(field).find('label').hide();
+                    if ($.fn.placeholder) {
+                        $(field).find('textarea').placeholder();
+                    }
+                }
             }, this));
         }
     };

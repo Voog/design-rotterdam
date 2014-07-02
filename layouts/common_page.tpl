@@ -9,7 +9,6 @@
   </head>
 
   <body class="common-page">
-    {% include "topbar" %}
     <div class="container">
       {% include "header" %}
       <section class="content-header content-formatted cfx">

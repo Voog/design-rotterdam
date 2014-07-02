@@ -34,6 +34,7 @@
             this.$input.on('focus', $.proxy(this.handleInputFocus, this));
             this.$input.on('blur', $.proxy(this.handleInputBlur, this));
             this.$clearbtn.on('click', $.proxy(this.handleClearButtonClick, this));
+            this.$submitbtn.on('click', $.proxy(this.handleSubmitButtonClick, this));
             this.$content.on('scroll', $.proxy(this.handleModalScroll, this));
         },
         createModal: function() {
@@ -111,6 +112,10 @@
         handleClearButtonClick: function(event) {
             event.preventDefault();
             this.reset();
+        },
+
+        handleSubmitButtonClick: function(event) {
+            this.handleSubmit(event);
         },
         
         handleModalScroll: function(event) {

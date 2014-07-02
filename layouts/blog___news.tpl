@@ -10,7 +10,6 @@
 </head>
 
 <body class="blog-page">
-  {% include "topbar" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">

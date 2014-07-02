@@ -16,5 +16,7 @@
     <nav class="main-menu">
       {% include "nav-menu" %}
     </nav>
+
+    {% include 'topbar' %}
   </div>
 </header>

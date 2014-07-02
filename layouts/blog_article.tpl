@@ -9,7 +9,6 @@
 </head>
 
 <body class="post-page">
-  {% include "topbar" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -47,7 +46,7 @@
   </div>
 
   {% include "javascripts" %}
-  <script type="text/javascript">site.initBlogPage();</script>
+  <script type="text/javascript">site.initArticlePage();</script>
   <script src="{{ javascripts_path }}/autogrow.js"></script>
   <script>$('.form_field_textarea').autogrow();</script>
 </body>
