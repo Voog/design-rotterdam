@@ -306,8 +306,7 @@ body {
   margin-left: 125px; }
 .content-body {
   display: inline-block;
-  max-width: 440px;
-  width: 100%;
+  width: 85%;
   vertical-align: top; }
 .content-header {
   margin-bottom: 45px; }
