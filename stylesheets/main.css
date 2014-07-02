@@ -1059,6 +1059,7 @@ body.mobilesearch-open {
     opacity: 0.4; }
   .topbar .expanded {
     position: absolute;
+    right: 40px;
     display: block; }
   .topbar .main-menu {
     top: 40px;
