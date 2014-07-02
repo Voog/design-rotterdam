@@ -246,7 +246,7 @@
             s.resume();
         }, 200);
 
-        $(window).on('load', function() {s.handler({}, function(){});})
+        $(window).on('load resize', function() {s.handler({}, function(){});})
     };
 
 
