@@ -27,6 +27,7 @@
       {% endfor %}
     </main>
     {% include "footer" %}
+    <div class="voog-reference">{% loginblock %}{{ "footer_login_link" | lc }}{% endloginblock %}</div>
   </div>
   {% include "javascripts" %}
   <script type="text/javascript">site.initFrontPage();</script>

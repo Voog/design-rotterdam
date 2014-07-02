@@ -99,13 +99,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/sidebar-right.tpl",
-      "layout_name": "sidebar-right",
-      "title": "sidebar-right"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/tags-article.tpl",
       "layout_name": "tags-article",
       "title": "tags-article"

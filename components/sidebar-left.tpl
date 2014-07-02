@@ -3,9 +3,7 @@
     <aside class="sidebar sidebar-left">
       <section class="content-formatted cfx">
         <div class="sidebar-header">
-          {% contentblock name="content_sidebar_header" %}
-              {{ item.title }}
-          {% endcontentblock %}
+          {{ item.title }}
         </div>
 
         <nav class="sub-menu">

@@ -25,8 +25,8 @@ body {
       border: none; }
   .container .horizontal-line {
     margin-bottom: 12px;
-    width: 220px;
     max-width: 100%;
+    width: 220px;
     height: 2px;
     background: #555;
     background: rgba(0,0,0,.65); }
@@ -295,9 +295,6 @@ body {
     font-weight: 700;
     font-size: 16px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .sidebar-left .sub-menu {
-
-  }
 
 /* CONTENT */
 .content {
@@ -529,10 +526,9 @@ body {
     color: rgba(0,0,0,.8);
     line-height: 1.6; }
   .comment-form .form_field_textarea {
-    padding: 8px 0 6px 0px;
+    padding: 6px 0 6px 0px;
     min-height: 30px;
-    line-height: 1.1;
-    margin-top: -5px; }
+    line-height: 1.1; }
 .comment {
   margin-bottom: 15px;
   font-size: 14px; }
@@ -828,18 +824,20 @@ body.mobilesearch-open {
   color: rgba(0,0,0,.8);
   font-size: 12px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-.blog-page .footer {
-  max-width: 220px; }
+.footer {
+  width: 100%;
+}
 .footer.footer-fixed {
   position: fixed;
-  bottom: -200px;
   right: 0;
+  bottom: -200px;
   left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 25px;
   padding-bottom: 20px;
+  padding-left: 25px;
   width: 24%;
+  max-width: 220px;
   background: white; }
 .footer-animated {
   -webkit-transition:  bottom 0.2s ease-in-out;
@@ -847,6 +845,14 @@ body.mobilesearch-open {
 .footer .search {
   max-width: 100%;
 }
+.voog-reference {
+  margin: -10px auto 25px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px; }
+  .voog-reference a {
+    color: #333; }
+    .voog-reference a:hover {
+      color: #555; }
 
 /* TABLET VIEW */
 @media screen and (max-width: 999px) {
@@ -857,7 +863,7 @@ body.mobilesearch-open {
   .content {
     position: relative; }
   .content-body {
-    max-width: inherit; }
+    max-width: 100%; }
   .sidebar-left {
     position: relative;
     z-index: 1;
