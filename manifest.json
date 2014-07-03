@@ -116,12 +116,7 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
-    },
-    null,
-    null,
-    null,
-    null,
-    null
+    }
   ],
   "assets": [
     {
@@ -243,6 +238,12 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
       "filename": "main.css"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/style.min.css",
+      "kind": "stylesheets",
+      "filename": "style.min.css"
     }
   ]
 }

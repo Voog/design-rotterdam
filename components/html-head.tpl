@@ -38,8 +38,7 @@
 {% endif %}
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-{% stylesheet_link "main.css?1" %}
-{% stylesheet_link "fonts.css?1" %}
+{% stylesheet_link "style.min.css?1" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css?1" %}<![endif]-->
 
 <script src="{{ javascripts_path }}/modernizr.min.js?1"></script>
