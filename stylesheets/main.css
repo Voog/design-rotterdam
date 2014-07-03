@@ -960,10 +960,15 @@ body.mobilesearch-open {
     font-weight: 400; }
   .lang-menu {
     display: none;
-    padding-left: 0;
-    background: #333; }
+    padding-left: 0; }
   .lang-menu .menu {
-    height: inherit; }
+    height: 40px;
+    width: auto;
+    display: inline-block;
+    float: right;
+    right: 40px;
+    position: fixed;
+    background-color: #333; }
   .lang-menu li {
     float: right;
     width: 40px;
