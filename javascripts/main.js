@@ -981,6 +981,7 @@ if (typeof module === 'object' && module.exports) {
             checkScrollBar();
             handleTableHorizontalScrolling();
         }
+        $('.content form').edicyFormPlaceholders();
     };
 
     window.site = $.extend(window.site || {}, {

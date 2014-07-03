@@ -41,6 +41,4 @@
 </script>
 {% endif %}
 
-<script>$('.content form').edicyFormPlaceholders();</script>
-
 {% unless editmode %}{{ site.analytics }}{% endunless %}
