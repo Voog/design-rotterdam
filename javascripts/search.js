@@ -1,3 +1,4 @@
+/* search */
 ;(function($) {
     var searcherUIdefaults = {
         lang: 'en',
@@ -98,9 +99,8 @@
             var visibleClass = this.options.visibleClass ? this.options.visibleClass : 'voog-search-visible';
             if (!$('body').hasClass(visibleClass)) {
                 this.$el.find('.search-box').removeClass('search-box-focus');
+                this.reset();
             }
-            this.$clearbtn.hide();
-            this.$submitbtn.show();
         },
         
         handleSideClick: function(event) {

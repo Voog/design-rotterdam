@@ -42,4 +42,4 @@
 {% stylesheet_link "fonts.css?1" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.css?1" %}<![endif]-->
 
-<script src="{{ javascripts_path }}/modernizr.js?1"></script>
+<script src="{{ javascripts_path }}/modernizr.min.js?1"></script>

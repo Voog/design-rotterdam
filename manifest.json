@@ -116,7 +116,12 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
-    }
+    },
+    null,
+    null,
+    null,
+    null,
+    null
   ],
   "assets": [
     {
@@ -187,21 +192,9 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/autogrow.js",
+      "file": "javascripts/jquery.min.js",
       "kind": "javascripts",
-      "filename": "autogrow.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/formPlaceholders.js",
-      "kind": "javascripts",
-      "filename": "formPlaceholders.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/jquery.js",
-      "kind": "javascripts",
-      "filename": "jquery.js"
+      "filename": "jquery.min.js"
     },
     {
       "content_type": "application/javascript",
@@ -211,27 +204,15 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/modernizr.js",
+      "file": "javascripts/main.min.js",
       "kind": "javascripts",
-      "filename": "modernizr.js"
+      "filename": "main.min.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/overthrow.js",
+      "file": "javascripts/modernizr.min.js",
       "kind": "javascripts",
-      "filename": "overthrow.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/placeholder.js",
-      "kind": "javascripts",
-      "filename": "placeholder.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/retina.js",
-      "kind": "javascripts",
-      "filename": "retina.js"
+      "filename": "modernizr.min.js"
     },
     {
       "content_type": "application/javascript",
@@ -241,9 +222,9 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/steady.js",
+      "file": "javascripts/search.min.js",
       "kind": "javascripts",
-      "filename": "steady.js"
+      "filename": "search.min.js"
     },
     {
       "content_type": "text/css",

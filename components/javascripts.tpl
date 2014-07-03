@@ -1,13 +1,9 @@
-<script src="{{ javascripts_path }}/jquery.js?1"></script>
-<script src="{{ javascripts_path }}/steady.js?1"></script>
-<script src="{{ javascripts_path }}/main.js?1"></script>
-<script src="{{ javascripts_path }}/placeholder.js?1"></script>
-<script src="{{ javascripts_path }}/formPlaceholders.js?1"></script>
-<script src="{{ javascripts_path }}/overthrow.js?1"></script>
+<script src="{{ javascripts_path }}/jquery.min.js?1"></script>
+<script src="{{ javascripts_path }}/main.min.js?1"></script>
 <script src="{{ site.static_asset_host }}/libs/picturefill/1.0.0/picturefill.min.js"></script>
 {% if site.search.enabled %}
 <script src="{{ site.static_asset_host }}/libs/edicy-search/1.0.0/edicy-search.js"></script>
-<script src="{{ javascripts_path }}/search.js"></script>
+<script src="{{ javascripts_path }}/search.min.js"></script>
 <script>
 
   $(function() {

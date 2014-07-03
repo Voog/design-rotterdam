@@ -22,7 +22,5 @@
     </div>
     {% include "javascripts" %}
     <script>site.initCommonPage();</script>
-    <script src="{{ javascripts_path }}/autogrow.js"></script>
-    <script>$('.form_field_textarea').autogrow();</script>
   </body>
 </html>
