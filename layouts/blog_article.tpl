@@ -2,10 +2,6 @@
 <html lang="{{ page.language_code }}">
 <head>
   {% include "html-head" %}
-  <meta property="og:url" content="{{ site.url }}/{{ article.url }}">
-  <meta property="og:title" content="{{ article.title }} — {{ page.site_title }}">
-  <meta property="og:description" content="{{ article.excerpt | strip_html | truncate : 200 }}">
-  <meta property="og:image" content="{{ site.url }}{{ photos_path }}/{{ page.data.fbimage }}"><!-- TODO: Add image location data tag -->
 </head>
 
 <body class="post-page">
