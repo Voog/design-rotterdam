@@ -509,7 +509,8 @@ body {
   max-width: 312px;
   width: 100%;
   vertical-align: top;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  word-break: break-all; }
 .comment-header {
   line-height: 22px; }
 .comment-header .edy-btn-removecomment {
