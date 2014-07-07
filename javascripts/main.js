@@ -817,6 +817,16 @@ if (typeof module === 'object' && module.exports) {
         });
     };
 
+    var handlePostMinHeight = function() {
+        $(window).ready(function(){
+            $('.post').each(function(n, el) {
+                var $post = $(el);
+                var height = $post.find('.post-header').css('height');
+                $post.find('.post-content').css('min-height', height);
+            })
+        });
+    };
+
     // Initiations
     var initFrontPage = function() {
         initStickyElements({
@@ -825,6 +835,7 @@ if (typeof module === 'object' && module.exports) {
             stickyFooter: true,
             stickyPostHeaders: true
         });
+        handlePostMinHeight();
     };
     var initCommonPage = function() {
         initStickyElements({
@@ -855,6 +866,7 @@ if (typeof module === 'object' && module.exports) {
             stickyFooter: true,
             stickyPostHeaders: true
         });
+        handlePostMinHeight();
     };
 
     var initStickyElements = function(opts) {
