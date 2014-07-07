@@ -31,7 +31,7 @@ body {
     background: #555;
     background: rgba(0,0,0,.65); }
 .content-formatted {
-  word-break: break-word; }
+  word-break: break-all; }
   .content-formatted h1,
   .content-formatted h2,
   .content-formatted h3,
