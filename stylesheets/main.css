@@ -884,7 +884,8 @@ body.mobilesearch-open {
     padding: 15px 5px 20px 15px;
     max-width: 95px;
     background: #e0e0e0;
-    text-align: right; }
+    text-align: right; 
+    word-break: break-all; }
   .sidebar-right {
     display: block;
     float: right;
