@@ -818,7 +818,8 @@ body.mobilesearch-open {
   left: 0; }
 
 /* FOOTER */
-.footer {
+.footer { 
+  display: inline-block;
   margin-bottom: 30px;
   color: #333;
   color: rgba(0,0,0,.8);
@@ -836,8 +837,8 @@ body.mobilesearch-open {
   margin-bottom: 0;
   padding-bottom: 20px;
   padding-left: 25px;
-  width: 24%;
   max-width: 220px;
+  width: 24%;
   background: white; }
 .footer-animated {
   -webkit-transition:  bottom 0.2s ease-in-out;
@@ -847,8 +848,8 @@ body.mobilesearch-open {
 }
 .voog-reference {
   margin: -10px auto 25px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px; }
+  font-size: 12px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .voog-reference a {
     color: #333; }
     .voog-reference a:hover {
@@ -962,12 +963,12 @@ body.mobilesearch-open {
     display: none;
     padding-left: 0; }
   .lang-menu .menu {
-    height: 40px;
-    width: auto;
+    position: fixed;
+    right: 40px;
     display: inline-block;
     float: right;
-    right: 40px;
-    position: fixed;
+    width: auto;
+    height: 40px;
     background-color: #333; }
   .lang-menu li {
     float: right;

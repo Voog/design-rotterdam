@@ -20,3 +20,5 @@
 *.html
 
 sftp-config.json
+
+node_modules/

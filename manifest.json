@@ -241,9 +241,21 @@
     },
     {
       "content_type": "text/css",
-      "file": "stylesheets/style.min.css",
       "kind": "stylesheets",
-      "filename": "style.min.css"
+      "file": "stylesheets/fonts.min.css",
+      "filename": "fonts.min.css"
+    },
+    {
+      "content_type": "text/css",
+      "kind": "stylesheets",
+      "file": "stylesheets/ie8.min.css",
+      "filename": "ie8.min.css"
+    },
+    {
+      "content_type": "text/css",
+      "kind": "stylesheets",
+      "file": "stylesheets/main.min.css",
+      "filename": "main.min.css"
     }
   ]
 }
