@@ -8,7 +8,7 @@
     <div class="container">
       {% include "header" %}
       <section class="content-header content-formatted cfx">
-        {% contentblock name="content_heading" %}How do we love like our coffee?{% endcontentblock %}
+        {% content name="slogan" %}
       </section>
       <main class="content" role="main">
         {% include "sidebar-left" %}

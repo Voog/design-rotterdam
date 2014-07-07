@@ -853,6 +853,11 @@ if (typeof module === 'object' && module.exports) {
         if ($.fn.autogrow) {
             $('.form_field_textarea').autogrow();
         }
+        $(window).ready(function() {
+            if (!($.trim($('.content-header').get(0).innerHTML))) {
+                $('.content-header').hide();
+            }
+        });
     };
     var initArticlePage = function() {
         initStickyElements({
