@@ -854,6 +854,10 @@ body.mobilesearch-open {
     color: #333; }
     .voog-reference a:hover {
       color: #555; }
+.content-formatted .edy-positionable-container-left {
+  margin: 0 25px 15px 0; }
+.content-formatted .edy-positionable-container-right {
+  margin: 0 0 15px 25px; }
 
 /* TABLET VIEW */
 @media screen and (max-width: 999px) {
