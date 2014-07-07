@@ -109,7 +109,10 @@ body {
 .main-menu .add-page-btn {
   margin-left: 5px; }
 .sub-menu li {
-  line-height: 1.2em; }
+  line-height: 0.85;
+  padding-bottom: 10px; }
+  .sub-menu li:last-child {
+    padding-bottom: 0; }
   .sub-menu li a {
     color: #888;
     word-break: break-word;
@@ -288,6 +291,9 @@ body {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .sidebar-left {
   max-width: 120px; }
+  .sidebar-header {
+    padding-bottom: 7px;
+  }
   .sidebar-left .content-formatted h1 {
     margin: 0 0 3px;
     color: #333;
@@ -875,7 +881,7 @@ body.mobilesearch-open {
     float: right;
     margin-bottom: 20px;
     margin-left: 20px;
-    padding: 20px 5px 10px 15px;
+    padding: 15px 5px 20px 15px;
     max-width: 95px;
     background: #e0e0e0;
     text-align: right; }
