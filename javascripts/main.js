@@ -1,3 +1,30 @@
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+// MIT license
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
 /**
  * Auto-growing textareas; technique ripped from Facebook
  *
@@ -529,224 +556,6 @@
     };
 })(jQuery);
 
-/* STEADY.JS */
-function Steady(opts) {
-  if ( !opts ) throw new Error('missing options');
-  if ( !opts.handler ) throw new Error('missing handler parameter');
-
-
-  this.scrollElement = opts.scrollElement || window;
-  this.conditions = opts.conditions || {};
-  this.handler   = opts.handler;
-  this.values    = {};
-  this.tracked   = {};
-  this.success   = false;
-  this.throttleVal = opts.throttle || 100;
-  this.processing = false;
-  this.stopped = false;
-
-
-  this._parse();
-
-  if ( this.scrollElement.hasOwnProperty('scrollY') ) {
-    this._addBottom();
-    this._addScrollX();
-    this._addScrollY();
-  } else {
-    this._addBottomEl();
-    this._addScrollTop();
-    this._addScrollLeft();
-  }
-
-  this._addWidth();
-  this._onScroll();
-
-}
-
-
-Steady.prototype.addCondition = function(name, value) {
-  this.conditions[name] = value;
-  this._parse();
-};
-Steady.prototype.removeCondition = function(name) {
-  delete this.conditions[name];
-  this._parse();
-};
-Steady.prototype.addTracker  = function(name, fn) {
-  this.tracked[name] = { cb: fn, name: name};
-};
-
-Steady.prototype._addScrollX = function() {
-  this.addTracker('scrollX', function(window) {
-    return window.scrollX;
-  });
-};
-Steady.prototype._addScrollY = function() {
-  this.addTracker('scrollY', function(window) {
-    return window.scrollY;
-  });
-};
-
-Steady.prototype._addBottom = function() {
-  this.addTracker('bottom', function(window) {
-    var height = Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight, 
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    );
-    return height - (window.scrollY + window.innerHeight);
-  });
-};
-
-Steady.prototype._addBottomEl = function() {
-  var self = this;
-  this.addTracker('bottom', function(window) {
-    var height = Math.max(
-      self.scrollElement.scrollHeight,
-      self.scrollElement.offsetHeight
-    );
-    return height - ( self.scrollElement.scrollTop + self.scrollElement.offsetHeight);
-  });
-};
-
-Steady.prototype._addScrollTop = function() {
-  var self = this;
-  this.addTracker('scrollTop', function(window) {
-    return self.scrollElement.scrollTop;
-  });
-};
-
-Steady.prototype._addScrollLeft = function() {
-  var self = this;
-  this.addTracker('scrollLeft', function(window) {
-    return self.scrollElement.scrollLeft;
-  });
-};
-
-Steady.prototype._addWidth = function() {
-  this.addTracker('width', function(window) {
-    return window.innerWidth;
-  });
-};
-
-
-Steady.prototype._parse = function() {
-  this._parsed = {};
-  this._wantedTrackers = [];
-  this._parsedMax = {};
-  this._parsedMin = {};
-
-  for ( var condition in this.conditions ) {
-    if( !this.conditions.hasOwnProperty(condition) ) continue;
-    
-    var operator = condition.substr(0, 4);
-
-    switch(operator) {
-      case 'min-':
-        this._wantedTrackers.push(condition.substr(4, condition.length));
-        this._parsedMin[condition.substr(4, condition.length)] = this.conditions[condition];
-        break;
-      case 'max-':
-        this._wantedTrackers.push(condition.substr(4, condition.length));
-        this._parsedMax[condition.substr(4, condition.length)] = this.conditions[condition];
-        break;
-      default:
-        this._wantedTrackers.push(condition);
-        this._parsed[condition] = this.conditions[condition];
-    }
-
-  }
-};
-
-Steady.prototype._check = function() {
-  var results = [];
-  
-  for( var name in this.values ) {
-    if ( this._parsed.hasOwnProperty(name) ) {
-      results.push( this._parsed[name] == this.values[name] );
-    }
-    if ( this._parsedMin.hasOwnProperty(name) ) {
-      results.push( this._parsedMin[name] <= this.values[name] ); 
-    }
-
-    if ( this._parsedMax.hasOwnProperty(name) ) {
-      results.push( this._parsedMax[name] >= this.values[name] );
-    }
-  }
-
-  if ( results.length && results.indexOf(false) == -1 ) {
-    this.processing = true;
-
-    var cb = this._done.bind(this);
-    window.requestAnimationFrame(this.handler.bind(this, this.values, cb));
-  }
-};
-
-Steady.prototype._done = function() {
-  this.processing = false;
-};
-
-Steady.prototype._onScroll = function() {
-  this._onScrollHandler = this._throttledHandler();
-  this.scrollElement.addEventListener('scroll', this._onScrollHandler, false);
-};
-
-Steady.prototype._throttledHandler = function() {
-  var self = this;
-  return this.throttle(function(e) {
-
-    if ( !self._wantedTrackers.length || self.processing ) return;
-    
-    for (var i = 0; i < self._wantedTrackers.length; i++) {
-
-      if ( !self.tracked[self._wantedTrackers[i]] ) continue;
-
-      self.values[self._wantedTrackers[i]] = self.tracked[self._wantedTrackers[i]].cb(window);
-    }
-    
-    window.requestAnimationFrame(self._check.bind(self));
-  }, this.throttleVal);
-};
-
-Steady.prototype.stop = function() {
-  if ( ! this.stopped  ) {
-    this.scrollElement.removeEventListener('scroll', this._onScrollHandler, false);
-    this.stopped = true;
-  }
-};
-
-Steady.prototype.resume = function() {
-  if ( this.stopped  ) 
-    this._onScroll();
-    this.stopped = false;
-};
-
-
-// i use it to avoid calling the onscroll function many times.
-Steady.prototype.throttle = function(fn, delay) {
-  var timer;
-
-  return function () {
-    var context = this;
-    var args = arguments;
-
-    if ( timer ) return;
-
-    timer = true;
-    setTimeout(function () {
-      fn.apply(context, args);
-      timer = false;
-    }, delay);
-  };
-};
-
-
-if (typeof module === 'object' && module.exports) {
-  module.exports = Steady;
-}
-
 /* General JS */
 ;(function($) {
     var wrapTables = function() {
@@ -885,6 +694,14 @@ if (typeof module === 'object' && module.exports) {
         var stickyMobileMenu = opts.stickyMobileMenu || false;
         var stickyFooter = opts.stickyFooter || false;
         var stickyPostHeaders = opts.stickyPostHeaders || false;
+        var getPostHeights = function () {
+            var posts = $('.post');
+            var heights = [];
+            posts.each(function(n, el) {
+                heights.push(el.getBoundingClientRect().top);
+            });
+            return heights;
+        };
         var startScroll,
             toHandler,
             endScroll,
@@ -895,102 +712,110 @@ if (typeof module === 'object' && module.exports) {
             headerStaticArea = $(header).height() + 90,
             headerStaticHeight = headerStaticArea + 40,
             footerStaticArea = $(footer).height() + 90,
-            footerStaticHeight = footerStaticArea + 40;
-        var s = new Steady({
-            conditions: {
-                'min-scrollY': 0
-            },
-            throttle: 25,
-            handler: function (values, done) {
-                if (!startScroll) {
-                    startScroll = $(window).scrollTop();
-                } else {
-                    endScroll = $(window).scrollTop();
-                    scrolled = endScroll - startScroll;
-                    if (window.innerWidth < 640 && stickyMobileMenu) {
-                        if (scrolled > 5 && startScroll > headerStaticArea) {
-                            $('.topbar').addClass('fixed').css({'top' : -headerStaticArea});
-                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
-                            $('.topbar').addClass('fixed').css({'top' : 0});
-                        } else if (scrolled < 0 && startScroll <= 100 && $('.topbar').hasClass('fixed') === true) {
-                            $(container).css({'margin-top' : 0});
-                            $('.topbar').removeClass('fixed');
-                        }
+            footerStaticHeight = footerStaticArea + 40,
+            handler = function (postHeights) {
+            if (!startScroll) {
+                startScroll = $(window).scrollTop();
+            } else {
+                endScroll = $(window).scrollTop();
+                scrolled = endScroll - startScroll;
+                if (window.innerWidth < 640 && stickyMobileMenu) {
+                    if (scrolled > 5 && startScroll > headerStaticArea) {
+                        $('.topbar').addClass('fixed').css({'top' : -headerStaticArea});
+                    } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                        $('.topbar').addClass('fixed').css({'top' : 0});
+                    } else if (scrolled < 0 && startScroll <= 100 && $('.topbar').hasClass('fixed') === true) {
+                        $(container).css({'margin-top' : 0});
+                        $('.topbar').removeClass('fixed');
                     }
-                    if (window.innerWidth > 640 && stickyFooter) {
-                        // up and above footer
-                        if (scrolled < -5 && (startScroll + window.innerHeight) < ($('html').height())) {
-                            $(footer).addClass('footer-fixed footer-animated').css({'bottom' : 0});
-                            $(footer).css({'left' : $('.container').offset().left});
-                            $(container).css({'margin-bottom' : footerStaticArea});
-                        // down and above footer
-                        } else if (scrolled > 5 && (startScroll + window.innerHeight) < ($('html').height())) {
-                            $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
-                            $('body').removeClass('voog-search-visible');
-                            $(container).css({'margin-bottom' : 0});
-                        }
-                    }
-                    // Scrolling down and offset is larger than
-                    if (stickyHeader) {
-                        if (scrolled > 5 && startScroll > headerStaticArea) {
-                            $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
-                            $(container).css({'margin-top' : headerStaticArea});
-
-                        // Up and fixed area
-                        } else if (scrolled < -5 && startScroll > headerStaticArea) {
-                            $(header).addClass('header-fixed header-animated').css({'top' : 0});
-
-                        // Up, static area and header is fixed
-                        } else if (scrolled < 0 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
-                            $(header).removeClass('header-fixed header-animated');
-                            $(container).css({'margin-top' : 0});
-                        }
-                    }
-                    startScroll = 0;
                 }
-                if (window.innerWidth > 640 && stickyPostHeaders) {
-                    var posts = this.tracked;
-                    $('.post').each(function(n, el) {
-                        var offset = 30;
-                        var $header = $(el).find('.post-header');
-                        var topBoundary = 0 + offset
-                        var bottomBoundary = -($(el).height() - offset - $header.height());
-                        // scroll is between top and bottom of the .post
+                if (window.innerWidth > 640 && stickyFooter) {
+                    // up and above footer
+                    if (scrolled < -5 && (startScroll + window.innerHeight) < ($('html').height())) {
+                        $(footer).addClass('footer-fixed footer-animated').css({'bottom' : 0});
+                        $(footer).css({'left' : $('.container').offset().left});
+                        $(container).css({'margin-bottom' : footerStaticArea});
+                    // down and above footer
+                    } else if (scrolled > 5 && (startScroll + window.innerHeight) < ($('html').height())) {
+                        $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
+                        $('body').removeClass('voog-search-visible');
+                        $(container).css({'margin-bottom' : 0});
+                    }
+                }
+                // Scrolling down and offset is larger than
+                if (stickyHeader) {
+                    if (scrolled > 5 && startScroll > headerStaticArea) {
+                        $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
+                        $(container).css({'margin-top' : headerStaticArea});
 
-                        if (posts[n].cb() < topBoundary) {
-                            // scroll is inside .post
-                            if (posts[n].cb() > bottomBoundary) {
-                                $header.removeClass('top bottom');
-                                $(el).addClass('fixed-header');
-                            // scroll is below .post
-                            } else {
-                                $header.addClass('bottom').removeClass('top');
-                                $(el).removeClass('fixed-header');
-                            }
-                        // scroll is above .post
+                    // Up and fixed area
+                    } else if (scrolled < -5 && startScroll > headerStaticArea) {
+                        $(header).addClass('header-fixed header-animated').css({'top' : 0});
+
+                    // Up, static area and header is fixed
+                    } else if (scrolled < 0 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
+                        $(header).removeClass('header-fixed header-animated');
+                        $(container).css({'margin-top' : 0});
+                    }
+                }
+                startScroll = 0;
+            }
+            if (window.innerWidth > 640 && stickyPostHeaders) {
+                $('.post').each(function(n, el) {
+                    var offset = 30;
+                    var $header = $(el).find('.post-header');
+                    var topBoundary = 0 + offset
+                    var bottomBoundary = -($(el).height() - offset - $header.height());
+                    // scroll is between top and bottom of the .post
+
+                    if (postHeights[n] < topBoundary) {
+                        // scroll is inside .post
+                        if (postHeights[n] > bottomBoundary) {
+                            $header.removeClass('top bottom');
+                            $(el).addClass('fixed-header');
+                        // scroll is below .post
                         } else {
-                            $header.addClass('top').removeClass('bottom');
+                            $header.addClass('bottom').removeClass('top');
                             $(el).removeClass('fixed-header');
                         }
-                    });
-                }
-                done();
+                    // scroll is above .post
+                    } else {
+                        $header.addClass('top').removeClass('bottom');
+                        $(el).removeClass('fixed-header');
+                    }
+                });
             }
-        });
+        }
+        var latestKnownScrollY = 0,
+            ticking = false;
 
-        $('.post').each(function(n, el) {
-            s.addTracker(n, function(window) {
-                var rect = el.getBoundingClientRect();
-                return rect.top;
-            });
-        });
+        var onScroll = function() {
+            latestKnownScrollY = window.scrollY;
+            requestTick();
+        }
 
-        s.stop();
-        setTimeout(function() {
-            s.resume();
-        }, 200);
+        var requestTick = function() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+            }
+            ticking = true;
+        }
 
-        $(window).on('load resize', function() {s.handler({}, function(){});})
+        var update = function() {
+            ticking = false;
+            var currentScrollY = latestKnownScrollY;
+            handler(getPostHeights());
+
+            // read offset of DOM elements
+            // and compare to the currentScrollY value
+            // then apply some CSS classes
+            // to the visible items
+
+        }
+
+        $(window).on('load resize', function() {
+            handler(getPostHeights())
+        }).on('scroll', onScroll);
     };
 
 
