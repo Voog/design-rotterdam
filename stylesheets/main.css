@@ -1109,6 +1109,9 @@ body.mobilesearch-open {
     }
 
   /* BLOG & BLOG ARTICLE */
+  .blog-page .post {
+    margin-bottom: 25px;
+  }
   .blog-page .post-header,
   .blog-page .post-content {
     display: block;
