@@ -31,7 +31,7 @@ body {
     background: #555;
     background: rgba(0,0,0,.65); }
 .content-formatted {
-  word-break: break-all; }
+  word-break: break-word; }
   .content-formatted h1,
   .content-formatted h2,
   .content-formatted h3,
@@ -510,7 +510,7 @@ body {
   width: 100%;
   vertical-align: top;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-  word-break: break-all; }
+  word-break: break-word; }
 .comment-header {
   line-height: 22px; }
 .comment-header .edy-btn-removecomment {
@@ -886,7 +886,7 @@ body.mobilesearch-open {
     max-width: 95px;
     background: #e0e0e0;
     text-align: right; 
-    word-break: break-all; }
+    word-break: break-word; }
   .sidebar-right {
     display: block;
     float: right;
