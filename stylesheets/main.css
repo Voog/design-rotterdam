@@ -935,7 +935,9 @@ body.mobilesearch-open {
     display: block;
     margin-left: 70px;
     max-width: 100%;
-    width: auto; } }
+    width: auto; }
+    .comments-title {
+      margin-top: 30px; }
 
 /* MOBILE VIEW */
 @media screen and (max-width: 640px) {
