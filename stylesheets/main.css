@@ -165,10 +165,12 @@ body {
 .lang-menu {
   position: relative;
   display: table-cell;
-  padding-left: 13px;
   height: 13px;
   vertical-align: top;
   line-height: 1.1; }
+  .editmode .lang-menu {
+    padding-left: 13px;
+  }
   .lang-menu .menu { }
   .lang-menu .untranslated { }
   .lang-menu .untranslated:hover { }
@@ -263,13 +265,16 @@ body {
 .header-title {
   display: table-cell;
   margin: 0;
-  min-width: 244px;
   max-width: 810px;
   vertical-align: top;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 24px;
-  line-height: 1.1; }
+  line-height: 1.1;
+  margin-right: 13px; }
+  .editmode .header-title {
+    min-width: 100px;
+  }
   .header-title a {
     color: #333;
     color: rgba(0,0,0,0.8);

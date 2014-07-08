@@ -4,7 +4,7 @@
     {% include "html-head" %}
   </head>
 
-  <body class="common-page">
+  <body class="common-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
     <div class="container">
       {% include "header" %}
       <section class="content-header content-formatted cfx">

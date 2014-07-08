@@ -4,7 +4,7 @@
   {% include "html-head" %}
 </head>
 
-<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
+<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
