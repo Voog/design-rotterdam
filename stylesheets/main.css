@@ -440,8 +440,11 @@ body {
 /* FORMS */
 .container form {
   margin-bottom: 35px;
-  font-size: 12px;
+  font-size: 16px;
+  color: #919191;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.container .placeholder {
+  height: 1 !important; }
 .form_field_error, .form_error {
   color: #c33;
   font-weight: 700; }
