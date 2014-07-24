@@ -121,6 +121,12 @@
   "assets": [
     {
       "content_type": "image/svg+xml",
+      "file": "assets/ico-flags.svg",
+      "kind": "assets",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/loader.svg",
       "kind": "assets",
       "filename": "loader.svg"
@@ -163,15 +169,9 @@
     },
     {
       "content_type": "image/png",
-      "file": "images/flag-sprite.png",
+      "file": "images/ico-flags.png",
       "kind": "images",
-      "filename": "flag-sprite.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/flag-sprite@2x.png",
-      "kind": "images",
-      "filename": "flag-sprite@2x.png"
+      "filename": "ico-flags.png"
     },
     {
       "content_type": "image/png",
@@ -187,21 +187,21 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/jquery.min.js",
+      "file": "javascripts/application.js",
       "kind": "javascripts",
-      "filename": "jquery.min.js"
+      "filename": "application.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/main.js",
+      "file": "javascripts/application.min.js",
       "kind": "javascripts",
-      "filename": "main.js"
+      "filename": "application.min.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/main.min.js",
+      "file": "javascripts/modernizr.js",
       "kind": "javascripts",
-      "filename": "main.min.js"
+      "filename": "modernizr.js"
     },
     {
       "content_type": "application/javascript",
@@ -223,15 +223,15 @@
     },
     {
       "content_type": "text/css",
-      "file": "stylesheets/fonts.css",
-      "kind": "stylesheets",
-      "filename": "fonts.css"
-    },
-    {
-      "content_type": "text/css",
       "file": "stylesheets/ie8.css",
       "kind": "stylesheets",
       "filename": "ie8.css"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/ie8.min.css",
+      "kind": "stylesheets",
+      "filename": "ie8.min.css"
     },
     {
       "content_type": "text/css",
@@ -241,20 +241,8 @@
     },
     {
       "content_type": "text/css",
-      "kind": "stylesheets",
-      "file": "stylesheets/fonts.min.css",
-      "filename": "fonts.min.css"
-    },
-    {
-      "content_type": "text/css",
-      "kind": "stylesheets",
-      "file": "stylesheets/ie8.min.css",
-      "filename": "ie8.min.css"
-    },
-    {
-      "content_type": "text/css",
-      "kind": "stylesheets",
       "file": "stylesheets/main.min.css",
+      "kind": "stylesheets",
       "filename": "main.min.css"
     }
   ]
