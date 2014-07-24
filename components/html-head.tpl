@@ -14,7 +14,7 @@
 <meta property="og:url" content="{{ site.url }}{% if article %}{{ article.url | remove_first:'/' }}{% else %}{{ page.url | remove_first:'/' }}{% endif %}">
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:site_name" content="{{ page.site_title | escape }}">
- 
+
 {% if article %}
   {% if article.data.fb_image %}
     <meta property="og:image" content="{{ article.data.fb_image }}">
@@ -38,8 +38,7 @@
 {% endif %}
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-{% stylesheet_link "fonts.min.css?1" %}
-{% stylesheet_link "main.min.css?1" %}
-<!--[if lt IE 9]>{% stylesheet_link "ie8.min.css?1" %}<![endif]-->
+{% stylesheet_link "main.min.css" %}
+<!--[if lt IE 9]>{% stylesheet_link "ie8.min.css" %}<![endif]-->
 
-<script src="{{ javascripts_path }}/modernizr.min.js?1"></script>
+<script src="{{ javascripts_path }}/modernizr.min.js"></script>

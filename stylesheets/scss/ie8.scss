@@ -1,0 +1,15 @@
+@import 'bourbon/bourbon';
+@import '_mixins';
+@import '_variables';
+
+/* COMMENTS */
+.comment-form {
+  .placeholder {
+    color: #919191;
+  }
+
+  .form_field_textfield {
+    min-height: 25px;
+  }
+}
+

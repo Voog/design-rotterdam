@@ -5,7 +5,7 @@
 
       {% if editmode or site.has_many_languages? %}
         <nav class="lang-menu">
-          <button id="lang-menu-toggle" class="toggle-btn lang-menu-toggle lang-flag {% for language in site.languages %}{% if language.selected? %}{{ language.code }}{% endif %}{% endfor %}">Choose language</button>
+          <button id="lang-menu-toggle" class="toggle-btn lang-menu-toggle lang-flag {% for language in site.languages %}{% if language.selected? %}lang-flag-{{ language.code }}{% endif %}{% endfor %}">Choose language</button>
           <div id="toggleable-lang-menu" class="lang-menu-popover">
             {% include "lang-menu" %}
           </div>
