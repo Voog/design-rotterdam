@@ -20,7 +20,7 @@
 
         {% unless article.new_record? %}
         <aside class="comments">
-          <h2 class="comments-title">{% case article.comments_count %}{% when 0 %}{{ "no_comments" | lc }}{% else %}<span class="comments-count">{{ article.comments_count }} </span>{{ "comments_for_count" | lc }}{% endcase %}</h2>
+          <h2 class="comments-title">{{ 'replies' | lcc : article.comments_count }}</h2>
 
           {% include "comment-form" %}
 
