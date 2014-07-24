@@ -16,8 +16,6 @@
       <li>{% menubtn site.hidden_menuitems %}</li>
     {% endif %}
 
-    {% if editmode %}
-      <li class="add-page-btn">{% menuadd %}</li>
-    {% endif %}
+    <li class="add-page-btn">{% menuadd %}</li>
   {% endif %}
 </ul>
