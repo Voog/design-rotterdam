@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ page.language_code }}">
-<head>
+<html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
+<head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
 </head>
 
-<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">

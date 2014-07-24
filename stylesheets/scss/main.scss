@@ -143,6 +143,12 @@ body {
   background: #fafafa;
 }
 
+.content-formatted table {
+  .public & {
+    word-break: initial;
+  }
+}
+
 /* MENUS */
 .menu {
   position: relative;

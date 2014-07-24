@@ -10997,11 +10997,17 @@ return jQuery;
 
 /* General JS */
 ;(function($) {
-    var wrapTables = function() {
-        if (!$('.content-formatted table').parent().hasClass('table-container overthrow')) {
-            $('.content-formatted table').wrap('<div class="table-container overthrow"></div>');
-        }
-    };
+  var editmode = $('html').hasClass('editmode');
+  console.log(editmode);
+
+  // TODO: Remove if Edicy is going to wrap table with the container
+  var wrapTables = function() {
+    if (!editmode) {
+      $.each($('.content-formatted table'), function() {
+          $(this).wrap('<div class="table-container overthrow"></div>');
+      });
+    }
+  };
 
     var toggleMainMenu = function() {
         $('.js-menu-toggle').click(function() {

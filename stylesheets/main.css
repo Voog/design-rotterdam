@@ -119,6 +119,10 @@ body {
   background: #fafafa;
 }
 
+.public .content-formatted table {
+  word-break: initial;
+}
+
 /* MENUS */
 .menu {
   position: relative;
