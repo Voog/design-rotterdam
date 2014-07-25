@@ -115,8 +115,13 @@ body {
 
 .content-formatted pre {
   overflow: auto;
+  white-space: nowrap;
   padding: 10px;
   background: #fafafa;
+}
+.content-formatted pre code {
+  display: block;
+  padding: 0;
 }
 
 .public .content-formatted table {
