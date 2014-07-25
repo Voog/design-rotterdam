@@ -689,7 +689,6 @@
 /* General JS */
 ;(function($) {
   var editmode = $('html').hasClass('editmode');
-  console.log(editmode);
 
   // TODO: Remove if Edicy is going to wrap table with the container
   var wrapTables = function() {
