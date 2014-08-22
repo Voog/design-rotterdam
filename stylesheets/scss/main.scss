@@ -75,7 +75,13 @@ body {
 }
 
 .content-formatted {
+  word-wrap: break-word;
   word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
 }
 
 .content-formatted h1,
@@ -220,7 +226,13 @@ body {
 
 .sub-menu li a {
   color: #888;
+  word-wrap: break-word;
   word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
   font-weight: 300;
   font-size: 16px;
 }
@@ -650,8 +662,8 @@ $flags:
   .blog-page .post-header {
     position: absolute;
     margin-top: 0;
-    max-width: 240px;
-    width: 25%;
+    width: 220px;
+    padding-right: 20px;
   }
 
   .blog-page .post-title {
@@ -673,7 +685,7 @@ $flags:
 
   .blog-page .post-content {
     position: relative;
-    margin-left: 27%;
+    margin-left: 240px;
     max-width: 73%;
   }
 
@@ -682,7 +694,7 @@ $flags:
     max-width: 80%;
   }
 
-  .blog-page .post-content .image-container {
+  .blog-page .post-content .image-container:not(:last-child) {
     margin-bottom: 40px;
   }
 
@@ -698,13 +710,14 @@ $flags:
     position: fixed;
     top: 30px;
     float: left;
-    width: 24%;
+    width: 220px;
+    padding-right: 20px;
   }
 
   .blog-page .post.fixed-header .post-header + .post-content,
   .blog-page .post.fixed-bottom .post-header + .post-content {
     display: inherit;
-    margin-left: 27%;
+    margin-left: 240px;
   }
 
   .post-page .edy-padding-resizer-wrapper,
@@ -875,7 +888,13 @@ $flags:
     max-width: 312px;
     width: 100%;
     vertical-align: top;
+    word-wrap: break-word;
     word-break: break-word;
+
+    -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
@@ -937,7 +956,13 @@ $flags:
   .comment-body {
     color: #888;
     color: rgba(0,0,0,.5);
+    word-wrap: break-word;
     word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   }
 
   /* SEARCH */
@@ -1123,7 +1148,7 @@ $flags:
     z-index: -1;
     display: block;
     overflow: hidden;
-    margin-left: 250px;
+    margin-left: 240px;
     width: 0px;
     background: #e5e5e5;
     opacity: 0;
@@ -1138,7 +1163,7 @@ $flags:
 
   @media screen and (min-width: 601px) and (max-width: 1024px) {
     .voog-search-container {
-      margin-left: 240px;
+      margin-left: 235px;
     }
   }
 
@@ -1346,9 +1371,8 @@ $flags:
     left: 0;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 20px 0 20px 25px;
-    max-width: 240px;
-    width: 24%;
+    padding: 20px 20px 20px 25px;
+    width: 215px;
     background: white;
     background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(15%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
@@ -1415,7 +1439,13 @@ $flags:
       max-width: 95px;
       background: #e0e0e0;
       text-align: right;
+      word-wrap: break-word;
       word-break: break-word;
+
+      -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
     }
 
     .sidebar-right {
@@ -1440,7 +1470,7 @@ $flags:
 
     /* CONTENT */
     .container .content-body {
-      margin-bottom: 25px;
+      margin-bottom: 50px;
       max-width: 100%;
     }
 
