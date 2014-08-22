@@ -1099,12 +1099,12 @@ body {
 .voog-search-container {
   position: fixed;
   top: 0;
+  bottom: 0;
   z-index: -1;
   display: block;
   overflow: hidden;
   margin-left: 250px;
   width: 0px;
-  height: 100%;
   background: #e5e5e5;
   opacity: 0;
   -webkit-transition: opacity 0.1s ease-in, width 0.3s ease-in;
@@ -1112,9 +1112,13 @@ body {
   /*display: block; width: $search-width;*/
 }
 
+.editmode .voog-search-container {
+  bottom: 40px;
+}
+
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .voog-search-container {
-    margin-left: 24%;
+    margin-left: 240px;
   }
 }
 #mobile-search .voog-search-container {
@@ -1325,13 +1329,20 @@ body.mobilesearch-open {
   max-width: 240px;
   width: 24%;
   background: white;
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(15%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(15%, white), color-stop(100%, white));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  /* IE6-9 */
 }
 
 .footer-animated {
@@ -1604,6 +1615,7 @@ body.mobilesearch-open {
     top: 0;
     right: 0;
     display: block;
+    width: 100%;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
