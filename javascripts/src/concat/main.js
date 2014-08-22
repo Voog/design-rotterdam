@@ -15,6 +15,7 @@
  */
 
 (function($) {
+    'use strict';
 
     var NATIVE_SUPPORT = ('placeholder' in document.createElement('input'));
     var CSS_PROPERTIES = [
@@ -135,8 +136,11 @@
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+        window.cancelAnimationFrame = window[
+            vendors[x]+'CancelAnimationFrame'
+        ] || window[
+            vendors[x]+'CancelRequestAnimationFrame'
+        ];
     }
 
     if (!window.requestAnimationFrame)
@@ -197,17 +201,17 @@
                                     .replace(/&/g, '&amp;')
                                     .replace(/\n$/, '<br/>&nbsp;')
                                     .replace(/\n/g, '<br/>')
-                                    .replace(/ {2,}/g, function(space){ return times('&nbsp;', space.length - 1) + ' ' });
+                                    .replace(/ {2,}/g, function(space){ return times('&nbsp;', space.length - 1) + ' '; });
 
-        // Did enter get pressed?  Resize in this keydown event so that the flicker doesn't occur.
-        if (event && event.data && event.data.event === 'keydown' && event.keyCode === 13) {
-          val += '<br />';
-        }
+                // Did enter get pressed?  Resize in this keydown event so that the flicker doesn't occur.
+                if (event && event.data && event.data.event === 'keydown' && event.keyCode === 13) {
+                  val += '<br />';
+                }
 
                 shadow.css('width', $self.width());
                 shadow.html(val + (noFlickerPad === 0 ? '...' : '')); // Append '...' to resize pre-emptively.
                 $self.height(Math.max(shadow.height() + noFlickerPad, minHeight));
-            }
+            };
 
             $self.change(update).keyup(update).keydown({event:'keydown'},update);
             $(window).resize(update);
@@ -225,18 +229,18 @@
 
   var doc = w.document,
     docElem = doc.documentElement,
-    enabledClassName = "overthrow-enabled",
+    enabledClassName = 'overthrow-enabled',
 
     // Touch events are used in the polyfill, and thus are a prerequisite
-    canBeFilledWithPoly = "ontouchmove" in doc,
+    canBeFilledWithPoly = 'ontouchmove' in doc,
 
     // The following attempts to determine whether the browser has native overflow support
     // so we can enable it but not polyfill
     nativeOverflow =
       // Features-first. iOS5 overflow scrolling property check - no UA needed here. thanks Apple :)
-      "WebkitOverflowScrolling" in docElem.style ||
+      'WebkitOverflowScrolling' in docElem.style ||
       // Test the windows scrolling property as well
-      "msOverflowStyle" in docElem.style ||
+      'msOverflowStyle' in docElem.style ||
       // Touch events aren't supported and screen width is greater than X
       // ...basically, this is a loose "desktop browser" check.
       // It may wrongly opt-in very large tablets with no touch support.
@@ -260,7 +264,7 @@
           ua.match( / Version\/([0-9]+)/ ) && RegExp.$1 >= 0 && w.blackberry && wkLte534 ||
           /* Blackberry Playbook with webkit gte 534
           ~: Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+ */
-          ua.indexOf( "PlayBook" ) > -1 && wkLte534 && !ua.indexOf( "Android 2" ) === -1 ||
+          ua.indexOf( 'PlayBook' ) > -1 && wkLte534 && (ua.indexOf( 'Android 2' ) !== -1) ||
           /* Firefox Mobile (Fennec) 4 and up
           ~: Mozilla/5.0 (Mobile; rv:15.0) Gecko/15.0 Firefox/15.0 */
           ua.match(/Firefox\/([0-9]+)/) && RegExp.$1 >= 4 ||
@@ -281,12 +285,12 @@
 
   w.overthrow.addClass = function(){
     if( docElem.className.indexOf( w.overthrow.enabledClassName ) === -1 ){
-      docElem.className += " " + w.overthrow.enabledClassName;
+      docElem.className += ' ' + w.overthrow.enabledClassName;
     }
   };
 
   w.overthrow.removeClass = function(){
-    docElem.className = docElem.className.replace( w.overthrow.enabledClassName, "" );
+    docElem.className = docElem.className.replace( w.overthrow.enabledClassName, '' );
   };
 
   // Enable and potentially polyfill overflow
@@ -310,7 +314,7 @@
   };
 
   // Expose overthrow API
-  w.overthrow.support = nativeOverflow ? "native" : "none";
+  w.overthrow.support = nativeOverflow ? 'native' : 'none';
 
 })( this );
 
@@ -351,8 +355,8 @@
       sTop = elem.scrollTop,
       // Toss defaults
       op = {
-        top: "+0",
-        left: "+0",
+        top: '+0',
+        left: '+0',
         duration: 50,
         easing: o.easing,
         finished: function() {}
@@ -370,7 +374,7 @@
 
     // Convert relative values to ints
     // First the left val
-    if( typeof op.left === "string" ){
+    if( typeof op.left === 'string' ){
       op.left = parseFloat( op.left );
       endLeft = op.left + sLeft;
     }
@@ -379,7 +383,7 @@
       op.left = op.left - sLeft;
     }
     // Then the top val
-    if( typeof op.top === "string" ){
+    if( typeof op.top === 'string' ){
 
       op.top = parseFloat( op.top );
       endTop = op.top + sTop;
@@ -442,12 +446,12 @@
     return;
   }
 
-  o.scrollIndicatorClassName = "overthrow";
+  o.scrollIndicatorClassName = 'overthrow';
 
   var doc = w.document,
     docElem = doc.documentElement,
     // o api
-    nativeOverflow = o.support === "native",
+    nativeOverflow = o.support === 'native',
     canBeFilledWithPoly = o.canBeFilledWithPoly,
     configure = o.configure,
     set = o.set,
@@ -688,16 +692,18 @@
 
 /* General JS */
 ;(function($) {
-  var editmode = $('html').hasClass('editmode');
+    'use strict';
 
-  // TODO: Remove if Edicy is going to wrap table with the container
-  var wrapTables = function() {
-    if (!editmode) {
-      $.each($('.content-formatted table'), function() {
-          $(this).wrap('<div class="table-container overthrow"></div>');
-      });
-    }
-  };
+    var editmode = $('html').hasClass('editmode');
+
+    // TODO: Remove if Edicy is going to wrap table with the container
+    var wrapTables = function() {
+        if (!editmode) {
+            $.each($('.content-formatted table'), function() {
+                $(this).wrap('<div class="table-container overthrow"></div>');
+            });
+        }
+    };
 
     var toggleMainMenu = function() {
         $('.js-menu-toggle').click(function() {
@@ -712,19 +718,19 @@
             $('#toggleable-lang-menu').toggleClass('expanded');
         });
         $('body').on('click', function(event) {
-            $t = $(event.target);
-            if ($t.closest('.toggleable-lang-menu').length == 0 && !$t.is('#toggleable-lang-menu')) {
+            var $t = $(event.target);
+            if ($t.closest('.toggleable-lang-menu').length === 0 && !$t.is('#toggleable-lang-menu')) {
                 $('#toggleable-lang-menu').removeClass('expanded');
             }
         });
     };
 
     var handlePopoverMenuHide = function() {
-        $("html").click(function(event) {
+        $('html').click(function(event) {
             var $t = $(event.target);
-            if ((!$t.closest('.mobile-menu').length > 0) && (!$t.closest('.toggle-btn').length > 0)) {
-                if ($(".mobile-menu").hasClass('expanded')) {
-                    $(".mobile-menu").removeClass('expanded');
+            if ($t.closest('.mobile-menu').length === 0 && $t.closest('.toggle-btn').length === 0) {
+                if ($('.mobile-menu').hasClass('expanded')) {
+                    $('.mobile-menu').removeClass('expanded');
                     $('.js-menu-toggle').removeClass('open');
                 }
             }
@@ -747,7 +753,7 @@
                 return this.get(0).scrollWidth > this.innerWidth();
             }
             return false;
-        }
+        };
     };
 
     var handleTableHorizontalScrolling = function() {
@@ -773,7 +779,7 @@
                 var $post = $(el);
                 var height = $post.find('.post-header').css('height');
                 $post.find('.post-content').css('min-height', height);
-            })
+            });
         });
     };
 
@@ -893,7 +899,7 @@
                         $(header).addClass('header-fixed header-animated').css({'top' : 0});
 
                     // Up, static area and header is fixed
-                    } else if (scrolled < 0 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
+                    } else if (scrolled < -5 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
                         $(header).removeClass('header-fixed header-animated');
                         $(container).css({'margin-top' : 0});
                     }
@@ -904,7 +910,7 @@
                 $('.post').each(function(n, el) {
                     var offset = 30;
                     var $header = $(el).find('.post-header');
-                    var topBoundary = 0 + offset
+                    var topBoundary = 0 + offset;
                     var bottomBoundary = -($(el).height() - offset - $header.height());
                     // scroll is between top and bottom of the .post
 
@@ -925,7 +931,7 @@
                     }
                 });
             }
-        }
+        };
         var latestKnownScrollY = 0,
             ticking = false;
 
@@ -933,27 +939,27 @@
             $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
             $('body').removeClass('voog-search-visible');
             $(container).css({'margin-bottom' : 0});
-        }
+        };
 
         var fixFooter = function(expanded) {
-            var expanded = expanded || false;
+            expanded = expanded || false;
             $(footer).addClass('footer-fixed footer-animated');
             $(footer).css({'bottom' : (expanded ? 0 : -90) + (editmode ? 40 : 0)});
             $(footer).css({'left' : $('.container').offset().left});
             $(container).css({'margin-bottom' : footerStaticArea});
-        }
+        };
 
         var onScroll = function() {
             latestKnownScrollY = window.scrollY;
             requestTick();
-        }
+        };
 
         var requestTick = function() {
             if (!ticking) {
                 requestAnimationFrame(update);
             }
             ticking = true;
-        }
+        };
 
         var update = function() {
             ticking = false;
@@ -965,7 +971,7 @@
             // then apply some CSS classes
             // to the visible items
 
-        }
+        };
 
         $(window).on('load resize', function() {
             handler(getPostHeights());
