@@ -731,8 +731,31 @@ body {
   vertical-align: top;
 }
 
-.post-page .post-content .content-formatted p {
+.post-page .post-content .content-formatted p, .post-page .post-content .content-formatted h1, .post-page .post-content .content-formatted h2, .post-page .post-content .content-formatted h3, .post-page .post-content .content-formatted pre,
+.blog-page .post-content .content-formatted p,
+.blog-page .post-content .content-formatted h1,
+.blog-page .post-content .content-formatted h2,
+.blog-page .post-content .content-formatted h3,
+.blog-page .post-content .content-formatted pre {
   margin: 0 0 20px 70px;
+}
+.post-page .post-content .content-formatted p:last-child, .post-page .post-content .content-formatted h1:last-child, .post-page .post-content .content-formatted h2:last-child, .post-page .post-content .content-formatted h3:last-child, .post-page .post-content .content-formatted pre:last-child,
+.blog-page .post-content .content-formatted p:last-child,
+.blog-page .post-content .content-formatted h1:last-child,
+.blog-page .post-content .content-formatted h2:last-child,
+.blog-page .post-content .content-formatted h3:last-child,
+.blog-page .post-content .content-formatted pre:last-child {
+  margin-bottom: 0;
+}
+.post-page .post-content .content-formatted blockquote,
+.blog-page .post-content .content-formatted blockquote {
+  margin: 0 0 20px 120px;
+  text-align: right;
+  font-weight: 600;
+}
+.post-page .post-content .content-formatted blockquote:last-child,
+.blog-page .post-content .content-formatted blockquote:last-child {
+  margin-bottom: 0;
 }
 
 .post-page .image-container {
@@ -1480,8 +1503,9 @@ body.mobilesearch-open {
     width: auto;
   }
 
-  .post-page .post-content p {
-    margin-left: 70px !important;
+  .post-page .post-excerpt,
+  .blog-page .post-excerpt {
+    margin-bottom: 20px;
   }
 
   /* COMMENTS */

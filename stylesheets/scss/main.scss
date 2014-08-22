@@ -748,9 +748,24 @@ $flags:
     vertical-align: top;
   }
 
-  .post-page .post-content .content-formatted p {
-    margin: 0 0 20px 70px;
+  .post-page .post-content .content-formatted,
+  .blog-page .post-content .content-formatted {
+    p, h1, h2, h3, pre {
+        margin: 0 0 20px 70px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    blockquote {
+      margin: 0 0 20px 120px;
+      text-align: right;
+      font-weight: 600;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
+
 
   .post-page .image-container {
     margin-bottom: 25px;
@@ -1502,8 +1517,9 @@ $flags:
       width: auto;
     }
 
-    .post-page .post-content p {
-      margin-left: 70px !important;
+    .post-page .post-excerpt,
+    .blog-page .post-excerpt {
+      margin-bottom: 20px;
     }
 
     /* COMMENTS */
