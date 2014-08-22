@@ -825,25 +825,26 @@
     };
 
     var initStickyElements = function(opts) {
-        var stickyHeader = opts.stickyHeader || false;
-        var stickyMobileMenu = opts.stickyMobileMenu || false;
-        var stickyFooter = opts.stickyFooter || false;
-        var stickyPostHeaders = opts.stickyPostHeaders || false;
-        var getPostHeights = function () {
-            var posts = $('.post');
-            var heights = [];
-            posts.each(function(n, el) {
-                heights.push(el.getBoundingClientRect().top);
-            });
+        var stickyHeader = opts.stickyHeader || false,
+            stickyMobileMenu = opts.stickyMobileMenu || false,
+            stickyFooter = opts.stickyFooter || false,
+            stickyPostHeaders = opts.stickyPostHeaders || false,
+            getPostHeights = function () {
+                var posts = $('.post'),
+                    heights = [];
+                posts.each(function(n, el) {
+                    heights.push(el.getBoundingClientRect().top);
+                });
             return heights;
-        };
-        var startScroll,
+        },
+            startScroll,
             toHandler,
             endScroll,
             scrolled,
             container = $('.container'),
             header = $('.header'),
             footer = $('.footer'),
+            editmode = $('html').hasClass('editmode'),
             headerStaticArea = $(header).height() + 90,
             headerStaticHeight = headerStaticArea + 40,
             footerStaticArea = $(footer).height() + 90,
@@ -865,16 +866,20 @@
                     }
                 }
                 if (window.innerWidth > 640 && stickyFooter) {
-                    // up and above footer
-                    if (scrolled < -5 && (startScroll + window.innerHeight) < ($('html').height())) {
-                        $(footer).addClass('footer-fixed footer-animated').css({'bottom' : 0});
-                        $(footer).css({'left' : $('.container').offset().left});
-                        $(container).css({'margin-bottom' : footerStaticArea});
-                    // down and above footer
-                    } else if (scrolled > 5 && (startScroll + window.innerHeight) < ($('html').height())) {
-                        $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
-                        $('body').removeClass('voog-search-visible');
-                        $(container).css({'margin-bottom' : 0});
+
+                    if ($('.post:first-of-type').offset().top - $(window).innerHeight() + 90 < $('body').scrollTop()) {
+                        // up and above footer
+                        if (scrolled < -5) {
+                            fixFooter(false);
+                        // down and above footer
+                        } else if (scrolled > 5) {
+                            resetFooter();
+                        }
+                        if (startScroll + window.innerHeight > $(document).height() - footerStaticArea) {
+                            resetFooter();
+                        }
+                    } else {
+                        resetFooter();
                     }
                 }
                 // Scrolling down and offset is larger than
@@ -924,6 +929,20 @@
         var latestKnownScrollY = 0,
             ticking = false;
 
+        var resetFooter = function() {
+            $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
+            $('body').removeClass('voog-search-visible');
+            $(container).css({'margin-bottom' : 0});
+        }
+
+        var fixFooter = function(expanded) {
+            var expanded = expanded || false;
+            $(footer).addClass('footer-fixed footer-animated');
+            $(footer).css({'bottom' : (expanded ? 0 : -90) + (editmode ? 40 : 0)});
+            $(footer).css({'left' : $('.container').offset().left});
+            $(container).css({'margin-bottom' : footerStaticArea});
+        }
+
         var onScroll = function() {
             latestKnownScrollY = window.scrollY;
             requestTick();
@@ -949,8 +968,18 @@
         }
 
         $(window).on('load resize', function() {
-            handler(getPostHeights())
+            handler(getPostHeights());
         }).on('scroll', onScroll);
+
+        $('footer').bind('mouseenter', function() {
+            if ($('footer').hasClass('footer-fixed')) {
+                fixFooter(true);
+            }
+        }).bind('mouseleave', function() {
+            if ($('footer').hasClass('footer-fixed')) {
+                fixFooter(false);
+            }
+        });
     };
 
 
@@ -965,7 +994,9 @@
             handleTableHorizontalScrolling();
         }
         $('.content form').edicyFormPlaceholders();
-        $(window).load(function() {$('input, textarea').placeholder()});
+        $(window).load(function() {
+            $('input, textarea').placeholder();
+        });
     };
 
     window.site = $.extend(window.site || {}, {
