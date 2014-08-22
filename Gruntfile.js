@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+  'use strict';
+
   grunt.loadNpmTasks('grunt-bowercopy');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -174,6 +176,14 @@ module.exports = function(grunt) {
       svgmin: {
         files: 'assets/src/*.svg',
         tasks: 'newer:svgmin',
+        options: {
+          spawn: false
+        }
+      },
+
+      cssmin: {
+        files: ['stylesheets/*.css', '!stylesheets/*.min.css'],
+        tasks: 'newer:cssmin',
         options: {
           spawn: false
         }
