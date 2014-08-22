@@ -686,12 +686,6 @@ $flags:
   .blog-page .post-content {
     position: relative;
     margin-left: 240px;
-    max-width: 73%;
-  }
-
-  .blog-page .post-content p {
-    margin-left: 50px;
-    max-width: 80%;
   }
 
   .blog-page .post-content .image-container:not(:last-child) {
@@ -751,13 +745,13 @@ $flags:
   .post-page .post-content .content-formatted,
   .blog-page .post-content .content-formatted {
     p, h1, h2, h3, pre {
-        margin: 0 0 20px 70px;
+        margin: 0 70px 20px 70px;
       &:last-child {
         margin-bottom: 0;
       }
     }
     blockquote {
-      margin: 0 0 20px 120px;
+      margin: 0 70px 20px 120px;
       text-align: right;
       font-weight: 600;
       &:last-child {

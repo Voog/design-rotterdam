@@ -669,12 +669,6 @@ body {
 .blog-page .post-content {
   position: relative;
   margin-left: 240px;
-  max-width: 73%;
-}
-
-.blog-page .post-content p {
-  margin-left: 50px;
-  max-width: 80%;
 }
 
 .blog-page .post-content .image-container:not(:last-child) {
@@ -737,7 +731,7 @@ body {
 .blog-page .post-content .content-formatted h2,
 .blog-page .post-content .content-formatted h3,
 .blog-page .post-content .content-formatted pre {
-  margin: 0 0 20px 70px;
+  margin: 0 70px 20px 70px;
 }
 .post-page .post-content .content-formatted p:last-child, .post-page .post-content .content-formatted h1:last-child, .post-page .post-content .content-formatted h2:last-child, .post-page .post-content .content-formatted h3:last-child, .post-page .post-content .content-formatted pre:last-child,
 .blog-page .post-content .content-formatted p:last-child,
@@ -749,7 +743,7 @@ body {
 }
 .post-page .post-content .content-formatted blockquote,
 .blog-page .post-content .content-formatted blockquote {
-  margin: 0 0 20px 120px;
+  margin: 0 70px 20px 120px;
   text-align: right;
   font-weight: 600;
 }
