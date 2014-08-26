@@ -1872,6 +1872,11 @@ body.mobilesearch-open {
     margin-left: 0;
   }
 
+  /* TAGS */
+  .tags-container {
+    margin-top: 35px;
+  }
+
   /* FORMS */
   .content .form_field_textfield,
   .content .form_field_textarea,
