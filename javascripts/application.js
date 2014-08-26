@@ -10324,8 +10324,6 @@ return jQuery;
  */
 
 (function($) {
-    'use strict';
-
     var NATIVE_SUPPORT = ('placeholder' in document.createElement('input'));
     var CSS_PROPERTIES = [
         '-moz-box-sizing', '-webkit-box-sizing', 'box-sizing',
@@ -11001,7 +10999,7 @@ return jQuery;
 
 /* General JS */
 ;(function($) {
-    'use strict';
+  'use strict';
 
     var editmode = $('html').hasClass('editmode');
 
@@ -11181,7 +11179,6 @@ return jQuery;
                     }
                 }
                 if (window.innerWidth > 640 && stickyFooter) {
-
                     if ($('.post:first-of-type').offset().top - $(window).innerHeight() + 90 < $('body').scrollTop()) {
                         // up and above footer
                         if (scrolled < -5) {
@@ -11251,9 +11248,12 @@ return jQuery;
         };
 
         var fixFooter = function(expanded) {
+            $(footer).css('bottom', '');
             expanded = expanded || false;
             $(footer).addClass('footer-fixed footer-animated');
-            $(footer).css({'bottom' : (expanded ? 0 : -90) + (editmode ? 40 : 0)});
+            if (expanded) { $(footer).addClass('expanded'); } else {
+              $(footer).removeClass('expanded');
+            }
             $(footer).css({'left' : $('.container').offset().left});
             $(container).css({'margin-bottom' : footerStaticArea});
         };
