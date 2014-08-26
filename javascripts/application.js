@@ -10307,6 +10307,7 @@ return jQuery;
 
 }));
 
+'use strict';
 /**
  * placeholder - HTML5 input placeholder polyfill
  * Copyright (c) 2012 DIY Co
@@ -11195,10 +11196,10 @@ return jQuery;
                     }
                 }
                 // Scrolling down and offset is larger than
-                if (stickyHeader) {
+                if (stickyHeader && parseInt($(header).find('.header-inner').css('height')) < 60) {
                     if (scrolled > 5 && startScroll > headerStaticArea) {
                         $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
-                        $(container).css({'margin-top' : headerStaticArea});
+                        $(container).css({'padding-top' : headerStaticArea});
 
                     // Up and fixed area
                     } else if (scrolled < -5 && startScroll > headerStaticArea) {
@@ -11207,7 +11208,7 @@ return jQuery;
                     // Up, static area and header is fixed
                     } else if (scrolled < -5 && startScroll <= headerStaticArea && $(header).hasClass('header-fixed') === true) {
                         $(header).removeClass('header-fixed header-animated');
-                        $(container).css({'margin-top' : 0});
+                        $(container).css({'padding-top' : 0});
                     }
                 }
                 startScroll = 0;
@@ -11242,18 +11243,20 @@ return jQuery;
             ticking = false;
 
         var resetFooter = function() {
-            $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
-            $('body').removeClass('voog-search-visible');
-            $(container).css({'margin-bottom' : 0});
+            if ($(footer).hasClass('footer-fixed')) {
+                $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
+                $('body').removeClass('voog-search-visible');
+                $(container).css({'margin-bottom' : ''});
+                $(footer).css('bottom', '');
+            }
         };
 
         var fixFooter = function(expanded) {
-            $(footer).css('bottom', '');
             expanded = expanded || false;
+            $(footer).css('bottom', '');
             $(footer).addClass('footer-fixed footer-animated');
-            if (expanded) { $(footer).addClass('expanded'); } else {
-              $(footer).removeClass('expanded');
-            }
+            var adminToolBarHeight = $('body').hasClass('editmode') ? 40 : 0;
+            $(footer).css('bottom', 0 + adminToolBarHeight - (parseInt($(footer).css('height')) - 60) + (expanded ? 60 : 0));
             $(footer).css({'left' : $('.container').offset().left});
             $(container).css({'margin-bottom' : footerStaticArea});
         };
@@ -11289,10 +11292,12 @@ return jQuery;
         $('footer').bind('mouseenter', function() {
             if ($('footer').hasClass('footer-fixed')) {
                 fixFooter(true);
+                $('footer .gradient-overlay').hide();
             }
         }).bind('mouseleave', function() {
             if ($('footer').hasClass('footer-fixed')) {
                 fixFooter(false);
+                $('footer .gradient-overlay').show();
             }
         });
     };

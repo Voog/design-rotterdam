@@ -790,6 +790,7 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
   text-transform: uppercase;
   padding: 12px;
+  line-height: 1.8;
 }
 .blog-page .tags .tag-link {
   margin-left: 10px;
@@ -1417,7 +1418,6 @@ body.mobilesearch-open {
 .footer.footer-fixed {
   position: fixed;
   right: 0;
-  bottom: -50px;
   left: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -1437,13 +1437,6 @@ body.mobilesearch-open {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
   /* IE6-9 */
-}
-
-.footer-fixed.expanded {
-  bottom: 0;
-}
-.editmode .footer-fixed.expanded {
-  bottom: 40px;
 }
 
 .footer .gradient-overlay {
