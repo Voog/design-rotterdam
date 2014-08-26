@@ -16,27 +16,14 @@
         <section class="post-content">
           <div class="post-excerpt content-formatted cfx">{% editable article.excerpt %}</div>
           <div class="post-body content-formatted cfx">{% editable article.body %}</div>
+          <div class="tags">
+            {% include "tags-article" %}
+          </div>
         </section>
 
-        {% unless article.new_record? %}
-        <aside class="comments">
-          <h2 class="comments-title">{{ 'replies' | lcc : article.comments_count }}</h2>
-
-          {% include "comment-form" %}
-
-          {% for comment in article.comments %}
-            <div class="comment edy-site-blog-comment">
-              <div class="comment-header">
-                <span class="comment-author">{{ comment.author }}</span>
-                <span class="comment-date">{{ comment.created_at | format_date : "%b %d, %Y" }}</span>
-                <span>{% removebutton %}</span>
-              </div>
-              <div class="comment-body">{{ comment.body_html }}</div>
-            </div>
-          {% endfor %}
-        </aside>
-        {% endunless %}
+        {% include "comments-article" %}
       </article>
+
     </main>
     {% include "footer" %}
   </div>

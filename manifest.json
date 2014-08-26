@@ -116,6 +116,13 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
+    },
+    {
+      "title": "comments-article",
+      "layout_name": "comments-article",
+      "content_type": "component",
+      "component": true,
+      "file": "components/comments-article.tpl"
     }
   ],
   "assets": [
@@ -244,6 +251,12 @@
       "file": "stylesheets/main.min.css",
       "kind": "stylesheets",
       "filename": "main.min.css"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-tags.svg",
+      "filename": "ico-tags.svg"
     }
   ]
 }

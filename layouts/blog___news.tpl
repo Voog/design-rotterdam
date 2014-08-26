@@ -8,6 +8,7 @@
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
+      {% include "tags-blog" %}
       {% if editmode %}<div style="padding-bottom: 10px">{% addbutton %}</div>{% endif %}
       {% for article in articles %}
         <article class="post">

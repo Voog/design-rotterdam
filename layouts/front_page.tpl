@@ -9,6 +9,7 @@
     {% include "header" %}
     <main class="content" role="main">
       <section class="content-body content-formatted">{% content %}</section>
+      {% include "tags-blog" %}
       {% for article in site.latest_articles %}
         <article class="post">
           <header class="post-header">
