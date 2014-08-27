@@ -11163,6 +11163,7 @@ return jQuery;
             headerStaticHeight = headerStaticArea + 40,
             footerStaticArea = $(footer).height() + 90,
             footerStaticHeight = footerStaticArea + 40,
+            footerExpandTimeout,
             handler = function (postHeights) {
             if (!startScroll) {
                 startScroll = $(window).scrollTop();
@@ -11247,19 +11248,37 @@ return jQuery;
                 $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
                 $('body').removeClass('voog-search-visible');
                 $(container).css({'margin-bottom' : ''});
-                $(footer).css('bottom', '');
             }
         };
 
         var fixFooter = function(expanded) {
             expanded = expanded || false;
             var adminToolBarHeight = editmode ? 40 : 0;
-            $(footer).css('bottom', '');
             $(footer).addClass('footer-fixed footer-animated');
             $(footer).css('bottom', 0 + adminToolBarHeight - (parseInt($(footer).css('height')) - 60) + (expanded ? 60 : 0));
+            if (expanded) {
+                $(footer).css('bottom', 0);
+            }
             $(footer).css({'left' : $('.container').offset().left});
             $(container).css({'margin-bottom' : footerStaticArea});
         };
+
+        var expandFooter = function(expand) {
+            if (expand) {
+                if ($(footer).hasClass('footer-fixed')) {
+                    clearTimeout(footerExpandTimeout);
+                    fixFooter(true);
+                    $('footer .gradient-overlay').hide();
+                }
+            } else {
+                if ($('footer').hasClass('footer-fixed')) {
+                    footerExpandTimeout = setTimeout(function() {
+                        fixFooter(false);
+                        $('footer .gradient-overlay').show();
+                    }, 1500);
+                }
+            }
+        }
 
         var onScroll = function() {
             latestKnownScrollY = window.scrollY;
@@ -11275,7 +11294,6 @@ return jQuery;
 
         var update = function() {
             ticking = false;
-            var currentScrollY = latestKnownScrollY;
             handler(getPostHeights());
 
             // read offset of DOM elements
@@ -11290,15 +11308,9 @@ return jQuery;
         }).on('scroll', onScroll);
 
         $('footer').bind('mouseenter', function() {
-            if ($('footer').hasClass('footer-fixed')) {
-                fixFooter(true);
-                $('footer .gradient-overlay').hide();
-            }
+            expandFooter(true);
         }).bind('mouseleave', function() {
-            if ($('footer').hasClass('footer-fixed')) {
-                fixFooter(false);
-                $('footer .gradient-overlay').show();
-            }
+            expandFooter(false);
         });
     };
 
