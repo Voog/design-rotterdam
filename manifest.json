@@ -123,6 +123,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/comments-article.tpl"
+    },
+    {
+      "title": "animation-toggle",
+      "layout_name": "animation-toggle",
+      "content_type": "component",
+      "component": true,
+      "file": "components/animation-toggle.tpl"
     }
   ],
   "assets": [

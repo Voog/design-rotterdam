@@ -1903,6 +1903,10 @@ body.mobilesearch-open {
   .footer .search {
     display: none;
   }
+
+  .animation-toggle {
+    display: none;
+  }
 }
 .clearfix:after {
   content: " ";
@@ -1910,4 +1914,12 @@ body.mobilesearch-open {
   display: block;
   height: 0;
   clear: both;
+}
+
+.animation-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 12px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -5,6 +5,7 @@
 </head>
 
 <body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
+  {% if editmode %}{% include "animation-toggle" %}{% endif %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -27,6 +28,6 @@
     <div class="voog-reference">{% loginblock %}{{ "footer_login_link" | lc }}{% endloginblock %}</div>
   </div>
   {% include "javascripts" %}
-  <script type="text/javascript">site.initFrontPage();</script>
+  <script type="text/javascript">site.initFrontPage({{ animation }});</script>
 </body>
 </html>

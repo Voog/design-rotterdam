@@ -783,22 +783,28 @@
     };
 
     // Initiations
-    var initFrontPage = function() {
-        initStickyElements({
-            stickyHeader: true,
-            stickyMobileMenu: true,
-            stickyFooter: true,
-            stickyPostHeaders: true
-        });
+    var initFrontPage = function(animation) {
+        animation = typeof animation == 'undefined' ? false : animation;
+        if (animation) {
+            initStickyElements({
+                stickyHeader: true,
+                stickyMobileMenu: true,
+                stickyFooter: true,
+                stickyPostHeaders: true
+            });
+        }
         handlePostMinHeight();
     };
-    var initCommonPage = function() {
-        initStickyElements({
-            stickyHeader: true,
-            stickyMobileMenu: true,
-            stickyFooter: false,
-            stickyPostHeaders: false
-        });
+    var initCommonPage = function(animation) {
+        animation = typeof animation == 'undefined' ? false : animation;
+        if (animation) {
+            initStickyElements({
+                stickyHeader: true,
+                stickyMobileMenu: true,
+                stickyFooter: false,
+                stickyPostHeaders: false
+            });
+        }
         if ($.fn.autogrow) {
             $('.form_field_textarea').autogrow();
         }
@@ -808,24 +814,30 @@
             }
         });
     };
-    var initArticlePage = function() {
-        initStickyElements({
-            stickyHeader: true,
-            stickyMobileMenu: true,
-            stickyFooter: false,
-            stickyPostHeaders: false
-        });
+    var initArticlePage = function(animation) {
+        animation = typeof animation == 'undefined' ? false : animation;
+        if (animation) {
+            initStickyElements({
+                stickyHeader: true,
+                stickyMobileMenu: true,
+                stickyFooter: false,
+                stickyPostHeaders: false
+            });
+        }
         if ($.fn.autogrow) {
             $('.form_field_textarea').autogrow();
         }
     };
-    var initBlogPage = function() {
-        initStickyElements({
-            stickyHeader: true,
-            stickyMobileMenu: true,
-            stickyFooter: true,
-            stickyPostHeaders: true
-        });
+    var initBlogPage = function(animation) {
+        animation = typeof animation == 'undefined' ? false : animation;
+        if (animation) {
+            initStickyElements({
+                stickyHeader: true,
+                stickyMobileMenu: true,
+                stickyFooter: true,
+                stickyPostHeaders: true
+            });
+        }
         handlePostMinHeight();
     };
 
@@ -1004,7 +1016,6 @@
             expandFooter(false);
         });
     };
-
 
     var init = function() {
         toggleMainMenu();
