@@ -724,22 +724,25 @@ body {
   vertical-align: top;
 }
 
-.post-page .post-content .content-formatted p, .post-page .post-content .content-formatted h1, .post-page .post-content .content-formatted h2, .post-page .post-content .content-formatted h3, .post-page .post-content .content-formatted pre,
-.blog-page .post-content .content-formatted p,
-.blog-page .post-content .content-formatted h1,
-.blog-page .post-content .content-formatted h2,
-.blog-page .post-content .content-formatted h3,
-.blog-page .post-content .content-formatted pre {
-  margin: 0 70px 20px 70px;
+.post-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
+.post-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
+.blog-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
+.blog-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+  margin: 0 70px 20px;
 }
-.post-page .post-content .content-formatted p:last-child, .post-page .post-content .content-formatted h1:last-child, .post-page .post-content .content-formatted h2:last-child, .post-page .post-content .content-formatted h3:last-child, .post-page .post-content .content-formatted pre:last-child,
-.blog-page .post-content .content-formatted p:last-child,
-.blog-page .post-content .content-formatted h1:last-child,
-.blog-page .post-content .content-formatted h2:last-child,
-.blog-page .post-content .content-formatted h3:last-child,
-.blog-page .post-content .content-formatted pre:last-child {
+.post-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
+.post-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
+.blog-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
+.blog-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child {
   margin-bottom: 0;
 }
+.post-page .post-content .content-formatted > *,
+.post-page .post-content .edy-texteditor-view > *,
+.blog-page .post-content .content-formatted > *,
+.blog-page .post-content .edy-texteditor-view > * {
+  margin-bottom: 20px;
+}
+
 .post-page .post-content .content-formatted blockquote,
 .blog-page .post-content .content-formatted blockquote {
   margin: 0 70px 20px 120px;
@@ -749,6 +752,10 @@ body {
 .post-page .post-content .content-formatted blockquote:last-child,
 .blog-page .post-content .content-formatted blockquote:last-child {
   margin-bottom: 0;
+}
+.post-page .post-content .content-formatted table,
+.blog-page .post-content .content-formatted table {
+  width: 100%;
 }
 
 .post-page .post-excerpt,
@@ -817,9 +824,12 @@ body {
   left: 0;
   top: 0;
 }
+.no-svg .post-page .tags .tag-icon {
+  background-image: url("../images/ico-tags.png") no-repeat center center;
+}
 .post-page .tags .tags-list {
   line-height: 20px;
-  margin-left: 35px;
+  margin-left: 30px;
 }
 
 /* TABLES */
@@ -1413,6 +1423,8 @@ body.mobilesearch-open {
 
 .footer {
   width: 100%;
+  -webkit-transition: bottom 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
 }
 
 .footer.footer-fixed {

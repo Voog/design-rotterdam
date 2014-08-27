@@ -257,6 +257,18 @@
       "kind": "assets",
       "file": "assets/ico-tags.svg",
       "filename": "ico-tags.svg"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/ico-tags.png",
+      "filename": "ico-tags.png"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/src/ico-tags.png",
+      "filename": "src/ico-tags.png"
     }
   ]
 }

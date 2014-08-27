@@ -849,7 +849,7 @@
             container = $('.container'),
             header = $('.header'),
             footer = $('.footer'),
-            editmode = $('html').hasClass('editmode'),
+            editmode = $('body').hasClass('editmode'),
             headerStaticArea = $(header).height() + 90,
             headerStaticHeight = headerStaticArea + 40,
             footerStaticArea = $(footer).height() + 90,
@@ -944,9 +944,9 @@
 
         var fixFooter = function(expanded) {
             expanded = expanded || false;
+            var adminToolBarHeight = editmode ? 40 : 0;
             $(footer).css('bottom', '');
             $(footer).addClass('footer-fixed footer-animated');
-            var adminToolBarHeight = $('body').hasClass('editmode') ? 40 : 0;
             $(footer).css('bottom', 0 + adminToolBarHeight - (parseInt($(footer).css('height')) - 60) + (expanded ? 60 : 0));
             $(footer).css({'left' : $('.container').offset().left});
             $(container).css({'margin-bottom' : footerStaticArea});
