@@ -1423,8 +1423,6 @@ body.mobilesearch-open {
 
 .footer {
   width: 100%;
-  -webkit-transition: bottom 0.5s ease-in-out;
-  transition: bottom 0.5s ease-in-out;
 }
 
 .footer.footer-fixed {
@@ -1435,6 +1433,8 @@ body.mobilesearch-open {
   margin-bottom: 0;
   padding: 20px 20px 20px 25px;
   width: 215px;
+  -webkit-transition: bottom 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(15%, white), color-stop(100%, white));
@@ -1447,7 +1447,7 @@ body.mobilesearch-open {
   /* IE10+ */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 15%, white 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
   /* IE6-9 */
 }
 
@@ -1471,7 +1471,7 @@ body.mobilesearch-open {
   /* IE10+ */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 50%, white 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
   /* IE6-9 */
   -webkit-transition: opacity 0.1s ease-in-out;
   transition: opacity 0.1s ease-in-out;
@@ -1923,3 +1923,5 @@ body.mobilesearch-open {
   font-size: 12px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/*# sourceMappingURL=main.css.map */

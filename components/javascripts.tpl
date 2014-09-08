@@ -3,20 +3,23 @@
 {% editorjsblock %}
 <script src='{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js'></script>
 <script>
-  $('#animation-toggle').on('change', function() {
-      var siteData = new Edicy.CustomData({
-        type: 'site'
-      }), animationEnabled = $('#animation-toggle').get(0).checked;
+  var el = $('#animation-toggle').get(0);
+  console.log(el);
+  $(el).on('change', function() {
+    var siteData = new Edicy.CustomData({
+      type: 'site'
+    }), animationEnabled = el.checked;
 
-      siteData.set({
-        'animation': animationEnabled
-      });
-
-      window.location.reload();
+    siteData.set({
+      'animation': animationEnabled
+    }, { 
+      success: function() {
+        window.location.reload();
+      }
+    });
   });
 </script>
 {% endeditorjsblock %}
-
 {% if site.search.enabled %}
 <script src="{{ site.static_asset_host }}/libs/edicy-search/1.0.0/edicy-search.js"></script>
 <script src="{{ javascripts_path }}/search.min.js"></script>

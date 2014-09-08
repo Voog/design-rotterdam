@@ -950,6 +950,10 @@
             if ($(footer).hasClass('footer-fixed')) {
                 $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
                 $('body').removeClass('voog-search-visible');
+                $(footer).css({
+                  'bottom': '',
+                  'left': ''
+                });
                 $(container).css({'margin-bottom' : ''});
             }
         };

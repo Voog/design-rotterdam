@@ -5,12 +5,11 @@
 </head>
 
 <body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
-  {% if editmode %}{% include "animation-toggle" %}{% endif %}
+  {% include "animation-toggle" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
       <section class="content-body content-formatted">{% content %}</section>
-      {% include "tags-blog" %}
       {% for article in site.latest_articles %}
         <article class="post">
           <header class="post-header">
@@ -25,7 +24,6 @@
       {% endfor %}
     </main>
     {% include "footer" %}
-    <div class="voog-reference">{% loginblock %}{{ "footer_login_link" | lc }}{% endloginblock %}</div>
   </div>
   {% include "javascripts" %}
   <script type="text/javascript">site.initFrontPage({{ animation }});</script>

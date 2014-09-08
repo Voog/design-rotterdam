@@ -11259,6 +11259,10 @@ return jQuery;
             if ($(footer).hasClass('footer-fixed')) {
                 $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
                 $('body').removeClass('voog-search-visible');
+                $(footer).css({
+                  'bottom': '',
+                  'left': 0
+                });
                 $(container).css({'margin-bottom' : ''});
             }
         };

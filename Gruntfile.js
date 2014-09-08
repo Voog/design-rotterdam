@@ -88,7 +88,8 @@ module.exports = function(grunt) {
     sass: {
       build: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          sourcemap: false
         },
         files: [{
           expand: true,
