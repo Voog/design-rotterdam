@@ -4,7 +4,7 @@
   {% assign animation = true %}
 {% endif %}
 
-{% if editmode or previewmode %}
+{% if editmode %}
 <div class="animation-toggle">
   <label for="animation-toggle">Animation enabled:</label>
   <input type="checkbox" name="animation-toggle" id="animation-toggle"{% if animation %} checked="checked"{% endif %}>
