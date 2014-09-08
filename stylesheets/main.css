@@ -116,6 +116,11 @@ body {
 .content-formatted img {
   max-width: 100%;
   height: auto;
+  border: none;
+}
+
+.content-formatted b, .content-formatted strong {
+  font-weight: 600;
 }
 
 .content-formatted pre {
@@ -131,6 +136,10 @@ body {
 
 .public .content-formatted table {
   word-break: initial;
+}
+
+.content-formatted span {
+  line-height: 0;
 }
 
 /* MENUS */
@@ -1923,5 +1932,3 @@ body.mobilesearch-open {
   font-size: 12px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-/*# sourceMappingURL=main.css.map */

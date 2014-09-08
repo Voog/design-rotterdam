@@ -141,6 +141,13 @@ body {
 .content-formatted img {
   max-width: 100%;
   height: auto;
+  border: none;
+}
+
+.content-formatted {
+  b, strong {
+    font-weight: 600;
+  }
 }
 
 .content-formatted {
@@ -161,6 +168,10 @@ body {
   .public & {
     word-break: initial;
   }
+}
+
+.content-formatted span {
+  line-height: 0;
 }
 
 /* MENUS */
