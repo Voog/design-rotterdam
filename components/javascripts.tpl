@@ -4,7 +4,6 @@
 <script src='{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js'></script>
 <script>
   var el = $('#animation-toggle').get(0);
-  console.log(el);
   $(el).on('change', function() {
     var siteData = new Edicy.CustomData({
       type: 'site'
