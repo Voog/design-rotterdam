@@ -146,30 +146,6 @@
       "filename": "loader.svg"
     },
     {
-      "content_type": "application/vnd.ms-fontobject",
-      "file": "assets/MinionPro-Regular.eot",
-      "kind": "assets",
-      "filename": "MinionPro-Regular.eot"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/MinionPro-Regular.svg",
-      "kind": "assets",
-      "filename": "MinionPro-Regular.svg"
-    },
-    {
-      "content_type": "application/x-font-truetype",
-      "file": "assets/MinionPro-Regular.ttf",
-      "kind": "assets",
-      "filename": "MinionPro-Regular.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/MinionPro-Regular.woff",
-      "kind": "assets",
-      "filename": "MinionPro-Regular.woff"
-    },
-    {
       "content_type": "image/svg+xml",
       "file": "assets/search.svg",
       "kind": "assets",

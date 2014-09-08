@@ -20,6 +20,7 @@
 
 {% comment %}<!-- STYLESHEETS -->{% endcomment %}
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 {% stylesheet_link "main.min.css" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.min.css" %}<![endif]-->
 

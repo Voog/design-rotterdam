@@ -1,10 +1,3 @@
-/* FONTS */
-@font-face {
-  font-family: 'Minion';
-  src: url("../assets/MinionPro-Regular.ttf") format("truetype"), url("../assets/MinionPro-Regular.svg") format("svg"), url("../assets/MinionPro-Regular.eot"), url("../assets/MinionPro-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
 /* GENERAL */
 .scrollpos {
   position: fixed;
@@ -24,7 +17,7 @@ body {
   margin: 0 auto;
   padding: 0;
   color: #222;
-  font: 300 20px/1.4 "Minion", "Georgia", serif;
+  font: 300 20px/1.4 "Garamond EB", "Georgia", serif;
 }
 
 .container {
@@ -139,7 +132,7 @@ body {
 }
 
 .content-formatted span {
-  line-height: 0;
+  line-height: 1;
 }
 
 /* MENUS */
@@ -1884,6 +1877,11 @@ body.mobilesearch-open {
 
   .post-page .post-content {
     margin-left: 0;
+  }
+
+  /* COMMON PAGE */
+  .common-page .content-body {
+    width: 100%;
   }
 
   /* TAGS */
