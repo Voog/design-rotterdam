@@ -5,7 +5,6 @@
 </head>
 
 <body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
-  {% include "animation-toggle" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -26,6 +25,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
-  <script type="text/javascript">site.initFrontPage({{ animation }});</script>
+  <script type="text/javascript">site.initFrontPage({% if editmode %}false{% else %}true{% endif %});</script>
 </body>
 </html>

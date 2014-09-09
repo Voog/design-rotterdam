@@ -5,7 +5,6 @@
 </head>
 
 <body class="blog-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
-  {% include "animation-toggle" %}
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -28,6 +27,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
-  <script type="text/javascript">site.initBlogPage();</script>
+  <script type="text/javascript">site.initBlogPage({% if editmode %}false{% else %}true{% endif %});</script>
 </body>
 </html>

@@ -5,7 +5,6 @@
 </head>
 
 <body class="common-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
-  {% include "animation-toggle" %}
   <div class="container">
     {% include "header" %}
     <section class="content-header content-formatted cfx">
@@ -18,6 +17,6 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
-  <script>site.initCommonPage();</script>
+  <script>site.initCommonPage({% if editmode %}false{% else %}true{% endif %});</script>
 </body>
 </html>

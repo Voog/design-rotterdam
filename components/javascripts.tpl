@@ -2,22 +2,6 @@
 <script src="{{ site.static_asset_host }}/libs/picturefill/1.0.0/picturefill.min.js"></script>
 {% editorjsblock %}
 <script src='{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js'></script>
-<script>
-  var el = $('#animation-toggle').get(0);
-  $(el).on('change', function() {
-    var siteData = new Edicy.CustomData({
-      type: 'site'
-    }), animationEnabled = el.checked;
-
-    siteData.set({
-      'animation': animationEnabled
-    }, { 
-      success: function() {
-        window.location.reload();
-      }
-    });
-  });
-</script>
 {% endeditorjsblock %}
 {% if site.search.enabled %}
 <script src="{{ site.static_asset_host }}/libs/edicy-search/1.0.0/edicy-search.js"></script>
