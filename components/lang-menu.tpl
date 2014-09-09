@@ -1,3 +1,4 @@
+{% if editmode or site.has_many_languages? %}
 <ul class="menu">
   {% for language in site.languages %}
     <li{% if language.selected? %} class="active"{% endif %}>
@@ -9,3 +10,4 @@
     <li class="add-lang-btn">{% languageadd %}</li>
   {% endif %}
 </ul>
+{% endif %}
