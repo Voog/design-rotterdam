@@ -1,2 +1,96 @@
 /* FORMS */
-// Styling rules for the site's form-fields area. These rules affect the entire site's form-fields that are in the editable content area.
+.container form {
+  margin-top: 30px;
+  margin-bottom: 35px;
+  font-size: 16px;
+  color: #919191;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container .placeholder {
+  height: 1 !important;
+}
+
+.form_field_error, .form_error {
+  color: #c33;
+  font-weight: 700;
+}
+
+.form_notice {
+  color: #3c3;
+  font-weight: 700;
+}
+
+.form_error, .form_notice {
+  margin-bottom: 25px;
+  font-size: 1.2em;
+}
+
+.form_field {
+  margin-bottom: 15px;
+}
+
+.form_field label {
+  display: block;
+  padding: 2px 0 1px;
+  color: #919191;
+}
+
+.form_field label,
+.form_field_textfield,
+.form_field_textarea,
+.form_field_select,
+.form_field_file,
+.form_submit input {
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.form_field_textfield,
+.form_field_textarea,
+.form_field_file {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+.form_field_textarea,
+.form_field_textfield,
+.form_submit input {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.form_field_textarea,
+.form_field_textfield {
+  border-bottom: 1px solid #dadada;
+}
+
+.form_field_textarea {
+  overflow: auto;
+  min-height: 86px;
+  max-width: 100%;
+  width: 30%;
+  ;
+}
+
+.form_field_size_medium {
+  width: 60%;
+}
+
+.form_field_size_large {
+  width: 100%;
+}
+
+.form_submit input {
+  margin: 0;
+  padding: 5px 12px;
+  border: none;
+  background: #dadada;
+  color: #888;
+  cursor: pointer;
+}

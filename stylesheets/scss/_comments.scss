@@ -1,3 +1,105 @@
 /* COMMENTS */
-// Styling rules for the article comments area.
-// Comment form inputs are styled using the form fields styles located in the "_forms.scss" partial.
+.comments {
+  display: inline-block;
+  margin-left: 42px;
+  max-width: 312px;
+  width: 100%;
+  vertical-align: top;
+  word-wrap: break-word;
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.comment-header {
+  line-height: 22px;
+}
+
+.comment-header .edy-btn-removecomment {
+  vertical-align: -1px;
+}
+
+.comments-title {
+  margin: 0 0 7px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.comment-form {
+}
+
+.comment-form form {
+  margin-bottom: 23px;
+}
+
+.comment-form .form_field {
+  margin-bottom: 5px;
+}
+
+.comment-form .form_field_textfield,
+.comment-form .form_field_textarea {
+  padding: 0;
+  width: 100%;
+  color: #333;
+  color: rgba(0,0,0,.8);
+  line-height: 1.6;
+}
+
+.comment-form .form_field_textarea {
+  padding: 6px 0 6px 0px;
+  min-height: 30px;
+  line-height: 1.1;
+}
+
+.comment {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.comment-author {
+  font-weight: 400;
+}
+
+.comment-date {
+  display: inline-block;
+  color: #919191;
+}
+
+.comment-body {
+  color: #888;
+  color: rgba(0,0,0,.5);
+  word-wrap: break-word;
+  word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+
+@include query($tablet) {
+  /* COMMENTS */
+  .comments {
+    display: block;
+    margin-left: 70px;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .comments-title {
+    margin-top: 30px;
+  }
+}
+
+@include query($mobile) {
+  /* COMMENTS */
+  .comments {
+    margin-bottom: 35px;
+    margin-left: 0;
+  }
+}

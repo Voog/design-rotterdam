@@ -1,3 +1,140 @@
-// Styling rules for the site's editable content area and its elements.
-// NB! Each editable content-area - {% content %} - should be wrapped in the element that has the "content-formatted" class.
-// NB! Contact forms and image galleries are located in the separate partials: "_forms.scss" and "_gallery.scss".
+.content-formatted {
+  word-wrap: break-word;
+  word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+
+.content-formatted h1,
+.content-formatted h2,
+.content-formatted h3,
+.content-formatted h4,
+.content-formatted h5,
+.content-formatted h6 {
+  margin: 0 0 17px;
+  font-weight: 300;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.content-formatted h2,
+.content-formatted h3,
+.content-formatted h4,
+.content-formatted h5,
+.content-formatted h6 {
+  color: #c33;
+  text-transform: uppercase;
+}
+
+.content-formatted h1 {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.content-formatted h2 {
+  font-size: 24px;
+}
+
+.content-formatted h3,
+.content-formatted h4,
+.content-formatted h5,
+.content-formatted h6 {
+  font-size: 18px;
+}
+
+.content-formatted p {
+  margin: 0 0 25px;
+}
+
+.content-formatted p:last-child {
+  margin: 0;
+}
+
+.content-formatted a {
+  color: #888;
+  color: rgba(0,0,0,.5);
+}
+
+.content-formatted a:hover {
+  color: #333;
+  color: rgba(0,0,0,.8);
+}
+
+.content-formatted img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+.content-formatted {
+  b, strong {
+    font-weight: 600;
+  }
+}
+
+.content-formatted {
+  pre {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background: #fafafa;
+
+    code {
+      display: block;
+      padding: 0;
+    }
+  }
+}
+
+.content-formatted table {
+  .public & {
+    word-break: initial;
+  }
+}
+
+.content-formatted span {
+  line-height: 1;
+}
+
+/* TABLES */
+.content-formatted table {
+  border-collapse: collapse;
+}
+
+.content-formatted .overthrow {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-formatted .horizontal-scroll {
+  border-right: 1px dashed #e6e6e6;
+  border-left: 1px dashed #e6e6e6;
+}
+
+.content-formatted table td {
+  padding: 10px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.content-formatted .edy-positionable-container-left {
+  margin: 0 25px 15px 0;
+}
+
+.content-formatted .edy-positionable-container-right {
+  margin: 0 0 15px 25px;
+}
+
+@include query($mobile) {
+  .content-formatted .edy-img-container {
+    margin: 0 -25px;
+  }
+  /* FORMS */
+  .content .form_field_textfield,
+  .content .form_field_textarea,
+  .content .form_field_file {
+    width: 100%;
+  }
+}

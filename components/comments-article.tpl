@@ -1,5 +1,5 @@
 {% unless article.new_record? %}
-  <aside class="comments clearfix">
+  <aside class="comments cfx">
     <h2 class="comments-title">{{ 'replies' | lcc : article.comments_count }}</h2>
 
     {% include "comment-form" %}

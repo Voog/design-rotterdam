@@ -1,2 +1,436 @@
 /* MENUS */
-// Styling rules for the site's menus.
+.menu {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.menu li {
+  margin-right: 5px;
+}
+
+.menu li a {
+  color: #888;
+  color: rgba(0,0,0,.5);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.menu li a:hover {
+  color: #333;
+  color: rgba(0,0,0,.8);
+}
+
+.menu li.active a {
+  color: #333;
+  color: rgba(0,0,0,.8);
+}
+
+.menu li.active a:hover {
+  color: #222;
+  color: rgba(0,0,0,.85);
+}
+
+.main-menu li {
+  display: inline-block;
+}
+
+.main-menu li a {
+  text-transform: uppercase;
+}
+
+.main-menu li a.untranslated {
+  color: #c33;
+}
+
+.main-menu .add-page-btn {
+  margin-left: 5px;
+}
+
+.sub-menu li {
+  padding-bottom: 10px;
+  line-height: 0.85;
+}
+
+.sub-menu li:last-child {
+  padding-bottom: 0;
+}
+
+.sub-menu li a {
+  color: #888;
+  word-wrap: break-word;
+  word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.sub-menu li a.untranslated {
+  color: #c33;
+}
+
+.mobile-menu {
+  position: relative;
+  z-index: 4;
+  display: none;
+}
+
+.lang-menu-toggle {
+  position: relative;
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 20px;
+  width: 20px;
+  height: 13px;
+  outline: none;
+  border: none;
+  background: none;
+  vertical-align: top;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.lang-menu-toggle:after,
+.lang-menu li a.lang-flag:after {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 13px;
+  background-repeat: no-repeat;
+  content: '';
+
+  .no-svg & {
+    background-image: url('../images/ico-flags.png');
+  }
+
+  .svg & {
+    background-image: url('../assets/ico-flags.svg');
+  }
+}
+
+.lang-menu-toggle:after {
+  top: 0;
+  left: 0;
+}
+
+.lang-menu-popover {
+  display: none;
+}
+
+.lang-menu-popover.expanded {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  z-index: 10;
+  display: block;
+  padding: 0;
+  min-width: 121px;
+  border: 1px solid #e1e1e1;
+  background: #fff;
+  font-size: 12px;
+  -webkit-border: 1px solid #e1e1e1;
+}
+
+.lang-menu {
+  position: relative;
+  display: table-cell;
+  height: 13px;
+  vertical-align: top;
+  line-height: 1.1;
+}
+
+.lang-menu .menu {
+}
+
+.lang-menu .untranslated {
+}
+
+.lang-menu .untranslated:hover {
+}
+
+.lang-menu li {
+}
+
+.lang-menu li:last-child {
+}
+
+.lang-menu li.active a,
+.lang-menu li.active a:hover {
+  color: #333;
+}
+
+.lang-menu li a {
+  position: relative;
+  display: block;
+  padding: 5px 4px 5px 30px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.lang-menu li a:after {
+  top: 5px;
+  left: 5px;
+}
+
+.lang-menu li .edy-menu-langadd {
+  margin-left: 5px;
+}
+
+.lang-menu .add-lang-btn {
+  margin-top: 5px;
+}
+
+// Language flag icons positioning in the spritemap.
+$flags:
+  // Albanian (Albania)
+  (sq,   0        0),
+
+  // Armenian (Armenia)
+  (hy,  -20px     0),
+
+  // Bengali (Bangladesh)
+  (bn,  -40px     0),
+
+  // Brazilian Portuguese (Brazil)
+  (pt,  -60px     0),
+
+  // Bulgarian (Bulgaria)
+  (bg,  -80px     0),
+
+  // Chinese (China)
+  (zh, -100px     0),
+
+  // Croatian (Croatia)
+  (hr, -120px     0),
+
+  // Danish (Denmark)
+  (da, -140px     0),
+
+  // Czech (Czech Republic)
+  (cs, -160px     0),
+
+  // Estonian (Estonia)
+  (et, -180px     0),
+
+
+  // Finnish (Finland)
+  (fi,    0px -14px),
+
+  // French (France)
+  (fr,  -20px -14px),
+
+  // Georgian (Georgia)
+  (ka,  -40px -14px),
+
+  // German (Germany)
+  (de,  -60px -14px),
+
+  // Greek (Greece)
+  (el,  -80px -14px),
+
+  // Hungarian (Hungary)
+  (hu, -100px -14px),
+
+  // Icelandic (Iceland)
+  (is, -120px -14px),
+
+  // Hindi (India)
+  (hi, -140px -14px),
+
+  // Indonesian (Indonesia)
+  (id, -160px -14px),
+
+  // Iranian (Iran)
+  (fa, -180px -14px),
+
+
+  // Hebrew (Israel)
+  (he,    0px -28px),
+
+  // Italian (Italy)
+  (it,  -20px -28px),
+
+  // Japanese (Japan)
+  (ja,  -40px -28px),
+
+  // Korean (Korea, South)
+  (ko,  -60px -28px),
+
+  // Latvian (Latvia)
+  (lv,  -80px -28px),
+
+  // Lithuanian (Lithuania)
+  (lt, -100px -28px),
+
+  // Malaysian (Malaysia)
+  (ms, -120px -28px),
+
+  // Dutch (Netherlands)
+  (nl, -140px -28px),
+
+  // Norwegian (Norway)
+  (no, -160px -28px),
+
+  // Urdu (Pakistan)
+  (ur, -180px -28px),
+
+
+  // Filipino (Philippines)
+  (fil,   0px -42px),
+
+  // Polish (Poland)
+  (pl,  -20px -42px),
+
+  // Romanian (Romania)
+  (ro,  -40px -42px),
+
+  // Russian (Russia)
+  (ru,  -60px -42px),
+
+  // Arabic (Saudi Arabia)
+  (ar,  -80px -42px),
+
+  // Slovakian (Slovakia)
+  (sk, -100px -42px),
+
+  // Slovenian (Slovenia)
+  (sl, -120px -42px),
+
+  // Spanish (Spain)
+  (es, -140px -42px),
+
+  // Swedish (Sweden)
+  (sv, -160px -42px),
+
+  // Turkish (Turkey)
+  (tr, -180px -42px),
+
+
+  // Ukrainian (Ukraine)
+  (uk,    0px -56px),
+
+  // American English (United States of Ameria)
+  (en,  -20px -56px)
+  ;
+
+@each $flag, $pos in $flags {
+  .lang-flag-#{$flag}:after {
+    background-position: $pos;
+  }
+}
+
+@include query($mobile) {
+  /* mobile-menu */
+  .mobile-menu-toggler, #mobile-menu, .mobile-menu-toggler, #mobile-search {
+    display: none;
+  }
+
+  /* MENUS */
+  .main-menu {
+    text-align: right;
+  }
+
+  .main-menu li {
+    display: block;
+  }
+
+  .menu li {
+    margin-right: 0;
+  }
+
+  .main-menu li a {
+    display: inline-block;
+    padding: 8px 10px 7px;
+    background: #838383;
+    color: #d7d7d7;
+    vertical-align: top;
+    font-size: 18px;
+  }
+
+  .main-menu li a:hover,
+  .main-menu li.active a:hover {
+    color: #fafafa;
+  }
+
+  .main-menu li.active a {
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .lang-menu {
+    display: none;
+    padding-left: 0;
+  }
+
+  .lang-menu .menu {
+    position: fixed;
+    right: 40px;
+    display: inline-block;
+    float: right;
+    width: auto;
+    height: 40px;
+    background-color: #5E5E5E;
+  }
+
+  .lang-menu li {
+    float: right;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lang-menu li a {
+    padding: 0;
+    height: inherit;
+    text-indent: -9999px;
+    font-size: 0;
+    opacity: 0.8;
+  }
+
+  .lang-menu li a:hover,
+  .lang-menu li.active a {
+    background-color: #838383;
+    opacity: 1;
+  }
+
+  .lang-menu li a:after {
+    top: 14px;
+    left: 10px;
+  }
+
+  .lang-menu li.active a,
+  .lang-menu li.active a:hover {
+    background-color: #5E5E5E;
+  }
+
+  .lang-menu li a:hover,
+  .lang-menu li.active a:hover {
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: #5E5E5E;
+  }
+
+  .lang-menu li.add-lang-btn {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .lang-menu li.add-lang-btn a {
+    margin: 0;
+    text-indent: 0;
+    line-height: 50px;
+  }
+
+  .lang-menu li.add-lang-btn a:hover {
+    background: inherit;
+  }
+}

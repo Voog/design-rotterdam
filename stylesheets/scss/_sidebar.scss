@@ -1,8 +1,65 @@
 /* SIDEBAR */
-// Styling rules for the site's sidebar. These rules affect the entire site.
+.sidebar {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-// NB! Sidebar is not the part of the current template by default, but it can be easily included:
-// 1. Add "sidebar" component to the site's template components folder.
-// 2. Include the component into the appropriate place (or places) in the layout.
-// 3. Uncomment the "_sidebar.scss" partial in the "main.scss" file.
-// 4. Add the styling rules for the generated component.
+.sidebar-left {
+  max-width: 120px;
+}
+
+.sidebar-header {
+  padding-bottom: 7px;
+}
+
+.sidebar-left .content-formatted h1 {
+  margin: 0 0 3px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@include query($tablet) {
+  .sidebar-left {
+    position: relative;
+    z-index: 1;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 15px 5px 20px 15px;
+    max-width: 95px;
+    background: #e0e0e0;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  }
+
+  .sidebar-right {
+    display: block;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 15%;
+    max-width: 85%;
+    text-align: right;
+  }
+
+  .sidebar-right .content-formatted {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+
+  .sidebar-right .content-formatted h1 {
+    font-size: 35px;
+  }  
+}

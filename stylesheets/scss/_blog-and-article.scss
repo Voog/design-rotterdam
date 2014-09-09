@@ -1,2 +1,258 @@
 /* BLOG & BLOG ARTICLE */
-// Styling rules for both - the blog listing view and the blog single article view
+.blog-page .post {
+  position: relative;
+  margin-bottom: 55px;
+}
+
+.blog-page .post:last-child {
+  margin-bottom: 25px;
+}
+
+.blog-page .post-header
+.blog-page .post-content {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.blog-page .post-header {
+  position: absolute;
+  margin-top: 0;
+  width: 220px;
+  padding-right: 20px;
+}
+
+.blog-page .post-title {
+  margin: 0 0;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.blog-page .post-title a {
+  color: #333;
+}
+
+.blog-page .post-date {
+  color: #888;
+  font-size: 12px;
+}
+
+.blog-page .post-content {
+  position: relative;
+  margin-left: 240px;
+}
+
+.blog-page .post-content .image-container:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.blog-page .post-header.bottom {
+  bottom: 0;
+}
+
+.blog-page .post-header.top {
+  top: 0px;
+}
+
+.blog-page .post.fixed-header .post-header {
+  position: fixed;
+  top: 30px;
+  float: left;
+  width: 220px;
+  padding-right: 20px;
+}
+
+.blog-page .post.fixed-header .post-header + .post-content,
+.blog-page .post.fixed-bottom .post-header + .post-content {
+  display: inherit;
+  margin-left: 240px;
+}
+
+.post-page .edy-padding-resizer-wrapper,
+.blog-page .edy-padding-resizer-wrapper {
+  width: 100%;
+}
+
+.post-page .post-header {
+  margin-bottom: 30px;
+}
+
+.post-page .post-title {
+  margin: 0 0 10px;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.post-page .post-date {
+  color: #c33;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.post-page .post-content {
+  display: inline-block;
+  max-width: 580px;
+  width: 100%;
+  vertical-align: top;
+}
+
+.post-page,
+.blog-page {
+  .post-content .content-formatted,
+  .post-content .edy-texteditor-view {
+    & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+      margin: 0 70px 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    & > * {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.post-page .post-content .content-formatted,
+.blog-page .post-content .content-formatted {
+  blockquote {
+    margin: 0 70px 20px 120px;
+    text-align: right;
+    font-weight: 600;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  table {
+    width: 100%;
+  }
+}
+
+.post-page .post-excerpt,
+.blog-page .post-excerpt {
+  margin-bottom: 20px;
+}
+
+.post-page .image-container {
+  margin-bottom: 25px;
+}
+
+.post-header {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.post-date {
+  text-transform: uppercase;
+}
+
+/* BLOG TAGS */
+.tags-container {
+  text-align: right;
+  margin-bottom: 35px;
+  margin-top: -35px;
+
+  .front-page & {
+  }
+}
+.tags {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  .tags-list, .tag-link {
+    color: #888;
+    color: rgba(0,0,0,.5);
+  }
+}
+.blog-page .tags {
+  display: inline-block;
+  color: rgba(0,0,0,.9);
+  background-color: rgba(0,0,0,.05);
+  text-transform: uppercase;
+  padding: 12px;
+  line-height: 1.8;
+  .tag-link {
+    margin-left: 10px;
+    &.active {
+      padding-bottom: 2px;
+      color: rgba(0,0,0,.9);
+      border-bottom: 2px solid rgba(0,0,0,.25);
+    }
+  }
+}
+.post-page .tags {
+  display: block;
+  position: relative;
+  margin: 30px 0 30px 70px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .tag-icon {
+    display: block;
+    opacity: 0.5;
+    height: 20px;
+    width: 20px;
+    background: url("../assets/ico-tags.svg") no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .no-svg & {
+      background-image: url("../images/ico-tags.png") no-repeat center center;
+    }
+  }
+  .tags-list {
+    line-height: 20px;
+    margin-left: 30px;
+  }
+}
+
+@include query($mobile) {
+  /* BLOG & BLOG ARTICLE */
+  .blog-page .post {
+    margin-bottom: 30px;
+  }
+
+  .blog-page .post-header,
+  .blog-page .post-content {
+    display: block;
+    margin-left: 0;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .blog-page .post-header {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .post-page .post-title {
+    font-size: 36px;
+  }
+
+  .post-page .post-content {
+    margin-left: 0;
+  }
+
+  .blog-page .post-excerpt:last-child {
+    margin-bottom: 0;
+  }
+
+  .blog-page .post-content {
+    min-height: initial !important;
+  }
+
+  .post-page,
+  .blog-page {
+    .content-body:first-of-type {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .post-content .content-formatted,
+    .post-content .edy-texteditor-view {
+      & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+        margin: 0 0 20px;
+      }
+    }
+  }
+  /* TAGS */
+  .tags-container {
+    margin-top: 35px;
+  }
+}

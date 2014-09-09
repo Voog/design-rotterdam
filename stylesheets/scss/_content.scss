@@ -1,2 +1,39 @@
 /* CONTENT */
-// Styling rules for the site's main content area. These rules affect the entire site.
+.content {
+  margin-bottom: 30px;
+}
+
+.content-bottom {
+  margin-left: 125px;
+}
+
+.content-body {
+  display: inline-block;
+  width: 85%;
+  vertical-align: top;
+}
+
+.content-header {
+  margin-bottom: 45px;
+}
+
+.content-header h1 {
+  margin: 0;
+  letter-spacing: -3px;
+  font-size: 50px;
+  line-height: 1;
+}
+
+@include query($tablet) {
+  .content {
+    position: relative;
+  }
+
+  .content-body {
+    max-width: 100%;
+  }
+  .container .content-body {
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+}

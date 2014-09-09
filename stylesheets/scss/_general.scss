@@ -1,2 +1,114 @@
 /* GENERAL */
-//Styling rules for the basic parts of the page. These rules affect the entire site.
+.scrollpos {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: #ffffff;
+}
+
+.cfx:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  color: #222;
+  font: 300 20px/1.4 "Garamond EB", "Georgia", serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 25px;
+  max-width: 940px;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container a img {
+  border: none;
+}
+
+.container .horizontal-line {
+  margin-bottom: 12px;
+  max-width: 100%;
+  width: 220px;
+  height: 2px;
+  background: #555;
+  background: rgba(0,0,0,.65);
+}
+
+/* FRONT PAGE */
+.front-page .content-body {
+  margin-bottom: 70px;
+  max-width: 90%;
+  width: 100%;
+  color: rgb(125,125,125);
+  color: rgba(0,0,0,.5);
+  font-size: 24px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.front-page .content-body:empty {
+  display: none;
+}
+
+/* COMMON PAGE */
+.common-page .edy-img-container {
+  margin-left: -80px;
+}
+
+.common-page .content-header {
+  font-size: 46px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
+}
+
+@include query($tablet) {
+  /* COMMON PAGE */
+  .common-page .content-body {
+    display: block;
+    max-width: 100%;
+  }
+
+  .common-page .content-second {
+    display: inline-block;
+    margin-left: 0;
+  }
+
+  .common-page .edy-img-container {
+    margin-left: 0;
+  }
+
+  /* BLOG & BLOG ARTICLE */
+  .blog-page .edy-img-container {
+    margin-right: 0;
+    margin-left: -20px;
+  }
+
+  .post-page .post-content {
+    display: block;
+    margin-left: 0;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+@include query($mobile) {
+  .container {
+    margin: 0 20px;
+    padding: 0;
+  }
+  /* COMMON PAGE */
+  .common-page .content-body {
+    width: 100%;
+  }
+}
