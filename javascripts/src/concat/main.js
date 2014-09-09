@@ -782,6 +782,16 @@
         });
     };
 
+    var focusCommentsWithErrors = function() {
+      $(document).ready(function() {
+        if ($('.comment-form').hasClass('form_with_errors')) {
+          $('html, body').scrollTop($('.comment-form').offset().top);
+        } else if ($('form').find('.form_error, .form_notice').length > 0) {
+          $('html, body').scrollTop($('.form_error, .form_notice').closest('form').offset().top);
+        }
+      });
+    };
+
     // Initiations
     var initFrontPage = function(animation) {
         animation = typeof animation == 'undefined' ? false : animation;
@@ -813,6 +823,7 @@
                 $('.content-header').hide();
             }
         });
+        focusCommentsWithErrors();
     };
     var initArticlePage = function(animation) {
         animation = typeof animation == 'undefined' ? false : animation;
@@ -827,6 +838,7 @@
         if ($.fn.autogrow) {
             $('.form_field_textarea').autogrow();
         }
+        focusCommentsWithErrors();
     };
     var initBlogPage = function(animation) {
         animation = typeof animation == 'undefined' ? false : animation;
