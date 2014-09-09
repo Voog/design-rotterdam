@@ -1,10 +1,10 @@
 <script src="{{ javascripts_path }}/application.min.js"></script>
-<script src="{{ site.static_asset_host }}/libs/picturefill/1.0.0/picturefill.min.js"></script>
+<script src="{{ site.static_asset_host }}/libs/picturefill/latest/picturefill.min.js"></script>
 {% editorjsblock %}
 <script src='{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js'></script>
 {% endeditorjsblock %}
 {% if site.search.enabled %}
-<script src="{{ site.static_asset_host }}/libs/edicy-search/1.0.0/edicy-search.js"></script>
+<script src="{{ site.static_asset_host }}/libs/edicy-search/latest/edicy-search.js"></script>
 <script src="{{ javascripts_path }}/search.min.js"></script>
 <script>
 
