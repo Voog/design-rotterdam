@@ -43,6 +43,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/comments-article.tpl",
+      "layout_name": "comments-article",
+      "title": "comments-article"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/footer.tpl",
       "layout_name": "footer",
       "title": "footer"
@@ -116,13 +123,6 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
-    },
-    {
-      "title": "comments-article",
-      "layout_name": "comments-article",
-      "content_type": "component",
-      "component": true,
-      "file": "components/comments-article.tpl"
     }
   ],
   "assets": [
@@ -131,6 +131,12 @@
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-tags.svg",
+      "kind": "assets",
+      "filename": "ico-tags.svg"
     },
     {
       "content_type": "image/svg+xml",
@@ -155,6 +161,12 @@
       "file": "images/ico-flags.png",
       "kind": "images",
       "filename": "ico-flags.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ico-tags.png",
+      "kind": "images",
+      "filename": "ico-tags.png"
     },
     {
       "content_type": "image/png",
@@ -227,18 +239,6 @@
       "file": "stylesheets/main.min.css",
       "kind": "stylesheets",
       "filename": "main.min.css"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-tags.svg",
-      "filename": "ico-tags.svg"
-    },
-    {
-      "content_type": "image/png",
-      "kind": "images",
-      "file": "images/ico-tags.png",
-      "filename": "ico-tags.png"
     }
   ]
 }
