@@ -37,7 +37,10 @@
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:site_name" content="{{ page.site_title | escape }}">
 
+{% comment %}Article page OG & meta tags.{% endcomment %}
 {% if article %}
+  {% comment %}TODO: Add functionality to set custom Facebook OG image if the CMS is going to support it.{% endcomment %}
+  {% comment %}Article page OG image settings.{% endcomment %}
   {% if article.data.fb_image %}
     <meta property="og:image" content="{{ article.data.fb_image }}">
   {% elsif page.data.fb_image %}
@@ -45,17 +48,41 @@
   {% elsif site.data.fb_image %}
     <meta property="og:image" content="{{ site.data.fb_image }}">
   {% endif %}
+
+  {% comment %}Article page description tags.{% endcomment %}
   <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
   <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
 {% else %}
+
+  {% comment %}TODO: Add functionality to set custom Facebook OG image if the CMS is going to support it.{% endcomment %}
+  {% comment %}Common pages OG image tags.{% endcomment %}
   {% if page.data.fb_image %}
     <meta property="og:image" content="{{ page.data.fb_image }}">
   {% elsif site.data.fb_image %}
     <meta property="og:image" content="{{ site.data.fb_image }}">
   {% endif %}
+
+
   {% unless page.description == nil or page.description == "" %}
     <meta property="og:description" content="{{ page.description }}">
     <meta name="description" content="{{ page.description }}">
+  {% else %}
+    {% comment %}Blog page description tags.{% endcomment %}
+    {% if blog %}
+      {% for article in articles %}
+        {% if forloop.first %}
+          <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
+          <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...'  }}">
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% comment %}Content page description tags.{% endcomment %}
+      {% unless editmode %}
+        {% capture content %}{% content %}{% endcapture %}
+        <meta property="og:description" content="{{ content | strip_html | truncatewords: 200, '...' }}">
+        <meta name="description" content="{{ content | strip_html | truncatewords: 200, '...'  }}">
+      {% endunless %}
+    {% endif %}
   {% endunless %}
 {% endif %}
 
