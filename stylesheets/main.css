@@ -41,7 +41,7 @@ body {
   margin: 0 auto;
   padding: 0;
   color: #222;
-  font: 300 20px/1.4 "Garamond EB", "Georgia", serif;
+  font: 300 20px/1.4 "EB Garamond", "Georgia", serif;
 }
 
 .container {
@@ -1940,5 +1940,3 @@ body.mobilesearch-open {
     display: none;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
