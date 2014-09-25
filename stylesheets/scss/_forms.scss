@@ -1,5 +1,6 @@
 /* FORMS */
-.container form {
+.content-formatted form,
+.content-formatted .form {
   margin-top: 30px;
   margin-bottom: 35px;
   font-size: 16px;
@@ -43,7 +44,6 @@
 .form_field_file,
 .form_submit input {
   font-size: 16px;
-  font-family: inherit;
 }
 
 .form_field_textfield,
@@ -55,6 +55,16 @@
   margin: 0;
   outline: none;
   border: none;
+}
+
+.form_field_checkbox,
+.form_field_radio {
+  vertical-align: 2px;
+  margin: 3px 5px 3px 2px;
+}
+
+.form_field_checkbox {
+  margin-left: 1px;
 }
 
 .form_field_textarea,
