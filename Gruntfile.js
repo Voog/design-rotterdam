@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-  'use strict';
+  "use strict";
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -45,7 +46,24 @@ module.exports = function(grunt) {
       }
     },
 
-    // Concatenates javascripts into one file.
+    // Copys the standalone (not concatenated) javascript source files to the javascripts folder.
+    copy: {
+      javascripts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'javascripts/src',
+            src: [
+              '*.js',
+              '!modernizr.js'
+            ],
+            dest: 'javascripts/'
+          }
+        ]
+      }
+    },
+
+    // Concatenates the javascript source files to the javascripts folder.
     concat: {
       build: {
         src: [
@@ -89,6 +107,19 @@ module.exports = function(grunt) {
       }
     },
 
+    exec: {
+      kitmanifest: {
+        cmd: function(file) {
+          return 'kit manifest';
+        }
+      },
+      kit: {
+        cmd: function(file) {
+          return 'kit push -s ' + grunt.option('site') + ' ' + file;
+        }
+      }
+    },
+
     // Minifies the stylesheet files.
     cssmin: {
       build: {
@@ -105,7 +136,7 @@ module.exports = function(grunt) {
 
     // Minifies the image files.
     imagemin: {
-      images: {
+      build: {
         files: [{
           expand: true,
           cwd: 'images/src/',
@@ -130,25 +161,18 @@ module.exports = function(grunt) {
 
     // Watches the project for changes and recompiles the output files.
     watch: {
-      concat: {
+      js: {
         files: 'javascripts/src/concat/*.js',
-        tasks: 'concat'
-      },
-
-      uglify: {
-        files: [
-        'javascripts/*.js',
-        '!javascripts/*.min.js'
-        ],
-        tasks: 'uglify',
-        options: {
-          spawn: false
-        }
+        tasks: ['newer:concat', 'newer:uglify']
       },
 
       css: {
         files: 'stylesheets/scss/*.scss',
-        tasks: ['sass', 'cssmin'],
+        tasks: ['sass:build', 'newer:cssmin:build']
+      },
+
+      voog: {
+        files: ['javascripts/*.js', 'stylesheets/*.css', 'layouts/*.tpl', 'components/*.tpl'],
         options: {
           spawn: false
         }
@@ -156,10 +180,9 @@ module.exports = function(grunt) {
     },
   });
 
-  grunt.registerTask('default', ['bowercopy', 'modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
-
   grunt.loadNpmTasks('grunt-bowercopy');
   grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -167,4 +190,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-exec');
+
+  grunt.registerTask('default', ['bowercopy', 'modernizr', 'copy', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
+
+  grunt.event.on('watch', function(action, filepath, target) {
+    if (target == 'voog') {
+      if (action == "added" || action == "deleted") {
+        grunt.task.run(['exec:kitmanifest']);
+      }
+      if (action != "deleted") {
+        grunt.task.run(['exec:kit:' + filepath]);
+      }
+    }
+  });
 };
