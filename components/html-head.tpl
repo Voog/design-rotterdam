@@ -5,8 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-{% unless page.keywords == nil or page.keywords == "" %}<meta name="keywords" content="{{ page.keywords }}">{% endunless %}
-{% unless page.description == nil or page.keywords == "" %}<meta name="description" content="{{ page.description }}">{% endunless %}
 
 {% comment %}<!-- FAV ICON -->{% endcomment %}
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -28,7 +26,6 @@
 {% capture page_title %}{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}{% endcapture %}
 <title>{{ page_title }}</title>
 
-{% comment %}FACEBOOK OPEN GRAPH{% endcomment %}
 {% include "open-graph" %}
 
 {% if blog %}{{ blog.rss_link }}{% endif %}
