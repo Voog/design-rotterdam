@@ -209,12 +209,12 @@ body {
 
 .content-formatted pre {
   overflow: auto;
-  white-space: nowrap;
   padding: 10px;
   background: #fafafa;
 }
 .content-formatted pre code {
   display: block;
+  white-space: nowrap;
   padding: 0;
 }
 

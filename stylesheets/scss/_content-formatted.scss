@@ -77,12 +77,12 @@
 .content-formatted {
   pre {
     overflow: auto;
-    white-space: nowrap;
     padding: 10px;
     background: #fafafa;
 
     code {
       display: block;
+      white-space: nowrap;
       padding: 0;
     }
   }
