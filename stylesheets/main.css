@@ -135,7 +135,6 @@ body {
   }
 }
 .content-formatted {
-  word-wrap: break-word;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -206,16 +205,41 @@ body {
 .content-formatted b, .content-formatted strong {
   font-weight: 600;
 }
+.content-formatted pre,
+.content-formatted code,
+.content-formatted iframe,
+.content-formatted table,
+.content-formatted form {
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
 
+.content-formatted pre,
+.content-formatted code {
+  font-size: 14px;
+  background-color: #fafafa;
+}
 .content-formatted pre {
   overflow: auto;
   padding: 10px;
-  background: #fafafa;
 }
 .content-formatted pre code {
-  display: block;
-  white-space: nowrap;
+  display: inline;
   padding: 0;
+  white-space: pre;
+  line-height: inherit;
+  background-color: transparent;
+  word-wrap: normal;
+}
+.content-formatted code {
+  display: inline-block;
+  padding: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .public .content-formatted table {
