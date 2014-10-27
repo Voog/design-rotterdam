@@ -1134,12 +1134,6 @@ body {
   vertical-align: top;
 }
 
-.post-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
-.post-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
-.blog-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable),
-.blog-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
-  margin: 0 70px 20px;
-}
 .post-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
 .post-page .post-content .edy-texteditor-view > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
 .blog-page .post-content .content-formatted > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child,
@@ -1221,7 +1215,7 @@ body {
 .post-page .tags {
   display: block;
   position: relative;
-  margin: 30px 0 30px 70px;
+  margin: 30px 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .post-page .tags .tag-icon {
@@ -1867,9 +1861,9 @@ body.mobilesearch-open {
   /* COMMENTS */
   .comments {
     display: block;
-    margin-left: 70px;
-    max-width: 100%;
+    max-width: 580px;
     width: auto;
+    margin-left: 0;
   }
 
   .comments-title {
