@@ -2,6 +2,7 @@
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
+  {% include "edicy-tools-variables" %}
 </head>
 
 <body class="blog-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
@@ -27,6 +28,7 @@
     {% include "footer" %}
   </div>
   {% include "javascripts" %}
+  {% include "edicy-tools" %}
   <script type="text/javascript">site.initBlogPage({% if editmode %}false{% else %}true{% endif %});</script>
 </body>
 </html>

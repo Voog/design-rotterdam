@@ -7,7 +7,6 @@
 <script src="{{ site.static_asset_host }}/libs/edicy-search/latest/edicy-search.js"></script>
 <script src="{{ javascripts_path }}/search.min.js"></script>
 <script>
-
   $(function() {
     var search = new VoogSearch($('.js-search-form'), {
       per_page: 3,

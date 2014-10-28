@@ -301,10 +301,6 @@ body {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.menu li {
-  margin-right: 5px;
-}
-
 .menu li a {
   color: #888;
   color: rgba(0, 0, 0, 0.5);
@@ -329,6 +325,7 @@ body {
 
 .main-menu li {
   display: inline-block;
+  margin-right: 5px;
 }
 
 .main-menu li a {
@@ -377,26 +374,63 @@ body {
 .lang-menu-toggle {
   position: relative;
   display: inline-block;
-  margin-top: 6px;
-  margin-left: 20px;
-  width: 20px;
-  height: 13px;
+  height: 25px;
+  margin-left: 15px;
+  padding: 0;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
   outline: none;
   border: none;
   background: none;
   vertical-align: top;
-  font-size: 0;
   cursor: pointer;
 }
+.flags-disabled .lang-menu-toggle .ico-popover-toggle {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  font-size: 7.2px;
+}
+.lang-menu-toggle.open .ico-popover-toggle {
+  left: 1px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.flags-enabled .lang-menu-toggle {
+  width: 31px;
+}
+.flags-enabled .lang-menu-toggle .lang-title,
+.flags-enabled .lang-menu-toggle .ico-popover-toggle {
+  display: none;
+}
 
-.lang-menu-toggle:after,
+.lang-menu-toggle:before, .lang-menu-toggle:after,
+.lang-menu li a.lang-flag:before,
 .lang-menu li a.lang-flag:after {
   position: absolute;
+  top: 5px;
+  left: 5px;
   display: block;
-  width: 20px;
-  height: 13px;
-  background-repeat: no-repeat;
+  width: 21px;
+  height: 15px;
   content: '';
+}
+.flags-disabled .lang-menu-toggle:before, .flags-disabled .lang-menu-toggle:after, .flags-disabled
+.lang-menu li a.lang-flag:before, .flags-disabled
+.lang-menu li a.lang-flag:after {
+  display: none;
+}
+.lang-menu-toggle:before,
+.lang-menu li a.lang-flag:before {
+  background-color: black;
+}
+.lang-menu-toggle:after,
+.lang-menu li a.lang-flag:after {
+  opacity: 0.95;
+  background-repeat: no-repeat;
 }
 .no-svg .lang-menu-toggle:after, .no-svg
 .lang-menu li a.lang-flag:after {
@@ -407,11 +441,6 @@ body {
   background-image: url("../assets/ico-flags.svg");
 }
 
-.lang-menu-toggle:after {
-  top: 0;
-  left: 0;
-}
-
 .lang-menu-popover {
   display: none;
 }
@@ -419,15 +448,18 @@ body {
 .lang-menu-popover.expanded {
   position: absolute;
   top: 25px;
-  left: 10px;
+  left: 14px;
   z-index: 10;
   display: block;
   padding: 0;
-  min-width: 121px;
+  min-width: 138px;
   border: 1px solid #e1e1e1;
   background: #fff;
   font-size: 12px;
   -webkit-border: 1px solid #e1e1e1;
+}
+.flags-disabled .lang-menu-popover.expanded {
+  min-width: 121px;
 }
 
 .lang-menu {
@@ -436,6 +468,12 @@ body {
   height: 13px;
   vertical-align: top;
   line-height: 1.1;
+}
+.lang-menu.flags-disabled .lang-flag {
+  padding-left: 4px;
+}
+.lang-menu.flags-disabled .lang-flag:before, .lang-menu.flags-disabled .lang-flag:after {
+  display: none;
 }
 
 .lang-menu li.active a,
@@ -446,18 +484,13 @@ body {
 .lang-menu li a {
   position: relative;
   display: block;
-  padding: 5px 4px 5px 30px;
+  padding: 6px 4px 4px 30px;
   color: #888;
   text-transform: uppercase;
 }
 
-.lang-menu li a:after {
-  top: 5px;
-  left: 5px;
-}
-
 .lang-menu li .edy-menu-langadd {
-  margin-left: 5px;
+  padding-left: 10px;
 }
 
 .lang-menu .add-lang-btn {
@@ -469,167 +502,233 @@ body {
 }
 
 .lang-flag-hy:after {
-  background-position: -20px 0;
+  background-position: -21px 0;
 }
 
 .lang-flag-bn:after {
-  background-position: -40px 0;
+  background-position: -42px 0;
 }
 
-.lang-flag-pt:after {
-  background-position: -60px 0;
+.lang-flag-xx:after {
+  background-position: -63px 0;
 }
 
 .lang-flag-bg:after {
-  background-position: -80px 0;
+  background-position: -84px 0;
 }
 
 .lang-flag-zh:after {
-  background-position: -100px 0;
+  background-position: -105px 0;
 }
 
 .lang-flag-hr:after {
-  background-position: -120px 0;
+  background-position: -126px 0;
 }
 
 .lang-flag-da:after {
-  background-position: -140px 0;
+  background-position: -147px 0;
 }
 
 .lang-flag-cs:after {
-  background-position: -160px 0;
+  background-position: -168px 0;
 }
 
 .lang-flag-et:after {
-  background-position: -180px 0;
+  background-position: -189px 0;
 }
 
 .lang-flag-fi:after {
-  background-position: 0px -14px;
+  background-position: 0 -15px;
 }
 
 .lang-flag-fr:after {
-  background-position: -20px -14px;
+  background-position: -21px -15px;
 }
 
 .lang-flag-ka:after {
-  background-position: -40px -14px;
+  background-position: -42px -15px;
 }
 
 .lang-flag-de:after {
-  background-position: -60px -14px;
+  background-position: -63px -15px;
 }
 
 .lang-flag-el:after {
-  background-position: -80px -14px;
+  background-position: -84px -15px;
 }
 
 .lang-flag-hu:after {
-  background-position: -100px -14px;
+  background-position: -105px -15px;
 }
 
 .lang-flag-is:after {
-  background-position: -120px -14px;
+  background-position: -126px -15px;
 }
 
 .lang-flag-hi:after {
-  background-position: -140px -14px;
+  background-position: -147px -15px;
 }
 
 .lang-flag-id:after {
-  background-position: -160px -14px;
+  background-position: -168px -15px;
 }
 
 .lang-flag-fa:after {
-  background-position: -180px -14px;
+  background-position: -189px -15px;
 }
 
 .lang-flag-he:after {
-  background-position: 0px -28px;
+  background-position: 0 -30px;
 }
 
 .lang-flag-it:after {
-  background-position: -20px -28px;
+  background-position: -21px -30px;
 }
 
 .lang-flag-ja:after {
-  background-position: -40px -28px;
+  background-position: -42px -30px;
 }
 
 .lang-flag-ko:after {
-  background-position: -60px -28px;
+  background-position: -63px -30px;
 }
 
 .lang-flag-lv:after {
-  background-position: -80px -28px;
+  background-position: -84px -30px;
 }
 
 .lang-flag-lt:after {
-  background-position: -100px -28px;
+  background-position: -105px -30px;
 }
 
 .lang-flag-ms:after {
-  background-position: -120px -28px;
+  background-position: -126px -30px;
 }
 
 .lang-flag-nl:after {
-  background-position: -140px -28px;
+  background-position: -147px -30px;
 }
 
 .lang-flag-no:after {
-  background-position: -160px -28px;
+  background-position: -168px -30px;
 }
 
 .lang-flag-ur:after {
-  background-position: -180px -28px;
+  background-position: -189px -30px;
 }
 
 .lang-flag-fil:after {
-  background-position: 0px -42px;
+  background-position: 0 -45px;
 }
 
 .lang-flag-pl:after {
-  background-position: -20px -42px;
+  background-position: -21px -45px;
 }
 
 .lang-flag-ro:after {
-  background-position: -40px -42px;
+  background-position: -42px -45px;
 }
 
 .lang-flag-ru:after {
-  background-position: -60px -42px;
+  background-position: -63px -45px;
 }
 
 .lang-flag-ar:after {
-  background-position: -80px -42px;
+  background-position: -84px -45px;
 }
 
 .lang-flag-sk:after {
-  background-position: -100px -42px;
+  background-position: -105px -45px;
 }
 
 .lang-flag-sl:after {
-  background-position: -120px -42px;
+  background-position: -126px -45px;
 }
 
 .lang-flag-es:after {
-  background-position: -140px -42px;
+  background-position: -147px -45px;
 }
 
 .lang-flag-sv:after {
-  background-position: -160px -42px;
+  background-position: -168px -45px;
 }
 
 .lang-flag-tr:after {
-  background-position: -180px -42px;
+  background-position: -189px -45px;
 }
 
 .lang-flag-uk:after {
-  background-position: 0px -56px;
+  background-position: 0 -60px;
 }
 
 .lang-flag-en:after {
-  background-position: -20px -56px;
+  background-position: -21px -60px;
+}
+
+.lang-flag-xx:after {
+  background-position: -42px -60px;
+}
+
+.lang-flag-xx:after {
+  background-position: -63px -60px;
+}
+
+.lang-flag-pt:after {
+  background-position: -84px -60px;
+}
+
+.lang-flag-xx:after {
+  background-position: -105px;
+}
+
+.lang-flag-sr:after {
+  background-position: -126px;
+}
+
+.lang-flag-xx:after {
+  background-position: -147px;
+}
+
+.lang-flag-xx:after {
+  background-position: -168px;
+}
+
+.lang-options {
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+.lang-options .menu .menu-item {
+  margin-top: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+.option-btn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: #0066bb;
+}
+.option-btn:hover {
+  color: #0066bb;
+  color: rgba(0, 102, 187, 0.8);
+}
+.option-btn::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+.option-btn:focus {
+  outline: none;
+}
+.flags-disabled .option-btn .disable-text {
+  display: none;
+}
+.flags-enabled .option-btn .enable-text {
+  display: none;
 }
 
 @media screen and (max-width: 640px) {

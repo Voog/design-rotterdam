@@ -714,6 +714,7 @@
     var toggleLangMenu = function() {
         $('#lang-menu-toggle').click(function(event) {
             event.stopPropagation();
+            $(this).toggleClass('open');
             $('#toggleable-lang-menu').toggleClass('expanded');
         });
         $('body').on('click', function(event) {
@@ -721,6 +722,7 @@
             if ($t.closest('.toggleable-lang-menu').length === 0 && !$t.is('#toggleable-lang-menu')) {
                 $('#toggleable-lang-menu').removeClass('expanded');
             }
+            $('#lang-menu-toggle').removeClass('open');
         });
     };
 
