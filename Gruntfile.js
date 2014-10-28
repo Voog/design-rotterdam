@@ -19,15 +19,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Copys the standalone (not concatenated) javascript source files to the javascripts folder.
-    /*
-      If there are some javascript files that shouldn't be concatenated:
-
-
-
-
-        - Add 'copy' task next to 'modernizr' task on line '179'.
-    */
     copy: {
       javascripts: {
         files: [
