@@ -7,7 +7,6 @@
 
     $('.js-option-toggle-flags').on('click', function(event) {
       event.stopPropagation();
-      console.log('it happened');
 
       if ($(this).hasClass('js-flag-disable-btn')) {
         var flagsState = false;
