@@ -50,6 +50,20 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/edicy-tools-variables.tpl",
+      "layout_name": "edicy-tools-variables",
+      "title": "edicy-tools-variables"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/edicy-tools.tpl",
+      "layout_name": "edicy-tools",
+      "title": "edicy-tools"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/footer.tpl",
       "layout_name": "footer",
       "title": "footer"
@@ -210,18 +224,6 @@
       "file": "javascripts/modernizr.min.js",
       "kind": "javascripts",
       "filename": "modernizr.min.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/search.js",
-      "kind": "javascripts",
-      "filename": "search.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/search.min.js",
-      "kind": "javascripts",
-      "filename": "search.min.js"
     },
     {
       "content_type": "text/css",
