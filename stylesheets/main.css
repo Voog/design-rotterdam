@@ -455,7 +455,7 @@ body {
 .lang-menu-popover.expanded {
   position: absolute;
   top: 25px;
-  left: 14px;
+  left: 10px;
   z-index: 10;
   display: block;
   padding: 0;
@@ -791,11 +791,12 @@ body {
   }
 
   .lang-menu .menu {
-    position: fixed;
-    right: 40px;
+    position: relative;
+    right: 0;
     display: inline-block;
     float: right;
     width: auto;
+    height: auto;
     padding: 0 5px;
     background-color: #5E5E5E;
   }
