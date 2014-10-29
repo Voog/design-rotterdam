@@ -18,11 +18,17 @@
 .menu li a:hover {
   color: #333;
   color: rgba(0,0,0,.8);
+  @include filter(grayscale(50%));
+
+  &:before {
+    background-color: transparent;
+  }
 }
 
 .menu li.active a {
   color: #333;
   color: rgba(0,0,0,.8);
+  @include filter(grayscale(100%));
 }
 
 .menu li.active a:hover {
@@ -441,14 +447,12 @@ $flags:
     display: inline-block;
     float: right;
     width: auto;
-    height: 40px;
+    padding: 0 5px;
     background-color: #5E5E5E;
   }
 
   .lang-menu li {
     float: right;
-    width: 40px;
-    height: 40px;
   }
 
   .lang-menu li a {
@@ -457,6 +461,9 @@ $flags:
     text-indent: -9999px;
     font-size: 0;
     opacity: 0.8;
+    width: 21px;
+    height: 15px;
+    padding: 13px 5px 12px;
   }
 
   .lang-menu li a:hover,
@@ -465,14 +472,18 @@ $flags:
     opacity: 1;
   }
 
-  .lang-menu li a:after {
-    top: 14px;
-    left: 10px;
+  .lang-menu li a.lang-flag, {
+    &:before,
+    &:after {
+      top: 13px;
+      left: 5px;
+    }
   }
 
-  .lang-menu li.active a,
-  .lang-menu li.active a:hover {
+  .lang-menu li.active a.lang-flag,
+  .lang-menu li.active a.lang-flag:hover {
     background-color: #5E5E5E;
+    text-decoration: none;
   }
 
   .lang-menu li a:hover,
@@ -487,13 +498,15 @@ $flags:
     top: 0;
     left: 0;
     margin: 0;
-    padding: 0 10px;
+    padding: 14px 10px 12px;
   }
 
   .lang-menu li.add-lang-btn a {
+    width: auto;
+    height: auto;
     margin: 0;
+    padding: 0;
     text-indent: 0;
-    line-height: 50px;
   }
 
   .lang-menu li.add-lang-btn a:hover {
