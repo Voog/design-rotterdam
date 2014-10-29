@@ -89,7 +89,7 @@
   position: relative;
   display: inline-block;
   height: 25px;
-  margin-left: 15px;
+  margin-left: 10px;
   padding: 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -360,6 +360,10 @@ $flags:
       font-size: 13px;
     }
   }
+
+  @include query($mobile) {
+    display: none;
+  }
 }
 
 .option-btn {
@@ -439,6 +443,13 @@ $flags:
   .lang-menu {
     display: none;
     padding-left: 0;
+
+    &.flags-enabled {
+      li a {
+        text-indent: -9999px;
+        font-size: 0;
+      }
+    }
   }
 
   .lang-menu .menu {
@@ -458,17 +469,18 @@ $flags:
   .lang-menu li a {
     padding: 0;
     height: inherit;
-    text-indent: -9999px;
-    font-size: 0;
     opacity: 0.8;
     width: 21px;
     height: 15px;
     padding: 13px 5px 12px;
+    @include color($white);
   }
 
   .lang-menu li a:hover,
-  .lang-menu li.active a {
+  .lang-menu li.active a,
+  .lang-menu li.active a:hover {
     background-color: #838383;
+    @include color($white, .5);
     opacity: 1;
   }
 
