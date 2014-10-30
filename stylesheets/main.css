@@ -496,6 +496,10 @@ body {
   margin-top: 5px;
 }
 
+.lang-flag:after {
+  background-position: -189px -60px;
+}
+
 .lang-flag-sq:after {
   background-position: 0 0;
 }

@@ -239,6 +239,12 @@
   margin-top: 5px;
 }
 
+.lang-flag {
+  &:after {
+    background-position: -189px -60px;
+  }
+}
+
 // Language flag icons positioning in the spritemap.
 $flags:
 // Albanian (Albania)
