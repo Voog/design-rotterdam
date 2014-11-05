@@ -254,7 +254,7 @@ $flags:
 // Bengali (Bangladesh)
 (bn, -42px 0),
 // Brazilian Portuguese (Brazil)
-(xx, -63px 0),
+// (xx, -63px 0),
 // Bulgarian (Bulgaria)
 (bg, -84px 0),
 // Chinese (China)
@@ -336,19 +336,19 @@ $flags:
 // American English (United States of America)
 (en, -21px -60px),
 // French (Ivory Coast)
-(xx, -42px -60px),
+// (xx, -42px -60px),
 // British English (Great Britian)
-(xx, -63px -60px),
+(en-gb, -63px -60px),
 // Portuguese (Portuguese Republic)
 (pt, -84px -60px),
 // Canadian English (Canada)
-(xx, -105px, -60px),
+// (xx, -105px, -60px),
 // Serbian (Republic of Serbia)
 (sr, -126px, -60px),
 // Dutch, French, German (Kingdom of Belgium)
-(xx, -147px, -60px),
+// (xx, -147px, -60px),
 // Australian English (Commonwealth of Australia)
-(xx, -168px, -60px),
+// (xx, -168px, -60px),
 ;
 
 @each $flag, $pos in $flags {

@@ -134,12 +134,29 @@
   border-bottom: 1px solid #e6e6e6;
 }
 
-.content-formatted .edy-positionable-container-left {
-  margin: 0 25px 15px 0;
-}
+.content-formatted {
+  .edy-positionable-container-maxwidth {
+    .public & {
+      width: auto !important;
+      max-width: none !important;
+      margin-left: -70px !important;
+      margin-right: -70px !important;
+    }
+  }
 
-.content-formatted .edy-positionable-container-right {
-  margin: 0 0 15px 25px;
+  .edy-positionable-container-left,
+  .edy-positionable-container-right {
+    // TODO: Remove the !important.
+    margin-bottom: 0 !important;
+  }
+
+  .edy-positionable-container-left {
+    margin-right: 25px;
+  }
+
+  .edy-positionable-container-right {
+    margin-left: 25px;
+  }
 }
 
 @include query($mobile) {
