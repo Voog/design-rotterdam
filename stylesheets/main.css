@@ -1324,7 +1324,9 @@ body {
 .post-page .tags {
   display: block;
   position: relative;
-  margin: 30px 0;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-bottom: 30px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .post-page .tags .tag-icon {
@@ -1393,6 +1395,10 @@ body {
   }
 
   /* TAGS */
+  .post-page .tags {
+    margin-left: 0;
+  }
+
   .tags-container {
     margin-top: 35px;
   }
