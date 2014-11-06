@@ -407,6 +407,13 @@ $flags:
       display: none;
     }
   }
+
+  .disable-text,
+  .enable-text {
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
 }
 
 @include query($mobile) {
