@@ -1,12 +1,14 @@
-/* FOOTER */
+// FOOTER
 .footer {
   position: relative;
   display: inline-block;
   margin-bottom: 30px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
   color: #333;
   color: rgba(0,0,0,.8);
-  font-size: 12px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .footer {
@@ -17,14 +19,17 @@
   position: fixed;
   right: 0;
   left: 0;
+  width: 215px;
+  padding: 20px 20px 20px 25px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 20px 20px 20px 25px;
-  width: 215px;
-  -webkit-transition: bottom 0.5s ease-in-out;
-  transition: bottom 0.5s ease-in-out;
-  background: #FFF;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.001) 0px, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%);
+  background: #fff;
+  background: linear-gradient(to bottom, rgba(255,255,255,.001) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 100%);
+}
+
+.footer.footer-animated {
+  -webkit-transition: bottom .35s ease-in-out;
+  transition: bottom .35s ease-in-out;
 }
 
 .footer .gradient-overlay {
@@ -36,23 +41,18 @@
   bottom: 0;
   left: 0;
   background: transparent;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.001) 0px, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-  -webkit-transition: opacity 0.1s ease-in-out;
-  transition: opacity 0.1s ease-in-out;
+  background: linear-gradient(to bottom, rgba(255,255,255,.001) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .footer-fixed .gradient-overlay {
-  opacity: 1;
   display: block;
+  opacity: 1;
 }
 
 .footer-fixed.expanded .gradient-overlay {
   display: none;
-}
-
-.footer-animated {
-  -webkit-transition: bottom 0.2s ease-in-out;
-  transition: bottom 0.2s ease-in-out;
 }
 
 .footer .search {
@@ -61,8 +61,8 @@
 
 .voog-reference {
   margin: -10px auto 25px;
-  font-size: 12px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
 }
 
 .voog-reference a {
@@ -75,9 +75,9 @@
 
 @include query($mobile) {
   .footer {
+    width: auto;
     max-width: 100%;
     padding: 10px 50px 10px 0;
-    width: auto;
   }
 
   .footer.footer-fixed {

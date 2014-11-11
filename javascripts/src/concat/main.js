@@ -691,7 +691,6 @@
 
 /* General JS */
 ;(function($) {
-  'use strict';
 
     var editmode = $('html').hasClass('editmode');
 
@@ -778,7 +777,7 @@
         $(window).ready(function(){
             $('.post').each(function(n, el) {
                 var $post = $(el);
-                var height = $post.find('.post-header').css('height');
+                var height = $post.find('.post-header').height();
                 $post.find('.post-content').css('min-height', height);
             });
         });
@@ -869,7 +868,6 @@
             return heights;
         },
             startScroll,
-            toHandler,
             endScroll,
             scrolled,
             container = $('.container'),
@@ -881,7 +879,10 @@
             footerStaticArea = $(footer).height() + 90,
             footerStaticHeight = footerStaticArea + 40,
             footerExpandTimeout,
-            handler = function (postHeights) {
+            latestKnownScrollY = 0,
+            ticking = false;
+
+        var handler = function (postHeights) {
             if (!startScroll) {
                 startScroll = $(window).scrollTop();
             } else {
@@ -898,23 +899,27 @@
                     }
                 }
                 if (window.innerWidth > 640 && stickyFooter) {
-                    if ($('.post:first-of-type').offset().top - $(window).innerHeight() + 90 < $('body').scrollTop()) {
-                        // up and above footer
-                        if (scrolled < -5) {
-                            fixFooter(false);
-                        // down and above footer
-                        } else if (scrolled > 5) {
-                            resetFooter();
-                        }
-                        if (startScroll + window.innerHeight > $(document).height() - footerStaticArea) {
-                            resetFooter();
+                    if ($('.post').eq(0).offset().top - $(window).innerHeight() + 90 < $('body').scrollTop()) {
+                        if (startScroll + window.innerHeight <= $(document).height() - footerStaticArea - 90) {
+                            // above footer
+                            if (scrolled < -5) {
+                                fixFooter(false);
+                            // down and above footer
+                            } else if (scrolled > 5) {
+                                hideFooter();
+                            }
+                        } else {
+                            // down and below footer + 90px
+                            if (scrolled > 5) {
+                                resetFooter();
+                            }
                         }
                     } else {
                         resetFooter();
                     }
                 }
                 // Scrolling down and offset is larger than
-                if (stickyHeader && parseInt($(header).find('.header-inner').css('height')) < 60) {
+                if (stickyHeader && $(header).find('.header-inner').height() < 60) {
                     if (scrolled > 5 && startScroll > headerStaticArea) {
                         $(header).addClass('header-fixed').css({'top' : -headerStaticArea});
                         $(container).css({'padding-top' : headerStaticArea});
@@ -957,30 +962,27 @@
                 });
             }
         };
-        var latestKnownScrollY = 0,
-            ticking = false;
+
+        var hideFooter = function() {
+            console.log("hideFooter");
+            $(footer).addClass('footer-fixed footer-animated footer-hidden');
+            $(footer).css('bottom', -$(footer).outerHeight());
+        };
 
         var resetFooter = function() {
-            if ($(footer).hasClass('footer-fixed')) {
-                $(footer).removeClass('footer-fixed footer-animated').css({'bottom': -footerStaticArea});
-                $('body').removeClass('voog-search-visible');
-                $(footer).css({
-                  'bottom': '',
-                  'left': ''
-                });
-                $(container).css({'margin-bottom' : ''});
-            }
+            $(footer).removeClass('footer-fixed footer-animated footer-hidden');
+            $('body').removeClass('voog-search-visible');
+            $(footer).css({'bottom': '', 'left': '' });
+            $(container).css({'margin-bottom' : ''});
         };
 
         var fixFooter = function(expanded) {
             expanded = expanded || false;
-            var adminToolBarHeight = editmode ? 40 : 0;
             $(footer).addClass('footer-fixed footer-animated');
-            $(footer).css('bottom', 0 + adminToolBarHeight - (parseInt($(footer).css('height')) - 60) + (expanded ? 60 : 0));
-            if (expanded) {
-                $(footer).css('bottom', 0);
-            }
-            $(footer).css({'left' : $('.container').offset().left});
+            $(footer).css({
+                'left' : $('.container').offset().left,
+                'bottom': (expanded ? 0 : (-$(footer).height() + 60))
+            });
             $(container).css({'margin-bottom' : footerStaticArea});
         };
 
@@ -999,7 +1001,7 @@
                     }, 1500);
                 }
             }
-        }
+        };
 
         var onScroll = function() {
             latestKnownScrollY = window.scrollY;
@@ -1007,21 +1009,13 @@
         };
 
         var requestTick = function() {
-            if (!ticking) {
-                requestAnimationFrame(update);
-            }
+            if (!ticking) { requestAnimationFrame(update); }
             ticking = true;
         };
 
         var update = function() {
             ticking = false;
             handler(getPostHeights());
-
-            // read offset of DOM elements
-            // and compare to the currentScrollY value
-            // then apply some CSS classes
-            // to the visible items
-
         };
 
         $(window).on('load resize', function() {

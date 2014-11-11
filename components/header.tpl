@@ -1,3 +1,4 @@
+{% include "topbar" %}
 <header class="header">
   <div class="header-inner">
     <section class="header-top">
@@ -24,6 +25,5 @@
       {% include "nav-menu" %}
     </nav>
 
-    {% include 'topbar' %}
   </div>
 </header>

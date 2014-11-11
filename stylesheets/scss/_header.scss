@@ -4,6 +4,8 @@
   padding-top: 50px;
   padding-bottom: 50px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .header.header-fixed {
