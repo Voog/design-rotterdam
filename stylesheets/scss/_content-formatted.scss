@@ -140,8 +140,7 @@
 
   .edy-positionable-container-left,
   .edy-positionable-container-right {
-    // TODO: Remove the !important.
-    margin-bottom: 0 !important;
+    width: 45%;
   }
 
   .edy-positionable-container-left {
@@ -150,6 +149,15 @@
 
   .edy-positionable-container-right {
     margin-left: 25px;
+  }
+
+  .edy-image-container-with-title {
+    &:after {
+      display: block;
+      padding: 2px;
+      font-size: .75em;
+      content: attr(data-title);
+    }
   }
 }
 

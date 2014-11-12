@@ -209,13 +209,19 @@ body {
 }
 .content-formatted .edy-positionable-container-left,
 .content-formatted .edy-positionable-container-right {
-  margin-bottom: 0 !important;
+  width: 45%;
 }
 .content-formatted .edy-positionable-container-left {
   margin-right: 25px;
 }
 .content-formatted .edy-positionable-container-right {
   margin-left: 25px;
+}
+.content-formatted .edy-image-container-with-title:after {
+  display: block;
+  padding: 2px;
+  font-size: .75em;
+  content: attr(data-title);
 }
 
 @media screen and (max-width: 640px) {
