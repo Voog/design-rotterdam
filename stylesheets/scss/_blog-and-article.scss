@@ -215,7 +215,7 @@
 }
 
 @include query($tablet) {
-  /* BLOG & BLOG ARTICLE */
+  // BLOG & BLOG ARTICLE
   .blog-page .edy-img-container {
     margin-right: 0;
     margin-left: -20px;
@@ -230,6 +230,7 @@
 }
 
 @include query($mobile) {
+  // BLOG & BLOG ARTICLE
   .blog-page .post {
     margin-bottom: 30px;
   }

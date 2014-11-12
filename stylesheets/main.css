@@ -1290,7 +1290,6 @@ body {
 }
 
 @media screen and (max-width: 999px) {
-  /* BLOG & BLOG ARTICLE */
   .blog-page .edy-img-container {
     margin-right: 0;
     margin-left: -20px;
