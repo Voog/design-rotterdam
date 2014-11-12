@@ -1,20 +1,17 @@
-// CUSTOM MIXINS
-// Comment out the "_mixins.scss" partial in the "main.scss" file if not used.
-
-// Hyphenate
+// MIXINS
 @mixin hyphenate($boolean) {
   @if $boolean == true {
-    word-break: break-word;
-    -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
+    -webkit-hyphens: auto;
     hyphens: auto;
+    word-break: break-word;
   } @else {
-    word-break: normal;
-    -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
+    -webkit-hyphens: none;
     hyphens: none;
+    word-break: normal;
   }
 }
 
@@ -81,15 +78,15 @@
 @mixin inputiosreset {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-          border-radius: 0;
+  border-radius: 0;
 }
 
 // OPACITY
-@mixin opacity($value){
-  $IEValue: $value*100;
+@mixin opacity($value) {
+  $ie-value: $value*100;
   opacity: $value;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
-  filter: alpha(opacity=$IEValue);
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity="+$ie-value+")';
+  filter: alpha(opacity=$ie-value);
 }
 
 // MEDIA QUERY

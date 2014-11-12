@@ -1,9 +1,9 @@
-/* SIDEBAR */
+// SIDEBAR
 .sidebar {
   display: inline-block;
   width: 100%;
-  vertical-align: top;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: top;
 }
 
 .sidebar-left {
@@ -16,11 +16,11 @@
 
 .sidebar-left .content-formatted h1 {
   margin: 0 0 3px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   color: #333;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @include query($tablet) {
@@ -28,28 +28,22 @@
     position: relative;
     z-index: 1;
     float: right;
+    max-width: 95px;
+    padding: 15px 5px 20px 15px;
     margin-bottom: 20px;
     margin-left: 20px;
-    padding: 15px 5px 20px 15px;
-    max-width: 95px;
-    background: #e0e0e0;
+    @include hyphenate(true);
     text-align: right;
-    word-wrap: break-word;
-    word-break: break-word;
-
-    -webkit-hyphens: auto;
-     -moz-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+    background: #e0e0e0;
   }
 
   .sidebar-right {
     display: block;
     float: right;
+    max-width: 85%;
+    padding-left: 15%;
     margin-top: 0;
     margin-bottom: 25px;
-    padding-left: 15%;
-    max-width: 85%;
     text-align: right;
   }
 

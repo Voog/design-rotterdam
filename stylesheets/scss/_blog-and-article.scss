@@ -1,4 +1,4 @@
-/* BLOG & BLOG ARTICLE */
+// BLOG & BLOG ARTICLE
 .blog-page .post {
   position: relative;
   margin-bottom: 55px;
@@ -17,17 +17,17 @@
 
 .blog-page .post-header {
   position: absolute;
-  margin-top: 0;
   width: 220px;
   padding-right: 20px;
+  margin-top: 0;
 }
 
 .blog-page .post-title {
-  margin: 0 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
   color: #333;
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 18px;
 }
 
 .blog-page .post-title a {
@@ -35,8 +35,8 @@
 }
 
 .blog-page .post-date {
-  color: #888;
   font-size: 12px;
+  color: #888;
 }
 
 .blog-page .post-content {
@@ -53,7 +53,7 @@
 }
 
 .blog-page .post-header.top {
-  top: 0px;
+  top: 0;
 }
 
 .blog-page .post.fixed-header .post-header {
@@ -86,15 +86,15 @@
 }
 
 .post-page .post-date {
-  color: #c33;
-  font-weight: 400;
   font-size: 18px;
+  font-weight: 400;
+  color: #c33;
 }
 
 .post-page .post-content {
   display: inline-block;
-  max-width: 580px;
   width: 100%;
+  max-width: 580px;
   vertical-align: top;
 }
 
@@ -102,12 +102,11 @@
 .blog-page {
   .post-content .content-formatted,
   .post-content .edy-texteditor-view {
-    & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
-      &:last-child {
-        margin-bottom: 0;
-      }
+    :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child {
+      margin-bottom: 0;
     }
-    & > * {
+
+    * {
       margin-bottom: 20px;
     }
   }
@@ -117,12 +116,14 @@
 .blog-page .post-content .content-formatted {
   blockquote {
     margin: 0 70px 20px 120px;
-    text-align: right;
     font-weight: 600;
+    text-align: right;
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   table {
     width: 100%;
   }
@@ -148,32 +149,34 @@
   text-transform: uppercase;
 }
 
-/* BLOG TAGS */
+// BLOG TAGS
 .tags-container {
-  text-align: right;
-  margin-bottom: 35px;
   margin-top: -35px;
-
-  .front-page & {
-  }
+  margin-bottom: 35px;
+  text-align: right;
 }
+
 .tags {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  .tags-list, .tag-link {
-    color: #888;
+
+  .tags-list,
+  .tag-link {
     color: rgba(0,0,0,.5);
   }
 }
+
 .blog-page .tags {
   display: inline-block;
-  color: rgba(0,0,0,.9);
-  background-color: rgba(0,0,0,.05);
-  text-transform: uppercase;
   padding: 12px;
   line-height: 1.8;
+  color: rgba(0,0,0,.9);
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,.05);
+
   .tag-link {
     margin-left: 10px;
+
     &.active {
       padding-bottom: 2px;
       color: rgba(0,0,0,.9);
@@ -181,34 +184,52 @@
     }
   }
 }
+
 .post-page .tags {
-  display: block;
   position: relative;
+  display: block;
   margin-top: 30px;
-  margin-left: 70px;
   margin-bottom: 30px;
+  margin-left: 70px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   .tag-icon {
-    display: block;
-    opacity: 0.5;
-    height: 20px;
-    width: 20px;
-    background: url("../assets/ico-tags.svg") no-repeat center center;
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../assets/ico-tags.svg') no-repeat center center;
+    opacity: .5;
+
     .no-svg & {
-      background-image: url("../images/ico-tags.png") no-repeat center center;
+      background-image: url('../images/ico-tags.png') no-repeat center center;
     }
   }
+
   .tags-list {
-    line-height: 20px;
     margin-left: 30px;
+    line-height: 20px;
+  }
+}
+
+@include query($tablet) {
+  /* BLOG & BLOG ARTICLE */
+  .blog-page .edy-img-container {
+    margin-right: 0;
+    margin-left: -20px;
+  }
+
+  .post-page .post-content {
+    display: block;
+    margin-left: 0;
+    max-width: 100%;
+    width: auto;
   }
 }
 
 @include query($mobile) {
-  /* BLOG & BLOG ARTICLE */
   .blog-page .post {
     margin-bottom: 30px;
   }
@@ -216,9 +237,9 @@
   .blog-page .post-header,
   .blog-page .post-content {
     display: block;
-    margin-left: 0;
-    max-width: 100%;
     width: auto;
+    max-width: 100%;
+    margin-left: 0;
   }
 
   .blog-page .post-header {
@@ -248,14 +269,16 @@
       margin-top: 30px;
       margin-bottom: 30px;
     }
+
     .post-content .content-formatted,
     .post-content .edy-texteditor-view {
-      & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+      :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
         margin: 0 0 20px;
       }
     }
   }
-  /* TAGS */
+  
+  // BLOG TAGS
   .post-page {
     .tags {
       margin-left: 0;

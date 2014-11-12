@@ -1,4 +1,4 @@
-/* CONTENT */
+// CONTENT
 .content {
   margin-bottom: 30px;
 }
@@ -19,9 +19,9 @@
 
 .content-header h1 {
   margin: 0;
-  letter-spacing: -3px;
   font-size: 50px;
   line-height: 1;
+  letter-spacing: -3px;
 }
 
 @include query($tablet) {
@@ -32,8 +32,9 @@
   .content-body {
     max-width: 100%;
   }
+
   .container .content-body {
-    margin-bottom: 50px;
     max-width: 100%;
+    margin-bottom: 50px;
   }
 }

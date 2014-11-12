@@ -1,22 +1,20 @@
-/* MENUS */
+// MENUS
 .menu {
   position: relative;
   z-index: 2;
-  margin: 0;
   padding: 0;
-  list-style: none;
+  margin: 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  list-style: none;
 }
 
 .menu li a {
-  color: #888;
+  font-size: 12px;
   color: rgba(0,0,0,.5);
   text-decoration: none;
-  font-size: 12px;
 }
 
 .menu li a:hover {
-  color: #333;
   color: rgba(0,0,0,.8);
   @include filter(grayscale(50%));
 
@@ -26,13 +24,11 @@
 }
 
 .menu li.active a {
-  color: #333;
   color: rgba(0,0,0,.8);
   @include filter(grayscale(100%));
 }
 
 .menu li.active a:hover {
-  color: #222;
   color: rgba(0,0,0,.85);
 }
 
@@ -55,7 +51,7 @@
 
 .sub-menu li {
   padding-bottom: 10px;
-  line-height: 0.85;
+  line-height: .85;
 }
 
 .sub-menu li:last-child {
@@ -63,16 +59,10 @@
 }
 
 .sub-menu li a {
-  color: #888;
-  word-wrap: break-word;
-  word-break: break-word;
-
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  font-weight: 300;
+  @include hyphenate(true);
   font-size: 16px;
+  font-weight: 300;
+  color: #888;
 }
 
 .sub-menu li a.untranslated {
@@ -89,15 +79,15 @@
   position: relative;
   display: inline-block;
   height: 25px;
-  margin-left: 10px;
   padding: 0;
+  margin-left: 10px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  outline: none;
-  border: none;
-  background: none;
   vertical-align: top;
   cursor: pointer;
+  background: none;
+  border: 0;
+  outline: none;
 
   .flags-disabled & {
     .ico-popover-toggle {
@@ -149,8 +139,8 @@
   }
 
   &:after {
-    opacity: 0.95;
     background-repeat: no-repeat;
+    opacity: .95;
 
     .no-svg & {
       background-image: url('../images/ico-flags.png');
@@ -172,12 +162,12 @@
   left: 10px;
   z-index: 10;
   display: block;
-  padding: 0;
   min-width: 138px;
-  border: 1px solid #e1e1e1;
-  background: #fff;
+  padding: 0;
   font-size: 12px;
+  background: #fff;
   -webkit-border: 1px solid #e1e1e1;
+  border: 1px solid #e1e1e1;
 
   .flags-disabled & {
     min-width: 121px;
@@ -188,8 +178,8 @@
   position: relative;
   display: table-cell;
   height: 13px;
-  vertical-align: top;
   line-height: 1.1;
+  vertical-align: top;
 
   &.flags-disabled {
     .lang-flag {
@@ -201,21 +191,6 @@
       }
     }
   }
-}
-
-.lang-menu .menu {
-}
-
-.lang-menu .untranslated {
-}
-
-.lang-menu .untranslated:hover {
-}
-
-.lang-menu li {
-}
-
-.lang-menu li:last-child {
 }
 
 .lang-menu li.active a,
@@ -358,12 +333,12 @@ $flags:
 }
 
 .lang-options {
-  @include bg($black, 0.09);
+  @include bg($black, .09);
 
   .menu {
     .menu-item {
-      margin-top: 8px;
       padding: 7px 12px;
+      margin-top: 8px;
       font-size: 13px;
     }
   }
@@ -374,22 +349,22 @@ $flags:
 }
 
 .option-btn {
-  margin: 0;
   padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
+  margin: 0;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
   @include color($blue-1);
 
   &:hover {
-    @include color($blue-1, 0.8);
+    @include color($blue-1, .8);
   }
 
   &::-moz-focus-inner {
     padding: 0;
-    border: none;
+    border: 0;
   }
 
   &:focus {
@@ -417,12 +392,14 @@ $flags:
 }
 
 @include query($mobile) {
-  /* mobile-menu */
-  .mobile-menu-toggler, #mobile-menu, .mobile-menu-toggler, #mobile-search {
+  // MOBILE MENU
+  .mobile-menu-toggler,
+  #mobile-menu,
+  #mobile-search {
     display: none;
   }
 
-  /* MENUS */
+  // MENUS
   .main-menu {
     text-align: right;
   }
@@ -438,10 +415,10 @@ $flags:
   .main-menu li a {
     display: inline-block;
     padding: 8px 10px 7px;
-    background: #838383;
+    font-size: 18px;
     color: #d7d7d7;
     vertical-align: top;
-    font-size: 18px;
+    background: #838383;
   }
 
   .main-menu li a:hover,
@@ -450,8 +427,8 @@ $flags:
   }
 
   .main-menu li.active a {
-    color: #fff;
     font-weight: 400;
+    color: #fff;
   }
 
   .lang-menu {
@@ -460,8 +437,8 @@ $flags:
 
     &.flags-enabled {
       li a {
-        text-indent: -9999px;
         font-size: 0;
+        text-indent: -9999px;
       }
     }
   }
@@ -474,7 +451,7 @@ $flags:
     width: auto;
     height: auto;
     padding: 0 5px;
-    background-color: #5E5E5E;
+    background-color: #5e5e5e;
   }
 
   .lang-menu li {
@@ -482,12 +459,10 @@ $flags:
   }
 
   .lang-menu li a {
-    padding: 0;
-    height: inherit;
-    opacity: 0.8;
     width: 21px;
     height: 15px;
     padding: 13px 5px 12px;
+    opacity: .8;
     @include color($white);
   }
 
@@ -509,8 +484,8 @@ $flags:
 
   .lang-menu li.active a.lang-flag,
   .lang-menu li.active a.lang-flag:hover {
-    background-color: #5E5E5E;
     text-decoration: none;
+    background-color: #5e5e5e;
   }
 
   .lang-menu li a:hover,
@@ -518,21 +493,21 @@ $flags:
     top: 0;
     left: 0;
     margin: 0;
-    background: #5E5E5E;
+    background: #5e5e5e;
   }
 
   .lang-menu li.add-lang-btn {
     top: 0;
     left: 0;
-    margin: 0;
     padding: 14px 10px 12px;
+    margin: 0;
   }
 
   .lang-menu li.add-lang-btn a {
     width: auto;
     height: auto;
-    margin: 0;
     padding: 0;
+    margin: 0;
     text-indent: 0;
   }
 

@@ -1,8 +1,97 @@
-/* TOPBAR */
-// Styling rules for the site's topbar. These rules affect the entire site.
+// TOPBAR
+.topbar,
+.topbar .main-menu {
+  display: none;
+}
 
-// NB! Topbar is not the part of the current template by default, but it can be easily included:
-// 1. Add "topbar" component to the site's template components folder.
-// 2. Include the component into the appropriate place (or places) in the layout.
-// 3. Uncomment the "_topbar.scss" partial in the "main.scss" file.
-// 4. Add the styling rules for the generated component.
+@include query($mobile) {
+  .topbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .topbar.fixed .toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .topbar .toggle-btn {
+    position: relative;
+    z-index: 3;
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background: #333;
+    border: 0;
+    outline: none;
+  }
+
+  .topbar .toggle-btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  .topbar .toggle-btn.open,
+  .topbar .toggle-btn.open:hover {
+    background: #333;
+    opacity: 1;
+  }
+
+  .topbar .toggle-stripe {
+    width: 20px;
+    height: 3px;
+    margin: 4px auto;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+  .toggle-btn .close-icon {
+    position: relative;
+    top: 1px;
+    display: none;
+  }
+
+  .toggle-btn.open .toggle-stripe {
+    display: none;
+  }
+
+  .toggle-btn.open .close-icon {
+    display: block;
+  }
+
+  .toggle-btn:hover {
+    opacity: .4;
+  }
+
+  .topbar .expanded {
+    position: absolute;
+    right: 40px;
+    display: block;
+  }
+
+  .topbar .main-menu {
+    top: 40px;
+    right: 0;
+  }
+
+  .topbar.fixed .lang-menu {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    height: 40px;
+  }
+
+  .topbar.fixed .main-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+}

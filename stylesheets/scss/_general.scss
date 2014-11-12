@@ -1,31 +1,31 @@
-/* GENERAL */
+// GENERAL
 .scrollpos {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 100;
-  background: #ffffff;
+  background: #fff;
 }
 
 .cfx:after {
-  content: " ";
-  visibility: hidden;
   display: block;
   height: 0;
   clear: both;
+  content: ' ';
+  visibility: hidden;
 }
 
 body {
-  margin: 0 auto;
   padding: 0;
-  color: #222;
+  margin: 0 auto;
   font: 300 20px/1.4 "EB Garamond", "Georgia", serif;
+  color: #222;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 0 25px;
   max-width: 940px;
+  padding: 0 25px;
+  margin: 0 auto;
 }
 
 .container a {
@@ -33,47 +33,44 @@ body {
 }
 
 .container a img {
-  border: none;
+  border: 0;
 }
 
 .container .horizontal-line {
-  margin-bottom: 12px;
-  max-width: 100%;
   width: 220px;
   height: 2px;
-  background: #555;
+  max-width: 100%;
+  margin-bottom: 12px;
   background: rgba(0,0,0,.65);
 }
 
-/* FRONT PAGE */
+// FRONT PAGE
 .front-page .content-body {
-  margin-bottom: 70px;
-  max-width: 90%;
   width: 100%;
-  color: rgb(125,125,125);
-  color: rgba(0,0,0,.5);
-  font-size: 24px;
+  max-width: 90%;
+  margin-bottom: 70px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
   line-height: 1.5;
+  color: rgba(0,0,0,.5);
 }
 
 .front-page .content-body:empty {
   display: none;
 }
 
-/* COMMON PAGE */
+// COMMON PAGE
 .common-page .edy-img-container {
   margin-left: -80px;
 }
 
 .common-page .content-header {
-  font-size: 46px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 46px;
   line-height: 1;
 }
 
 @include query($tablet) {
-  /* COMMON PAGE */
   .common-page .content-body {
     display: block;
     max-width: 100%;
@@ -87,27 +84,15 @@ body {
   .common-page .edy-img-container {
     margin-left: 0;
   }
-
-  /* BLOG & BLOG ARTICLE */
-  .blog-page .edy-img-container {
-    margin-right: 0;
-    margin-left: -20px;
-  }
-
-  .post-page .post-content {
-    display: block;
-    margin-left: 0;
-    max-width: 100%;
-    width: auto;
-  }
 }
 
 @include query($mobile) {
   .container {
-    margin: 0 20px;
     padding: 0;
+    margin: 0 20px;
   }
-  /* COMMON PAGE */
+
+  // COMMON PAGE
   .common-page .content-body {
     width: 100%;
   }

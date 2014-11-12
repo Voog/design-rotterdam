@@ -1,6 +1,8 @@
+// FORMATTED CONTENT
 .content-formatted {
   @include hyphenate(true);
 }
+
 .content-formatted h1,
 .content-formatted h2,
 .content-formatted h3,
@@ -8,8 +10,8 @@
 .content-formatted h5,
 .content-formatted h6 {
   margin: 0 0 17px;
-  font-weight: 300;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 
 .content-formatted h2,
@@ -46,23 +48,22 @@
 }
 
 .content-formatted a {
-  color: #888;
   color: rgba(0,0,0,.5);
 }
 
 .content-formatted a:hover {
-  color: #333;
   color: rgba(0,0,0,.8);
 }
 
 .content-formatted img {
-  max-width: 100%;
   height: auto;
-  border: none;
+  max-width: 100%;
+  border: 0;
 }
 
 .content-formatted {
-  b, strong {
+  b,
+  strong {
     font-weight: 600;
   }
 
@@ -79,18 +80,18 @@
   pre,
   code {
     font-size: 14px;
-    @include bg($grey-3);
+    @include bg(#fafafa);
   }
 
   pre {
-    overflow: auto;
     padding: 10px;
+    overflow: auto;
 
     code {
       display: inline;
       padding: 0;
-      white-space: pre;
       line-height: inherit;
+      white-space: pre;
       background-color: transparent;
       @include word-wrap(normal);
     }
@@ -113,7 +114,7 @@
   line-height: 1;
 }
 
-/* TABLES */
+// TABLES
 .content-formatted table {
   border-collapse: collapse;
 }
@@ -139,8 +140,8 @@
     .public & {
       width: auto !important;
       max-width: none !important;
-      margin-left: -70px !important;
       margin-right: -70px !important;
+      margin-left: -70px !important;
     }
   }
 
@@ -163,7 +164,7 @@
   .content-formatted .edy-img-container {
     margin: 0 -25px;
   }
-  /* FORMS */
+
   .content .form_field_textfield,
   .content .form_field_textarea,
   .content .form_field_file {

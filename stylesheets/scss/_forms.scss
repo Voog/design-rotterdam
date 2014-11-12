@@ -1,28 +1,30 @@
-/* FORMS */
+// FORMS
 .content-formatted form,
 .content-formatted .form {
   margin-top: 30px;
   margin-bottom: 35px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #919191;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container .placeholder {
   height: 1 !important;
 }
 
-.form_field_error, .form_error {
-  color: #c33;
+.form_field_error,
+.form_error {
   font-weight: 700;
+  color: #c33;
 }
 
 .form_notice {
-  color: #3c3;
   font-weight: 700;
+  color: #3c3;
 }
 
-.form_error, .form_notice {
+.form_error,
+.form_notice {
   margin-bottom: 25px;
   font-size: 1.2em;
 }
@@ -49,18 +51,18 @@
 .form_field_textfield,
 .form_field_textarea,
 .form_field_file {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   margin: 0;
+  border: 0;
   outline: none;
-  border: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .form_field_checkbox,
 .form_field_radio {
-  vertical-align: 2px;
   margin: 3px 5px 3px 2px;
+  vertical-align: 2px;
 }
 
 .form_field_checkbox {
@@ -81,11 +83,10 @@
 }
 
 .form_field_textarea {
-  overflow: auto;
-  min-height: 86px;
-  max-width: 100%;
   width: 30%;
-  ;
+  max-width: 100%;
+  min-height: 86px;
+  overflow: auto;
 }
 
 .form_field_size_medium {
@@ -97,10 +98,10 @@
 }
 
 .form_submit input {
-  margin: 0;
   padding: 5px 12px;
-  border: none;
-  background: #dadada;
+  margin: 0;
   color: #888;
   cursor: pointer;
+  background: #dadada;
+  border: 0;
 }

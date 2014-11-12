@@ -1,18 +1,12 @@
-/* COMMENTS */
+// BLOG COMMENTS
 .comments {
+  @include hyphenate(true);
   display: inline-block;
-  margin-left: 42px;
-  max-width: 312px;
   width: 100%;
-  vertical-align: top;
-  word-wrap: break-word;
-  word-break: break-word;
-
-  -webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
+  max-width: 312px;
+  margin-left: 42px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: top;
 }
 
 .comment-header {
@@ -25,12 +19,9 @@
 
 .comments-title {
   margin: 0 0 7px;
-  text-transform: uppercase;
-  font-weight: 400;
   font-size: 18px;
-}
-
-.comment-form {
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .comment-form form {
@@ -43,16 +34,15 @@
 
 .comment-form .form_field_textfield,
 .comment-form .form_field_textarea {
-  padding: 0;
   width: 100%;
-  color: #333;
-  color: rgba(0,0,0,.8);
+  padding: 0;
   line-height: 1.6;
+  color: rgba(0,0,0,.8);
 }
 
 .comment-form .form_field_textarea {
-  padding: 6px 0 6px 0px;
   min-height: 30px;
+  padding: 6px 0;
   line-height: 1.1;
 }
 
@@ -71,23 +61,15 @@
 }
 
 .comment-body {
-  color: #888;
+  @include hyphenate(true);
   color: rgba(0,0,0,.5);
-  word-wrap: break-word;
-  word-break: break-word;
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
 }
 
 @include query($tablet) {
-  /* COMMENTS */
   .comments {
     display: block;
-    max-width: 580px;
     width: auto;
+    max-width: 580px;
     margin-left: 70px;
   }
 
@@ -97,7 +79,6 @@
 }
 
 @include query($mobile) {
-  /* COMMENTS */
   .comments {
     margin-bottom: 35px;
     margin-left: 0;
