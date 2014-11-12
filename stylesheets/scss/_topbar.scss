@@ -12,86 +12,90 @@
     display: block;
     width: 100%;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
 
-  .topbar.fixed .toggle-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
+    &.fixed .toggle-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
 
-  .topbar .toggle-btn {
-    position: relative;
-    z-index: 3;
-    float: right;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    background: #333;
-    border: 0;
-    outline: none;
-  }
+    .toggle-btn {
+      position: relative;
+      z-index: 3;
+      float: right;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      background: #333;
+      border: 0;
+      outline: none;
 
-  .topbar .toggle-btn::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
+      &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+      }
 
-  .topbar .toggle-btn.open,
-  .topbar .toggle-btn.open:hover {
-    background: #333;
-    opacity: 1;
-  }
+      &.open,
+      &.open:hover {
+        background: #333;
+        opacity: 1;
+      }
 
-  .topbar .toggle-stripe {
-    width: 20px;
-    height: 3px;
-    margin: 4px auto;
-    background: #fff;
-    border-radius: 5px;
-  }
+      .close-icon {
+        position: relative;
+        top: 1px;
+        display: none;
+      }
 
-  .toggle-btn .close-icon {
-    position: relative;
-    top: 1px;
-    display: none;
-  }
+      &.open {
+        .toggle-stripe {
+          display: none;
+        }
 
-  .toggle-btn.open .toggle-stripe {
-    display: none;
-  }
+        .close-icon {
+          display: block;
+        }
+      }
 
-  .toggle-btn.open .close-icon {
-    display: block;
-  }
+      &:hover {
+        opacity: .4;
+      }
+    }
 
-  .toggle-btn:hover {
-    opacity: .4;
-  }
+    .toggle-stripe {
+      width: 20px;
+      height: 3px;
+      margin: 4px auto;
+      background: #fff;
+      border-radius: 5px;
+    }
 
-  .topbar .expanded {
-    position: absolute;
-    right: 40px;
-    display: block;
-  }
+    .expanded {
+      position: absolute;
+      right: 40px;
+      display: block;
+    }
 
-  .topbar .main-menu {
-    top: 40px;
-    right: 0;
-  }
+    .main-menu {
+      top: 40px;
+      right: 0;
+    }
 
-  .topbar.fixed .lang-menu {
-    position: absolute;
-    top: 0;
-    right: 40px;
-    height: 40px;
-  }
+    &.fixed {
+      .lang-menu {
+        position: absolute;
+        top: 0;
+        right: 40px;
+        height: 40px;
+      }
 
-  .topbar.fixed .main-menu {
-    position: absolute;
-    top: 40px;
-    right: 0;
+      .main-menu {
+        position: absolute;
+        top: 40px;
+        right: 0;
+      }
+    }
   }
 }

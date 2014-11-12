@@ -6,63 +6,63 @@
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-}
 
-.header.header-fixed {
-  position: fixed;
-  top: -200px;
-  right: 0;
-  left: 0;
-  padding: 15px 25px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: rgba(255,255,255,.95);
-  -webkit-box-shadow: 0 0 10px 0 #888;
-  box-shadow: 0 0 10px 0 #888;
+  &.header-fixed {
+    position: fixed;
+    top: -200px;
+    right: 0;
+    left: 0;
+    padding: 15px 25px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: rgba(255,255,255,.95);
+    -webkit-box-shadow: 0 0 10px 0 #888;
+    box-shadow: 0 0 10px 0 #888;
 
-  .voog-search-visible & {
-    display: none;
+    .voog-search-visible & {
+      display: none;
+    }
   }
-}
 
-.header-animated {
-  -webkit-transition: top .3s ease-in-out;
-  transition: top .3s ease-in-out;
-}
+  &.header-animated {
+    -webkit-transition: top .3s ease-in-out;
+    transition: top .3s ease-in-out;
+  }
 
-.header-inner {
-  max-width: 940px;
-  padding: 0;
-  margin: 0 auto;
-}
+  .header-inner {
+    max-width: 940px;
+    padding: 0;
+    margin: 0 auto;
 
-.header-top {
-  display: table;
-}
+    .header-title {
+      display: table-cell;
+      max-width: 810px;
+      margin: 0;
+      margin-right: 13px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      vertical-align: top;
 
-.header-title {
-  display: table-cell;
-  max-width: 810px;
-  margin: 0;
-  margin-right: 13px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
-  vertical-align: top;
-}
+      .editmode & {
+        min-width: 100px;
+      }
 
-.editmode .header-title {
-  min-width: 100px;
-}
+      a {
+        color: rgba(0,0,0,.8);
+        text-decoration: none;
 
-.header-title a {
-  color: rgba(0,0,0,.8);
-  text-decoration: none;
-}
+        &:hover {
+          color: rgba(0,0,0,.75);
+        }
+      }
+    }
+  }
 
-.header-title a:hover {
-  color: rgba(0,0,0,.75);
+  .header-top {
+    display: table;
+  }
 }
 
 @include query($mobile) {
@@ -70,24 +70,24 @@
   .header {
     padding: 10px 50px 10px 0;
     margin-bottom: 30px;
-  }
 
-  .header.header-fixed {
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
+    &.header-fixed {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
 
-  .header-title {
-    margin-top: 30px;
-    font-size: 36px;
-  }
+    .header-title {
+      margin-top: 30px;
+      font-size: 36px;
+    }
 
-  .header .main-menu {
-    display: none;
-  }
+    .main-menu {
+      display: none;
+    }
 
-  .header-top,
-  .header-title {
-    display: block;
+    .header-top,
+    .header-title {
+      display: block;
+    }
   }
 }

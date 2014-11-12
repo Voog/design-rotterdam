@@ -1,67 +1,65 @@
 // FORMATTED CONTENT
 .content-formatted {
   @include hyphenate(true);
-}
 
-.content-formatted h1,
-.content-formatted h2,
-.content-formatted h3,
-.content-formatted h4,
-.content-formatted h5,
-.content-formatted h6 {
-  margin: 0 0 17px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 17px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
 
-.content-formatted h2,
-.content-formatted h3,
-.content-formatted h4,
-.content-formatted h5,
-.content-formatted h6 {
-  color: #c33;
-  text-transform: uppercase;
-}
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #c33;
+    text-transform: uppercase;
+  }
 
-.content-formatted h1 {
-  font-size: 36px;
-  line-height: 1;
-}
+  h1 {
+    font-size: 36px;
+    line-height: 1;
+  }
 
-.content-formatted h2 {
-  font-size: 24px;
-}
+  h2 {
+    font-size: 24px;
+  }
 
-.content-formatted h3,
-.content-formatted h4,
-.content-formatted h5,
-.content-formatted h6 {
-  font-size: 18px;
-}
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 18px;
+  }
 
-.content-formatted p {
-  margin: 0 0 25px;
-}
+  p {
+    margin: 0 0 25px;
 
-.content-formatted p:last-child {
-  margin: 0;
-}
+    &:last-child {
+      margin: 0;
+    }
+  }
 
-.content-formatted a {
-  color: rgba(0,0,0,.5);
-}
+  a {
+    color: rgba(0,0,0,.5);
 
-.content-formatted a:hover {
-  color: rgba(0,0,0,.8);
-}
+    &:hover {
+      color: rgba(0,0,0,.8);
+    }
+  }
 
-.content-formatted img {
-  height: auto;
-  max-width: 100%;
-  border: 0;
-}
+  img {
+    height: auto;
+    max-width: 100%;
+    border: 0;
+  }
 
-.content-formatted {
   b,
   strong {
     font-weight: 600;
@@ -74,9 +72,7 @@
   form {
     @include hyphenate(false);
   }
-}
 
-.content-formatted {
   pre,
   code {
     font-size: 14px;
@@ -102,40 +98,37 @@
     padding: 5px;
     @include word-wrap(break-word);
   }
-}
 
-.content-formatted table {
-  .public & {
-    word-break: initial;
+  span {
+    line-height: 1;
   }
-}
 
-.content-formatted span {
-  line-height: 1;
-}
+  // TABLES
+  table {
+    border-collapse: collapse;
 
-// TABLES
-.content-formatted table {
-  border-collapse: collapse;
-}
+    .public & {
+      word-break: initial;
+    }
 
-.content-formatted .overthrow {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
+    td {
+      padding: 10px;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+    }
+  }
 
-.content-formatted .horizontal-scroll {
-  border-right: 1px dashed #e6e6e6;
-  border-left: 1px dashed #e6e6e6;
-}
+  .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.content-formatted table td {
-  padding: 10px;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-}
+  .horizontal-scroll {
+    border-right: 1px dashed #e6e6e6;
+    border-left: 1px dashed #e6e6e6;
+  }
 
-.content-formatted {
+  // IMAGE CONTAINERS
   .edy-positionable-container-maxwidth {
     .public & {
       width: auto !important;
@@ -161,13 +154,15 @@
 }
 
 @include query($mobile) {
-  .content-formatted .edy-img-container {
-    margin: 0 -25px;
-  }
+  .content-formatted {
+    .edy-img-container {
+      margin: 0 -25px;
+    }
 
-  .content .form_field_textfield,
-  .content .form_field_textarea,
-  .content .form_field_file {
-    width: 100%;
+    .form_field_textfield,
+    .form_field_textarea,
+    .form_field_file {
+      width: 100%;
+    }
   }
 }

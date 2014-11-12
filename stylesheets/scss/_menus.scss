@@ -6,67 +6,75 @@
   margin: 0;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   list-style: none;
-}
 
-.menu li a {
-  font-size: 12px;
-  color: rgba(0,0,0,.5);
-  text-decoration: none;
-}
+  li {
+    a {
+      font-size: 12px;
+      color: rgba(0,0,0,.5);
+      text-decoration: none;
 
-.menu li a:hover {
-  color: rgba(0,0,0,.8);
-  @include filter(grayscale(50%));
+      &:hover {
+        color: rgba(0,0,0,.8);
+        @include filter(grayscale(50%));
 
-  &:before {
-    background-color: transparent;
+        &:before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  li.active {
+    a {
+      color: rgba(0,0,0,.8);
+      @include filter(grayscale(100%));
+
+      &:hover {
+        color: rgba(0,0,0,.85);
+      }
+    }
   }
 }
 
-.menu li.active a {
-  color: rgba(0,0,0,.8);
-  @include filter(grayscale(100%));
+.main-menu {
+  li {
+    display: inline-block;
+    margin-right: 5px;
+
+    a {
+      text-transform: uppercase;
+
+      &.untranslated {
+        color: #c33;
+      }
+    }
+  }
+
+  .add-page-btn {
+    margin-left: 5px;
+  }
 }
 
-.menu li.active a:hover {
-  color: rgba(0,0,0,.85);
-}
+.sub-menu {
+  li {
+    padding-bottom: 10px;
+    line-height: .85;
 
-.main-menu li {
-  display: inline-block;
-  margin-right: 5px;
-}
+    &:last-child {
+      padding-bottom: 0;
+    }
 
-.main-menu li a {
-  text-transform: uppercase;
-}
+    a {
+      @include hyphenate(true);
+      font-size: 16px;
+      font-weight: 300;
+      color: #888;
 
-.main-menu li a.untranslated {
-  color: #c33;
-}
-
-.main-menu .add-page-btn {
-  margin-left: 5px;
-}
-
-.sub-menu li {
-  padding-bottom: 10px;
-  line-height: .85;
-}
-
-.sub-menu li:last-child {
-  padding-bottom: 0;
-}
-
-.sub-menu li a {
-  @include hyphenate(true);
-  font-size: 16px;
-  font-weight: 300;
-  color: #888;
-}
-
-.sub-menu li a.untranslated {
-  color: #c33;
+      &.untranslated {
+        color: #c33;
+      }
+    }
+  }
 }
 
 .mobile-menu {
@@ -154,23 +162,23 @@
 
 .lang-menu-popover {
   display: none;
-}
 
-.lang-menu-popover.expanded {
-  position: absolute;
-  top: 25px;
-  left: 10px;
-  z-index: 10;
-  display: block;
-  min-width: 138px;
-  padding: 0;
-  font-size: 12px;
-  background: #fff;
-  -webkit-border: 1px solid #e1e1e1;
-  border: 1px solid #e1e1e1;
+  &.expanded {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    z-index: 10;
+    display: block;
+    min-width: 138px;
+    padding: 0;
+    font-size: 12px;
+    background: #fff;
+    -webkit-border: 1px solid #e1e1e1;
+    border: 1px solid #e1e1e1;
 
-  .flags-disabled & {
-    min-width: 121px;
+    .flags-disabled & {
+      min-width: 121px;
+    }
   }
 }
 
@@ -191,27 +199,31 @@
       }
     }
   }
-}
 
-.lang-menu li.active a,
-.lang-menu li.active a:hover {
-  color: #333;
-}
+  li {
+    a {
+      position: relative;
+      display: block;
+      padding: 6px 4px 4px 30px;
+      color: #888;
+      text-transform: uppercase;
+    }
 
-.lang-menu li a {
-  position: relative;
-  display: block;
-  padding: 6px 4px 4px 30px;
-  color: #888;
-  text-transform: uppercase;
-}
+    .edy-menu-langadd {
+      padding-left: 10px;
+    }
+  }
 
-.lang-menu li .edy-menu-langadd {
-  padding-left: 10px;
-}
+  li.active {
+    a,
+    a:hover {
+      color: #333;
+    }
+  }
 
-.lang-menu .add-lang-btn {
-  margin-top: 5px;
+  .add-lang-btn {
+    margin-top: 5px;
+  }
 }
 
 .lang-flag {
@@ -402,33 +414,35 @@ $flags:
   // MENUS
   .main-menu {
     text-align: right;
-  }
 
-  .main-menu li {
-    display: block;
-  }
+    .menu li {
+      margin-right: 0;
+    }
 
-  .menu li {
-    margin-right: 0;
-  }
+    li {
+      display: block;
 
-  .main-menu li a {
-    display: inline-block;
-    padding: 8px 10px 7px;
-    font-size: 18px;
-    color: #d7d7d7;
-    vertical-align: top;
-    background: #838383;
-  }
+      a {
+        display: inline-block;
+        padding: 8px 10px 7px;
+        font-size: 18px;
+        color: #d7d7d7;
+        vertical-align: top;
+        background: #838383;
+      }
+    }
 
-  .main-menu li a:hover,
-  .main-menu li.active a:hover {
-    color: #fafafa;
-  }
+    li,
+    li.active {
+      a:hover {
+        color: #fafafa;
+      }
+    }
 
-  .main-menu li.active a {
-    font-weight: 400;
-    color: #fff;
+    li.active a {
+      font-weight: 400;
+      color: #fff;
+    }
   }
 
   .lang-menu {
@@ -441,77 +455,83 @@ $flags:
         text-indent: -9999px;
       }
     }
-  }
 
-  .lang-menu .menu {
-    position: relative;
-    right: 0;
-    display: inline-block;
-    float: right;
-    width: auto;
-    height: auto;
-    padding: 0 5px;
-    background-color: #5e5e5e;
-  }
-
-  .lang-menu li {
-    float: right;
-  }
-
-  .lang-menu li a {
-    width: 21px;
-    height: 15px;
-    padding: 13px 5px 12px;
-    opacity: .8;
-    @include color(#fff);
-  }
-
-  .lang-menu li a:hover,
-  .lang-menu li.active a,
-  .lang-menu li.active a:hover {
-    background-color: #838383;
-    @include color(#fff, .5);
-    opacity: 1;
-  }
-
-  .lang-menu li a.lang-flag, {
-    &:before,
-    &:after {
-      top: 13px;
-      left: 5px;
+    .menu {
+      position: relative;
+      right: 0;
+      display: inline-block;
+      float: right;
+      width: auto;
+      height: auto;
+      padding: 0 5px;
+      background-color: #5e5e5e;
     }
-  }
 
-  .lang-menu li.active a.lang-flag,
-  .lang-menu li.active a.lang-flag:hover {
-    text-decoration: none;
-    background-color: #5e5e5e;
-  }
+    li,
+    li.active {
+      a,
+      a:hover {
+        background-color: #838383;
+        @include color(#fff, .5);
+        opacity: 1;
+      }
+    }
 
-  .lang-menu li a:hover,
-  .lang-menu li.active a:hover {
-    top: 0;
-    left: 0;
-    margin: 0;
-    background: #5e5e5e;
-  }
+    li {
+      float: right;
 
-  .lang-menu li.add-lang-btn {
-    top: 0;
-    left: 0;
-    padding: 14px 10px 12px;
-    margin: 0;
-  }
+      a {
+        width: 21px;
+        height: 15px;
+        padding: 13px 5px 12px;
+        opacity: .8;
+        @include color(#fff);
 
-  .lang-menu li.add-lang-btn a {
-    width: auto;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    text-indent: 0;
-  }
+        &.lang-flag {
+          &:before,
+          &:after {
+            top: 13px;
+            left: 5px;
+          }
+        }
+      }
+    }
 
-  .lang-menu li.add-lang-btn a:hover {
-    background: inherit;
+    li.active {
+      a.lang-flag,
+      a.lang-flag:hover {
+        text-decoration: none;
+        background-color: #5e5e5e;
+      }
+    }
+
+    li,
+    li.active {
+      a:hover {
+        top: 0;
+        left: 0;
+        margin: 0;
+        background: #5e5e5e;
+      }
+    }
+
+    .add-lang-btn {
+      top: 0;
+      left: 0;
+      padding: 14px 10px 12px;
+      margin: 0;
+
+      a {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        text-indent: 0;
+
+        &:hover {
+          background: inherit;
+        }
+      }
+    }
   }
 }

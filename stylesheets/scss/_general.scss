@@ -26,63 +26,69 @@ body {
   max-width: 940px;
   padding: 0 25px;
   margin: 0 auto;
-}
 
-.container a {
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
 
-.container a img {
-  border: 0;
-}
+    img {
+      border: 0;
+    }
+  }
 
-.container .horizontal-line {
-  width: 220px;
-  height: 2px;
-  max-width: 100%;
-  margin-bottom: 12px;
-  background: rgba(0,0,0,.65);
+  .horizontal-line {
+    width: 220px;
+    height: 2px;
+    max-width: 100%;
+    margin-bottom: 12px;
+    background: rgba(0,0,0,.65);
+  }
 }
 
 // FRONT PAGE
-.front-page .content-body {
-  width: 100%;
-  max-width: 90%;
-  margin-bottom: 70px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.5;
-  color: rgba(0,0,0,.5);
-}
+.front-page {
+  .content-body {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 70px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgba(0,0,0,.5);
 
-.front-page .content-body:empty {
-  display: none;
+    &:empty {
+      display: none;
+    }
+  }
 }
 
 // COMMON PAGE
-.common-page .edy-img-container {
-  margin-left: -80px;
-}
+.common-page {
+  .edy-img-container {
+    margin-left: -80px;
+  }
 
-.common-page .content-header {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 46px;
-  line-height: 1;
+  .content-header {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 46px;
+    line-height: 1;
+  }
 }
 
 @include query($tablet) {
-  .common-page .content-body {
-    display: block;
-    max-width: 100%;
-  }
+  .common-page {
+    .content-body {
+      display: block;
+      max-width: 100%;
+    }
 
-  .common-page .content-second {
-    display: inline-block;
-    margin-left: 0;
-  }
+    .content-second {
+      display: inline-block;
+      margin-left: 0;
+    }
 
-  .common-page .edy-img-container {
-    margin-left: 0;
+    .edy-img-container {
+      margin-left: 0;
+    }
   }
 }
 

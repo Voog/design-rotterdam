@@ -8,19 +8,19 @@
 
 .sidebar-left {
   max-width: 120px;
+
+  .content-formatted h1 {
+    margin: 0 0 3px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+  }
 }
 
 .sidebar-header {
   padding-bottom: 7px;
-}
-
-.sidebar-left .content-formatted h1 {
-  margin: 0 0 3px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #333;
-  text-transform: uppercase;
 }
 
 @include query($tablet) {
@@ -45,15 +45,15 @@
     margin-top: 0;
     margin-bottom: 25px;
     text-align: right;
-  }
 
-  .sidebar-right .content-formatted {
-    display: inline-block;
-    width: auto;
-    text-align: left;
-  }
+    .content-formatted {
+      display: inline-block;
+      width: auto;
+      text-align: left;
 
-  .sidebar-right .content-formatted h1 {
-    font-size: 35px;
-  }  
+      h1 {
+        font-size: 35px;
+      }
+    }
+  }
 }

@@ -1,105 +1,91 @@
 // BLOG & BLOG ARTICLE
-.blog-page .post {
-  position: relative;
-  margin-bottom: 55px;
+.post-header {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.blog-page .post:last-child {
-  margin-bottom: 25px;
-}
-
-.blog-page .post-header
-.blog-page .post-content {
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-}
-
-.blog-page .post-header {
-  position: absolute;
-  width: 220px;
-  padding-right: 20px;
-  margin-top: 0;
-}
-
-.blog-page .post-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 400;
-  color: #333;
+.post-date {
   text-transform: uppercase;
 }
 
-.blog-page .post-title a {
-  color: #333;
-}
+.blog-page {
+  .post {
+    position: relative;
+    margin-bottom: 55px;
 
-.blog-page .post-date {
-  font-size: 12px;
-  color: #888;
-}
+    &:last-child {
+      margin-bottom: 25px;
+    }
 
-.blog-page .post-content {
-  position: relative;
-  margin-left: 240px;
-}
+    &.fixed-header .post-header {
+      position: fixed;
+      top: 30px;
+      float: left;
+      width: 220px;
+      padding-right: 20px;
+    }
 
-.blog-page .post-content .image-container:not(:last-child) {
-  margin-bottom: 25px;
-}
+    &.fixed-header .post-header + .post-content,
+    &.fixed-bottom .post-header + .post-content {
+      display: inherit;
+      margin-left: 240px;
+    }
+  }
 
-.blog-page .post-header.bottom {
-  bottom: 0;
-}
+  .post-header {
+    position: absolute;
+    width: 220px;
+    padding-right: 20px;
+    margin-top: 0;
 
-.blog-page .post-header.top {
-  top: 0;
-}
+    &.bottom {
+      bottom: 0;
+    }
 
-.blog-page .post.fixed-header .post-header {
-  position: fixed;
-  top: 30px;
-  float: left;
-  width: 220px;
-  padding-right: 20px;
-}
+    &.top {
+      top: 0;
+    }
+  }
 
-.blog-page .post.fixed-header .post-header + .post-content,
-.blog-page .post.fixed-bottom .post-header + .post-content {
-  display: inherit;
-  margin-left: 240px;
-}
+  .post-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    text-transform: uppercase;
 
-.post-page .edy-padding-resizer-wrapper,
-.blog-page .edy-padding-resizer-wrapper {
-  width: 100%;
-}
+    a {
+      color: #333;
+    }
+  }
 
-.post-page .post-header {
-  margin-bottom: 30px;
-}
+  .post-date {
+    font-size: 12px;
+    color: #888;
+  }
 
-.post-page .post-title {
-  margin: 0 0 10px;
-  font-size: 50px;
-  line-height: 1;
-}
+  .post-header,
+  .post-content {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
 
-.post-page .post-date {
-  font-size: 18px;
-  font-weight: 400;
-  color: #c33;
-}
+  .post-content {
+    position: relative;
+    margin-left: 240px;
 
-.post-page .post-content {
-  display: inline-block;
-  width: 100%;
-  max-width: 580px;
-  vertical-align: top;
+    .image-container:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
 }
 
 .post-page,
 .blog-page {
+  .edy-padding-resizer-wrapper {
+    width: 100%;
+  }
+
   .post-content .content-formatted,
   .post-content .edy-texteditor-view {
     :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child {
@@ -110,43 +96,56 @@
       margin-bottom: 20px;
     }
   }
-}
 
-.post-page .post-content .content-formatted,
-.blog-page .post-content .content-formatted {
-  blockquote {
-    margin: 0 70px 20px 120px;
-    font-weight: 600;
-    text-align: right;
+  .post-content .content-formatted {
+    blockquote {
+      margin: 0 70px 20px 120px;
+      font-weight: 600;
+      text-align: right;
 
-    &:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    table {
+      width: 100%;
     }
   }
 
-  table {
-    width: 100%;
-  }
-}
-
-.post-page,
-.blog-page {
   .post-excerpt,
   .post-body {
     margin: 0 70px 20px;
   }
 }
 
-.post-page .image-container {
-  margin-bottom: 25px;
-}
+.post-page {
+  .post-header {
+    margin-bottom: 30px;
+  }
 
-.post-header {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+  .post-title {
+    margin: 0 0 10px;
+    font-size: 50px;
+    line-height: 1;
+  }
 
-.post-date {
-  text-transform: uppercase;
+  .post-date {
+    font-size: 18px;
+    font-weight: 400;
+    color: #c33;
+  }
+
+  .post-content {
+    display: inline-block;
+    width: 100%;
+    max-width: 580px;
+    vertical-align: top;
+  }
+
+  .image-container {
+    margin-bottom: 25px;
+  }
 }
 
 // BLOG TAGS
@@ -223,45 +222,49 @@
 
   .post-page .post-content {
     display: block;
-    margin-left: 0;
-    max-width: 100%;
     width: auto;
+    max-width: 100%;
+    margin-left: 0;
   }
 }
 
 @include query($mobile) {
   // BLOG & BLOG ARTICLE
-  .blog-page .post {
-    margin-bottom: 30px;
+  .blog-page {
+    .post {
+      margin-bottom: 30px;
+    }
+
+    .post-header,
+    .post-content {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .post-header {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .post-excerpt:last-child {
+      margin-bottom: 0;
+    }
+
+    .post-content {
+      min-height: initial !important;
+    }
   }
 
-  .blog-page .post-header,
-  .blog-page .post-content {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    margin-left: 0;
-  }
+  .post-page {
+    .post-title {
+      font-size: 36px;
+    }
 
-  .blog-page .post-header {
-    position: relative;
-    margin-bottom: 10px;
-  }
-
-  .post-page .post-title {
-    font-size: 36px;
-  }
-
-  .post-page .post-content {
-    margin-left: 0;
-  }
-
-  .blog-page .post-excerpt:last-child {
-    margin-bottom: 0;
-  }
-
-  .blog-page .post-content {
-    min-height: initial !important;
+    .post-content {
+      margin-left: 0;
+    }
   }
 
   .post-page,
@@ -271,10 +274,12 @@
       margin-bottom: 30px;
     }
 
-    .post-content .content-formatted,
-    .post-content .edy-texteditor-view {
-      :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
-        margin: 0 0 20px;
+    .post-content {
+      .content-formatted,
+      .edy-texteditor-view {
+        :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+          margin: 0 0 20px;
+        }
       }
     }
   }

@@ -11,10 +11,10 @@
 
 .comment-header {
   line-height: 22px;
-}
 
-.comment-header .edy-btn-removecomment {
-  vertical-align: -1px;
+  .edy-btn-removecomment {
+    vertical-align: -1px;
+  }
 }
 
 .comments-title {
@@ -24,26 +24,28 @@
   text-transform: uppercase;
 }
 
-.comment-form form {
-  margin-bottom: 23px;
-}
+.comment-form {
+  form {
+    margin-bottom: 23px;
+  }
 
-.comment-form .form_field {
-  margin-bottom: 5px;
-}
+  .form_field {
+    margin-bottom: 5px;
+  }
 
-.comment-form .form_field_textfield,
-.comment-form .form_field_textarea {
-  width: 100%;
-  padding: 0;
-  line-height: 1.6;
-  color: rgba(0,0,0,.8);
-}
+  .form_field_textfield,
+  .form_field_textarea {
+    width: 100%;
+    padding: 0;
+    line-height: 1.6;
+    color: rgba(0,0,0,.8);
+  }
 
-.comment-form .form_field_textarea {
-  min-height: 30px;
-  padding: 6px 0;
-  line-height: 1.1;
+  .form_field_textarea {
+    min-height: 30px;
+    padding: 6px 0;
+    line-height: 1.1;
+  }
 }
 
 .comment {
