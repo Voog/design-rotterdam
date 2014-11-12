@@ -133,6 +133,20 @@ module.exports = function(grunt) {
       },
     },
 
+    // Runs scss-lint for all SCSS files
+    scsslint: {
+      all: {
+        src: 'stylesheets/scss/*.scss'
+      },
+      options: {
+        force: true,
+        bundleExec: false,
+        config: '~/.scss-lint.yml',
+        reporterOutput: null,
+        colorizeOutput: true
+      },
+    },
+
     // Watches the project for changes and recompiles the output files.
     watch: {
       js: {
@@ -142,7 +156,7 @@ module.exports = function(grunt) {
 
       css: {
         files: 'stylesheets/scss/*.scss',
-        tasks: ['sass:build', 'newer:cssmin:build']
+        tasks: ['sass:build', 'newer:cssmin:build', 'newer:scsslint:all']
       },
 
       voog: {
@@ -165,6 +179,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-scss-lint');
 
   grunt.registerTask('default', ['modernizr', 'copy', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
 
