@@ -15,20 +15,6 @@
     &:last-child {
       margin-bottom: 25px;
     }
-
-    &.fixed-header .post-header {
-      position: fixed;
-      top: 30px;
-      float: left;
-      width: 220px;
-      padding-right: 20px;
-    }
-
-    &.fixed-header .post-header + .post-content,
-    &.fixed-bottom .post-header + .post-content {
-      display: inherit;
-      margin-left: 240px;
-    }
   }
 
   .post-header {
@@ -47,11 +33,11 @@
   }
 
   .post-title {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 400;
+    margin: 0 0;
     color: #333;
     text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
 
     a {
       color: #333;
@@ -59,15 +45,8 @@
   }
 
   .post-date {
-    font-size: 12px;
     color: #888;
-  }
-
-  .post-header,
-  .post-content {
-    display: inline-block;
-    width: 100%;
-    vertical-align: top;
+    font-size: 12px;
   }
 
   .post-content {
@@ -76,6 +55,21 @@
 
     .image-container:not(:last-child) {
       margin-bottom: 25px;
+    }
+  }
+
+  .post.fixed-header {
+    .post-header {
+      position: fixed;
+      top: 30px;
+      float: left;
+      width: 220px;
+      padding-right: 20px;
+    }
+
+    .post-header + .post-content {
+      display: inherit;
+      margin-left: 240px;
     }
   }
 }
@@ -88,28 +82,32 @@
 
   .post-content .content-formatted,
   .post-content .edy-texteditor-view {
-    :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable):last-child {
-      margin-bottom: 0;
-    }
-
-    * {
-      margin-bottom: 20px;
-    }
-  }
-
-  .post-content .content-formatted {
-    blockquote {
-      margin: 0 70px 20px 120px;
-      font-weight: 600;
-      text-align: right;
-
+    & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
       &:last-child {
         margin-bottom: 0;
       }
     }
 
-    table {
-      width: 100%;
+    & > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  .post-content {
+    .content-formatted {
+      blockquote {
+        margin: 0 70px 20px 120px;
+        text-align: right;
+        font-weight: 600;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      table {
+        width: 100%;
+      }
     }
   }
 
@@ -213,21 +211,6 @@
   }
 }
 
-@include query($tablet) {
-  // BLOG & BLOG ARTICLE
-  .blog-page .edy-img-container {
-    margin-right: 0;
-    margin-left: -20px;
-  }
-
-  .post-page .post-content {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    margin-left: 0;
-  }
-}
-
 @include query($mobile) {
   // BLOG & BLOG ARTICLE
   .blog-page {
@@ -248,22 +231,17 @@
       margin-bottom: 10px;
     }
 
-    .post-excerpt:last-child {
-      margin-bottom: 0;
-    }
-
-    .post-content {
-      min-height: initial !important;
-    }
-  }
-
-  .post-page {
     .post-title {
       font-size: 36px;
     }
 
     .post-content {
       margin-left: 0;
+      min-height: initial !important;
+    }
+
+    .post-excerpt:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -277,13 +255,13 @@
     .post-content {
       .content-formatted,
       .edy-texteditor-view {
-        :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+        & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
           margin: 0 0 20px;
         }
       }
     }
   }
-  
+
   // BLOG TAGS
   .post-page {
     .tags {
