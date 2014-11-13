@@ -8,6 +8,13 @@
   color: #919191;
 }
 
+.content-formatted form {
+  input,
+  textarea {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+
 .container .placeholder {
   height: 1 !important;
 }
@@ -16,6 +23,7 @@
 .form_error {
   font-weight: 700;
   color: #c33;
+  font-size: 16px;
 }
 
 .form_notice {
@@ -26,7 +34,7 @@
 .form_error,
 .form_notice {
   margin-bottom: 25px;
-  font-size: 1.2em;
+  font-size: 16px;
 }
 
 .form_field {

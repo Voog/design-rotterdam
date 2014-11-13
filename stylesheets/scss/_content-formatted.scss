@@ -130,7 +130,8 @@
 
   // IMAGE CONTAINERS
   .edy-positionable-container-maxwidth {
-    .public & {
+    .public &,
+    .blog-page & {
       width: auto !important;
       max-width: none !important;
       margin-right: -70px !important;
@@ -171,6 +172,16 @@
     .form_field_textarea,
     .form_field_file {
       width: 100%;
+    }
+
+    .edy-positionable-container-maxwidth {
+      .public &,
+      .blog-page & {
+        width: auto !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
     }
   }
 }
