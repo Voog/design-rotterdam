@@ -755,7 +755,6 @@ body {
   }
 }
 .header {
-  z-index: 10;
   padding-top: 50px;
   padding-bottom: 50px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -763,6 +762,7 @@ body {
   transform: translateZ(0);
 }
 .header.header-fixed {
+  z-index: 10;
   position: fixed;
   top: -200px;
   right: 0;
