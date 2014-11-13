@@ -10945,14 +10945,6 @@ return jQuery;
         stickyMobileMenu = opts.stickyMobileMenu || false,
         stickyFooter = opts.stickyFooter || false,
         stickyPostHeaders = opts.stickyPostHeaders || false,
-        getPostHeights = function () {
-          var posts = $('.post'),
-              heights = [];
-          posts.each(function(n, el) {
-            heights.push(el.getBoundingClientRect().top);
-          });
-          return heights;
-        },
         startScroll,
         endScroll,
         scrolled,
@@ -10964,6 +10956,15 @@ return jQuery;
         footerExpandTimeout,
         latestKnownScrollY = 0,
         ticking = false;
+
+    var getPostHeights = function () {
+      var posts = $('.post'),
+          heights = [];
+      posts.each(function(n, el) {
+        heights.push(el.getBoundingClientRect().top);
+      });
+      return heights;
+    };
 
     var handler = function (postHeights) {
       if (!startScroll) {

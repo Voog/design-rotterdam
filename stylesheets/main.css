@@ -978,7 +978,6 @@ body {
 .content-body {
   display: inline-block;
   width: 85%;
-  vertical-align: top;
 }
 
 .content-header {
