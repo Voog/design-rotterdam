@@ -38,7 +38,9 @@ module.exports = function(grunt) {
         src: [
         'bower_components/jquery/dist/jquery.js',
         'bower_components/overthrow/src/overthrow-polyfill.js',
-        'javascripts/src/concat/*.js'
+        'javascripts/src/concat/*.js',
+        '!javascripts/src/concat/main.js',
+        'javascripts/src/concat/main.js'
         ],
         dest: 'javascripts/application.js'
       }
