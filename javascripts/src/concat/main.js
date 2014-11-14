@@ -257,9 +257,7 @@
               }
             } else {
               // down and below footer + 90px
-              if (scrolled > 5) {
-                resetFooter();
-              }
+              resetFooter();
             }
           } else {
             resetFooter();

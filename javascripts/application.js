@@ -10991,12 +10991,16 @@ return jQuery;
               // down and above footer
               } else if (scrolled > 5) {
                 hideFooter();
+                // setTimeout(function() {
+                //   console.log("!");
+                //   if ($(window).scrollTop() + window.innerHeight > ($(document).height() - footerStaticArea - 90)) {
+                //     resetHeader();
+                //   }
+                // }, 20);
               }
             } else {
               // down and below footer + 90px
-              if (scrolled > 5) {
-                resetFooter();
-              }
+              resetFooter();
             }
           } else {
             resetFooter();
