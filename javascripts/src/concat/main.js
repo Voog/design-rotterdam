@@ -246,7 +246,7 @@
           }
         }
         if (window.innerWidth > 640 && stickyFooter) {
-          if ($('.post').eq(0).offset().top - $(window).innerHeight() + 90 < $('body').scrollTop()) {
+          if ($('.post').eq(0).offset().top - $(window).innerHeight() + 90 < $(document).scrollTop()) {
             if (startScroll + window.innerHeight <= $(document).height() - footerStaticArea - 90) {
               // above footer
               if (scrolled < -5) {
