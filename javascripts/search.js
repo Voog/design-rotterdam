@@ -6,7 +6,7 @@
         modalTpl: '<div class="voog-search-container"><div class="voog-search-inner"><div class="voog-search-results"></div><div class="voog-search-noresults"></div><div class="voog-search-loader"></div></div></div>',
         noResults: 'No results found!',
         minChars : 3,
-        $parent: $('.container'),
+        $parent: $('body'),
         closeOnSideClick: true
     };
 
@@ -41,8 +41,23 @@
         createModal: function() {
             var $modal = $(this.options.modalTpl);
             $modal.appendTo(this.options.$parent);
+            this.$modal = $modal;
+            this.adjustModalMargin();
+            this.$modal.hide();
+            $('body').removeClass('voog-search-visible');
 
             return $modal;
+        },
+
+        adjustModalMargin: function() {
+            var footerOffset = $('.footer').offset().left,
+                searchFormWidth = $('.footer .search-form').width(),
+                footerLeftPadding = parseInt($('.footer').css('padding-left')),
+                footerRightPadding = parseInt($('.footer').css('padding-right')),
+                extraPadding = footerOffset > 0 ? 10 : 0,
+                extraPadding = (footerLeftPadding > 0 ? extraPadding : 30),
+                marginLeft = footerOffset + searchFormWidth + footerLeftPadding + footerRightPadding + extraPadding;
+            this.$modal.css('margin-left', marginLeft);
         },
 
         filterParams: function(p) {
@@ -104,7 +119,7 @@
         },
 
         handleSideClick: function(event) {
-            if (!$.contains(this.$modal.get(0), event.target) && event.target !== this.$modal.get(0) && event.target !== this.$input.get(0)) {
+            if (!$.contains(this.$modal.find('.voog-search-inner'), event.target) && event.target !== this.$modal.find('.voog-search-inner') && event.target !== this.$input.get(0)) {
                 this.reset();
             }
         },
@@ -129,6 +144,10 @@
         },
 
         doSearch: function() {
+            this.adjustModalMargin();
+            this.$modal.show();
+            $('body').removeClass('voog-search-visible');
+
             clearTimeout(this.timeout);
             this.timeout = setTimeout($.proxy(function() {
 
