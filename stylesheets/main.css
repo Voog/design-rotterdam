@@ -699,7 +699,7 @@ body {
     float: right;
     width: auto;
     height: auto;
-    padding: 0 5px;
+    padding: 0;
     background-color: #5e5e5e;
   }
   .lang-menu li a,
@@ -717,13 +717,13 @@ body {
   .lang-menu li a {
     width: 21px;
     height: 15px;
-    padding: 13px 5px 12px;
+    padding: 13px 8px 12px;
     opacity: .8;
     color: white;
   }
   .lang-menu li a.lang-flag:before, .lang-menu li a.lang-flag:after {
     top: 13px;
-    left: 5px;
+    left: 8px;
   }
   .lang-menu li.active a.lang-flag,
   .lang-menu li.active a.lang-flag:hover {
