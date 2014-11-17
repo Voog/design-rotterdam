@@ -1,17 +1,20 @@
 // HEADER
 .header {
+  position: relative;
+  z-index: 10;
   margin-top: 50px;
   margin-bottom: 50px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 
+
   &.header-fixed {
-    z-index: 10;
     position: fixed;
     top: -200px;
     right: 0;
     left: 0;
+    z-index: 10;
     padding: 15px 25px;
     margin-top: 0;
     margin-bottom: 0;
@@ -69,8 +72,8 @@
   // HEADER
   .header {
     padding: 10px 50px 10px 0;
-    margin-bottom: 30px;
     margin-top: 0;
+    margin-bottom: 30px;
 
     &.header-fixed {
       padding-top: 7px;

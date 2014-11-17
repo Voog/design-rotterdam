@@ -446,6 +446,7 @@ $flags:
   }
 
   .lang-menu {
+    z-index: 12;
     display: none;
     padding-left: 0;
 
@@ -464,7 +465,6 @@ $flags:
       width: auto;
       height: auto;
       padding: 0;
-      background-color: #5e5e5e;
     }
 
     li,
@@ -484,7 +484,7 @@ $flags:
         width: 21px;
         height: 15px;
         padding: 13px 8px 12px;
-        opacity: .8;
+        opacity: .95;
         @include color(#fff);
 
         &.lang-flag {
