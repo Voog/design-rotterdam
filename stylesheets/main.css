@@ -21,6 +21,10 @@ body {
   color: #222;
 }
 
+body.edy-bar-open {
+  padding-bottom: 150px;
+}
+
 .container {
   max-width: 940px;
   padding: 0 25px;
