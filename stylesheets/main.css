@@ -21,8 +21,10 @@ body {
   color: #222;
 }
 
-body.edy-bar-open {
-  padding-bottom: 150px;
+.edy-bar-open:after {
+  display: table;
+  clear: both;
+  content: " ";
 }
 
 .container {
