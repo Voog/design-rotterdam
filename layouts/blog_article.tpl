@@ -11,13 +11,13 @@
     <main class="content" role="main">
       <article class="post">
         <header class="post-header content-formatted cfx">
-          <h1 class="post-title">{% editable article.title %}</h1>
+          <h1 class="post-title" data-search-indexing-allowed="true">{% editable article.title %}</h1>
           <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | format_date : "%B %d, %Y" }}</time>
         </header>
-        <section class="post-content">
+        <section class="post-content" data-search-indexing-allowed="true">
           <div class="post-excerpt content-formatted cfx">{% editable article.excerpt %}</div>
           <div class="post-body content-formatted cfx">{% editable article.body %}</div>
-          <div class="tags">
+          <div class="tags" data-search-indexing-allowed="false">
             {% include "tags-article" %}
           </div>
         </section>

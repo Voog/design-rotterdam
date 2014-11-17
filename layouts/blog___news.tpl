@@ -6,7 +6,7 @@
 </head>
 
 <body class="blog-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
-  <div class="container">
+  <div class="container" data-search-indexing-allowed="false">
     {% include "header" %}
     <main class="content" role="main">
       <div class="blog-header">

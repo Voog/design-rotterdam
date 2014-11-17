@@ -9,7 +9,7 @@
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
-      <section class="content-body content-formatted">{% content %}</section>
+      <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content %}</section>
       {% for article in site.latest_articles %}
         <article class="post">
           <header class="post-header">
