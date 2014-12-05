@@ -7,9 +7,11 @@
   margin-left: 125px;
 }
 
-.content-body {
-  display: inline-block;
-  width: 85%;
+.content-page {
+  .content-body {
+    display: inline-block;
+    width: 85%;
+  }
 }
 
 .content-header {

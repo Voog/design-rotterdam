@@ -50,6 +50,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/edicy-tools-styles.tpl",
+      "layout_name": "edicy-tools-styles",
+      "title": "edicy-tools-styles"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/edicy-tools-variables.tpl",
       "layout_name": "edicy-tools-variables",
       "title": "edicy-tools-variables"
@@ -176,6 +183,24 @@
       "file": "assets/search_close.svg",
       "kind": "assets",
       "filename": "search_close.svg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-page-header-bg.jpg",
+      "kind": "images",
+      "filename": "front-page-header-bg.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-page-header-bg_block.jpg",
+      "kind": "images",
+      "filename": "front-page-header-bg_block.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-page-header-bg_large.jpg",
+      "kind": "images",
+      "filename": "front-page-header-bg_large.jpg"
     },
     {
       "content_type": "image/png",

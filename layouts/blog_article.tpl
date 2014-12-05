@@ -5,7 +5,7 @@
   {% include "edicy-tools-variables" %}
 </head>
 
-<body class="post-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+<body class="post-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">

@@ -15,6 +15,12 @@
   visibility: hidden;
 }
 
+.voog-bg-picker-btn {
+  padding: 0;
+  cursor: pointer;
+  border: none;
+}
+
 body {
   padding: 0;
   margin: 0 auto;
@@ -29,9 +35,11 @@ body {
 }
 
 .container {
-  max-width: 940px;
-  padding: 0 25px;
-  margin: 0 auto;
+  .content-page & {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
 
   a {
     text-decoration: none;
@@ -52,10 +60,32 @@ body {
 
 // FRONT PAGE
 .front-page {
+  .wrap {
+    max-width: 940px;
+    margin: 0 auto;
+  }
+
+  .header-banner {
+    position: relative;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center center;
+
+    @include query($mobile) {
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+  }
+
+  .background-color {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
   .content-body {
-    width: 100%;
-    max-width: 90%;
-    margin-bottom: 70px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 24px;
     line-height: 1.5;

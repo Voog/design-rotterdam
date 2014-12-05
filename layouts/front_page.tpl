@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
+  {% assign front_page = true %}
   {% include "html-head" %}
   {% include "edicy-tools-variables" %}
+  {% include "edicy-tools-styles" %}
 </head>
 
 <body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
-      <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content %}</section>
-      {% for article in site.latest_articles %}
-        <article class="post">
-          <header class="post-header">
-            <h1 class="post-title"><a href="{{ article.url }}">{{ article.title }}</a></h1>
-            <time datetime="{{ article.created_at | date : "%Y-%m-%d" }}" class="post-date">{{ article.created_at | date : "%b %d, %Y" }}</time>
-          </header>
 
-          <section class="post-content">
-            <div class="post-excerpt content-formatted cfx">{{ article.excerpt }}</div>
-          </section>
-        </article>
-      {% endfor %}
+      <div class="header-banner js-header-banner js-background-type">
+        {% if editmode %}<button class="voog-bg-picker-btn  js-background-settings" data-bg-image="{{ header_bg_image }}" data-bg-image-sizes="{{ header_bg_image_image_sizes_str | escape }}" data-bg-color="{{ header_bg_color }}" data-bg-color-data="{{ header_bg_image_color_data_str | escape }}"></button>{% endif %}
+        <div class="background-color"></div>
+      </div>
+
+      <div class="wrap">
+        <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content %}</section>
+      </div>
     </main>
     {% include "footer" %}
   </div>
