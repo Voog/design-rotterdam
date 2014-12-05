@@ -46,9 +46,5 @@
     .header-banner .background-color {
       background-color: {{ page.data.header_bg.color }};
     }
-  {% else %}
-    .header-banner .background-color {
-      background-color: {{ header_bg_color }};
-    }
   {% endif %}
 </style>

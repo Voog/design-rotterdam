@@ -1,8 +1,14 @@
 {% include "topbar" %}
 <header class="header">
-  <div class="header-inner">
-    <section class="header-top">
+  <div class="header-inner cfx">
+    <div class="header-left">
       <h1 class="header-title">{% unless editmode %}<a href="{{ site.root_item.url }}">{% endunless %}{% editable site.header %}{% unless editmode %}</a>{% endunless %}</h1>
+    </div>
+
+    <div class="header-right">
+      <nav class="main-menu">
+        {% include "nav-menu" %}
+      </nav>
 
       {% if editmode or site.has_many_languages? %}
         <nav class="lang-menu js-menu-lang-wrap {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
@@ -19,11 +25,7 @@
           </div>
         </nav>
       {% endif %}
-    </section>
-
-    <nav class="main-menu">
-      {% include "nav-menu" %}
-    </nav>
+    </div>
 
   </div>
 </header>

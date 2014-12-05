@@ -73,7 +73,7 @@
     }
 
     // Front page left content area background picker.
-    var HeaderLeftBg = new Edicy.BgPicker($('.js-background-settings'), {
+    var HeaderBg = new Edicy.BgPicker($('.js-background-settings'), {
         picture: true,
         target_width: 600,
         color: true,

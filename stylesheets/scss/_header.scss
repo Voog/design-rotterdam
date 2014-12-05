@@ -63,8 +63,13 @@
     }
   }
 
-  .header-top {
+  .header-left {
     display: table;
+    float: left;
+  }
+
+  .header-right {
+    float: right;
   }
 }
 
@@ -89,7 +94,7 @@
       display: none;
     }
 
-    .header-top,
+    .header-left,
     .header-title {
       display: block;
     }

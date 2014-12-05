@@ -13,12 +13,12 @@
     <main class="content" role="main">
 
       <div class="header-banner js-header-banner js-background-type">
-        {% if editmode %}<button class="voog-bg-picker-btn  js-background-settings" data-bg-image="{{ header_bg_image }}" data-bg-image-sizes="{{ header_bg_image_image_sizes_str | escape }}" data-bg-color="{{ header_bg_color }}" data-bg-color-data="{{ header_bg_image_color_data_str | escape }}"></button>{% endif %}
+        {% if editmode %}<button class="voog-bg-picker-btn  js-background-settings" data-bg-image="{{ header_bg_image }}" data-bg-image-sizes="{{ header_bg_image_sizes_str | escape }}" {% unless header_bg.color == nil %}data-bg-color="{{ header_bg_color }}"{% endunless %} data-bg-color-data="{{ header_bg_image_color_data_str | escape }}"></button>{% endif %}
         <div class="background-color"></div>
       </div>
 
       <div class="wrap">
-        <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content %}</section>
+        <section class="content-body content-formatted cfx" data-search-indexing-allowed="true">{% content %}</section>
       </div>
     </main>
     {% include "footer" %}
