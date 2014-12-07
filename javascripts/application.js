@@ -10886,11 +10886,10 @@ return jQuery;
       initStickyElements({
         stickyHeader: true,
         stickyMobileMenu: true,
-        stickyFooter: true,
-        stickyPostHeaders: true
+        stickyFooter: false,
+        stickyPostHeaders: false
       });
     }
-    handlePostMinHeight();
   };
   var initCommonPage = function(animation) {
     animation = typeof animation == 'undefined' ? false : animation;

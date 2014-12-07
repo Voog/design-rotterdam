@@ -10,6 +10,8 @@
         {% include "nav-menu" %}
       </nav>
 
+      {% if site.search.enabled %}{% include "search" %}{% endif %}
+
       {% if editmode or site.has_many_languages? %}
         <nav class="lang-menu js-menu-lang-wrap {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
           <button id="lang-menu-toggle" class="toggle-btn lang-menu-toggle lang-flag lang-flag-{{ page.language_code }} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">

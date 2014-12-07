@@ -7,7 +7,7 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="front-page blog-page{% if site.search.enabled %} search-enabled{% endif %}">
+<body class="front-page{% if site.search.enabled %} search-enabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="wrap">
+      <div class="wrap js-topbar-init">
         <section class="content-body content-formatted cfx" data-search-indexing-allowed="true">{% content name="default" %}</section>
       </div>
     </main>
