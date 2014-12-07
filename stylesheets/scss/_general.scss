@@ -16,6 +16,7 @@
 }
 
 .voog-bg-picker-btn {
+  left: 0;
   padding: 0;
   cursor: pointer;
   border: none;
@@ -65,15 +66,56 @@ body {
     margin: 0 auto;
   }
 
+  .content {
+    .wrap {
+      padding: 50px 20px;
+    }
+  }
+
   .header-banner {
     position: relative;
     min-height: 350px;
     background-size: cover;
     background-position: center center;
 
+    .flexbox & {
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+    }
+
     @include query($mobile) {
       margin-right: -20px;
       margin-left: -20px;
+    }
+
+    .header-body {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 389px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .no-flexbox & {
+        display: table;
+        width: 100%;
+        min-height: 350px;
+        margin: 0 auto;
+      }
+    }
+
+    .header-inner {
+      .no-flexbox & {
+        display: table-cell;
+        max-width: 300px;
+        vertical-align: middle;
+      }
+    }
+
+    .edy-empty-bordered {
+      padding: 56px 93px 52px;
     }
   }
 
