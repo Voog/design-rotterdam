@@ -10,6 +10,11 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 
+  .front-page & {
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
   &.footer-fixed {
     position: fixed;
     right: 0;
@@ -56,6 +61,15 @@
     max-width: 100%;
   }
 }
+.voog-reference-wrap {
+  .front-page & {
+    padding: 0 20px;
+
+    @include query($mobile) {
+      padding: 0;
+    }
+  }
+}
 
 .voog-reference {
   margin: -10px auto 25px;
@@ -76,6 +90,10 @@
     width: auto;
     max-width: 100%;
     padding: 10px 10px 10px 0;
+
+    .front-page & {
+      padding: 0;
+    }
 
     &.footer-fixed {
       padding-top: 7px;

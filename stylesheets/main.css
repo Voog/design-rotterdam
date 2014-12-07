@@ -81,6 +81,12 @@ body {
 .front-page .content .wrap {
   padding: 41px 20px 17px;
 }
+@media screen and (max-width: 640px) {
+  .front-page .content .wrap {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 .front-page .background-color {
   position: absolute;
   top: 0;
@@ -1813,12 +1819,18 @@ body.mobilesearch-open {
 .form_field {
   margin-bottom: 15px;
 }
-.form_field label {
+.form_field label,
+.form_field .edy-fe-label {
   display: block;
   padding: 2px 0 1px;
   color: #919191;
 }
-.dark-background .form_field label {
+.header-inner .form_field label, .header-inner
+.form_field .edy-fe-label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.dark-background .form_field label, .dark-background
+.form_field .edy-fe-label {
   color: white;
 }
 
@@ -1864,9 +1876,14 @@ body.mobilesearch-open {
 .form_field_textfield {
   border-bottom: 1px solid #dadada;
 }
-.dark-background .form_field_textarea, .dark-background
+.header-inner .form_field_textarea, .header-inner
 .form_field_textfield {
-  bacgkround: #C8C8C8;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+.light-background .form_field_textarea, .light-background
+.form_field_textfield {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .form_field_textarea {
@@ -1891,6 +1908,10 @@ body.mobilesearch-open {
   cursor: pointer;
   background: #dadada;
   border: 0;
+}
+.light-background .form_submit input {
+  background: #252525;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .comments {
@@ -1996,6 +2017,10 @@ body.mobilesearch-open {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+.front-page .footer {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 .footer.footer-fixed {
   position: fixed;
   right: 0;
@@ -2035,6 +2060,15 @@ body.mobilesearch-open {
   max-width: 100%;
 }
 
+.front-page .voog-reference-wrap {
+  padding: 0 20px;
+}
+@media screen and (max-width: 640px) {
+  .front-page .voog-reference-wrap {
+    padding: 0;
+  }
+}
+
 .voog-reference {
   margin: -10px auto 25px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2052,6 +2086,9 @@ body.mobilesearch-open {
     width: auto;
     max-width: 100%;
     padding: 10px 10px 10px 0;
+  }
+  .front-page .footer {
+    padding: 0;
   }
   .footer.footer-fixed {
     padding-top: 7px;

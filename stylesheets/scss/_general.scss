@@ -95,6 +95,11 @@ body {
   .content {
     .wrap {
       padding: 41px 20px 17px;
+
+      @include query($mobile) {
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
   }
 
