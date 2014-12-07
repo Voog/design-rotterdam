@@ -26,7 +26,7 @@
       {% assign header_bg_type = 'light-background' %}
     {% endif %}
   {% else %}
-    {% assign header_bg_type = 'dark-background' %}
+    {% assign header_bg_type = 'light-background' %}
   {% endif %}
 
   {% if header_bg_image == nil %}

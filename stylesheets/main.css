@@ -14,6 +14,27 @@
   visibility: hidden;
 }
 
+.dark-background .edy-empty-bordered {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dark-background .placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-background .edy-content-element-hover {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.dark-background .edy-texteditor-active {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: rgba(255, 255, 255, 0.4);
+}
+.dark-background .edy-texteditor-active:hover {
+  outline-color: rgba(255, 255, 255, 0.63);
+}
+
 .voog-bg-picker-btn {
   left: 0;
   padding: 0;
@@ -60,13 +81,30 @@ body {
 .front-page .content .wrap {
   padding: 41px 20px 17px;
 }
-.front-page .header-banner {
+.front-page .background-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.front-page .content-body {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.5);
+}
+.front-page .content-body:empty {
+  display: none;
+}
+
+.header-banner {
   position: relative;
   min-height: 350px;
   background-size: cover;
   background-position: center center;
 }
-.flexbox .front-page .header-banner {
+.flexbox .header-banner {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -94,49 +132,105 @@ body {
   -ms-flex-pack: center;
 }
 @media screen and (max-width: 640px) {
-  .front-page .header-banner {
+  .header-banner {
     margin-right: -20px;
     margin-left: -20px;
   }
 }
-.front-page .header-banner .header-body {
+.header-banner .header-body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 389px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
   box-sizing: border-box;
 }
-.no-flexbox .front-page .header-banner .header-body {
+.no-flexbox .header-banner .header-body {
   display: table;
   width: 100%;
   min-height: 350px;
   margin: 0 auto;
 }
-.no-flexbox .front-page .header-banner .header-inner {
+.header-banner .header-inner {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+.no-flexbox .header-banner .header-inner {
   display: table-cell;
-  max-width: 300px;
   vertical-align: middle;
 }
-.front-page .header-banner .edy-empty-bordered {
-  padding: 56px 93px 52px;
+@media screen and (max-width: 452px) {
+  .header-banner .header-inner {
+    min-width: 0;
+  }
 }
-.front-page .background-color {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+.header-banner .header-inner,
+.header-banner .header-inner h1,
+.header-banner .header-inner h2,
+.header-banner .header-inner h3,
+.header-banner .header-inner h4,
+.header-banner .header-inner h5,
+.header-banner .header-inner h6,
+.header-banner .header-inner pre,
+.header-banner .header-inner code {
+  color: rgba(0, 0, 0, 0.8);
 }
-.front-page .content-body {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.5;
+.header-banner .header-inner table {
+  margin: 0 auto;
+}
+.header-banner .header-inner ul,
+.header-banner .header-inner ol,
+.header-banner .header-inner table,
+.header-banner .header-inner pre,
+.header-banner .header-inner code {
+  text-align: left;
+}
+.header-banner.dark-background .header-inner,
+.header-banner.dark-background .header-inner p,
+.header-banner.dark-background .header-inner h1,
+.header-banner.dark-background .header-inner h2,
+.header-banner.dark-background .header-inner h3,
+.header-banner.dark-background .header-inner h4,
+.header-banner.dark-background .header-inner h5,
+.header-banner.dark-background .header-inner h6,
+.header-banner.dark-background .header-inner ul,
+.header-banner.dark-background .header-inner ol,
+.header-banner.dark-background .header-inner table,
+.header-banner.dark-background .header-inner pre,
+.header-banner.dark-background .header-inner code {
+  color: rgba(255, 255, 255, 0.8);
+}
+.header-banner.dark-background .header-inner a {
   color: rgba(0, 0, 0, 0.5);
 }
-.front-page .content-body:empty {
-  display: none;
+.header-banner.dark-background .header-inner a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.header-banner.dark-background .header-inner pre,
+.header-banner.dark-background .header-inner code {
+  background-color: #050505;
+}
+.header-banner .edys-gallery-area,
+.header-banner .edy-gallery-area {
+  font-size: 0;
+}
+.header-banner .edys-gallery-area .edys-gallery-item,
+.header-banner .edys-gallery-area .edy-gallery-item,
+.header-banner .edys-gallery-area .edy-gallery-sortable-placeholder,
+.header-banner .edy-gallery-area .edys-gallery-item,
+.header-banner .edy-gallery-area .edy-gallery-item,
+.header-banner .edy-gallery-area .edy-gallery-sortable-placeholder {
+  display: inline-block;
+  float: none;
+  margin: 3px 0 3px 6px;
+}
+.header-banner .edy-ca-empty {
+  max-width: 412px;
+  margin: 0 auto;
+}
+.header-banner .edy-empty-bordered {
+  padding: 56px 40px 52px;
 }
 
 .common-page .edy-img-container {
@@ -435,7 +529,7 @@ body {
 .lang-menu li a.lang-flag:after {
   position: absolute;
   top: 5px;
-  left: 5px;
+  right: 5px;
   display: block;
   width: 21px;
   height: 15px;
@@ -470,7 +564,7 @@ body {
 .lang-menu-popover.expanded {
   position: absolute;
   top: 25px;
-  left: 10px;
+  right: 0;
   z-index: 10;
   display: block;
   min-width: 138px;
@@ -506,9 +600,10 @@ body {
 .lang-menu li a {
   position: relative;
   display: block;
-  padding: 6px 4px 4px 30px;
+  padding: 6px 30px 4px 4px;
   color: #888;
   text-transform: uppercase;
+  text-align: right;
 }
 .lang-menu li .edy-menu-langadd {
   padding-left: 10px;
@@ -709,6 +804,7 @@ body {
   padding: 7px 12px;
   margin-top: 8px;
   font-size: 13px;
+  text-align: right;
 }
 @media screen and (max-width: 640px) {
   .lang-options {
@@ -854,15 +950,19 @@ body {
 .header {
   position: relative;
   z-index: 10;
-  margin-top: 50px;
-  margin-bottom: 75px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 .front-page .header {
+  margin-top: 33px;
+  margin-bottom: 33px;
   padding-right: 20px;
   padding-left: 20px;
+}
+.content-page .header {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .header.header-fixed {
   position: fixed;
@@ -913,9 +1013,12 @@ body {
 .header .header-left {
   display: table;
   float: left;
+  margin-right: 20px;
 }
 .header .header-right {
   float: right;
+  position: relative;
+  top: -2px;
 }
 
 @media screen and (max-width: 640px) {

@@ -15,6 +15,32 @@
   visibility: hidden;
 }
 
+// CMS DEFAULT STYLES OVERRIDES
+.dark-background {
+  .edy-empty-bordered {
+    color: rgba(#fff, .5);
+    border-color: rgba(#fff, .5);
+  }
+  .placeholder {
+    color: rgba(#fff, .5);
+  }
+  .edy-content-element-hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(#fff, .2);
+  }
+  .edy-texteditor-active {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: rgba(#fff, .4);
+
+    &:hover {
+      outline-color: rgba(#fff, .63);
+    }
+  }
+}
+
+
 .voog-bg-picker-btn {
   left: 0;
   padding: 0;
@@ -72,53 +98,6 @@ body {
     }
   }
 
-  .header-banner {
-    position: relative;
-    min-height: 350px;
-    background-size: cover;
-    background-position: center center;
-
-    .flexbox & {
-      @include display(flex);
-      @include align-items(center);
-      @include justify-content(center);
-    }
-
-    @include query($mobile) {
-      margin-right: -20px;
-      margin-left: -20px;
-    }
-
-    .header-body {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 389px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-
-      .no-flexbox & {
-        display: table;
-        width: 100%;
-        min-height: 350px;
-        margin: 0 auto;
-      }
-    }
-
-    .header-inner {
-      .no-flexbox & {
-        display: table-cell;
-        max-width: 300px;
-        vertical-align: middle;
-      }
-    }
-
-    .edy-empty-bordered {
-      padding: 56px 93px 52px;
-    }
-  }
-
   .background-color {
     position: absolute;
     top: 0;
@@ -136,6 +115,134 @@ body {
     &:empty {
       display: none;
     }
+  }
+}
+
+.header-banner {
+  position: relative;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center center;
+
+  .flexbox & {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  @include query($mobile) {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .header-body {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+
+    .no-flexbox & {
+      display: table;
+      width: 100%;
+      min-height: 350px;
+      margin: 0 auto;
+    }
+  }
+
+  .header-inner {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+
+    .no-flexbox & {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    @include query(452px) {
+      min-width: 0;
+    }
+
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code {
+      color: rgba(0,0,0,.8);
+    }
+
+    table {
+      margin: 0 auto;
+    }
+
+    ul,
+    ol,
+    table,
+    pre,
+    code {
+      text-align: left;
+    }
+  }
+
+  &.dark-background {
+    .header-inner {
+      &,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol,
+      table,
+      pre,
+      code {
+        color: rgba(255,255,255,.8);
+      }
+
+      a {
+        color: rgba(0,0,0,.5);
+
+        &:hover {
+          color: rgba(0,0,0,.8);
+        }
+      }
+
+      pre,
+      code {
+        background-color: #050505;
+      }
+    }
+  }
+
+  .edys-gallery-area,
+  .edy-gallery-area {
+    font-size: 0;
+
+    .edys-gallery-item,
+    .edy-gallery-item,
+    .edy-gallery-sortable-placeholder {
+      display: inline-block;
+      float: none;
+      margin: 3px 0 3px 6px;
+    }
+  }
+
+  .edy-ca-empty {
+    max-width: 412px;
+    margin: 0 auto;
+  }
+
+  .edy-empty-bordered {
+    padding: 56px 40px 52px;
   }
 }
 

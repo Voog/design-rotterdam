@@ -27,7 +27,7 @@
     });
 
     // Header background image and color preview logic function.
-    var HeaderBgPreview = function(data, Header) {
+    var headerBgPreview = function(data, header) {
       // Returns the suitable version of the image depending on the viewport width.
       var getImageByWidth = function(sizes, targetWidth) {
         var prevImage;
@@ -44,27 +44,27 @@
       // Defines the suitable image based on the viewport width.
       var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
 
-      var HeaderBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
-          HeaderBgColor = (data.color && data.color !== '') ? data.color : 'transparent',
-          HeaderBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
-          HeaderBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none';
+      var headerBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+          headerBgColor = (data.color && data.color !== '') ? data.color : 'transparent',
+          headerBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
+          headerBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none';
 
       // Removes the current lightness class.
-      $(Header).find('.js-background-type').removeClass('light-background dark-background');
-      // Checks the opacity of the Header background color and sets the lightness class depending on it's value.
-      if (HeaderBgColorOpacity >= 0.2) {
-        $(Header).find('.js-background-type').addClass(HeaderBgColorLightness >= 0.5 ? 'light-background' : 'dark-background');
+      $('.js-background-type').removeClass('light-background dark-background');
+      // Checks the opacity of the header background color and sets the lightness class depending on it's value.
+      if (headerBgColorOpacity >= 0.2) {
+        $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background');
       } else {
-        $(Header).find('.js-background-type').addClass('light-background');
+        $('.js-background-type').addClass('light-background');
       };
 
-      // Updates the Header background image and background color.
-      $(Header).css({'background-image' : HeaderBgImage});
-      $(Header).find('.background-color').css({'background-color' : HeaderBgColor});
+      // Updates the header background image and background color.
+      $(header).css({'background-image' : headerBgImage});
+      $(header).find('.background-color').css({'background-color' : headerBgColor});
     };
 
-    // Header background image and color save logic function.
-    var HeaderBgCommit = function(data, dataName) {
+    // header background image and color save logic function.
+    var headerBgCommit = function(data, dataName) {
       var commitData = $.extend(true, {}, data);
       commitData.image = data.image || '';
       commitData.imageSizes = data.imageSizes || '';
@@ -73,18 +73,18 @@
     }
 
     // Front page left content area background picker.
-    var HeaderBg = new Edicy.BgPicker($('.js-background-settings'), {
+    var headerBg = new Edicy.BgPicker($('.js-background-settings'), {
         picture: true,
         target_width: 600,
         color: true,
         showAlpha: true,
 
       preview: function(data) {
-        HeaderBgPreview(data, '.js-header-banner');
+        headerBgPreview(data, '.js-header-banner');
       },
 
       commit: function(data) {
-        HeaderBgCommit(data, 'header_bg');
+        headerBgCommit(data, 'header_bg');
       }
     });
 

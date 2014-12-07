@@ -136,7 +136,7 @@
   &:after {
     position: absolute;
     top: 5px;
-    left: 5px;
+    right: 5px;
     display: block;
     width: 21px;
     height: 15px;
@@ -171,7 +171,7 @@
   &.expanded {
     position: absolute;
     top: 25px;
-    left: 10px;
+    right: 0;
     z-index: 10;
     display: block;
     min-width: 138px;
@@ -214,9 +214,10 @@
     a {
       position: relative;
       display: block;
-      padding: 6px 4px 4px 30px;
+      padding: 6px 30px 4px 4px;
       color: #888;
       text-transform: uppercase;
+      text-align: right;
     }
 
     .edy-menu-langadd {
@@ -362,6 +363,7 @@ $flags:
       padding: 7px 12px;
       margin-top: 8px;
       font-size: 13px;
+      text-align: right;
     }
   }
 
