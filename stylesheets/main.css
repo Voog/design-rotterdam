@@ -615,7 +615,7 @@ body {
   text-align: right;
 }
 .lang-menu li .edy-menu-langadd {
-  padding-left: 10px;
+  padding-right: 10px;
 }
 .lang-menu li.active a,
 .lang-menu li.active a:hover {
