@@ -895,6 +895,9 @@ body {
     font-size: 0;
     text-indent: -9999px;
   }
+  .lang-menu.flags-enabled li a.edy-menu-langadd {
+    margin: 15px;
+  }
   .lang-menu.flags-disabled li a {
     width: auto;
     padding: 13px 9px 12px;

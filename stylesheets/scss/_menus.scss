@@ -466,6 +466,10 @@ $flags:
       li a {
         font-size: 0;
         text-indent: -9999px;
+
+        &.edy-menu-langadd {
+          margin: 15px;
+        }
       }
     }
 
