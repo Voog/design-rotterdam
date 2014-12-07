@@ -183,43 +183,13 @@ body {
 
     ul,
     ol,
+    dl,
     table,
     pre,
-    code {
+    code,
+    form,
+    .form {
       text-align: left;
-    }
-  }
-
-  &.dark-background {
-    .header-inner {
-      &,
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      ul,
-      ol,
-      table,
-      pre,
-      code {
-        color: rgba(255,255,255,.8);
-      }
-
-      a {
-        color: rgba(0,0,0,.5);
-
-        &:hover {
-          color: rgba(0,0,0,.8);
-        }
-      }
-
-      pre,
-      code {
-        background-color: #050505;
-      }
     }
   }
 

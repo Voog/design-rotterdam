@@ -181,35 +181,13 @@ body {
 }
 .header-banner .header-inner ul,
 .header-banner .header-inner ol,
+.header-banner .header-inner dl,
 .header-banner .header-inner table,
 .header-banner .header-inner pre,
-.header-banner .header-inner code {
+.header-banner .header-inner code,
+.header-banner .header-inner form,
+.header-banner .header-inner .form {
   text-align: left;
-}
-.header-banner.dark-background .header-inner,
-.header-banner.dark-background .header-inner p,
-.header-banner.dark-background .header-inner h1,
-.header-banner.dark-background .header-inner h2,
-.header-banner.dark-background .header-inner h3,
-.header-banner.dark-background .header-inner h4,
-.header-banner.dark-background .header-inner h5,
-.header-banner.dark-background .header-inner h6,
-.header-banner.dark-background .header-inner ul,
-.header-banner.dark-background .header-inner ol,
-.header-banner.dark-background .header-inner table,
-.header-banner.dark-background .header-inner pre,
-.header-banner.dark-background .header-inner code {
-  color: rgba(255, 255, 255, 0.8);
-}
-.header-banner.dark-background .header-inner a {
-  color: rgba(0, 0, 0, 0.5);
-}
-.header-banner.dark-background .header-inner a:hover {
-  color: rgba(0, 0, 0, 0.8);
-}
-.header-banner.dark-background .header-inner pre,
-.header-banner.dark-background .header-inner code {
-  background-color: #050505;
 }
 .header-banner .edys-gallery-area,
 .header-banner .edy-gallery-area {
@@ -272,6 +250,21 @@ body {
   hyphens: auto;
   word-break: break-word;
 }
+.dark-background .content-formatted, .dark-background
+.content-formatted p, .dark-background
+.content-formatted h1, .dark-background
+.content-formatted h2, .dark-background
+.content-formatted h3, .dark-background
+.content-formatted h4, .dark-background
+.content-formatted h5, .dark-background
+.content-formatted h6, .dark-background
+.content-formatted ul, .dark-background
+.content-formatted ol, .dark-background
+.content-formatted table, .dark-background
+.content-formatted pre, .dark-background
+.content-formatted code {
+  color: rgba(255, 255, 255, 0.8);
+}
 .content-formatted h1,
 .content-formatted h2,
 .content-formatted h3,
@@ -315,6 +308,12 @@ body {
 .content-formatted a:hover {
   color: rgba(0, 0, 0, 0.8);
 }
+.dark-background .content-formatted a {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-background .content-formatted a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
 .content-formatted img {
   height: auto;
   max-width: 100%;
@@ -339,6 +338,10 @@ body {
 .content-formatted code {
   font-size: 14px;
   background-color: #fafafa;
+}
+.dark-background .content-formatted pre, .dark-background
+.content-formatted code {
+  background-color: #050505;
 }
 .content-formatted pre {
   padding: 10px;
@@ -1815,6 +1818,9 @@ body.mobilesearch-open {
   padding: 2px 0 1px;
   color: #919191;
 }
+.dark-background .form_field label {
+  color: white;
+}
 
 .form_field label,
 .form_field_textfield,
@@ -1857,6 +1863,10 @@ body.mobilesearch-open {
 .form_field_textarea,
 .form_field_textfield {
   border-bottom: 1px solid #dadada;
+}
+.dark-background .form_field_textarea, .dark-background
+.form_field_textfield {
+  bacgkround: #C8C8C8;
 }
 
 .form_field_textarea {

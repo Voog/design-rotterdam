@@ -2,6 +2,24 @@
 .content-formatted {
   @include hyphenate(true);
 
+  &,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  table,
+  pre,
+  code {
+    .dark-background & {
+      color: rgba(255,255,255,.8);
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -52,6 +70,14 @@
     &:hover {
       color: rgba(0,0,0,.8);
     }
+
+    .dark-background & {
+      color: rgba(255,255,255,.5);
+
+      &:hover {
+        color: rgba(255,255,255,.8);
+      }
+    }
   }
 
   img {
@@ -77,6 +103,10 @@
   code {
     font-size: 14px;
     @include bg(#fafafa);
+
+    .dark-background & {
+      background-color: #050505;
+    }
   }
 
   pre {

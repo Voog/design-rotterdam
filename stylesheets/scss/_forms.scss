@@ -44,6 +44,10 @@
     display: block;
     padding: 2px 0 1px;
     color: #919191;
+
+    .dark-background & {
+      color: white;
+    }
   }
 }
 
@@ -88,6 +92,10 @@
 .form_field_textarea,
 .form_field_textfield {
   border-bottom: 1px solid #dadada;
+
+  .dark-background & {
+    bacgkround: #C8C8C8;
+  }
 }
 
 .form_field_textarea {
