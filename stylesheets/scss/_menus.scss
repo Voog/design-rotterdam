@@ -201,7 +201,7 @@
 
   &.flags-disabled {
     .lang-flag {
-      padding-left: 4px;
+      padding-right: 4px;
 
       &:before,
       &:after {
@@ -469,6 +469,13 @@ $flags:
       }
     }
 
+    &.flags-disabled {
+      li a {
+        width: auto;
+        padding: 13px 9px 12px;
+      }
+    }
+
     .menu {
       position: relative;
       right: 0;
@@ -532,10 +539,10 @@ $flags:
       left: 0;
       padding: 14px 10px 12px;
       margin: 0;
+      padding: 0;
 
       a {
         width: auto;
-        height: auto;
         padding: 0;
         margin: 0;
         text-indent: 0;
