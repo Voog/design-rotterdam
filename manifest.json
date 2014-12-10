@@ -155,6 +155,12 @@
   ],
   "assets": [
     {
+      "content_type": "text/unknown",
+      "file": "assets/.DS_Store",
+      "kind": "assets",
+      "filename": ".DS_Store"
+    },
+    {
       "content_type": "image/svg+xml",
       "file": "assets/ico-flags.svg",
       "kind": "assets",
@@ -183,6 +189,18 @@
       "file": "assets/search_close.svg",
       "kind": "assets",
       "filename": "search_close.svg"
+    },
+    {
+      "content_type": "application/x-wais-source",
+      "file": "assets/src",
+      "kind": "assets",
+      "filename": "src"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "images/.DS_Store",
+      "kind": "images",
+      "filename": ".DS_Store"
     },
     {
       "content_type": "image/jpeg",
@@ -227,6 +245,18 @@
       "filename": "search.png"
     },
     {
+      "content_type": "application/x-wais-source",
+      "file": "images/src",
+      "kind": "images",
+      "filename": "src"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "javascripts/.DS_Store",
+      "kind": "javascripts",
+      "filename": ".DS_Store"
+    },
+    {
       "content_type": "application/javascript",
       "file": "javascripts/application.js",
       "kind": "javascripts",
@@ -263,6 +293,18 @@
       "filename": "search.min.js"
     },
     {
+      "content_type": "application/x-wais-source",
+      "file": "javascripts/src",
+      "kind": "javascripts",
+      "filename": "src"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "stylesheets/.DS_Store",
+      "kind": "stylesheets",
+      "filename": ".DS_Store"
+    },
+    {
       "content_type": "text/css",
       "file": "stylesheets/ie8.css",
       "kind": "stylesheets",
@@ -285,6 +327,12 @@
       "file": "stylesheets/main.min.css",
       "kind": "stylesheets",
       "filename": "main.min.css"
+    },
+    {
+      "content_type": "text/unknown",
+      "file": "stylesheets/scss",
+      "kind": "stylesheets",
+      "filename": "scss"
     }
   ]
 }

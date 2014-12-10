@@ -15,6 +15,23 @@
   visibility: hidden;
 }
 
+%button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: none;
+  }
+}
+
 // CMS DEFAULT STYLES OVERRIDES
 .dark-background {
   .edy-empty-bordered {
@@ -53,6 +70,13 @@ body {
   margin: 0 auto;
   font: 300 20px/1.4 "EB Garamond", "Georgia", serif;
   color: #222;
+
+  @include query($mobile) {
+    &.voog-search-visible {
+      position: fixed;
+      overflow: hidden;
+    }
+  }
 }
 
 .edy-bar-open:after {

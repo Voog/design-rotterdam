@@ -111,15 +111,6 @@
     }
   }
 
-  // TODO: Remove if decided to not use or add back if it is going to be used anyway.
-  // &.open {
-  //   .ico-popover-toggle {
-  //     left: 1px;
-  //     @include transform(rotate(180deg));
-  //   }
-  // }
-
-
   .flags-enabled & {
     width: 31px;
 
@@ -127,6 +118,10 @@
     .ico-popover-toggle {
       display: none;
     }
+  }
+
+  .search-enabled & {
+    margin-left: 0;
   }
 }
 

@@ -1,5 +1,18 @@
 // VARIABLES
+// Colors
+$white: #ffffff;
+$black: #000000;
+$search-color: #1B2124;
+$search-bg: #f4f4f4;
+$search-highlight: #F9EC5A;
 
 // Media queries
 $tablet: 999px;
 $mobile: 640px;
+
+// Reusable values
+// Define the reusable variables here.
+// For example the width of several different elements, that allways have to be with the same height:
+// $box-width: 400px;
+$search-height-1: 30px;
+$search-height-2: 40px;

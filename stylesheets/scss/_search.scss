@@ -1,351 +1,223 @@
-// SEARCH
-.container .search {
-  position: relative;
-  display: block;
-  width: 220px;
-  margin: 0;
-}
-
+/* SEARCH */
+// Styling rules for the site's search box. These rules affect the entire site.
 .search {
-  .search-box {
-    position: relative;
-    max-width: 180px;
-    padding: 0 10px 0 30px;
-    overflow: hidden;
-    border-top: 2px solid transparent;
-    transition: border-top-color .1s, border-bottom-color .1s;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  margin-left: 12px;
+  font-size: 0;
 
-    &.search-box-focus {
-      border-top: 2px solid rgba(0,0,0,.65);
-    }
+  .voog-search-visible & {
+    @include bg($search-bg);
   }
 
-  .search-input {
-    width: 100%;
-    padding: 5px 0;
-    margin: 0;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .header-fixed &,
+  &.hidden {
+    display: none;
+  }
+
+  @include query($mobile) {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    margin-left: 0;
+    background-color: rgba(255,255,255,.95);
+
+    .voog-search-visible & {
+      width: 176px;
+    }
+  }
+}
+
+.search-form {
+  position: relative;
+  z-index: 20;
+}
+
+.search-input {
+  display: none;
+  vertical-align: middle;
+  width: 140px;
+  margin: 0;
+  padding: 8px 0 7px 9px;
+  font-family: inherit;
+  font-size: 12px;
+  @include color($search-color, 0.67);
+  background-color: transparent;
+  @include box-sizing(border-box);
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Removes the clear input button in IE11
+  &::-ms-clear {
+    display: none;
+  }
+
+  &::-webkit-input-placeholder {
+
+
+  }
+
+  .voog-search-visible & {
+    display: inline-block;
+  }
+
+  @include query($mobile) {
+    padding: 11px 0 11px 9px;
+    font-size: 14px;
+  }
+}
+
+.search-btn {
+  @extend %button;
+  vertical-align: top;
+  opacity: .35;
+  line-height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.search-btn-open {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  padding: 5px;
+
+  .voog-search-visible & {
+    display: none;
+  }
+
+  @include query($mobile) {
+    top: 0;
+    padding: 11px;
+  }
+}
+
+.search-btn-close {
+  display: none;
+  padding: 9px;
+
+  .voog-search-visible & {
+    display: inline-block;
+  }
+
+  @include query($mobile) {
+    padding: 13px 9px 9px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.voog-search-modal {
+
+
+
+}
+
+.voog-search-modal-inner {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  z-index: 999;
+  display: none;
+  width: 350px;
+  max-height: 600px;
+  padding: 15px 25px;
+  text-align: left;
+  font-size: 16px;
+  @include bg($white,.95);
+  box-shadow: 0 0 40px rgba($black,.1);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &.search-results-active {
+    display: block;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 900px) {
+    max-height: 700px;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 800px) {
+    max-height: 600px;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    max-height: 500px;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 600px) {
+    max-height: 400px;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 500px) {
+    max-height: 300px;
+  }
+
+  @media screen and (min-width: 640px) and (max-height: 400px) {
+    max-height: 200px;
+  }
+
+  @include query($mobile) {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    max-height: none;
+    @include box-sizing(border-box);
+    box-shadow: none;
+
+    &.no-content {
+      bottom: auto;
+    }
+  }
+}
+
+.voog-search-modal-result {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
     font-size: 16px;
-    color: rgba(0,0,0,.8);
-    background: none;
-    border: 0;
-    outline: 0;
+    color: $black;
 
-    &::-ms-clear {
-      display: none;
-    }
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      @include color($search-color);
 
-    &::-webkit-input-placeholder,
-    &:-moz-placeholder,
-    &::-moz-placeholder,
-    &-ms-input-placeholder {
-      color: rgba(0,0,0,.5);
-      opacity: 0;
-      transition: opacity .1s;
-    }
-
-    &:focus {
-      &::-webkit-input-placeholder,
-      &:-moz-placeholder,
-      &::-moz-placeholder,
-      &-ms-input-placeholder {
-        color: rgba(0,0,0,.5);
-        opacity: 1;
+      &:hover {
+        @include color($search-color, 0.8);
       }
     }
   }
 
-  .search-submit,
-  .search-close {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    display: none;
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-  }
-
-  .search-submit {
-    display: block;
-    background: url('../images/search.png') no-repeat center center;
-  }
-
-  .search-close {
-    background: url('../images/search-close.png') no-repeat center center;
-  }
-
-  &:after {
-    position: absolute;
-    top: -2px;
-    right: -30px;
-    display: none;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-    border-color: rgba(0,0,0,0);
-    border-right-color: #e5e5e5;
-    border-style: solid;
-    border-width: 18px;
-    content: ' ';
-  }
-}
-
-#mobile-search .search {
-  width: 100%;
-  background-color: #fff;
-  border-top: 2px solid rgba(0,0,0,.65);
-  border-bottom: 2px solid rgba(0,0,0,.65);
-
-  .search-box {
-    top: 0;
-    right: 0;
-    left: 0;
-    max-width: 100%;
-    padding-right: 50px;
-    padding-left: 25px;
-
-    &.search-box-focus {
-      border-top: 2px solid transparent;
-    }
-  }
-
-  .search-input {
-    padding: 10px 0;
-    font-size: 16px;
-  }
-
-  .search-submit,
-  .search-close {
-    position: absolute;
-    right: 0;
-    left: initial;
-  }
-}
-
-.voog-search-visible {
-  overflow: hidden;
-
-  .search .search-close {
-    display: block;
-  }
-
-  .search:after {
-    display: block;
-  }
-
-  .voog-search-container {
-    z-index: 1000;
-    display: block;
-    width: 300px;
-    opacity: 1;
-    -moz-box-shadow: 10px 0 10px rgba(0,0,0,.05);
-    -webkit-box-shadow: 10px 0 10px rgba(0,0,0,.05);
-    box-shadow: 10px 0 10px rgba(0,0,0,.05);
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .search:after {
-    right: -20px;
-  }
-}
-
-#mobile-search .search:after {
-  display: none;
-}
-
-// SEARCH CONTAINER
-.voog-search-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  display: block;
-  width: 0;
-  margin-left: 240px;
-  overflow: hidden;
-  background: #e5e5e5;
-  opacity: 0;
-  -webkit-transition: opacity .1s ease-in, width .3s ease-in;
-  transition: opacity .1s ease-in, width .3s ease-in;
-
-  .editmode & {
-    bottom: 40px;
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .voog-search-container {
-    margin-left: 235px;
-  }
-}
-
-#mobile-search .voog-search-container {
-  position: static;
-  top: auto;
-  width: 100%;
-  margin-left: 0 !important;
-
-  .voog-mobile-search-visible & {
-    z-index: 1000;
-    display: block;
-    opacity: 1;
-  }
-}
-
-.voog-search-inner {
-  width: 300px;
-  height: 100%;
-  overflow: auto;
-}
-
-#mobile-search .voog-search-inner {
-  width: auto;
-}
-
-.voog-search-loader {
-  display: block;
-  height: 100%;
-
-  .svg & {
-    background: url('../assets/loader.svg') no-repeat center center;
-  }
-}
-
-.voog-search-results {
-  display: none;
-  padding: 20px 0;
-}
-
-#mobile-search .voog-search-results {
-  padding: 10px 0;
-}
-
-.voog-search-noresults {
-  display: none;
-  width: 100%;
-  height: 100%;
-
-  div {
-    display: table-cell;
-    padding: 40px;
-    color: #848484;
-    text-align: center;
-    vertical-align: middle;
-  }
-
-  &.voog-search-noresults-visible {
-    display: table;
-  }
-}
-
-.voog-search-result {
-  padding: 12px 18px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(0,0,0,.5);
-
-  .voog-search-result-title {
-    padding: 0 0 12px;
-    margin: 0;
-    font-size: 16px;
-    color: rgba(0,0,0,.8);
-  }
-
-  .voog-search-result-link {
-    color: rgba(0,0,0,.6);
-
-    &:hover {
-      color: rgba(0,0,0,.6);
-    }
-  }
-
-  .voog-search-result-content {
-    padding: 0;
-    margin: 0;
+  p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #818181;
   }
 
   em {
     font-style: normal;
-    background: #f9ec5a;
+    @include bg($search-highlight, 0.5);
+    border-radius: 2px;
+    padding: 0 0.2em;
   }
-}
-
-.mobile-search-toggler {
-  position: absolute;
-  top: 0;
-  right: 43px;
-  z-index: 3;
-  display: block;
-  width: 33px;
-  height: 43px;
-  background: url('../images/search.png') no-repeat center center;
-  background-size: 16px 16px;
-  outline: 0;
-
-  .svg & {
-    background-image: url('../assets/search.svg');
-  }
-}
-
-body.mobilesearch-open {
-  overflow: hidden;
-}
-
-.mobilesearch-open .mobile-search-toggler {
-  background: none !important;
-
-  &:before,
-  &:after {
-    position: absolute;
-    top: 20px;
-    left: 7px;
-    display: block;
-    width: 20px;
-    height: 3px;
-    background: #222;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    content: '';
-  }
-
-  &:before {
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    -moz-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-}
-
-#mobile-search {
-  position: fixed;
-  top: 40px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: none;
-  overflow: auto;
-  background: #e5e5e5;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobilesearch-open #mobile-search {
-  display: block;
-}
-
-#mobile-search-results {
-  position: absolute;
-  top: 45px;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }

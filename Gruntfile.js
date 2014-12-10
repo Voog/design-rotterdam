@@ -153,7 +153,7 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['javascripts/src/concat/*.js', 'javascripts/*.js'],
-        tasks: ['newer:concat', 'newer:uglify']
+        tasks: ['newer:concat:build', 'newer:uglify:build']
       },
 
       css: {
@@ -180,8 +180,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-svgmin');
 
   grunt.registerTask('default', ['modernizr', 'copy', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
 

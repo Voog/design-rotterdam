@@ -3,23 +3,28 @@
   position: relative;
   z-index: 10;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  // -webkit-transform: translateZ(0);
+  // transform: translateZ(0);
 
   .front-page & {
     margin-top: 33px;
     margin-bottom: 33px;
     padding-right: 20px;
     padding-left: 20px;
-
-    @include query($mobile) {
-      margin: 0;
-    }
   }
 
   .content-page & {
     margin-top: 50px;
     margin-bottom: 50px;
+
+    @include query($mobile) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @include query($mobile) {
+    position: static;
   }
 
   &.header-fixed {
@@ -51,6 +56,7 @@
     margin: 0 auto;
 
     .header-title {
+      @include hyphenate(true);
       display: table-cell;
       max-width: 810px;
       margin: 0;
@@ -80,25 +86,35 @@
     display: table;
     float: left;
     margin-right: 20px;
+
+    @include query($mobile) {
+      margin-right: 30px;
+    }
   }
 
   .header-right {
     float: right;
     position: relative;
     top: -2px;
+
+    @include query($mobile) {
+      position: static;
+    }
   }
 }
 
 @include query($mobile) {
   // HEADER
   .header {
-    padding: 10px 50px 10px 0;
-    margin-top: 0;
-    margin-bottom: 30px;
+
+    &,
+    .front-page & {
+      margin: 0 -20px;
+      padding: 10px 50px 10px 20px;
+    }
 
     &.header-fixed {
-      padding-top: 7px;
-      padding-bottom: 7px;
+      padding: 7px 45px;
     }
 
     .header-title {
