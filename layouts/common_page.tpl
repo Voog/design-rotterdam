@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  {% include "html-head" %}
   {% include "edicy-tools-variables" %}
+  {% include "html-head" %}
 </head>
 
 <body class="common-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
