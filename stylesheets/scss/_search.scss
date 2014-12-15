@@ -1,8 +1,18 @@
 /* SEARCH */
 // Styling rules for the site's search box. These rules affect the entire site.
+.mobile-search-btns {
+  display: none;
+
+  @include query($mobile) {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    display: block;
+  }
+}
+
 .search {
   position: relative;
-  display: inline-block;
   vertical-align: middle;
   float: left;
   margin-left: 12px;
@@ -10,6 +20,7 @@
 
   .voog-search-visible & {
     @include bg($search-bg);
+    display: inline-block;
   }
 
   .header-fixed &,
@@ -19,20 +30,33 @@
 
   @include query($mobile) {
     position: absolute;
-    top: 0;
-    right: 40px;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 1;
     margin-left: 0;
     background-color: rgba(255,255,255,.95);
-
-    .voog-search-visible & {
-      width: 176px;
-    }
   }
 }
 
 .search-form {
   position: relative;
   z-index: 20;
+
+  .voog-search-visible & {
+    @include bg($search-bg);
+  }
+
+  @include query($mobile) {
+    display: none;
+
+    .voog-search-visible & {
+      display: block;
+      background-color: $white;
+      border-top: 2px solid rgba($black,.65);
+      border-bottom: 2px solid rgba($black,.65);
+    }
+  }
 }
 
 .search-input {
@@ -48,6 +72,10 @@
   @include box-sizing(border-box);
   border: none;
 
+  .voog-search-visible & {
+    display: block;
+  }
+
   &:focus {
     outline: none;
   }
@@ -59,16 +87,12 @@
 
   &::-webkit-input-placeholder {
 
-
-  }
-
-  .voog-search-visible & {
-    display: inline-block;
   }
 
   @include query($mobile) {
-    padding: 11px 0 11px 9px;
-    font-size: 14px;
+    width: 100%;
+    padding: 11px 40px 11px 20px;
+    font-size: 16px;
   }
 }
 
@@ -85,11 +109,16 @@
   &:hover {
     opacity: 1;
   }
+
+  @include query($mobile) {
+  }
 }
 
+.search-btn-submit,
 .search-btn-open {
   position: relative;
   top: 1px;
+  right: 0;
   display: inline-block;
   padding: 5px;
 
@@ -103,6 +132,7 @@
   }
 }
 
+.search-btn-reset,
 .search-btn-close {
   display: none;
   padding: 9px;
@@ -121,9 +151,36 @@
   }
 }
 
+.search-btn-submit,
+.search-btn-reset {
+  .voog-search-visible & {
+    position: absolute;
+    top: 1px;
+    right: 0;
+
+    @include query($mobile) {
+      top: 0;
+    }
+  }
+}
+
+.search-btn-submit {
+  @include query($mobile) {
+    .voog-search-visible & {
+      display: block;
+    }
+  }
+}
+
+.search-btn-reset {
+  @include query($mobile) {
+    .voog-search-visible & {
+      display: none;
+    }
+  }
+}
+
 .voog-search-modal {
-
-
 
 }
 
@@ -173,11 +230,12 @@
 
   @include query($mobile) {
     position: fixed;
-    top: 40px;
+    top: 87px;
     left: 0;
     bottom: 0;
     width: auto;
     max-height: none;
+    padding: 15px 20px;
     @include box-sizing(border-box);
     box-shadow: none;
 
