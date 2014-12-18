@@ -26,7 +26,7 @@
       id: '{{ page.id }}'
     });
 
-    // Header background image and color preview logic function.
+    // HEADER BACKGROUND IMAGE AND COLOR PREVIEW LOGIC FUNCTION.
     var headerBgPreview = function(data, header) {
       // Returns the suitable version of the image depending on the viewport width.
       var getImageByWidth = function(sizes, targetWidth) {
@@ -63,7 +63,7 @@
       $(header).find('.background-color').css({'background-color' : headerBgColor});
     };
 
-    // header background image and color save logic function.
+    // HEADER BACKGROUND IMAGE AND COLOR SAVE LOGIC FUNCTION.
     var headerBgCommit = function(data, dataName) {
       var commitData = $.extend(true, {}, data);
       commitData.image = data.image || '';
