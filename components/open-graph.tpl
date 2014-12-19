@@ -11,7 +11,7 @@
 {% if page.image == nil and front_page and header_bg_image_sizes != nil and header_bg_image_sizes != '' %}
   {% assign og_image = header_bg_image_sizes[0] %}
 {% else %}
-  {% unless article and page.image? %}
+  {% unless article and page.image? == nil %}
     {% assign og_image = page.image %}
   {% elsif article.image? %}
     {% assign og_image = article.image %}
