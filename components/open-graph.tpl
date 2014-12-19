@@ -11,11 +11,13 @@
 {% if page.image == nil and front_page and header_bg_image_sizes != nil and header_bg_image_sizes != '' %}
   {% assign og_image = header_bg_image_sizes[0] %}
 {% else %}
-  {% unless article and page.image? == nil %}
+  {% if article %}
+    {% if article.image? %}
+      {% assign og_image = article.image %}
+    {% endif %}
+  {% elsif page.image? %}
     {% assign og_image = page.image %}
-  {% elsif article.image? %}
-    {% assign og_image = article.image %}
-  {% endunless %}
+  {% endif %}
 {% endif %}
 
 {% if og_image.url %}<meta property="og:image" content="{{ og_image.url }}">{% endif %}
