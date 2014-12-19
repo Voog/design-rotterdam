@@ -42,6 +42,26 @@
 }
 
 .main-menu {
+  .search-enabled.lang-enabled.voog-search-visible & {
+    margin-right: 175px;
+  }
+
+  .search-enabled.lang-enabled & {
+    margin-right: 70px;
+  }
+
+  .lang-enabled & {
+    margin-right: 45px;
+  }
+
+  .search-enabled.voog-search-visible & {
+    margin-right: 145px;
+  }
+
+  .search-enabled & {
+    margin-right: 40px;
+  }
+
   li {
     display: inline-block;
     margin-right: 5px;
@@ -61,6 +81,16 @@
 
   .add-page-btn {
     margin-left: 5px;
+  }
+
+  @include query($mobile) {
+    .search-enabled.lang-enabled.voog-search-visible &,
+    .search-enabled.lang-enabled &,
+    .lang-enabled &,
+    .search-enabled.voog-search-visible &,
+    .search-enabled & {
+      margin-right: 0;
+    }
   }
 }
 

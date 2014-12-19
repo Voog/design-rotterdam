@@ -67,6 +67,8 @@ body {
 @media screen and (max-width: 640px) {
   body.voog-search-visible {
     position: fixed;
+    right: 0;
+    left: 0;
     overflow: hidden;
   }
 }
@@ -173,7 +175,6 @@ body {
 }
 .header-banner .header-body {
   position: relative;
-  z-index: 1;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -492,6 +493,21 @@ body {
   float: left;
 }
 
+.search-enabled.lang-enabled.voog-search-visible .main-menu {
+  margin-right: 175px;
+}
+.search-enabled.lang-enabled .main-menu {
+  margin-right: 70px;
+}
+.lang-enabled .main-menu {
+  margin-right: 45px;
+}
+.search-enabled.voog-search-visible .main-menu {
+  margin-right: 145px;
+}
+.search-enabled .main-menu {
+  margin-right: 40px;
+}
 .main-menu li {
   display: inline-block;
   margin-right: 5px;
@@ -507,6 +523,11 @@ body {
 }
 .main-menu .add-page-btn {
   margin-left: 5px;
+}
+@media screen and (max-width: 640px) {
+  .search-enabled.lang-enabled.voog-search-visible .main-menu, .search-enabled.lang-enabled .main-menu, .lang-enabled .main-menu, .search-enabled.voog-search-visible .main-menu, .search-enabled .main-menu {
+    margin-right: 0;
+  }
 }
 
 .sub-menu li {
@@ -1000,6 +1021,7 @@ body {
 .header {
   position: relative;
   z-index: 10;
+  min-height: 27px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .front-page .header {
@@ -1091,6 +1113,16 @@ body {
 }
 @media screen and (max-width: 640px) {
   .header .header-right {
+    position: static;
+  }
+}
+.header .header-right .header-options {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media screen and (max-width: 640px) {
+  .header .header-right .header-options {
     position: static;
   }
 }
@@ -1553,7 +1585,6 @@ body {
   position: relative;
   vertical-align: middle;
   float: left;
-  margin-left: 12px;
   font-size: 0;
 }
 .voog-search-visible .search {
@@ -1570,7 +1601,6 @@ body {
     right: 0;
     left: 0;
     z-index: 1;
-    margin-left: 0;
     background-color: rgba(255, 255, 255, 0.95);
   }
 }

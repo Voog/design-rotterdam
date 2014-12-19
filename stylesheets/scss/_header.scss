@@ -2,6 +2,7 @@
 .header {
   position: relative;
   z-index: 10;
+  min-height: 27px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   // -webkit-transform: translateZ(0);
   // transform: translateZ(0);
@@ -99,6 +100,16 @@
 
     @include query($mobile) {
       position: static;
+    }
+
+    .header-options {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include query($mobile) {
+        position: static;
+      }
     }
   }
 }

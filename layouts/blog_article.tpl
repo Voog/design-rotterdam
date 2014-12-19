@@ -5,7 +5,7 @@
   {% include "html-head" %}
 </head>
 
-<body class="post-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+<body class="post-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">
