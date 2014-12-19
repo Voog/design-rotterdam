@@ -125,6 +125,12 @@ body {
 .front-page .content-body:empty {
   display: none;
 }
+.front-page .content-body a {
+  color: rgba(0, 0, 0, 0.3);
+}
+.front-page .content-body a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
 
 .header-banner {
   position: relative;

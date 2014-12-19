@@ -144,6 +144,14 @@ body {
     &:empty {
       display: none;
     }
+
+    a {
+      color: rgba(0,0,0,.3);
+
+      &:hover {
+        color: rgba(0,0,0,.5);
+      }
+    }
   }
 }
 
