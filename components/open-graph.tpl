@@ -20,10 +20,12 @@
   {% endif %}
 {% endif %}
 
-{% if og_image.url %}<meta property="og:image" content="{{ og_image.url }}">{% endif %}
-{% if og_image.content_type %}<meta property="og:image:type" content="{{ og_image.content_type }}">{% endif %}
-{% if og_image.width %}<meta property="og:image:width" content="{{ og_image.width }}">{% endif %}
-{% if og_image.height %}<meta property="og:image:height" content="{{ og_image.height }}">{% endif %}
+{% if og_image %}
+  {% if og_image.url %}<meta property="og:image" content="{{ og_image.url }}">{% endif %}
+  {% if og_image.content_type %}<meta property="og:image:type" content="{{ og_image.content_type }}">{% endif %}
+  {% if og_image.width %}<meta property="og:image:width" content="{{ og_image.width }}">{% endif %}
+  {% if og_image.height %}<meta property="og:image:height" content="{{ og_image.height }}">{% endif %}
+{% endif %}
 
 {% comment %}Open Graph description{% endcomment %}
 {% if article %}{% assign description = article.description %}{% else %}{% assign description = page.description %}{% endif %}
