@@ -1015,7 +1015,7 @@ body {
 @media screen and (max-width: 640px) {
   .content-page .header {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 640px) {
