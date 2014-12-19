@@ -204,8 +204,7 @@
     }
 
     .edy-positionable-container-maxwidth {
-      .public &,
-      .blog-page & {
+      .public .post & {
         width: auto !important;
         max-width: none !important;
         margin-right: 0 !important;
