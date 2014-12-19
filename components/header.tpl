@@ -2,7 +2,7 @@
 <header class="header">
   <div class="header-inner cfx">
     <div class="header-left">
-      <h1 class="header-title">{% unless editmode %}<a href="{{ site.root_item.url }}">{% endunless %}{% editable site.header %}{% unless editmode %}</a>{% endunless %}</h1>
+      <div class="header-title content-formatted">{% unless editmode %}<a href="{{ site.root_item.url }}">{% endunless %}{% editable site.header %}{% unless editmode %}</a>{% endunless %}</div>
     </div>
 
     <div class="header-right">
