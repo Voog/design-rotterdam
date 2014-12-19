@@ -9,29 +9,19 @@
 
 {% comment %}Open Graph image{% endcomment %}
 {% if page.image == nil and front_page and header_bg_image_sizes != nil and header_bg_image_sizes != '' %}
-  {% assign og_image_url = header_bg_image_sizes[0].url %}
-  {% assign og_image_width = header_bg_image_sizes[0].width %}
-  {% assign og_image_height = header_bg_image_sizes[0].height %}
+  {% assign og_image = header_bg_image_sizes[0] %}
 {% else %}
-  {% if article %}
-    {% if article.image? %}
-      {% assign og_image_url = article.image.url %}
-      {% assign og_image_content_type = article.image.content_type %}
-      {% assign og_image_width = article.image.width %}
-      {% assign og_image_height = article.image.height %}
-    {% endif %}
-  {% elsif page.image? %}
-    {% assign og_image_url = page.image.url %}
-    {% assign og_image_content_type = page.image.content_type %}
-    {% assign og_image_width = page.image.width %}
-    {% assign og_image_height = page.image.height %}
-  {% endif %}
+  {% unless article and page.image? %}
+    {% assign og_image = page.image %}
+  {% elsif article.image? %}
+    {% assign og_image = article.image %}
+  {% endunless %}
 {% endif %}
 
-{% if og_image_url %}<meta property="og:image" content="{{ og_image_url }}">{% endif %}
-{% if og_image_content_type %}<meta property="og:image:type" content="{{ og_image_content_type }}">{% endif %}
-{% if og_image_width %}<meta property="og:image:width" content="{{ og_image_width }}">{% endif %}
-{% if og_image_height %}<meta property="og:image:height" content="{{ og_image_height }}">{% endif %}
+{% if og_image.url %}<meta property="og:image" content="{{ og_image.url }}">{% endif %}
+{% if og_image.content_type %}<meta property="og:image:type" content="{{ og_image.content_type }}">{% endif %}
+{% if og_image.width %}<meta property="og:image:width" content="{{ og_image.width }}">{% endif %}
+{% if og_image.height %}<meta property="og:image:height" content="{{ og_image.height }}">{% endif %}
 
 {% comment %}Open Graph description{% endcomment %}
 {% if article %}{% assign description = article.description %}{% else %}{% assign description = page.description %}{% endif %}
