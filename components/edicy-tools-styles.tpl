@@ -11,8 +11,10 @@
           .header-banner {
             background-image: url("{{ imageSize.url }}");
           }
+        {% elsif forloop.last %}
+          {% break %}
         {% else %}
-          @media screen and (max-width: {{ imageSize.width }}px)) {
+          @media screen and (max-width: {{ imageSize.width }}px) {
             .header-banner {
               background-image: url("{{ imageSize.url }}");
             }
@@ -31,12 +33,6 @@
     @media screen and (max-width: 1280px) {
       .header-banner {
         background-image: url("{{ bg_image_prefix }}_large.jpg");
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .header-banner {
-        background-image: url("{{ bg_image_prefix }}_block.jpg");
       }
     }
   {% endif %}
