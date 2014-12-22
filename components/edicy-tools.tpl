@@ -61,7 +61,7 @@
                 headerBgCombinedLightness = site.getCombinedLightness(headerBgImageColor, headerBgColor);
 
                 // Checks the opacity of the header background color and sets the lightness class depending on it's value.
-                if (headerBgCombinedLightness > 0.5) {
+                if (headerBgCombinedLightness >= 0.5) {
                   $('.js-background-type').addClass('light-background').removeClass('dark-background');
                 } else {
                   $('.js-background-type').addClass('dark-background').removeClass('light-background');
@@ -69,6 +69,7 @@
               });
             });
           } else {
+            headerBgCombinedLightness = null;
             // Checks the opacity of the header background color and sets the lightness class depending on it's value.
             if (headerBgColorOpacity >= 0.5) {
               $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background').removeClass(headerBgColorLightness >= 0.5 ? 'dark-background' : 'light-background');
@@ -88,6 +89,7 @@
       commitData.image = data.image || '';
       commitData.imageSizes = data.imageSizes || '';
       commitData.color = data.color || 'transparent';
+      commitData.combinedLightness = headerBgCombinedLightness;
       pageData.set(dataName, commitData);
     }
 

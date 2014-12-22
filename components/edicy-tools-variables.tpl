@@ -13,17 +13,26 @@
   {% assign header_bg_image_sizes = header_bg.imageSizes %}
   {% assign header_bg_color = header_bg.color %}
   {% assign header_bg_color_data = header_bg.colorData %}
+  {% assign header_bg_combined_lightness = header_bg.combinedLightness %}
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if header_bg %}
-    {% if header_bg_color_data.a >= 0.5 %}
-      {% if header_bg_color_data.lightness >= 0.5 %}
+    {% if header_bg_combined_lightness %}
+      {% if header_bg_combined_lightness > 0.5 %}
         {% assign header_bg_type = 'light-background' %}
       {% else %}
         {% assign header_bg_type = 'dark-background' %}
       {% endif %}
     {% else %}
-      {% assign header_bg_type = 'light-background' %}
+      {% if header_bg_color_data.a >= 0.5 %}
+        {% if header_bg_color_data.lightness >= 0.5 %}
+          {% assign header_bg_type = 'light-background' %}
+        {% else %}
+          {% assign header_bg_type = 'dark-background' %}
+        {% endif %}
+      {% else %}
+        {% assign header_bg_type = 'light-background' %}
+      {% endif %}
     {% endif %}
   {% else %}
     {% assign header_bg_type = 'light-background' %}
