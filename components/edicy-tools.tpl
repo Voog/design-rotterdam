@@ -71,14 +71,8 @@
           } else {
             // Checks the opacity of the header background color and sets the lightness class depending on it's value.
             if (headerBgColorOpacity >= 0.5) {
-              console.log('lighness based');
-              console.log(headerBgColorLightness);
-              console.log('');
               $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background').removeClass(headerBgColorLightness >= 0.5 ? 'dark-background' : 'light-background');
             } else {
-              console.log('opacity based');
-              console.log(headerBgColorOpacity);
-              console.log('');
               $('.js-background-type').addClass('light-background').removeClass('dark-background');
             };
           };
