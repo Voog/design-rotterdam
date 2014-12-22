@@ -42,24 +42,46 @@
         return sizes[sizes.length - 1];
       };
 
-      // Defines the suitable image based on the viewport width.
-      var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
-
-      var headerBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
-          headerBgColor = (data.color && data.color !== '') ? data.color : 'transparent',
+      // Defines the variables used in preview logic.
+      var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none',
+          headerBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+          headerBgColor = (data.color && data.color !== '') ? data.color : 'rgba(255,255,255,0)',
           headerBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
-          headerBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none';
+          headerBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none',
+          colorExtractImage = $('<img>'),
+          colorExtractCanvas = $('<canvas>'),
+          colorExtractUrl = (data.image && data.image !== '') ? data.image : null;
 
-      // Removes the current lightness class.
-      $('.js-background-type').removeClass('light-background dark-background');
-      // Checks the opacity of the header background color and sets the lightness class depending on it's value.
-      if (headerBgColorOpacity >= 0.2) {
-        $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background');
-      } else {
-        $('.js-background-type').addClass('light-background');
-      };
+          // Updates the header background lightness class.
+          if (colorExtractUrl) {
+            colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
+            colorExtractImage.load(function() {
+              ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
+                headerBgImageColor = data.bgColor;
+                headerBgCombinedLightness = site.getCombinedLightness(headerBgImageColor, headerBgColor);
 
-      console.log(headerBgImage);
+                // Checks the opacity of the header background color and sets the lightness class depending on it's value.
+                if (headerBgCombinedLightness > 0.5) {
+                  $('.js-background-type').addClass('light-background').removeClass('dark-background');
+                } else {
+                  $('.js-background-type').addClass('dark-background').removeClass('light-background');
+                }
+              });
+            });
+          } else {
+            // Checks the opacity of the header background color and sets the lightness class depending on it's value.
+            if (headerBgColorOpacity >= 0.5) {
+              console.log('lighness based');
+              console.log(headerBgColorLightness);
+              console.log('');
+              $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background').removeClass(headerBgColorLightness >= 0.5 ? 'dark-background' : 'light-background');
+            } else {
+              console.log('opacity based');
+              console.log(headerBgColorOpacity);
+              console.log('');
+              $('.js-background-type').addClass('light-background').removeClass('dark-background');
+            };
+          };
 
       // Updates the header background image and background color.
       $(header).css({'background-image' : headerBgImage});

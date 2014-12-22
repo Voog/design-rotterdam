@@ -16,7 +16,7 @@
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if header_bg %}
-    {% if header_bg_color_data.a >= 0.2 %}
+    {% if header_bg_color_data.a >= 0.5 %}
       {% if header_bg_color_data.lightness >= 0.5 %}
         {% assign header_bg_type = 'light-background' %}
       {% else %}
