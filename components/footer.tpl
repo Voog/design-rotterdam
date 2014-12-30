@@ -4,8 +4,8 @@
     <div class="gradient-overlay"></div>
     {% xcontent name="footer" %}
   </div>
-</footer>
 
-<div class="voog-reference-wrap wrap">
-  <div class="voog-reference">{% loginblock %}{% endloginblock %}</div>
-</div>
+  <div class="voog-reference-wrap wrap">
+    <div class="voog-reference">{% loginblock %}{% endloginblock %}</div>
+  </div>
+</footer>
