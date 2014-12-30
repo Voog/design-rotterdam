@@ -168,6 +168,12 @@
     },
     {
       "content_type": "image/svg+xml",
+      "file": "assets/ico-voog-black.svg",
+      "kind": "assets",
+      "filename": "ico-voog-black.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/loader.svg",
       "kind": "assets",
       "filename": "loader.svg"
@@ -213,6 +219,12 @@
       "file": "images/ico-tags.png",
       "kind": "images",
       "filename": "ico-tags.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ico-voog-black.png",
+      "kind": "images",
+      "filename": "ico-voog-black.png"
     },
     {
       "content_type": "image/png",

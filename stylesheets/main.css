@@ -2118,6 +2118,7 @@ body {
 }
 
 .front-page .voog-reference-wrap {
+  margin-bottom: 30px;
   padding: 0 20px;
 }
 @media screen and (max-width: 640px) {
@@ -2126,16 +2127,22 @@ body {
   }
 }
 
-.voog-reference {
-  margin: -10px auto 25px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-}
 .voog-reference a {
-  color: #333;
+  display: block;
+  opacity: .5;
+  width: 35px;
+  height: 8px;
+  font-size: 0;
+  background-size: cover;
+}
+.no-svg .voog-reference a {
+  background-image: url("../images/ico-voog-black.png");
+}
+.svg .voog-reference a {
+  background-image: url("../assets/ico-voog-black.svg");
 }
 .voog-reference a:hover {
-  color: #555;
+  opacity: 1;
 }
 
 @media screen and (max-width: 640px) {
