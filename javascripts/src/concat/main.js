@@ -105,11 +105,6 @@
   };
 
   var handleSearch = function() {
-    $('.js-search-submit').click(function(event) {
-      event.stopPropagation();
-      $('body').addClass('voog-search-visible');
-    });
-
     $('.js-search-reset').click(function(event) {
       event.preventDefault();
       $('body').removeClass('voog-search-visible');
