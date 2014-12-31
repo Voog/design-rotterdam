@@ -11321,6 +11321,23 @@ MMCQ = (function() {
 
   var editmode = $('html').hasClass('editmode');
 
+  var toggleFlags = function() {
+    $('.js-option-toggle-flags').on('click', function(event) {
+      event.stopPropagation();
+
+      if ($(this).hasClass('js-flag-disable-btn')) {
+        var flagsState = false;
+      } else {
+        var flagsState = true;
+      }
+
+      $(this).toggleClass('js-flag-disable-btn');
+      $('.js-menu-lang-wrap').toggleClass('flags-enabled flags-disabled');
+
+      siteData.set("flags_state", flagsState);
+    });
+  };
+
   // TODO: Remove if Edicy is going to wrap table with the container
   var wrapTables = function() {
     if (!editmode) {
@@ -11434,6 +11451,73 @@ MMCQ = (function() {
       handleTableHorizontalScrolling();
     });
   };
+
+  // Returns the suitable version of the image depending on the viewport width.
+  var getImageByWidth = function(sizes, targetWidth) {
+    var prevImage;
+
+    for (var i = 0, max = sizes.length; i < max; i++) {
+      if (sizes[i].width < targetWidth) {
+        return prevImage || sizes[i];
+      }
+      prevImage = sizes[i];
+    }
+    // Makes sure that smallest is returned if all images bigger than targetWidth.
+    return sizes[sizes.length - 1];
+  };
+
+  // Header background image and color preview logic function.
+  var headerBgPreview = function(data, header) {
+    // Defines the variables used in preview logic.
+    var suitableImage = data.imageSizes ? site.getImageByWidth(data.imageSizes, $(window).width()) : 'none',
+        headerBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+        headerBgColor = (data.color && data.color !== '') ? data.color : 'rgba(255,255,255,0)',
+        headerBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
+        headerBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none',
+        colorExtractImage = $('<img>'),
+        colorExtractCanvas = $('<canvas>'),
+        colorExtractUrl = (data.image && data.image !== '') ? data.image : null;
+
+        // Updates the header background lightness class.
+        if (colorExtractUrl) {
+          colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
+          colorExtractImage.load(function() {
+            ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
+              headerBgImageColor = data.bgColor;
+              headerBgCombinedLightness = getCombinedLightness(headerBgImageColor, headerBgColor);
+
+              // Checks the opacity of the header background color and sets the lightness class depending on it's value.
+              if (headerBgCombinedLightness >= 0.5) {
+                $('.js-background-type').addClass('light-background').removeClass('dark-background');
+              } else {
+                $('.js-background-type').addClass('dark-background').removeClass('light-background');
+              }
+            });
+          });
+        } else {
+          headerBgCombinedLightness = null;
+          // Checks the opacity of the header background color and sets the lightness class depending on it's value.
+          if (headerBgColorOpacity >= 0.5) {
+            $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background').removeClass(headerBgColorLightness >= 0.5 ? 'dark-background' : 'light-background');
+          } else {
+            $('.js-background-type').addClass('light-background').removeClass('dark-background');
+          };
+        };
+
+    // Updates the header background image and background color.
+    $(header).css({'background-image' : headerBgImage});
+    $(header).find('.background-color').css({'background-color' : headerBgColor});
+  };
+
+  // Header background image and color save logic function.
+  var headerBgCommit = function(data, dataName) {
+    var commitData = $.extend(true, {}, data);
+    commitData.image = data.image || '';
+    commitData.imageSizes = data.imageSizes || '';
+    commitData.color = data.color || 'transparent';
+    commitData.combinedLightness = headerBgCombinedLightness;
+    pageData.set(dataName, commitData);
+  }
 
   var colorSum = function(bgColor, fgColor) {
     if (bgColor && fgColor) {
@@ -11773,6 +11857,10 @@ window.site = $.extend(window.site || {}, {
   initCommonPage: initCommonPage,
   initBlogPage: initBlogPage,
   initArticlePage: initArticlePage,
+  toggleFlags: toggleFlags,
+  getImageByWidth: getImageByWidth,
+  headerBgPreview: headerBgPreview,
+  headerBgCommit: headerBgCommit,
   handleHeaderColorScheme: handleHeaderColorScheme,
   getCombinedLightness: getCombinedLightness
 });
