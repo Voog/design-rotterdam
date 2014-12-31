@@ -583,8 +583,7 @@ window.site = $.extend(window.site || {}, {
   getImageByWidth: getImageByWidth,
   headerBgPreview: headerBgPreview,
   headerBgCommit: headerBgCommit,
-  handleHeaderColorScheme: handleHeaderColorScheme,
-  getCombinedLightness: getCombinedLightness
+  handleHeaderColorScheme: handleHeaderColorScheme
 });
 
 init();
