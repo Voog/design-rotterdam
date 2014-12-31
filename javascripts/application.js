@@ -11396,6 +11396,7 @@ MMCQ = (function() {
     $('.js-search-open').click(function(event) {
       event.stopPropagation();
       $('body').addClass('voog-search-visible');
+      $('.js-search-input').val('').focus();
     });
 
     $('.js-search-close').click(function(event) {
