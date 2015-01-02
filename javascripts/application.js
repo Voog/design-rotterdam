@@ -11475,7 +11475,7 @@ MMCQ = (function() {
     return false;
   };
 
-// Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
+  // Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
   var handleHeaderImageLightnessClass = function() {
     if (headerBgCombinedLightness >= 0.5) {
       $('.js-background-type').addClass('light-background').removeClass('dark-background');
@@ -11498,7 +11498,6 @@ MMCQ = (function() {
         colorExtractUrl = (data.image && data.image !== '') ? data.image : null;
 
     if (data.image && data.image !== '' && !headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious) || data.image && data.image !== '' && headerBg.headerBgImageColor == undefined) {
-      console.log('new image');
       // Updates the header background lightness class.
       if (colorExtractUrl) {
         colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
@@ -11511,7 +11510,6 @@ MMCQ = (function() {
         });
       }
     } else {
-      console.log('old or no image');
       headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
       headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
       handleHeaderImageLightnessClass();
