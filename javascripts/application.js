@@ -11466,43 +11466,56 @@ MMCQ = (function() {
     return sizes[sizes.length - 1];
   };
 
+  var headerBgImageSizesContains = function(sizes, url) {
+    for (var i = sizes.length; i--;) {
+      if (url.indexOf(sizes[i].url.trim()) > -1) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+// Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
+  var handleHeaderImageLightnessClass = function() {
+    if (headerBgCombinedLightness >= 0.5) {
+      $('.js-background-type').addClass('light-background').removeClass('dark-background');
+    } else {
+      $('.js-background-type').addClass('dark-background').removeClass('light-background');
+    }
+  };
+
   // Header background image and color preview logic function.
   var headerBgPreview = function(data, header) {
     // Defines the variables used in preview logic.
-    var suitableImage = data.imageSizes ? site.getImageByWidth(data.imageSizes, $(window).width()) : 'none',
-        headerBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+
+    var headerBgImagePrevious = $('.js-header-banner').css('background-image'),
+        headerBgImageSuitable = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none',
+        headerBgImage = (data.image && data.image !== '') ? 'url(' + headerBgImageSuitable.url + ')' : 'none',
+        headerBgImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
         headerBgColor = (data.color && data.color !== '') ? data.color : 'rgba(255,255,255,0)',
-        headerBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
-        headerBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none',
         colorExtractImage = $('<img>'),
         colorExtractCanvas = $('<canvas>'),
         colorExtractUrl = (data.image && data.image !== '') ? data.image : null;
 
-        // Updates the header background lightness class.
-        if (colorExtractUrl) {
-          colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
-          colorExtractImage.load(function() {
-            ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
-              headerBgImageColor = data.bgColor;
-              headerBgCombinedLightness = getCombinedLightness(headerBgImageColor, headerBgColor);
-
-              // Checks the opacity of the header background color and sets the lightness class depending on it's value.
-              if (headerBgCombinedLightness >= 0.5) {
-                $('.js-background-type').addClass('light-background').removeClass('dark-background');
-              } else {
-                $('.js-background-type').addClass('dark-background').removeClass('light-background');
-              }
-            });
+    if (data.image && data.image !== '' && !headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious) || data.image && data.image !== '' && headerBg.headerBgImageColor == undefined) {
+      console.log('new image');
+      // Updates the header background lightness class.
+      if (colorExtractUrl) {
+        colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
+        colorExtractImage.load(function() {
+          ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
+            headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
+            headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
+            handleHeaderImageLightnessClass();
           });
-        } else {
-          headerBgCombinedLightness = null;
-          // Checks the opacity of the header background color and sets the lightness class depending on it's value.
-          if (headerBgColorOpacity >= 0.5) {
-            $('.js-background-type').addClass(headerBgColorLightness >= 0.5 ? 'light-background' : 'dark-background').removeClass(headerBgColorLightness >= 0.5 ? 'dark-background' : 'light-background');
-          } else {
-            $('.js-background-type').addClass('light-background').removeClass('dark-background');
-          };
-        };
+        });
+      }
+    } else {
+      console.log('old or no image');
+      headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
+      headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
+      handleHeaderImageLightnessClass();
+    }
 
     // Updates the header background image and background color.
     $(header).css({'background-image' : headerBgImage});
@@ -11514,7 +11527,7 @@ MMCQ = (function() {
     var commitData = $.extend(true, {}, data);
     commitData.image = data.image || '';
     commitData.imageSizes = data.imageSizes || '';
-    commitData.color = data.color || 'transparent';
+    commitData.color = data.color || 'rgba(255,255,255,0)';
     commitData.combinedLightness = headerBgCombinedLightness;
     pageData.set(dataName, commitData);
   }
