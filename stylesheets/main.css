@@ -103,12 +103,11 @@ body {
   margin: 0 auto;
 }
 .front-page .content .wrap {
-  padding: 41px 20px 17px;
+  padding: 40px 20px 17px;
 }
 @media screen and (max-width: 640px) {
   .front-page .content .wrap {
-    padding-right: 0;
-    padding-left: 0;
+    padding: 20px 0 0;
   }
 }
 .front-page .background-color {
@@ -1300,43 +1299,40 @@ body {
     font-size: 35px;
   }
 }
-.content {
+.container .content {
   margin-bottom: 30px;
 }
-
-.content-bottom {
-  margin-left: 125px;
+@media screen and (max-width: 999px) {
+  .container .content {
+    position: relative;
+    margin-bottom: 20px;
+  }
 }
-
-.content-page .content-body {
+.content-page .container .content-body {
   display: inline-block;
   width: 85%;
 }
-
-.content-header {
+@media screen and (max-width: 999px) {
+  .container .content-body {
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .container .content-body {
+    margin-bottom: 0;
+  }
+}
+.container .content-header {
   margin-bottom: 45px;
 }
-.content-header h1 {
+.container .content-header h1 {
   margin: 0;
   font-size: 50px;
   line-height: 1;
   letter-spacing: -3px;
 }
 
-@media screen and (max-width: 999px) {
-  .content {
-    position: relative;
-  }
-
-  .content-body {
-    max-width: 100%;
-  }
-
-  .container .content-body {
-    max-width: 100%;
-    margin-bottom: 50px;
-  }
-}
 .post-header {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
