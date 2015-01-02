@@ -154,6 +154,10 @@ body {
         color: rgba(0,0,0,.5);
       }
     }
+
+    @include query($mobile) {
+      font-size: 15px;
+    }
   }
 }
 
@@ -170,6 +174,7 @@ body {
   }
 
   @include query($mobile) {
+    min-height: 340px;
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -197,6 +202,10 @@ body {
     .no-flexbox & {
       display: table-cell;
       vertical-align: middle;
+    }
+
+    @include query($mobile) {
+      font-size: 38px;
     }
 
     @include query(452px) {

@@ -133,6 +133,11 @@ body {
 .front-page .content-body a:hover {
   color: rgba(0, 0, 0, 0.5);
 }
+@media screen and (max-width: 640px) {
+  .front-page .content-body {
+    font-size: 15px;
+  }
+}
 
 .header-banner {
   position: relative;
@@ -169,6 +174,7 @@ body {
 }
 @media screen and (max-width: 640px) {
   .header-banner {
+    min-height: 340px;
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -194,6 +200,11 @@ body {
 .no-flexbox .header-banner .header-inner {
   display: table-cell;
   vertical-align: middle;
+}
+@media screen and (max-width: 640px) {
+  .header-banner .header-inner {
+    font-size: 38px;
+  }
 }
 @media screen and (max-width: 452px) {
   .header-banner .header-inner {
@@ -1130,7 +1141,7 @@ body {
 @media screen and (max-width: 640px) {
   .header, .front-page .header {
     margin: 0 -20px;
-    padding: 10px 50px 10px 20px;
+    padding: 8px 50px 5px 20px;
   }
   .header.header-fixed {
     padding: 7px 45px;
