@@ -11498,7 +11498,6 @@ MMCQ = (function() {
         colorExtractCanvas = $('<canvas>'),
         colorExtractImageUrl = (data.image && data.image !== '') ? data.image : null;
 
-
     if (colorExtractImageUrl) {
       if (headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious)) {
         headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
