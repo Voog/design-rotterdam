@@ -29,8 +29,8 @@
               </div>
             </nav>
           {% endif %}
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </header>
