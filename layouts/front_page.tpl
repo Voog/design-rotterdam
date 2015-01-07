@@ -12,7 +12,7 @@
     {% include "header" %}
     <main class="content" role="main">
       <div class="header-banner js-header-banner js-background-type {{ header_bg_type }}">
-        {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ header_bg_image }}" data-bg-image-sizes="{{ header_bg_image_sizes_str | escape }}" {% unless header_bg.color == nil %}data-bg-color="{{ header_bg_color }}"{% endunless %} data-bg-color-data="{{ header_bg_image_color_data_str | escape }}"></button>{% endif %}
+        {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" {% unless header_bg_image == '' %}data-bg-image="{{ header_bg_image }}"{% endunless %} {% unless header_bg_image_sizes == '' %}data-bg-image-sizes="{{ header_bg_image_sizes_str | escape }}"{% endunless %} {% unless header_bg_color == nil or header_bg_color == 'rgba(255,255,255,0)' %}data-bg-color="{{ header_bg_color }}"{% endunless %} {% unless header_bg_color_data == nil %}data-bg-color-data="{{ header_bg_color_data_str | escape }}"{% endunless %}></button>{% endif %}
         <div class="background-color"></div>
         <div class="header-body">
           <div class="header-inner content-formatted cfx">{% content %}</div>

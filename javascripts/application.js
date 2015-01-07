@@ -11489,18 +11489,22 @@ MMCQ = (function() {
     // Defines the variables used in preview logic.
 
     var headerBgImagePrevious = $('.js-header-banner').css('background-image'),
-        headerBgImageSuitable = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none',
+        headerBgImageSuitable = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : null,
         headerBgImage = (data.image && data.image !== '') ? 'url(' + headerBgImageSuitable.url + ')' : 'none',
         headerBgImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
-        headerBgColor = (data.color && data.color !== '') ? data.color : 'rgba(255,255,255,0)',
+        headerBgColor = (data.color && data.color !== '') ? data.color : 'rgba(0,0,0,0)',
+        headerBgColorDataLightness = (data.colorData && data.colorData !== '') ? data.colorData.lightness : 1,
         colorExtractImage = $('<img>'),
         colorExtractCanvas = $('<canvas>'),
-        colorExtractUrl = (data.image && data.image !== '') ? data.image : null;
+        colorExtractImageUrl = (data.image && data.image !== '') ? data.image : null;
 
-    if (data.image && data.image !== '' && !headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious) || data.image && data.image !== '' && headerBg.headerBgImageColor == undefined) {
-      // Updates the header background lightness class.
-      if (colorExtractUrl) {
-        colorExtractImage.attr('src', colorExtractUrl.replace(/.*\/photos/g,'/photos'));
+
+    if (colorExtractImageUrl) {
+      if (headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious)) {
+        headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
+        handleHeaderImageLightnessClass();
+      } else {
+        colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
         colorExtractImage.load(function() {
           ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
             headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
@@ -11508,12 +11512,11 @@ MMCQ = (function() {
             handleHeaderImageLightnessClass();
           });
         });
-      }
+      };
     } else {
-      headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
-      headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
+      headerBgCombinedLightness = getCombinedLightness('rgba(255,255,255,1)', headerBgColor);
       handleHeaderImageLightnessClass();
-    }
+    };
 
     // Updates the header background image and background color.
     $(header).css({'background-image' : headerBgImage});
