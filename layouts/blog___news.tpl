@@ -6,7 +6,7 @@
   {% include "html-head" %}
 </head>
 
-<body class="blog-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %}">
+<body class="blog-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <div class="container" data-search-indexing-allowed="false">
     {% include "header" %}
     <main class="content" role="main">

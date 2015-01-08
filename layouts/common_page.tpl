@@ -5,7 +5,7 @@
   {% include "html-head" %}
 </head>
 
-<body class="common-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %}">
+<body class="common-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <section class="content-header content-formatted cfx" data-search-indexing-allowed="true">
