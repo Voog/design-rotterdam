@@ -62,10 +62,13 @@
   }
 }
 .voog-reference-wrap {
-  margin-top: 30px;
+  &,
+  .front-page & {
+    margin-top: 30px;
 
-  @include query($mobile) {
-    padding: 0;
+    @include query($mobile) {
+      padding: 0;
+    }
   }
 }
 

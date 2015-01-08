@@ -2149,11 +2149,11 @@ body {
   max-width: 100%;
 }
 
-.voog-reference-wrap {
+.voog-reference-wrap, .front-page .voog-reference-wrap {
   margin-top: 30px;
 }
 @media screen and (max-width: 640px) {
-  .voog-reference-wrap {
+  .voog-reference-wrap, .front-page .voog-reference-wrap {
     padding: 0;
   }
 }
