@@ -54,7 +54,7 @@
       }
 
       $(this).toggleClass('js-flag-disable-btn');
-      $('.js-menu-lang-wrap').toggleClass('flags-enabled flags-disabled');
+      $('body').toggleClass('flags-enabled flags-disabled');
 
       siteData.set("flags_state", flagsState);
     });

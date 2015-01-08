@@ -1,5 +1,5 @@
 <section class="topbar">
-  <nav class="mobile-menu lang-menu js-menu-lang-wrap {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
+  <nav class="mobile-menu lang-menu {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
     {% include "lang-menu" %}
   </nav>
 

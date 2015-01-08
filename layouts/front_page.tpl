@@ -7,7 +7,7 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="front-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %}">
+<body class="front-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <div class="container">
     {% include "header" %}
     <main class="content" role="main">

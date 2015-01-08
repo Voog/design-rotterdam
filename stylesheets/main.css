@@ -503,14 +503,23 @@ body {
   float: left;
 }
 
+.search-enabled.lang-enabled.voog-search-visible.flags-disabled .main-menu {
+  margin-right: 240px;
+}
 .search-enabled.lang-enabled.voog-search-visible .main-menu {
   margin-right: 175px;
+}
+.search-enabled.lang-enabled.flags-disabled .main-menu {
+  margin-right: 120px;
 }
 .search-enabled.lang-enabled .main-menu {
   margin-right: 70px;
 }
 .lang-enabled .main-menu {
   margin-right: 45px;
+}
+.lang-enabled.flags-disabled .main-menu {
+  margin-right: 95px;
 }
 .search-enabled.voog-search-visible .main-menu {
   margin-right: 145px;
@@ -643,7 +652,7 @@ body {
   position: absolute;
   top: 25px;
   right: 0;
-  z-index: 10;
+  z-index: 20;
   display: block;
   min-width: 138px;
   padding: 0;
@@ -669,10 +678,10 @@ body {
     top: 0;
   }
 }
-.lang-menu.flags-disabled .lang-flag {
+.flags-disabled .lang-menu .lang-flag {
   padding-right: 4px;
 }
-.lang-menu.flags-disabled .lang-flag:before, .lang-menu.flags-disabled .lang-flag:after {
+.flags-disabled .lang-menu .lang-flag:before, .flags-disabled .lang-menu .lang-flag:after {
   display: none;
 }
 .lang-menu li a {
@@ -960,14 +969,14 @@ body {
     display: none;
     padding-left: 0;
   }
-  .lang-menu.flags-enabled li a {
+  .flags-enabled .lang-menu li a {
     font-size: 0;
     text-indent: -9999px;
   }
-  .lang-menu.flags-enabled li a.edy-menu-langadd {
+  .flags-enabled .lang-menu li a.edy-menu-langadd {
     margin: 15px;
   }
-  .lang-menu.flags-disabled li a {
+  .flags-disabled .lang-menu li a {
     width: auto;
     padding: 13px 9px 12px;
   }
@@ -1268,8 +1277,8 @@ body {
     position: relative;
     z-index: 1;
     float: right;
-    max-width: 95px;
-    padding: 15px 5px 20px 15px;
+    max-width: 105px;
+    padding: 15px 5px 20px;
     margin-bottom: 20px;
     margin-left: 20px;
     -moz-hyphens: auto;

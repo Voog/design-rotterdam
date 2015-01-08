@@ -42,8 +42,15 @@
 }
 
 .main-menu {
+  .search-enabled.lang-enabled.voog-search-visible.flags-disabled & {
+    margin-right: 240px;
+  }
   .search-enabled.lang-enabled.voog-search-visible & {
     margin-right: 175px;
+  }
+
+  .search-enabled.lang-enabled.flags-disabled & {
+    margin-right: 120px;
   }
 
   .search-enabled.lang-enabled & {
@@ -52,6 +59,10 @@
 
   .lang-enabled & {
     margin-right: 45px;
+  }
+
+  .lang-enabled.flags-disabled & {
+    margin-right: 95px;
   }
 
   .search-enabled.voog-search-visible & {
@@ -206,7 +217,7 @@
     position: absolute;
     top: 25px;
     right: 0;
-    z-index: 10;
+    z-index: 20;
     display: block;
     min-width: 138px;
     padding: 0;
@@ -233,7 +244,7 @@
     top: 0;
   }
 
-  &.flags-disabled {
+  .flags-disabled & {
     .lang-flag {
       padding-right: 4px;
 
@@ -496,7 +507,7 @@ $flags:
     display: none;
     padding-left: 0;
 
-    &.flags-enabled {
+    .flags-enabled & {
       li a {
         font-size: 0;
         text-indent: -9999px;
@@ -507,7 +518,7 @@ $flags:
       }
     }
 
-    &.flags-disabled {
+    .flags-disabled & {
       li a {
         width: auto;
         padding: 13px 9px 12px;
