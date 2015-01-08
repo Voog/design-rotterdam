@@ -11898,9 +11898,6 @@ var init = function() {
     handleTableHorizontalScrolling();
   }
   $('.content form').edicyFormPlaceholders();
-  $(window).load(function() {
-    $('input, textarea').placeholder();
-  });
 };
 
 window.site = $.extend(window.site || {}, {
