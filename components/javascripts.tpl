@@ -1,5 +1,5 @@
 <script src="{{ javascripts_path }}/application.min.js"></script>
-<script src="{{ site.static_asset_host }}/libs/picturefill/latest/picturefill.min.js"></script>
+{% sitejs_include %}
 
 {% if site.search.enabled %}
   <script src="{{ site.static_asset_host }}/libs/edicy-search/latest/edicy-search.js"></script>
