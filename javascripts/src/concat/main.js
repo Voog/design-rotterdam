@@ -43,6 +43,22 @@
 
   var editmode = $('html').hasClass('editmode');
 
+  // Function to limit the rate at which a function can fire.
+  var debounce = function(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
   var toggleFlags = function() {
     $('.js-option-toggle-flags').on('click', function(event) {
       event.stopPropagation();
@@ -157,9 +173,11 @@
   };
 
   var handleWindowResize = function() {
-    $(window).resize(function() {
-      handleSubMenuLocation();
-    });
+    // $(window).resize(function() {
+    //   handleSubMenuLocation();
+    // });
+
+$(window).resize(debounce(handleSubMenuLocation, 1000));
   };
 
   // Returns the suitable version of the image depending on the viewport width.
