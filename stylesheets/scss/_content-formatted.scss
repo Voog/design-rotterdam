@@ -198,6 +198,35 @@
       content: attr(data-title);
     }
   }
+
+  .edys-gallery-area,
+  .edy-gallery-area {
+    margin-left: -6px;
+    font-size: 0;
+    line-height: 1em;
+
+    .edys-gallery-item {
+      @include transition(opacity 0.3s ease-in);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      &.inactive {
+        opacity: .6;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .edys-gallery-item,
+    .edy-gallery-item,
+    .edy-gallery-sortable-placeholder {
+      display: inline-block;
+      float: none;
+      margin: 3px 0 3px 6px
+    }
+  }
 }
 
 @include query($mobile) {
