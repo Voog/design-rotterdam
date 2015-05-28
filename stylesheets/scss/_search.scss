@@ -30,9 +30,9 @@
   @include query($mobile) {
     display: none;
     position: absolute;
-    top: 40px;
-    right: 0;
-    left: 0;
+    top: 6px;
+    right: -80px;
+    left: -40px;
     background-color: rgba(255,255,255,.95);
 
     .voog-search-visible & {

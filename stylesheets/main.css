@@ -1067,6 +1067,9 @@ body {
   .header {
     position: static;
   }
+  .search-enabled .header {
+    padding-right: 70px;
+  }
 }
 .header.header-fixed {
   position: fixed;
@@ -1093,16 +1096,43 @@ body {
   padding: 0;
   margin: 0 auto;
 }
+.flexbox .header .header-inner {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
+}
+@media screen and (max-width: 640px) {
+  .flexbox .header .header-inner {
+    display: block;
+  }
+}
 .header .header-inner .header-title {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
   word-break: break-word;
-  display: table-cell;
-  max-width: 810px;
   margin: 0;
-  margin-right: 13px;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.1;
@@ -1113,31 +1143,37 @@ body {
   min-width: 100px;
 }
 .header .header-inner .header-title a {
+  display: inline-block;
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 .header .header-inner .header-title a:hover {
   color: rgba(0, 0, 0, 0.75);
 }
-.header .header-left {
-  display: table;
+.flexbox .header .header-left {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.no-flexbox .header .header-left {
   float: left;
-  margin-right: 20px;
 }
 @media screen and (max-width: 640px) {
-  .header .header-left {
-    margin-right: 30px;
+  .no-flexbox .header .header-left {
+    float: none;
   }
 }
 .header .header-right {
-  float: right;
   position: relative;
-  top: -2px;
+  text-align: right;
+  margin-left: 20px;
 }
-@media screen and (max-width: 640px) {
-  .header .header-right {
-    position: static;
-  }
+.no-flexbox .header .header-right {
+  float: right;
 }
 .header .header-right .header-options {
   position: absolute;
@@ -1154,6 +1190,9 @@ body {
   .header, .front-page .header {
     margin: 0 -20px;
     padding: 8px 50px 5px 20px;
+  }
+  .search-enabled .header, .search-enabled .front-page .header {
+    padding-right: 80px;
   }
   .header.header-fixed {
     padding: 7px 45px;
@@ -1183,7 +1222,6 @@ body {
     display: block;
     width: 100%;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    z-index: 11;
   }
   .topbar.fixed .toggle-btn {
     position: absolute;
@@ -1627,9 +1665,9 @@ body {
   .search {
     display: none;
     position: absolute;
-    top: 40px;
-    right: 0;
-    left: 0;
+    top: 6px;
+    right: -80px;
+    left: -40px;
     background-color: rgba(255, 255, 255, 0.95);
   }
   .voog-search-visible .search {
