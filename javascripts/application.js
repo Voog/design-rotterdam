@@ -11376,6 +11376,16 @@ MMCQ = (function() {
     });
   };
 
+  var bindFallbackHeaderLeftWidthCalculation = function() {
+    var headerWidth = $('.js-header-inner').width(),
+        headerRight = $('.js-header-right'),
+        headerRightWidth = headerRight.width(),
+        headerRightMargin = parseInt(headerRight.css('margin-left')) + 1;
+
+
+    $('.js-header-left').css('min-width', headerWidth - headerRightWidth - headerRightMargin);
+  };
+
   // TODO: Remove if Edicy is going to wrap table with the container
   var wrapTables = function() {
     if (!editmode) {
@@ -11898,6 +11908,10 @@ var init = function() {
     handleTableHorizontalScrolling();
   }
   $('.content form').edicyFormPlaceholders();
+
+  if (!Modernizr.flexbox && editmode) {
+    bindFallbackHeaderLeftWidthCalculation();
+  };
 };
 
 window.site = $.extend(window.site || {}, {
