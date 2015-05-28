@@ -43,21 +43,22 @@
 
   var editmode = $('html').hasClass('editmode');
 
+  // Remove comments if debouncing is used.
   // Function to limit the rate at which a function can fire.
-  var debounce = function(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+  // var debounce = function(func, wait, immediate) {
+  //   var timeout;
+  //   return function() {
+  //     var context = this, args = arguments;
+  //     var later = function() {
+  //       timeout = null;
+  //       if (!immediate) func.apply(context, args);
+  //     };
+  //     var callNow = immediate && !timeout;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(later, wait);
+  //     if (callNow) func.apply(context, args);
+  //   };
+  // };
 
   var toggleFlags = function() {
     $('.js-option-toggle-flags').on('click', function(event) {
@@ -139,14 +140,6 @@
     });
   };
 
-  var handleSubMenuLocation = function() {
-    if($(window).width() <= 999){
-      $('.sidebar-left').prependTo('.content-top .content-first');
-    } else {
-      $('.sidebar-left').prependTo('.content-top');
-    }
-  };
-
   var handleSearch = function() {
     $('.js-search-reset').click(function(event) {
       event.preventDefault();
@@ -173,11 +166,9 @@
   };
 
   var handleWindowResize = function() {
-    // $(window).resize(function() {
-    //   handleSubMenuLocation();
-    // });
-
-$(window).resize(debounce(handleSubMenuLocation, 1000));
+    // Add functions that should be trgiggered while resizing the window here.
+    // Example:
+    // $(window).resize(debounce(yourFunctionName, 3000));
   };
 
   // Returns the suitable version of the image depending on the viewport width.
