@@ -152,17 +152,17 @@ module.exports = function(grunt) {
     // Watches the project for changes and recompiles the output files.
     watch: {
       js: {
-        files: ['javascripts/src/concat/*.js', 'javascripts/*.js'],
-        tasks: ['newer:concat:build', 'newer:uglify:build']
+        files: 'javascripts/src/concat/*.js',
+        tasks: ['concat:build', 'uglify:build', 'exec:kit:javascripts/*.js']
       },
 
       css: {
         files: 'stylesheets/scss/*.scss',
-        tasks: ['sass:build', 'newer:cssmin:build', 'newer:scsslint:all']
+        tasks: ['sass:build', 'cssmin:build', 'exec:kit:stylesheets/*.css']
       },
 
       voog: {
-        files: ['javascripts/*.js', 'stylesheets/*.css', 'layouts/*.tpl', 'components/*.tpl'],
+        files: ['layouts/*.tpl', 'components/*.tpl'],
         options: {
           spawn: false
         }
@@ -179,7 +179,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-modernizr');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-svgmin');
 

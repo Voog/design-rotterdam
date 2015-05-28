@@ -13,6 +13,10 @@
     .content-page & {
       display: inline-block;
       width: 85%;
+
+      @include query($tablet) {
+        display: block;
+      }
     }
 
     @include query($tablet) {

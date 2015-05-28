@@ -1356,6 +1356,11 @@ body {
   width: 85%;
 }
 @media screen and (max-width: 999px) {
+  .content-page .container .content-body {
+    display: block;
+  }
+}
+@media screen and (max-width: 999px) {
   .container .content-body {
     max-width: 100%;
     margin-bottom: 50px;
