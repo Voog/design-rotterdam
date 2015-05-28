@@ -16,6 +16,7 @@
 
       @include query($tablet) {
         display: block;
+        width: auto;
       }
     }
 

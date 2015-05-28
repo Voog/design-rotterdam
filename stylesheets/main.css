@@ -1402,6 +1402,7 @@ body {
 @media screen and (max-width: 999px) {
   .content-page .container .content-body {
     display: block;
+    width: auto;
   }
 }
 @media screen and (max-width: 999px) {
