@@ -442,6 +442,22 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.content-formatted .edy-positionable-container-center:first-child,
+.content-formatted .edy-positionable-container-left-block:first-child,
+.content-formatted .edy-positionable-container-right-block:first-child,
+.content-formatted .edy-texteditor-container-wrapper-center:first-child,
+.content-formatted .edy-texteditor-container-wrapper-left-block:first-child,
+.content-formatted .edy-texteditor-container-wrapper-right-block:first-child {
+  margin-top: 0;
+}
+.content-formatted .edy-positionable-container-center:last-child,
+.content-formatted .edy-positionable-container-left-block:last-child,
+.content-formatted .edy-positionable-container-right-block:last-child,
+.content-formatted .edy-texteditor-container-wrapper-center:last-child,
+.content-formatted .edy-texteditor-container-wrapper-left-block:last-child,
+.content-formatted .edy-texteditor-container-wrapper-right-block:last-child {
+  margin-bottom: 0;
+}
 .content-formatted .edy-positionable-container-left,
 .content-formatted .edy-positionable-container-right {
   width: 45%;
@@ -466,22 +482,6 @@ body {
   margin-left: -6px;
   font-size: 0;
   line-height: 1em;
-}
-.content-formatted .edys-gallery-area .edys-gallery-item,
-.content-formatted .edy-gallery-area .edys-gallery-item {
-  -webkit-transition: opacity 0.3s ease-in;
-  -moz-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in;
-  -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-}
-.content-formatted .edys-gallery-area .edys-gallery-item.inactive,
-.content-formatted .edy-gallery-area .edys-gallery-item.inactive {
-  opacity: .6;
-}
-.content-formatted .edys-gallery-area .edys-gallery-item:hover,
-.content-formatted .edy-gallery-area .edys-gallery-item:hover {
-  opacity: 1;
 }
 .content-formatted .edys-gallery-area .edys-gallery-item,
 .content-formatted .edys-gallery-area .edy-gallery-item,
@@ -1753,8 +1753,6 @@ body {
   color: #1B2124;
   color: rgba(27, 33, 36, 0.67);
   background-color: transparent;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
 }
@@ -1913,8 +1911,6 @@ body {
     width: auto;
     max-height: none;
     padding: 15px 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     box-shadow: none;
   }

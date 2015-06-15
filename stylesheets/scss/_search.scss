@@ -71,7 +71,7 @@
   font-size: 12px;
   @include color($search-color, 0.67);
   background-color: transparent;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   border: none;
 
   .voog-search-visible & {
@@ -238,7 +238,7 @@
     width: auto;
     max-height: none;
     padding: 15px 20px;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     box-shadow: none;
 
     &.no-content {

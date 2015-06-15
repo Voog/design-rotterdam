@@ -171,6 +171,14 @@
   .edy-texteditor-container-wrapper-right-block {
     margin-top: 20px;
     margin-bottom: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .edy-positionable-container-left,
@@ -204,20 +212,6 @@
     margin-left: -6px;
     font-size: 0;
     line-height: 1em;
-
-    .edys-gallery-item {
-      @include transition(opacity 0.3s ease-in);
-      -webkit-transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-
-      &.inactive {
-        opacity: .6;
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-    }
 
     .edys-gallery-item,
     .edy-gallery-item,
