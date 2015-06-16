@@ -289,11 +289,12 @@ body {
   }
 }
 .content-formatted {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
-  word-break: break-word;
 }
 .dark-background .content-formatted, .dark-background
 .content-formatted p, .dark-background
@@ -373,11 +374,12 @@ body {
 .content-formatted iframe,
 .content-formatted table,
 .content-formatted form {
+  word-break: normal;
+  word-wrap: normal;
+  -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
-  -webkit-hyphens: none;
   hyphens: none;
-  word-break: normal;
 }
 .content-formatted pre,
 .content-formatted code {
@@ -603,11 +605,12 @@ body {
   text-transform: uppercase;
 }
 .sub-menu li a {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
-  word-break: break-word;
   font-size: 16px;
   font-weight: 300;
   color: #888;
@@ -1169,11 +1172,12 @@ body {
   }
 }
 .header .header-inner .header-title {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
-  word-break: break-word;
   margin: 0;
   font-size: 24px;
   font-weight: 700;
@@ -1361,11 +1365,12 @@ body {
     padding: 15px 5px 20px;
     margin-bottom: 20px;
     margin-left: 20px;
+    word-break: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    -webkit-hyphens: auto;
     hyphens: auto;
-    word-break: break-word;
     text-align: right;
     background: #e0e0e0;
   }
@@ -2086,11 +2091,12 @@ body {
 }
 
 .comments {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
-  word-break: break-word;
   display: inline-block;
   width: 100%;
   max-width: 312px;
@@ -2151,11 +2157,12 @@ body {
 }
 
 .comment-body {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
-  word-break: break-word;
   color: rgba(0, 0, 0, 0.5);
 }
 
