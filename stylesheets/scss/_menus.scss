@@ -145,6 +145,12 @@
         color: #c33;
       }
     }
+
+    &.editmode-button {
+      @include query($tablet) {
+        margin-right: 5px;
+      }
+    }
   }
 }
 

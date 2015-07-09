@@ -617,6 +617,11 @@ body {
 .sub-menu li a.untranslated {
   color: #c33;
 }
+@media screen and (max-width: 999px) {
+  .sub-menu li.editmode-button {
+    margin-right: 5px;
+  }
+}
 
 .mobile-menu {
   position: relative;
