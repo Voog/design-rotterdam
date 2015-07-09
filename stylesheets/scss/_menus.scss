@@ -90,8 +90,24 @@
     }
   }
 
-  .add-page-btn {
-    margin-left: 5px;
+  .editmode-button {
+    margin-left: 10px;
+
+    @include query($mobile) {
+      margin-top: 3px;
+      margin-left: 0;
+      margin-bottom: 7px;
+
+      &:last-child {
+        margin-top: 10px;
+      }
+
+      a {
+        padding: 10px 15px!important;
+        background-color: #838383 !important;
+        vertical-align: middle !important;
+      }
+    }
   }
 
   @include query($mobile) {
@@ -278,7 +294,8 @@
   }
 
   .add-lang-btn {
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-left: 12px;
   }
 }
 
@@ -586,12 +603,14 @@ $flags:
     .add-lang-btn {
       top: 0;
       left: 0;
-      padding: 14px 10px 12px;
+      padding: 7px 15px 11px;
       margin: 0;
-      padding: 0;
+      background-color: #838383;
+      opacity: .95;
 
       a {
         width: auto;
+        height: auto;
         padding: 0;
         margin: 0;
         text-indent: 0;
