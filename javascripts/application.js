@@ -11540,8 +11540,10 @@ MMCQ = (function() {
 
     if (colorExtractImageUrl) {
       if (headerBgImageSizesContains(headerBgImageSizes, headerBgImagePrevious)) {
+        headerBg.headerBgImageColor = headerBg.headerBgImageColor ? headerBg.headerBgImageColor : 'rgba(178,198,207,1)';
         headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
         handleHeaderImageLightnessClass();
+        console.log(headerBg.headerBgImageColor);
       } else {
         colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
         colorExtractImage.load(function() {
@@ -11549,12 +11551,15 @@ MMCQ = (function() {
             headerBg.headerBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
             headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
             handleHeaderImageLightnessClass();
+            console.log(headerBg.headerBgImageColor);
           });
         });
       };
     } else {
-      headerBgCombinedLightness = getCombinedLightness('rgba(255,255,255,1)', headerBgColor);
+      headerBg.headerBgImageColor = 'rgba(255,255,255,1)';
+      headerBgCombinedLightness = getCombinedLightness(headerBg.headerBgImageColor, headerBgColor);
       handleHeaderImageLightnessClass();
+      console.log(headerBg.headerBgImageColor);
     };
 
     // Updates the header background image and background color.
