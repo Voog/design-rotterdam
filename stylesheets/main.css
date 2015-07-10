@@ -643,6 +643,9 @@ body {
   border: 0;
   outline: none;
 }
+.lang-menu-toggle:before, .lang-menu-toggle:after {
+  right: 5px;
+}
 .flags-disabled .lang-menu-toggle .ico-popover-toggle {
   position: relative;
   top: -1px;
@@ -665,7 +668,6 @@ body {
 .lang-menu li a.lang-flag:after {
   position: absolute;
   top: 5px;
-  right: 5px;
   display: block;
   width: 21px;
   height: 15px;
@@ -740,6 +742,9 @@ body {
   color: #888;
   text-transform: uppercase;
   text-align: right;
+}
+.lang-menu li a.lang-flag:before, .lang-menu li a.lang-flag:after {
+  right: 4px;
 }
 .lang-menu li .edy-menu-langadd {
   padding-right: 10px;
