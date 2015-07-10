@@ -263,18 +263,6 @@
       "filename": "modernizr.min.js"
     },
     {
-      "content_type": "application/javascript",
-      "file": "javascripts/search.js",
-      "kind": "javascripts",
-      "filename": "search.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/search.min.js",
-      "kind": "javascripts",
-      "filename": "search.min.js"
-    },
-    {
       "content_type": "text/css",
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
