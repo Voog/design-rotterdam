@@ -143,7 +143,6 @@ module.exports = function(grunt) {
       options: {
         force: true,
         bundleExec: false,
-        config: '~/.scss-lint.yml',
         reporterOutput: null,
         colorizeOutput: true
       },
@@ -179,7 +178,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-svgmin');
-  grunt.loadNpmTasks('grunt-scss-lint');
+  // grunt.loadNpmTasks('grunt-scss-lint');
 
   grunt.registerTask('default', ['modernizr', 'concat', 'uglify', 'sass', 'cssmin', 'imagemin', 'svgmin']);
 
