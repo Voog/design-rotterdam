@@ -562,6 +562,11 @@ body {
 .lang-enabled.flags-disabled .main-menu {
   margin-right: 95px;
 }
+@media screen and (max-width: 640px) {
+  .lang-enabled.flags-disabled .main-menu {
+    margin-right: 0;
+  }
+}
 .search-enabled.voog-search-visible .main-menu {
   margin-right: 145px;
 }

@@ -63,7 +63,12 @@
 
   .lang-enabled.flags-disabled & {
     margin-right: 95px;
+
+    @include query($mobile) {
+      margin-right: 0;
+    }
   }
+
 
   .search-enabled.voog-search-visible & {
     margin-right: 145px;
