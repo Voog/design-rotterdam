@@ -575,10 +575,10 @@ body {
 }
 .main-menu li {
   display: inline-block;
-  margin-right: 5px;
+  margin-left: 5px;
 }
 .main-menu li:last-child {
-  margin-right: 0;
+  margin-left: 0;
 }
 .main-menu li a {
   text-transform: uppercase;
