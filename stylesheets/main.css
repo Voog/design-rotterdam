@@ -1251,6 +1251,11 @@ body {
 .no-flexbox .header .header-right {
   float: right;
 }
+@media screen and (max-width: 640px) {
+  .header .header-right {
+    position: static;
+  }
+}
 .header .header-right .header-options {
   position: absolute;
   top: 0;
@@ -1748,9 +1753,9 @@ body {
   .search {
     display: none;
     position: absolute;
-    top: 6px;
-    right: -80px;
-    left: -40px;
+    top: 40px;
+    right: 0;
+    left: 0;
     background-color: rgba(255, 255, 255, 0.95);
   }
   .voog-search-visible .search {
@@ -1888,6 +1893,12 @@ body {
 }
 
 .voog-search-modal-inner {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   position: absolute;
   top: 30px;
   right: 0;

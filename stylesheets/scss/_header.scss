@@ -128,9 +128,9 @@
     // position: relative;
     // top: -2px;
 
-    // @include query($mobile) {
-    //   position: static;
-    // }
+    @include query($mobile) {
+      position: static;
+    }
 
     .header-options {
       position: absolute;
