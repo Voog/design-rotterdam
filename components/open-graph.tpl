@@ -9,7 +9,7 @@
 
 {% comment %}Open Graph image{% endcomment %}
 {% if page.image == nil and front_page and header_bg_image_sizes != nil and header_bg_image_sizes != '' %}
-  {% assign og_image = header_bg_image_sizes[0] %}
+  {% assign og_image = header_bg_image_sizes[2] %}
 {% else %}
   {% if article %}
     {% if article.image? %}
