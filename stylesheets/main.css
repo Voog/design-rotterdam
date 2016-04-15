@@ -1760,7 +1760,7 @@ body {
   }
   .voog-search-visible .search-form {
     display: block;
-    background-color: #ffffff;
+    background-color: white;
     border-top: 2px solid rgba(0, 0, 0, 0.65);
     border-bottom: 2px solid rgba(0, 0, 0, 0.65);
   }
@@ -1893,7 +1893,7 @@ body {
   padding: 15px 25px;
   text-align: left;
   font-size: 16px;
-  background-color: #ffffff;
+  background-color: white;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
@@ -1957,7 +1957,7 @@ body {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #000000;
+  color: black;
 }
 .voog-search-modal-result h3 a {
   text-decoration: none;
