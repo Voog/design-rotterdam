@@ -1,91 +1,81 @@
 :root {
   /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.font",
+     "pathI18n": ["main_styles"],
+     "titleI18n": "maximum_width",
+     "editor": "rangePicker",
+     "min": 600,
+     "max": 1800,
+     "step": 20,
+     "unit": "px",
+     "scope": "global"
+  */
+  --site-width: 940px;
+  /* VoogStyle
+     "pathI18n": ["main_styles"],
+     "titleI18n": "font_primary",
      "editor": "listPicker",
      "list": {{ base_font_set }},
      "featured": true,
-     "scope": "global",
-     "boundVariables": [
-      "--header-site-title-font-family",
-      "--header-mainmenu-font-family",
-      "--blog-list-headings-font-family",
-      "--h1-font-family",
-      "--h2-font-family",
-      "--h3-font-family",
-      "--content-font-family",
-      "--footer-font-family",
-      "--form-field-text-font-family"
-     ]
+     "scope": "global"
   */
-  --font-main: "Montserrat", Helvetica, Arial, sans-serif;
+  --font-one: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.background_color",
-     "editor": "colorPicker",
-     "scope": "global",
-     "boundVariables": [
-      "--header-background-color",
-      "--footer-background-color"
-    ]
-  */
-  --bg-color: #f4f4f4;
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.primary_color",
-     "editor": "colorPicker",
-     "scope": "global",
+     "pathI18n": ["main_styles"],
+     "titleI18n": "font_secondary",
+     "editor": "listPicker",
+     "list": {{ base_font_set }},
      "featured": true,
-     "boundVariables": [
-        "--header-site-title-color",
-        "--header-mainmenu-hover-color",
-        "--header-mainmenu-active-color",
-        "--content-submenu--hover-color",
-        "--content-submenu--active-color",
-        "--h1-color",
-        "--h2-color",
-        "--h3-color",
-        "--content-links-hover-color"
-     ]
+     "scope": "global"
   */
-  --second-color: black;
+  --font-two: "EB Garamond", "Georgia", serif;
   /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.secondary_color",
+     "pathI18n": ["main_styles", "colors"],
+     "titleI18n": "primary_color",
      "editor": "colorPicker",
      "scope": "global",
      "featured": true,
      "boundVariables": [
         "--content-color",
+        "--content-links-hover-color",
+        "--content-submenu-hover-color",
+        "--content-submenu-active-color",
+        "--focus-area-links-color",
+        "--footer-color",
+        "--header-site-title-color",
+        "--header-mainmenu-hover-color",
+        "--header-mainmenu-active-color",
+        "--content-title-color",
+        "--blog-list-title-color",
         "--form-field-text-color",
-        "--footer-text-color"
-     ]
+        "--h1-color"
+      ]
   */
-  --main-color: #333;
+  --color-primary: #333;
   /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.third_color",
+     "pathI18n": ["main_styles", "colors"],
+     "titleI18n": "secondary_color",
      "editor": "colorPicker",
      "scope": "global",
      "featured": true,
      "boundVariables": [
-      "--header-mainmenu-color",
-      "--content-submenu--color",
-      "--content-links-color",
-      "--table-border-color"
+        "--blog-list-date-color",
+        "--button-color",
+        "--content-links-color",
+        "--content-submenu-color",
+        "--focus-area-text-color",
+        "--focus-area-links-hover-color",
+        "--header-mainmenu-color",
+        "--table-border-color",
+        "--form-field-border-color"
      ]
   */
-  --third-color: #818181;
+  --color-secondary: #919191;
   /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.fourth_color",
+     "pathI18n": ["main_styles", "colors"],
+     "titleI18n": "background_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true,
-     "boundVariables": [
-      "--blog-list-headings-color",
-      "--form-field-background-color"
-    ]
+     "featured": true
   */
-  --fourth-color: white;
+  --color-bg: white;
 }

@@ -18,43 +18,37 @@ $search-height-1: 30px;
 $search-height-2: 40px;
 
 
-/////// Temporary vars for design editor. Remove unnecessary ones:
+//
 
+$site-width: 940px;
+
+// Colors
 $color-white: rgb(255, 255, 255);
 $color-black: rgb(0, 0, 0);
 
-$main-color: #333;
-$second-color: $color-black;
-$third-color: #818181;
-$fourth-color: $color-white;
-$link-color: #919191;
-$link-color: $third-color;
-$focus-color: #f9ec5a;
+$color-one: #222; // replaced by $color-two in design editor
+// rgb(34,34,34)
 
-$black: $second-color;
-$white: $fourth-color;
+$color-two: #333;
+// rgb(51,51,51)
 
-$bg-color: #f4f4f4;
-$bg-color-dark: #2b2b2b;
+$color-three: #888; // replaced by $color-four in design editor
+// rgb(136,136,136)
 
-$error-color: #c70909;
-$success-color: #409e13;
+$color-four: #919191; 
+// rgb(145,145,145)
 
-// FONT SIZES
-$h1-size: 40px;
+$color-error: #c33; //rgb(204,51,51)
+$color-notice: #3c3; // rgb(51,204,51)
+
+// Fonts
+$font-one: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-two: "EB Garamond", "Georgia", serif;
+
+$h1-size: 36px;
 $h2-size: 24px;
-$h3-size: 20px;
 $font-size: 18px;
-$line-height: 1.45;
+$line-height: 1.4;
 
-$font-main: "Montserrat", Helvetica, Arial, sans-serif;
-
-$main-width: 700px;
-
-$break-medium: 600px;
-$break-small: 500px;
-
-$header-inner-height: 28px;
-
-$pad-50: 50px;
-
+$color-one: $color-two; 
+$color-three: $color-four;

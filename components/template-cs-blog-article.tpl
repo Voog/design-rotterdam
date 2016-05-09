@@ -1,17 +1,28 @@
 :root {
   /* VoogStyle
-    "pathI18n": ["headings", "title"],
+     "pathI18n": ["content"],
+     "titleI18n": "padding",
+     "editor": "rangePicker",
+     "min": 0,
+     "max": 200,
+     "step": 10,
+     "unit": "px",
+     "scope": "global"
+  */
+  --blog-article-margin: 70px;
+  /* VoogStyle
+    "pathI18n": ["content", "title"],
     "titleI18n": "size",
     "editor": "rangePicker",
     "min": 8,
-    "max": 100,
+    "max": 80,
     "unit": "px",
     "scope": "global",
     "featured": true
   */
-  --h1-font-size: 36px;
+  --content-title-font-size: 46px;
   /* VoogStyle
-     "pathI18n": ["headings", "title"],
+     "pathI18n": ["content", "title"],
      "titleI18n": "line_height",
      "editor": "rangePicker",
      "min": 0.8,
@@ -20,17 +31,9 @@
      "unit": "em",
      "scope": "global"
   */
-  --h1-line-height: 1em;
+  --content-title-line-height: 1em;
   /* VoogStyle
-     "pathI18n": ["headings", "title"],
-     "titleI18n": "alignment",
-     "editor": "listPicker",
-     "list": {{ base_alignment_set }},
-     "scope": "global"
-  */
-  --h1-alignment: left;
-  /* VoogStyle
-    "pathI18n": ["headings", "title"],
+    "pathI18n": ["content", "title"],
     "titleI18n": "font_weight",
     "type": "button",
     "editor": "toggleIcon",
@@ -41,9 +44,9 @@
     "icon": "bold",
     "scope": "global"
   */
-  --h1-font-weight: 400;
+  --content-title-font-weight: 400;
   /* VoogStyle
-    "pathI18n": ["headings", "title"],
+    "pathI18n": ["content", "title"],
     "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
@@ -54,9 +57,9 @@
     "icon": "italic",
     "scope": "global"
   */
-  --h1-font-style: normal;
+  --content-title-font-style: normal;
   /* VoogStyle
-    "pathI18n": ["headings", "title"],
+    "pathI18n": ["content", "title"],
     "titleI18n": "text_decoration",
     "type": "button",
     "editor": "toggleIcon",
@@ -67,9 +70,9 @@
     "icon": "underline",
     "scope": "global"
   */
-  --h1-text-decoration: none;
+  --content-title-text-decoration: none;
   /* VoogStyle
-    "pathI18n": ["headings", "title"],
+    "pathI18n": ["content", "title"],
     "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
@@ -80,29 +83,29 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --h1-text-transform: none;
+  --content-title-text-transform: none;
   /* VoogStyle
-    "pathI18n": ["headings", "title"],
+    "pathI18n": ["content", "title"],
     "titleI18n": "color",
     "type": "button",
     "editor": "colorPicker",
     "scope": "global",
     "featured": true
   */
-  --h1-color: #333;
+  --content-title-color: #333;
   /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "size",
     "editor": "rangePicker",
     "min": 8,
-    "max": 100,
+    "max": 80,
     "unit": "px",
     "scope": "global",
     "featured": true
   */
-  --h2-font-size: 24px;
+  --post-date-font-size: 20px;
   /* VoogStyle
-     "pathI18n": ["headings", "heading"],
+     "pathI18n": ["content", "date"],
      "titleI18n": "line_height",
      "editor": "rangePicker",
      "min": 0.8,
@@ -111,17 +114,9 @@
      "unit": "em",
      "scope": "global"
   */
-  --h2-line-height: 1.4;
+  --post-date-line-height: 1.6em;
   /* VoogStyle
-     "pathI18n": ["headings", "heading"],
-     "titleI18n": "alignment",
-     "editor": "listPicker",
-     "list": {{ base_alignment_set }},
-     "scope": "global"
-  */
-  --h2-alignment: left;
-  /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "font_weight",
     "type": "button",
     "editor": "toggleIcon",
@@ -132,9 +127,9 @@
     "icon": "bold",
     "scope": "global"
   */
-  --h2-font-weight: 400;
+  --post-date-font-weight: 400;
   /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
@@ -145,9 +140,9 @@
     "icon": "italic",
     "scope": "global"
   */
-  --h2-font-style: normal;
+  --post-date-font-style: normal;
   /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "text_decoration",
     "type": "button",
     "editor": "toggleIcon",
@@ -158,9 +153,9 @@
     "icon": "underline",
     "scope": "global"
   */
-  --h2-text-decoration: none;
+  --post-date-text-decoration: none;
   /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
@@ -171,29 +166,32 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --h2-text-transform: uppercase;
+  --post-date-text-transform: uppercase;
   /* VoogStyle
-    "pathI18n": ["headings", "heading"],
+    "pathI18n": ["content", "date"],
     "titleI18n": "color",
     "type": "button",
     "editor": "colorPicker",
     "scope": "global",
     "featured": true
   */
-  --h2-color: #c33;
+  --post-date-color: #c33;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+    "pathI18n": ["content", "text"],
     "titleI18n": "size",
     "editor": "rangePicker",
     "min": 8,
-    "max": 100,
+    "max": 80,
     "unit": "px",
     "scope": "global",
-    "featured": true
+    "featured": true,
+    "boundVariables": [
+      "--form-field-text-font-size"
+    ]
   */
-  --h3-font-size: 18px;
+  --content-font-size: 20px;
   /* VoogStyle
-     "pathI18n": ["headings", "subheading"],
+     "pathI18n": ["content", "text"],
      "titleI18n": "line_height",
      "editor": "rangePicker",
      "min": 0.8,
@@ -202,17 +200,33 @@
      "unit": "em",
      "scope": "global"
   */
-  --h3-line-height: 1.4;
+  --content-line-height: 1.4;
   /* VoogStyle
-     "pathI18n": ["headings", "subheading"],
-     "titleI18n": "alignment",
-     "editor": "listPicker",
-     "list": {{ base_alignment_set }},
-     "scope": "global"
+    "pathI18n": ["content", "text"],
+    "titleI18n": "color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
   */
-  --h3-alignment: left;
+  --content-color: #333;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+      "pathI18n": ["content", "link", "normal"],
+      "titleI18n": "font_weight",
+      "type": "button",
+      "editor": "toggleIcon",
+      "states": {
+        "on": "600",
+        "off": "400"
+      },
+      "icon": "bold",
+      "scope": "global",
+      "boundVariables": [
+        "--content-links-hover-font-weight"
+      ]
+    */
+  --content-links-font-weight: 400;
+  /* VoogStyle
+    "pathI18n": ["content", "link", "hover"],
     "titleI18n": "font_weight",
     "type": "button",
     "editor": "toggleIcon",
@@ -223,9 +237,25 @@
     "icon": "bold",
     "scope": "global"
   */
-  --h3-font-weight: 400;
+  --content-links-hover-font-weight: 400;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+    "pathI18n": ["content", "link", "normal"],
+    "titleI18n": "font_style",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "italic",
+      "off": "normal"
+    },
+    "icon": "italic",
+    "scope": "global",
+    "boundVariables": [
+      "--content-links-hover-font-style"
+    ]
+  */
+  --content-links-font-style: normal;
+  /* VoogStyle
+    "pathI18n": ["content", "link", "hover"],
     "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
@@ -236,9 +266,25 @@
     "icon": "italic",
     "scope": "global"
   */
-  --h3-font-style: normal;
+  --content-links-hover-font-style: normal;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+    "pathI18n": ["content", "link", "normal"],
+    "titleI18n": "text_decoration",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "underline",
+      "off": "none"
+    },
+    "icon": "underline",
+    "scope": "global",
+    "boundVariables": [
+      "--content-links-hover-text-decoration"
+    ]
+  */
+  --content-links-text-decoration: none;
+  /* VoogStyle
+    "pathI18n": ["content", "link", "hover"],
     "titleI18n": "text_decoration",
     "type": "button",
     "editor": "toggleIcon",
@@ -249,9 +295,25 @@
     "icon": "underline",
     "scope": "global"
   */
-  --h3-text-decoration: none;
+  --content-links-hover-text-decoration: none;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+    "pathI18n": ["content", "link", "normal"],
+    "titleI18n": "text_transform",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "uppercase",
+      "off": "none"
+    },
+    "icon": "uppercase",
+    "scope": "global",
+    "boundVariables": [
+      "--content-links-hover-text-transform"
+    ]
+  */
+  --content-links-text-transform: none;
+  /* VoogStyle
+    "pathI18n": ["content", "link", "hover"],
     "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
@@ -262,14 +324,23 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --h3-text-transform: uppercase;
+  --content-links-hover-text-transform: none;
   /* VoogStyle
-    "pathI18n": ["headings", "subheading"],
+    "pathI18n": ["content", "link", "normal"],
     "titleI18n": "color",
     "type": "button",
     "editor": "colorPicker",
     "scope": "global",
     "featured": true
   */
-  --h3-color: #c33;
+  --content-links-color: #919191;
+ /* VoogStyle
+  "pathI18n": ["content", "link", "hover"],
+  "titleI18n": "color",
+  "type": "button",
+  "editor": "colorPicker",
+  "scope": "global",
+  "featured": true
+*/
+  --content-links-hover-color: #333;
 }
