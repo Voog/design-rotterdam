@@ -11,6 +11,10 @@
   font-weight: 700;
   src: url("../assets/montserrat-bold.eot?#iefix") format("embedded-opentype"), url("../assets/montserrat-bold.woff2") format("woff2"), url("../assets/montserrat-bold.woff") format("woff"), url("../assets/montserrat-bold.ttf") format("truetype"), url("../assets/montserrat-bold.svg#Montserrat") format("svg");
 }
+a {
+  text-decoration: none;
+}
+
 .scrollpos {
   position: fixed;
   top: 0;
@@ -515,16 +519,12 @@ body {
 }
 .menu li a:hover {
   color: rgba(0, 0, 0, 0.8);
-  -webkit-filter: grayscale(50%);
-  filter: grayscale(50%);
 }
 .menu li a:hover:before {
   background-color: transparent;
 }
 .menu li.active a {
   color: rgba(0, 0, 0, 0.8);
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
 .menu li.active a:hover {
   color: rgba(0, 0, 0, 0.85);

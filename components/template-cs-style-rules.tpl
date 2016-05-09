@@ -19,7 +19,8 @@ body {
 .search .search-input,
 .voog-search-result,
 .sidebar,
-.sidebar-left .content-formatted h1 {
+.sidebar-left .content-formatted h1,
+.header-banner .header-inner {
   font-family: var(--font-one);
 }
 
@@ -32,7 +33,7 @@ body {
 .content-formatted form,
 .content-formatted .form,
 .content-formatted form input,
-.content-formatted form-textarea {
+.content-formatted form textarea {
   font-family: var(--font-one);
 }
 
@@ -41,9 +42,18 @@ body {
     font-family: var(--font-one);
   }
 }
-.container,
-.header .header-inner {
+.header .header-inner,
+.front-page .wrap,
+.content-page .container {
   max-width: var(--site-width);
+}
+
+.header-banner .header-inner {
+  color: var(--color-primary);
+}
+
+.front-page .content-body {
+  color: var(--color-secondary);
 }
 
 .header .header-inner .header-title, .header .header-inner .header-title a, .header .header-inner .header-title a:hover {
@@ -218,9 +228,17 @@ body {
 }
 .content-formatted a {
   color: var(--content-links-color);
+  font-style: var(--content-links-font-style);
+  font-weight: var(--content-links-font-weight);
+  text-decoration: var(--content-links-text-decoration);
+  text-transform: var(--content-links-text-transform);
 }
 .content-formatted a:hover {
   color: var(--content-links-hover-color);
+  font-style: var(--content-links-hover-font-style);
+  font-weight: var(--content-links-hover-font-weight);
+  text-decoration: var(--content-links-hover-text-decoration);
+  text-transform: var(--content-links-hover-text-transform);
 }
 
 .footer {
