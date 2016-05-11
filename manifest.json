@@ -36,9 +36,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/search.tpl",
-      "layout_name": "search",
-      "title": "search"
+      "file": "components/sidebar-left.tpl",
+      "layout_name": "sidebar-left",
+      "title": "sidebar-left"
     },
     {
       "content_type": "component",
@@ -120,16 +120,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/comment-form.tpl",
-      "layout_name": "comment-form",
-      "title": "comment-form"
+      "file": "components/search.tpl",
+      "layout_name": "search",
+      "title": "search"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/sidebar-left.tpl",
-      "layout_name": "sidebar-left",
-      "title": "sidebar-left"
+      "file": "components/comment-form.tpl",
+      "layout_name": "comment-form",
+      "title": "comment-form"
     },
     {
       "content_type": "component",
@@ -172,6 +172,13 @@
       "file": "components/template-cs-content.tpl",
       "layout_name": "template-cs-content",
       "title": "template-cs-content"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-focus-area.tpl",
+      "layout_name": "template-cs-focus-area",
+      "title": "template-cs-focus-area"
     },
     {
       "content_type": "component",
@@ -275,7 +282,7 @@
       "filename": "montserrat-bold.svg"
     },
     {
-      "content_type": "application/x-font-truetype",
+      "content_type": "application/font-sfnt",
       "file": "assets/montserrat-bold.ttf",
       "kind": "assets",
       "filename": "montserrat-bold.ttf"
@@ -305,7 +312,7 @@
       "filename": "montserrat-regular.svg"
     },
     {
-      "content_type": "application/x-font-truetype",
+      "content_type": "application/font-sfnt",
       "file": "assets/montserrat-regular.ttf",
       "kind": "assets",
       "filename": "montserrat-regular.ttf"

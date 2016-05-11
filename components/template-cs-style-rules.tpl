@@ -48,8 +48,8 @@ body {
   max-width: var(--site-width);
 }
 
-.header-banner .header-inner {
-  color: var(--color-primary);
+.header-banner .header-body {
+  width: var(--focus-area-width);
 }
 
 .front-page .content-body {
@@ -69,7 +69,7 @@ body {
   background-color: var(--color-bg);
 }
 
-.lang-menu.flags-disabled .lang-flag {
+.lang-menu .lang-flag {
   color: var(--header-mainmenu-active-color);
 }
 
@@ -361,11 +361,13 @@ body {
 .content-formatted .form_field_textarea,
 .content-formatted .form_field_select,
 .content-formatted .form_field_file,
+.content-formatted .form_field .edy-fe-label,
 .comment-form .form_field label,
 .comment-form .form_field_textfield,
 .comment-form .form_field_textarea,
 .comment-form .form_field_select,
-.comment-form .form_field_file {
+.comment-form .form_field_file,
+.comment-form .form_field .edy-fe-label {
   background-color: var(--color-bg);
   color: var(--form-field-text-color);
   font-size: var(--form-field-text-font-size);

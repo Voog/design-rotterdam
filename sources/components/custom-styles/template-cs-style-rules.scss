@@ -66,7 +66,6 @@ body {
   }
 }
 
-
 .header .header-inner,
 .front-page .wrap,
 .content-page .container {
@@ -74,14 +73,14 @@ body {
 }
 
 // front page colors
-.header-banner .header-inner {
-  color: var(--color-primary);
+
+.header-banner .header-body {
+  width: var(--focus-area-width);
 }
 
 .front-page .content-body {
   color: var(--color-secondary);
 }
-
 
 // Header - Site title
 .header {
@@ -107,7 +106,7 @@ body {
 }
 
 // Header - lang menu
-.lang-menu.flags-disabled .lang-flag {
+.lang-menu .lang-flag {
   color: var(--header-mainmenu-active-color);
 }
 
@@ -485,7 +484,8 @@ form,
   .form_field_textfield,
   .form_field_textarea,
   .form_field_select,
-  .form_field_file {
+  .form_field_file,
+  .form_field .edy-fe-label {
     background-color: var(--color-bg);
     color: var(--form-field-text-color);
     font-size: var(--form-field-text-font-size);
