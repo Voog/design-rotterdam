@@ -10,6 +10,26 @@ $search-highlight: #F9EC5A;
 $tablet: 999px;
 $mobile: 640px;
 
+// Width
+
+$site-width: 940px;
+
+// Colors
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(0, 0, 0);
+$color-two: #333;
+$color-four: #919191; 
+$color-error: #c33; //rgb(204,51,51)
+$color-notice: #3c3; // rgb(51,204,51)
+
+// Fonts
+$font-one: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-two: "EB Garamond", "Georgia", serif;
+$h1-size: 36px;
+$h2-size: 24px;
+$font-size: 18px;
+$line-height: 1.4;
+
 // Reusable values
 // Define the reusable variables here.
 // For example the width of several different elements, that allways have to be with the same height:

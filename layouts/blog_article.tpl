@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+{% include "template-variables" %}
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
+  {% assign blog_article = true %}
+  {% include "html-head" blog_article: true %}
   {% include "edicy-tools-variables" %}
-  {% include "html-head" %}
 </head>
 
 <body class="post-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
