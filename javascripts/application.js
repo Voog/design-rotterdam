@@ -11651,6 +11651,11 @@ MMCQ = (function() {
   });
 };
 
+var bindCustomTexteditorStyles = function(buttonTranslation) {
+  window.edy = window.edy || [];
+  edy.push(['texteditorStyles', {name: buttonTranslation, tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
+};
+
 var init = function() {
   toggleMainMenu();
   toggleLangMenu();
@@ -11676,7 +11681,8 @@ window.site = $.extend(window.site || {}, {
   getImageByWidth: getImageByWidth,
   headerBgPreview: headerBgPreview,
   headerBgCommit: headerBgCommit,
-  handleHeaderColorScheme: handleHeaderColorScheme
+  handleHeaderColorScheme: handleHeaderColorScheme,
+  bindCustomTexteditorStyles: bindCustomTexteditorStyles
 });
 
 init();

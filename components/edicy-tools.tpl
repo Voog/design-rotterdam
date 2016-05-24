@@ -28,5 +28,7 @@
         site.headerBgCommit(data, 'header_bg');
       }
     });
+
+    site.bindCustomTexteditorStyles('{{ "button" | lc: editor_locale }}');
   </script>
 {% endeditorjsblock %}
