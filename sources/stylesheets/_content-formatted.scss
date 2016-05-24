@@ -147,6 +147,17 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  .custom-btn {
+    background: #dadada;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.7em;
+    margin-bottom: 20px;
+    padding: .31em .75em;
+  }
+
   // IMAGE CONTAINERS
   .blog-page .post-content &,
   .post-page .post-content & {

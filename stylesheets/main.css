@@ -437,6 +437,16 @@ body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
+.content-formatted .custom-btn {
+  background: #dadada;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.7em;
+  margin-bottom: 20px;
+  padding: .31em .75em;
+}
 .blog-page .post-content .content-formatted .edy-positionable-container-maxwidth, .post-page .post-content .content-formatted .edy-positionable-container-maxwidth {
   width: auto !important;
   max-width: none !important;
