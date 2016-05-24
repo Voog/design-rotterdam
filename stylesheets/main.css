@@ -305,6 +305,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -384,6 +385,7 @@ body {
   word-break: normal;
   word-wrap: normal;
   -webkit-hyphens: none;
+  -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
 }
@@ -614,6 +616,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   font-size: 16px;
@@ -1188,6 +1191,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   margin: 0;
@@ -1383,6 +1387,7 @@ body {
     word-break: break-word;
     word-wrap: break-word;
     -webkit-hyphens: auto;
+    -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
     text-align: right;
@@ -1875,6 +1880,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   position: absolute;
@@ -2110,6 +2116,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   display: inline-block;
@@ -2175,6 +2182,7 @@ body {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   color: rgba(0, 0, 0, 0.5);
