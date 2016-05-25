@@ -91,7 +91,7 @@
   var wrapTables = function() {
     if (!editmode) {
       $.each($('.content-formatted table'), function() {
-        $(this).wrap('<div class="table-container overthrow"></div>');
+        $(this).wrap('<div class="table-container"></div>');
       });
     }
   };
