@@ -1490,7 +1490,7 @@ body {
 }
 .content-page .container .content-body {
   display: inline-block;
-  max-width: calc(100% - 135px);
+  width: calc(100% - 135px);
 }
 @media screen and (max-width: 999px) {
   .content-page .container .content-body {
