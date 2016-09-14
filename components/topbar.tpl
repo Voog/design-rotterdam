@@ -31,6 +31,6 @@
     </div>
   </button>
   <nav class="mobile-menu main-menu">
-    {% include "nav-menu" %}
+    {% include "nav-menu" with "mobile-menu" %}
   </nav>
 </section>
