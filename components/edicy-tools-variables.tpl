@@ -59,4 +59,10 @@
   {% else %}
     {% assign header_bg_color_data_str = header_bg_color_data | json %}
   {% endif %}
+
+  {% comment %}VOOG intro popover targets. Add them where applicable popovers should appear.{% endcomment %}
+  {% capture edy_intro_add_page %}{% if editmode %}data-edy-intro-popover="edy-add-page"{% endif %}{% endcapture %}
+  {% capture edy_intro_add_lang %}{% if editmode %}data-edy-intro-popover="edy-add-lang"{% endif %}{% endcapture %}
+  {% capture edy_intro_edit_text %}{% if editmode %}data-edy-intro-popover="edy-edit-text"{% endif %}{% endcapture %}
+
 {% endcapture %}
