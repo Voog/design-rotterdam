@@ -49,7 +49,6 @@
           {% endif %}
         </div>
       {% endif %}
-
     </main>
     {% include "footer" %}
   </div>
