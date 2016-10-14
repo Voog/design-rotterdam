@@ -156,6 +156,11 @@
     line-height: 1.7em;
     margin-bottom: 20px;
     padding: .31em .75em;
+
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
   }
 
   // IMAGE CONTAINERS

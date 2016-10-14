@@ -445,6 +445,10 @@ body {
   margin-bottom: 20px;
   padding: .31em .75em;
 }
+.content-formatted .custom-btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
 .blog-page .post-content .content-formatted .edy-positionable-container-maxwidth, .post-page .post-content .content-formatted .edy-positionable-container-maxwidth {
   width: auto !important;
   max-width: none !important;
