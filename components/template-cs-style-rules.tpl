@@ -424,3 +424,12 @@ body {
   color: var(--form-field-text-color);
   opacity: .5;
 }
+
+.public .edy-ecommerce-shopping-cart-button {
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  color: var(--button-color);
+  text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+  background-color: var(--button-background-color);
+}
