@@ -1,0 +1,38 @@
+.public {
+  .edy-ecommerce-shopping-cart-button {
+    z-index: 1;
+    display: inline-block;
+    padding: 6px 12px 7px;
+    font-family: $font-one;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-four;
+    cursor: pointer;
+    background: rgba($color-grey, 1);
+    border: 0;
+
+    @include query($mobile) {
+      top: 40px;
+      right: 0;
+    }
+
+    @include querymin($mobile) {
+      top: 84px;
+      right: 30px;
+    }
+
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+
+    &:hover {
+      opacity: .75;
+    }
+
+    .edy-ecommerce-shopping-cart-button-flash {
+      line-height: 2.2;
+    }
+  }
+}
