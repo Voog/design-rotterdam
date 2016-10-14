@@ -96,7 +96,7 @@
 
 .form_field_textarea,
 .form_field_textfield {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid rgba($color-grey, 1);
 
   .header-inner & {
     background: rgba(255,255,255,0.5);
@@ -128,7 +128,7 @@
   margin: 0;
   color: #888;
   cursor: pointer;
-  background: #dadada;
+  background: rgba($color-grey, 1);
   border: 0;
 
   .light-background & {
