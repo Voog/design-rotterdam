@@ -1361,6 +1361,9 @@ body {
     background: #333;
     opacity: 1;
   }
+  .edy-checkout-button-visible .topbar .toggle-btn {
+    top: 41px;
+  }
   .topbar .toggle-btn .close-icon {
     position: relative;
     top: 1px;
@@ -1390,6 +1393,9 @@ body {
   .topbar .main-menu {
     top: 40px;
     right: 0;
+  }
+  .edy-checkout-button-visible .topbar .main-menu {
+    top: 81px;
   }
   .topbar.fixed .lang-menu {
     position: absolute;
@@ -1862,6 +1868,9 @@ body {
   .voog-search-visible .search {
     display: block;
   }
+  .edy-checkout-button-visible .search {
+    top: 81px;
+  }
 }
 
 .search-form {
@@ -1945,6 +1954,10 @@ body {
     top: 0;
     padding: 11px;
   }
+  .edy-checkout-button-visible .search-btn-submit, .edy-checkout-button-visible
+  .search-btn-open {
+    top: 41px;
+  }
 }
 
 .search-btn-reset,
@@ -1966,6 +1979,11 @@ body {
     width: 18px;
     height: 18px;
   }
+}
+
+.search-btn-close {
+  position: relative;
+  top: 41px;
 }
 
 .voog-search-visible .search-btn-submit, .voog-search-visible
@@ -2014,6 +2032,9 @@ body {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
   overflow-y: auto;
+}
+.edy-checkout-button-visible .voog-search-modal-inner {
+  top: 124px;
 }
 .voog-search-modal-inner.search-results-active {
   display: block;

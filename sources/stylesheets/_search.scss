@@ -38,6 +38,10 @@
     .voog-search-visible & {
       display: block;
     }
+
+    .edy-checkout-button-visible & {
+      top: 81px; // Base offset + height of the checkout button (40 + 41).
+    }
   }
 }
 
@@ -131,6 +135,10 @@
   @include query($mobile) {
     top: 0;
     padding: 11px;
+
+      .edy-checkout-button-visible & {
+      top: 41px; // Height of the checkout button.
+    }
   }
 }
 
@@ -151,6 +159,11 @@
       height: 18px;
     }
   }
+}
+
+.search-btn-close {
+  position: relative;
+  top: 41px;
 }
 
 .search-btn-submit,
@@ -202,6 +215,10 @@
   box-shadow: 0 0 40px rgba($black,.1);
   overflow-x: hidden;
   overflow-y: auto;
+
+  .edy-checkout-button-visible & {
+    top: 124px; // Base offset + height of the checkout button (40 + 41).
+  }
 
   &.search-results-active {
     display: block;

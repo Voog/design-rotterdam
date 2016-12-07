@@ -44,6 +44,10 @@
         opacity: 1;
       }
 
+      .edy-checkout-button-visible & {
+        top: 41px; // Height of the checkout button.
+      }
+
       .close-icon {
         position: relative;
         top: 1px;
@@ -82,9 +86,13 @@
     .main-menu {
       top: 40px;
       right: 0;
+
+      .edy-checkout-button-visible & {
+        top: 81px; // Base offset + height of the checkout button (40 + 41).
+      }
     }
 
-    &.fixed {
+    &.fixed { // scss-lint:disable MergeableSelector
       .lang-menu {
         position: absolute;
         top: 0;
