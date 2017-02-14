@@ -12,7 +12,7 @@
   .content-body {
     .content-page & {
       display: inline-block;
-      width: calc(100% - 135px);
+      width: calc(100% - 144px);
 
       @include query($tablet) {
         display: block;
