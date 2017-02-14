@@ -246,178 +246,46 @@
   ],
   "assets": [
     {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-flags.svg",
-      "kind": "assets",
-      "filename": "ico-flags.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-tags.svg",
-      "kind": "assets",
-      "filename": "ico-tags.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-voog-black.svg",
-      "kind": "assets",
-      "filename": "ico-voog-black.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/loader.svg",
-      "kind": "assets",
-      "filename": "loader.svg"
-    },
-    {
-      "content_type": "application/vnd.ms-fontobject",
-      "file": "assets/montserrat-bold.eot",
-      "kind": "assets",
-      "filename": "montserrat-bold.eot"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/montserrat-bold.svg",
-      "kind": "assets",
-      "filename": "montserrat-bold.svg"
-    },
-    {
-      "content_type": "application/font-sfnt",
-      "file": "assets/montserrat-bold.ttf",
-      "kind": "assets",
-      "filename": "montserrat-bold.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/montserrat-bold.woff",
-      "kind": "assets",
-      "filename": "montserrat-bold.woff"
-    },
-    {
-      "content_type": "text/unknown",
-      "file": "assets/montserrat-bold.woff2",
-      "kind": "assets",
-      "filename": "montserrat-bold.woff2"
-    },
-    {
-      "content_type": "application/vnd.ms-fontobject",
-      "file": "assets/montserrat-regular.eot",
-      "kind": "assets",
-      "filename": "montserrat-regular.eot"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/montserrat-regular.svg",
-      "kind": "assets",
-      "filename": "montserrat-regular.svg"
-    },
-    {
-      "content_type": "application/font-sfnt",
-      "file": "assets/montserrat-regular.ttf",
-      "kind": "assets",
-      "filename": "montserrat-regular.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/montserrat-regular.woff",
-      "kind": "assets",
-      "filename": "montserrat-regular.woff"
-    },
-    {
-      "content_type": "text/unknown",
-      "file": "assets/montserrat-regular.woff2",
-      "kind": "assets",
-      "filename": "montserrat-regular.woff2"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/search.svg",
-      "kind": "assets",
-      "filename": "search.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/search_close.svg",
-      "kind": "assets",
-      "filename": "search_close.svg"
-    },
-    {
-      "content_type": "image/jpeg",
-      "file": "images/front-page-header-bg.jpg",
-      "kind": "images",
-      "filename": "front-page-header-bg.jpg"
-    },
-    {
-      "content_type": "image/jpeg",
-      "file": "images/front-page-header-bg_block.jpg",
-      "kind": "images",
-      "filename": "front-page-header-bg_block.jpg"
-    },
-    {
-      "content_type": "image/jpeg",
-      "file": "images/front-page-header-bg_large.jpg",
-      "kind": "images",
-      "filename": "front-page-header-bg_large.jpg"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/ico-flags.png",
-      "kind": "images",
-      "filename": "ico-flags.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/ico-tags.png",
-      "kind": "images",
-      "filename": "ico-tags.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/ico-voog-black.png",
-      "kind": "images",
-      "filename": "ico-voog-black.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/search-close.png",
-      "kind": "images",
-      "filename": "search-close.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/search.png",
-      "kind": "images",
-      "filename": "search.png"
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/modernizr-custom.min.js",
+      "filename": "modernizr-custom.min.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application.js",
       "kind": "javascripts",
+      "file": "javascripts/application.js",
       "filename": "application.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application.min.js",
       "kind": "javascripts",
+      "file": "javascripts/application.min.js",
       "filename": "application.min.js"
     },
     {
-      "content_type": "application/javascript",
-      "file": "javascripts/modernizr-custom.min.js",
-      "kind": "javascripts",
-      "filename": "modernizr-custom.min.js"
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-flags.svg",
+      "filename": "ico-flags.svg"
     },
     {
-      "content_type": "text/css",
-      "file": "stylesheets/main.css",
-      "kind": "stylesheets",
-      "filename": "main.css"
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-tags.svg",
+      "filename": "ico-tags.svg"
     },
     {
-      "content_type": "text/css",
-      "file": "stylesheets/main.min.css",
-      "kind": "stylesheets",
-      "filename": "main.min.css"
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-voog-black.svg",
+      "filename": "ico-voog-black.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/loader.svg",
+      "filename": "loader.svg"
     }
   ]
 }
