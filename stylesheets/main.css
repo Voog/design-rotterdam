@@ -353,7 +353,7 @@ body {
 }
 .content-formatted b,
 .content-formatted strong {
-  font-weight: bolder;
+  font-weight: 600;
 }
 .content-formatted pre,
 .content-formatted code,
