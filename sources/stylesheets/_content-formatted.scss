@@ -2,6 +2,10 @@
 .content-formatted {
   @include hyphenate(true);
 
+  &:empty {
+    display: none;
+  }
+
   h1,
   h2,
   h3,
