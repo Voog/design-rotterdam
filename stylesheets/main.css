@@ -1531,6 +1531,10 @@ body {
   letter-spacing: -3px;
 }
 
+.post-intro-content {
+  padding-bottom: 50px;
+}
+
 .post-header {
   font-family: "Montserrat", sans-serif;
 }
