@@ -43,9 +43,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/edicy-tools-styles.tpl",
-      "layout_name": "edicy-tools-styles",
-      "title": "edicy-tools-styles"
+      "file": "components/product-list-loop.tpl",
+      "layout_name": "product-list-loop",
+      "title": "product-list-loop"
     },
     {
       "content_type": "component",
@@ -141,16 +141,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/edicy-tools-styles.tpl",
+      "layout_name": "edicy-tools-styles",
+      "title": "edicy-tools-styles"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/product-list-loop.tpl",
-      "layout_name": "product-list-loop",
-      "title": "product-list-loop"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -200,6 +200,13 @@
       "file": "components/javascripts.tpl",
       "layout_name": "javascripts",
       "title": "javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs-buttons-loop.tpl",
+      "layout_name": "menu-breadcrumbs-buttons-loop",
+      "title": "menu-breadcrumbs-buttons-loop"
     },
     {
       "content_type": "component",
@@ -256,6 +263,20 @@
       "file": "components/blog-article-variables.tpl",
       "layout_name": "blog-article-variables",
       "title": "blog-article-variables"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs.tpl",
+      "layout_name": "menu-breadcrumbs",
+      "title": "menu-breadcrumbs"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs-items-loop.tpl",
+      "layout_name": "menu-breadcrumbs-items-loop",
+      "title": "menu-breadcrumbs-items-loop"
     },
     {
       "content_type": "component",
