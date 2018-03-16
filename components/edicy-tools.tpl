@@ -10,6 +10,19 @@
       id: '{{ page.id }}'
     });
 
+    {% if items_page %}
+      site.bindContentItemImgDropAreas('{{ "drag_picture_for_product_here" | lc: editor_locale }}');
+      site.bindContentItemImageCropToggle();
+
+      {%if site.data.settings_root_item %}
+        rootItemValuesObj = {{ site.data.settings_root_item | json }};
+      {% else %}
+        rootItemValuesObj = {};
+      {% endif %};
+
+      site.bindRootItemSettings(rootItemValuesObj);
+    {% endif %}
+
     // Initiates language flag toggleing functionality.
     site.toggleFlags();
 
