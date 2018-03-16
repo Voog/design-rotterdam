@@ -8,13 +8,13 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="item-list-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
+<body class="common-page content-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <div class="container js-container">
     <div class="container-inner">
       <div class="wrap js-wrap">
         {% include "header" %}
         <main class="content" role="main">
-           <div class="content-area" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% content %}</div>
+           <div class="content-body content-formatted" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% content %}</div>
           {% include "menu-breadcrumbs" %}
           <section class="content-item-boxes">
             {% if site.root_item.selected? %}

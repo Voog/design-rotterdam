@@ -8,7 +8,7 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="item-list-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
+<body class="common-page content-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <div class="container js-container">
     <div class="container-inner">
       <div class="wrap js-wrap">
@@ -47,15 +47,15 @@
                   {% endif %}
                 {% endif %}
 
-                <div class="content-gallery content-area" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
+                <div class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
               </div>
 
               <div class="content-body">
                 <header class="content-header">
-                  <div class="content-item-title content-area">{% contentblock name="content_header_test" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}</div>
+                  <div class="content-item-title content-body content-formatted">{% contentblock name="content_header_test" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}</div>
                 </header>
 
-                <div class="content-area area-normal" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}</div>
+                <div class="content-body content-formatted" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}</div>
               </div>
             </div>
         </main>
