@@ -19,6 +19,18 @@
       color: rgba($black, .5);
     }
 
+    .item-list-page & {
+      font-size: 16;
+      display: inline-block;
+      width: 100% !important;
+    }
+
+    .item-page & {
+      font-size: 16;
+      display: inline-block;
+      width: 100% !important;
+    }
+
     .content-page & {
       display: inline-block;
       width: calc(100% - 140px);

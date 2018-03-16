@@ -20,6 +20,8 @@ body {
 .voog-reference,
 .front-page .content-body,
 .common-page .content-header,
+.item-list-page .content-header,
+.item-page .content-header,
 .header,
 .menu,
 .lang-menu-toggle,
@@ -51,7 +53,9 @@ body {
 }
 .header .header-inner,
 .front-page .wrap,
-.content-page .container {
+.content-page .container,
+.item-list-page .container,
+.item-page .container {
   max-width: var(--site-width);
 }
 
@@ -191,6 +195,8 @@ body {
 }
 
 .common-page .content-header,
+.item-list-page .content-header,
+.item-page .content-header,
 .post-page .post-header h1 {
   font-size: var(--content-title-font-size);
   font-style: var(--content-title-font-style);

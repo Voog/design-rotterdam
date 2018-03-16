@@ -274,6 +274,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-svg-spritesheet.tpl",
+      "layout_name": "template-svg-spritesheet",
+      "title": "template-svg-spritesheet"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/menu-breadcrumbs.tpl",
       "layout_name": "menu-breadcrumbs",
       "title": "menu-breadcrumbs"
@@ -405,21 +412,9 @@
     },
     {
       "content_type": "text/css",
-      "file": "stylesheets/product.min.css",
-      "kind": "stylesheets",
-      "filename": "product.min.css"
-    },
-    {
-      "content_type": "text/css",
       "file": "stylesheets/main.min.css",
       "kind": "stylesheets",
       "filename": "main.min.css"
-    },
-    {
-      "content_type": "text/css",
-      "file": "stylesheets/product.css",
-      "kind": "stylesheets",
-      "filename": "product.css"
     },
     {
       "content_type": "text/css",

@@ -76,6 +76,18 @@ body {
     padding: 0 25px;
   }
 
+  .item-list-page & {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  .item-page & {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
   a {
     text-decoration: none;
 

@@ -8,7 +8,8 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="item-page common-page content-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
+<body class="item-page {% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
+  {% include "template-svg-spritesheet" %}
   <div class="container js-container">
     <div class="container-inner">
       <div class="wrap js-wrap">
