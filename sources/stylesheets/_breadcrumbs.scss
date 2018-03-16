@@ -1,0 +1,33 @@
+// Product list menu
+.menu-horizontal {
+  .menu-separator {
+     opacity: .36;
+     margin-right: 3px;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &.menu-breadcrumbs {
+    padding-top: 15px;
+    line-height: 16px;
+    font-size: 12px;
+
+    .menu-item {
+      margin-right: 3px;
+    }
+
+    .menu-item {
+      display: inline-block;
+    }
+
+    .menu-item-cms {
+      margin-left: 10px;
+
+      &.float-right {
+        float: right;
+      }
+    }
+  }
+}

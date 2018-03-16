@@ -1,0 +1,276 @@
+.content-item-box {
+  color: ($color-black, .8);
+
+  .item-page &{
+  margin-bottom: 40px;
+  padding-top: 10px;
+  }
+
+  .item-list-page & {
+    padding-top: 15px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+
+    @media screen and (min-width: $mobile + 1) {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    @media screen and (min-width: $mobile + 1) {
+      width: 50%;
+      padding-right: 10px;
+      padding-left: 10px;
+
+    }
+  }
+
+  .top-inner {
+    opacity: 1;
+
+    &::after {
+      .editmode &,
+      .item-list-page & {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: '';
+        opacity: 0;
+        transition: opacity .5s;
+      }
+    }
+  }
+
+  &:hover {
+    transition: $transition;
+
+    .top-inner {
+      // scss-lint:disable NestingDepth
+      &::after {
+        .editmode &,
+        .item-list-page & {
+          opacity: .2;
+        }
+      }
+      // scss-lint:enable NestingDepth
+    }
+  }
+}
+
+.item-list-page {
+  .content-item-box {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.item-top {
+  position: relative;
+  @include aspect-ratio(1, 1);
+
+  &:hover {
+    .btn,
+    .edy-img-drop-area-remove-image {
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    padding: 0;
+    background-color: rgba($color-science-blue, .3);
+    border: 0;
+    opacity: 0;
+    transition: background-color .5s, opacity .5s;
+
+    &:hover {
+      background-color: rgba($color-science-blue, 1);
+    }
+  }
+
+
+  .edy-img-drop-area-remove-image{
+    width: 45px !important;
+    height: 45px !important;
+    top: 10px !important;
+    right: 10px!important;
+    z-index: 9;
+    color: rgba($color-white, 1) !important;
+    background-color: rgba($color-science-blue, .3)!important;
+    border: 0!important;
+    opacity: 0;
+    transition: background-color .5s, opacity .5s !important;
+
+    &:hover {
+      background-color: rgba($color-science-blue, 1)!important;
+    }
+  }
+
+  .edy-img-drop-area-remove-image-ico{
+    margin-top: -10px!important;
+    margin-left: -8px!important;
+  }
+
+  .bg-crop-btn {
+    @include size(45px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    color: $white;
+    outline: 0;
+
+    &.is-visible {
+      display: block;
+    }
+
+    &.is-hidden,
+    .without-image & {
+      display: none;
+    }
+  }
+
+  .top-inner {
+    @include hyphenate;
+    // scss-lint:disable ImportantRule
+    display: flex !important;
+    // scss-lint:enable ImportantRule
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+
+    .public  & {
+      overflow: hidden;
+
+      // scss-lint:disable SelectorDepth
+      // scss-lint:disable NestingDepth
+      .image-landscape {
+        &.not-cropped {
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+
+        &.is-cropped {
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      .image-portrait {
+        &.not-cropped {
+          width: auto;
+          height: 100%;
+          max-height: 100%;
+        }
+
+        &.is-cropped {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .image-square {
+        width: 100%;
+        height: auto;
+      }
+      // scss-lint:enable NestingDepth
+      // scss-lint:enable SelectorDepth
+    }
+
+    .with-image & {
+      background-color: transparent;
+    }
+
+    .without-image & {
+      border-color: rgba($color-black, .1);
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .item-placeholder {
+      padding: .5em;
+      font-size: 22px;
+    }
+  }
+
+
+
+  .image-drop-area {
+    // scss-lint:disable ImportantRule
+    background-position: center !important;
+    // scss-lint:enable ImportantRule
+    background-repeat: no-repeat;
+
+    &.not-cropped {
+      background-size: contain;
+    }
+
+    &:not(.active) {
+      border-color: rgba($color-black, .4);
+      border-style: dashed;
+      border-width: 1px;
+
+      &:hover {
+        border-style: solid;
+      }
+    }
+
+    .edy-img-drop-area-placeholder {
+      @media screen and (max-width: $mobile) {
+        font-size: 13px;
+      }
+
+      @media screen and (min-width: $mobile + 1) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.item-title {
+  @include hyphenate;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+
+
+  .item-link {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .content-item-box > & {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
+.content-body{
+  .content-item-title h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .content-item-title {
+    padding-top: 3px;
+  }
+}
