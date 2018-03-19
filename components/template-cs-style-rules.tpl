@@ -315,6 +315,15 @@ body {
   text-transform: var(--content-links-hover-text-transform);
 }
 
+.item-list-page .item-link {
+  color: var(--content-links-color);
+  font-style: var(--content-links-font-style);
+}
+.item-list-page .item-link:hover {
+  color: var(--content-links-hover-color);
+  font-style: var(--content-links-hover-font-style);
+}
+
 .footer {
   color: var(--footer-color);
   font-size: var(--footer-font-size);

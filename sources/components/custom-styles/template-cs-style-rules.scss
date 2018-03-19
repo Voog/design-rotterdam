@@ -380,6 +380,16 @@ body {
   }
 }
 
+.item-list-page .item-link {
+  color: var(--content-links-color);
+  font-style: var(--content-links-font-style);
+
+  &:hover {
+    color: var(--content-links-hover-color);
+    font-style: var(--content-links-hover-font-style);
+  }
+}
+
 // Content - Footer
 .footer {
   color: var(--footer-color);
