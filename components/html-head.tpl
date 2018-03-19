@@ -35,7 +35,7 @@
   {% if blog_article %}
     {% include "template-cs-blog-article" %}
   {% endif %}
-  {% if common_page %}
+  {% if common_page or items_page %}
     {% include "template-cs-content" %}
   {% endif %}
   {% include "template-cs-footer" %}
