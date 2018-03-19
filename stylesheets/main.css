@@ -1607,6 +1607,9 @@ body {
   line-height: 1;
   letter-spacing: -3px;
 }
+.container .items-body .content-header h1 {
+  letter-spacing: 0px;
+}
 
 .post-header {
   font-family: "Montserrat", sans-serif;
