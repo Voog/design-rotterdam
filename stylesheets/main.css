@@ -595,6 +595,10 @@ body {
   color: rgba(0, 0, 0, 0.85);
 }
 
+.menu li.is-hidden {
+  display: none !important;
+}
+
 .main-menu,
 .lang-menu {
   float: left;

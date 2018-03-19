@@ -106,6 +106,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/menu-item.tpl",
+      "layout_name": "menu-item",
+      "title": "menu-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-footer.tpl",
       "layout_name": "template-cs-footer",
       "title": "template-cs-footer"

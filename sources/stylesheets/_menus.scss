@@ -36,6 +36,14 @@
   }
 }
 
+.menu {
+  li {
+   &.is-hidden {
+    display: none !important;
+    }
+  }
+}
+
 .main-menu,
 .lang-menu {
   float: left;
