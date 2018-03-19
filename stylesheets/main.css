@@ -1549,14 +1549,29 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 .item-list-page .container .content-body {
-  font-size: 16;
+  font-size: 16px;
   display: inline-block;
   width: 100% !important;
 }
 .item-page .container .content-body {
-  font-size: 16;
+  font-size: 16px;
   display: inline-block;
   width: 100% !important;
+}
+@media screen and (max-width: 999px) {
+  .item-page .container .content-body {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .item-page .container .content-body {
+    margin-bottom: 0;
+  }
+}
+.item-page .container .content-body .content-header {
+  margin-top: 4px;
+  margin-bottom: 15px;
 }
 .content-page .container .content-body {
   display: inline-block;

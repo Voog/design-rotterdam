@@ -20,15 +20,29 @@
     }
 
     .item-list-page & {
-      font-size: 16;
+      font-size: 16px;
       display: inline-block;
       width: 100% !important;
     }
 
     .item-page & {
-      font-size: 16;
+      font-size: 16px;
       display: inline-block;
       width: 100% !important;
+
+      @include query($tablet) {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      @include query($mobile) {
+        margin-bottom: 0;
+      }
+
+      .content-header {
+        margin-top: 4px;
+        margin-bottom: 15px;
+      }
     }
 
     .content-page & {
