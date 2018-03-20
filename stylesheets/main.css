@@ -531,8 +531,8 @@ body {
 }
 .content-formatted .edy-buy-button-variants .form_field_select {
   padding: 2px 25px 2px 6px;
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
   vertical-align: bottom;
   background-image: url(../assets/ico-arrow.svg);
@@ -1574,8 +1574,8 @@ body {
   }
 }
 .item-page .container .content-body .content-header {
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin-top: -6px;
+  margin-bottom: 10px;
 }
 .content-page .container .content-body {
   display: inline-block;
@@ -2773,7 +2773,7 @@ body {
   height: auto;
 }
 .with-image .item-top .top-inner {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   border: 0;
 }
 .without-image .item-top .top-inner {
@@ -2872,7 +2872,7 @@ body {
 }
 
 .intro-content {
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 
 .content-item-boxes {
