@@ -2608,18 +2608,18 @@ body {
 }
 @media screen and (max-width: 640px) {
   .item-list-page .content-item-box {
-    display: block;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 @media screen and (min-width: 641px) {
   .item-list-page .content-item-box {
     display: inline-block;
     vertical-align: top;
-  }
-}
-@media screen and (min-width: 641px) {
-  .item-list-page .content-item-box {
-    width: 50%;
+    width: 33.3%;
     padding-right: 10px;
     padding-left: 10px;
   }
