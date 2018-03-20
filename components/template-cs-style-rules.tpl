@@ -290,6 +290,19 @@ body {
   text-transform: var(--content-submenu-active-text-transform);
 }
 
+.menu-breadcrumbs li.current a {
+  font-style: var(--content-submenu-active-font-style);
+  font-weight: var(--content-submenu-active-font-weight);
+  -webkit-hyphens: var(--content-submenu-hyphens);
+      -ms-hyphens: var(--content-submenu-hyphens);
+          hyphens: var(--content-submenu-hyphens);
+  line-height: var(--content-submenu-line-height);
+  color: var(--content-submenu-active-color) !important;
+  -webkit-text-decoration: var(--content-submenu-active-text-decoration);
+          text-decoration: var(--content-submenu-active-text-decoration);
+  text-transform: var(--content-submenu-active-text-transform);
+}
+
 .content-formatted {
   font-size: var(--content-font-size);
   -webkit-hyphens: var(--content-hyphens);
