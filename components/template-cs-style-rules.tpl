@@ -300,7 +300,6 @@ body {
   color: var(--content-submenu-active-color);
   -webkit-text-decoration: var(--content-submenu-active-text-decoration);
           text-decoration: var(--content-submenu-active-text-decoration);
-  text-transform: var(--content-submenu-active-text-transform);
 }
 
 .content-formatted {
@@ -334,9 +333,8 @@ body {
   color: var(--content-links-color);
   font-style: var(--content-links-font-style);
 }
-.item-list-page .item-link:hover,
-.item-list-page .item-title:hover,
-.item-list-page .item-placeholder:hover {
+
+.item-list-page .item-link:hover {
   color: var(--content-links-hover-color);
   font-style: var(--content-links-hover-font-style);
 }

@@ -365,7 +365,6 @@ body {
     line-height: var(--content-submenu-line-height);
     color: var(--content-submenu-active-color);
     text-decoration: var(--content-submenu-active-text-decoration);
-    text-transform: var(--content-submenu-active-text-transform);
   }
 }
 
@@ -398,11 +397,11 @@ body {
 .item-list-page .item-placeholder {
   color: var(--content-links-color);
   font-style: var(--content-links-font-style);
+}
 
-  &:hover {
-    color: var(--content-links-hover-color);
-    font-style: var(--content-links-hover-font-style);
-  }
+.item-list-page .item-link:hover {
+  color: var(--content-links-hover-color);
+  font-style: var(--content-links-hover-font-style);
 }
 
 // Content - Footer
