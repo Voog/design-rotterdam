@@ -1574,8 +1574,8 @@ body {
   }
 }
 .item-page .container .content-body .content-header {
-  margin-top: 4px;
-  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 .content-page .container .content-body {
   display: inline-block;
@@ -2824,7 +2824,7 @@ body {
 }
 .item-list-page .item-title {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 .content-item-box > .item-title {
   margin-top: 15px;
@@ -2834,14 +2834,10 @@ body {
 }
 
 .content-body .content-item-title h1 {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 0;
   margin-top: 0;
   text-transform: uppercase;
-  font-weight: 700;
-}
-.content-body .content-item-title {
-  padding-top: 3px;
 }
 
 .svg-spritesheet {
@@ -2864,11 +2860,6 @@ body {
             flex: 1;
     max-width: 520px;
     margin-right: 40px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .item-page .content-body {
-    padding-top: 30px;
   }
 }
 @media screen and (min-width: 641px) {

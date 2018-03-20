@@ -251,7 +251,7 @@
 
   .item-list-page & {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .content-item-box > & {
@@ -264,15 +264,10 @@
 
 .content-body{
   .content-item-title h1 {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 0;
     margin-top: 0;
     text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .content-item-title {
-    padding-top: 3px;
   }
 }
 
@@ -299,10 +294,6 @@
 
 .content-body {
   .item-page & {
-    @media screen and (max-width: $mobile) {
-      padding-top: 30px;
-    }
-
     @media screen and (min-width: $mobile + 1) {
       flex: 1;
     }
