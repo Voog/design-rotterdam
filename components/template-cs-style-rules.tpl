@@ -297,7 +297,7 @@ body {
       -ms-hyphens: var(--content-submenu-hyphens);
           hyphens: var(--content-submenu-hyphens);
   line-height: var(--content-submenu-line-height);
-  color: var(--content-submenu-active-color) !important;
+  color: var(--content-submenu-active-color);
   -webkit-text-decoration: var(--content-submenu-active-text-decoration);
           text-decoration: var(--content-submenu-active-text-decoration);
   text-transform: var(--content-submenu-active-text-transform);

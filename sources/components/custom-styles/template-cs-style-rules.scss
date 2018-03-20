@@ -363,7 +363,7 @@ body {
     font-weight: var(--content-submenu-active-font-weight);
     hyphens: var(--content-submenu-hyphens);
     line-height: var(--content-submenu-line-height);
-    color: var(--content-submenu-active-color) !important;
+    color: var(--content-submenu-active-color);
     text-decoration: var(--content-submenu-active-text-decoration);
     text-transform: var(--content-submenu-active-text-transform);
   }
