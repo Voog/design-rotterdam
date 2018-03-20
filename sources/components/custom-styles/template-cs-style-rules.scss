@@ -380,7 +380,9 @@ body {
   }
 }
 
-.item-list-page .item-link {
+.item-list-page .item-link,
+.item-list-page .item-title,
+.item-list-page .item-placeholder {
   color: var(--content-links-color);
   font-style: var(--content-links-font-style);
 
