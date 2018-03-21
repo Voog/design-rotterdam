@@ -392,6 +392,13 @@ body {
   }
 }
 
+.content-body .content-formatted {
+  font-size: var(--content-font-size);
+  hyphens: var(--content-hyphens);
+  line-height: var(--content-line-height);
+  color: var(--content-color);
+}
+
 .item-list-page .item-link,
 .item-list-page .item-title,
 .item-list-page .item-placeholder {

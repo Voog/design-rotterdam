@@ -1553,12 +1553,10 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 .item-list-page .container .content-body {
-  font-size: 16px;
   display: inline-block;
   width: 100% !important;
 }
 .item-page .container .content-body {
-  font-size: 16px;
   display: inline-block;
   width: 100% !important;
 }
