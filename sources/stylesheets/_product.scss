@@ -1,5 +1,8 @@
 .content-item-box {
-  color: ($color-black, .8);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  text-align: center;
 
   .item-page &{
   margin-bottom: 30px;
@@ -58,6 +61,24 @@
         }
       }
       // scss-lint:enable NestingDepth
+    }
+  }
+
+  .item-title {
+    @include hyphenate;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    .item-link {
+      @include hyphenate;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      text-align: center;
+
+      &:hover {
+        opacity: .7;
+      }
     }
   }
 }
@@ -146,8 +167,6 @@
     // scss-lint:enable ImportantRule
     align-items: center;
     justify-content: center;
-    font-weight: 300;
-    font-size: 16px;
     line-height: 1.2;
     text-align: center;
 
@@ -201,9 +220,34 @@
       border-width: 1px;
     }
 
+    .edy-img-drop-area-placeholder {
+      @media screen and (min-width: $tablet + 1) {
+        font-size: 22px;
+      }
+
+      @media screen and (min-width: $mobile + 1) and (max-width: $tablet) {
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+      }
+    }
+
     .item-placeholder {
       padding: .5em;
-      font-size: 22px;
+
+      @media screen and (min-width: $tablet + 1) {
+        font-size: 28px;
+      }
+
+      @media screen and (min-width: $mobile + 1) and (max-width: $tablet) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -228,38 +272,6 @@
         border-style: solid;
       }
     }
-
-    .edy-img-drop-area-placeholder {
-      @media screen and (max-width: $mobile) {
-        font-size: 16px;
-      }
-
-      @media screen and (min-width: $mobile + 1) {
-        font-size: 22px;
-      }
-    }
-  }
-}
-
-.item-title {
-  @include hyphenate;
-  margin-top: 0;
-  margin-bottom: 0;
-
-  .item-link {
-    text-align: center;
-  }
-
-  .item-list-page & {
-    font-weight: 400;
-    font-size: 16px;
-  }
-
-  .content-item-box > & {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    line-height: 1.2;
-    text-align: center;
   }
 }
 
