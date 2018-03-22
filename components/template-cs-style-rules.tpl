@@ -337,15 +337,17 @@ body {
 }
 
 .item-list-page .item-link,
-.item-list-page .item-title,
-.item-list-page .item-placeholder {
-  color: var(--content-links-color);
-  font-style: var(--content-links-font-style);
+.item-list-page .item-title {
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  font-weight: var(--h3-font-weight);
+  font-style: var(--h3-font-style);
+  color: var(--h3-color);
 }
 
-.item-list-page .item-link:hover {
-  color: var(--content-links-hover-color);
-  font-style: var(--content-links-hover-font-style);
+.top-inner .edy-img-drop-area-placeholder,
+.top-inner .item-placeholder {
+  color: var(--h3-color);
 }
 
 .footer {
