@@ -1,7 +1,5 @@
 .content-item-box {
   margin-top: 15px;
-  margin-bottom: 5px;
-  line-height: 1.2;
   text-align: center;
 
   .item-page & {
@@ -10,21 +8,18 @@
 
   .item-list-page & {
     box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 12px;
 
     @media screen and (max-width: $mobile) {
-      display: inline-block;
-      vertical-align: top;
       width: 50%;
-      padding-right: 10px;
-      padding-left: 10px;
     }
 
     @media screen and (min-width: $mobile + 1) {
-      display: inline-block;
-      vertical-align: top;
       width: 33.3%;
-      padding-right: 10px;
-      padding-left: 10px;
     }
   }
 
@@ -64,13 +59,13 @@
 
   .item-title {
     @include hyphenate;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0px;
     text-align: center;
 
     .item-link {
       @include hyphenate;
-      margin-top: 15px;
+      margin-top: 10px;
       margin-bottom: 0px;
       text-align: center;
 
