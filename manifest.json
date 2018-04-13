@@ -71,6 +71,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/site-signout.tpl",
+      "layout_name": "site-signout",
+      "title": "site-signout"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/tags-blog.tpl",
       "layout_name": "tags-blog",
       "title": "tags-blog"
