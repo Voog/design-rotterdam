@@ -29,6 +29,13 @@
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/common_page.tpl",
+      "layout_name": "page_default",
+      "title": "Common page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
       "file": "layouts/product_list.tpl",
       "layout_name": "page_default",
       "title": "Product list"
@@ -57,6 +64,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/edicy-tools-styles.tpl",
+      "layout_name": "edicy-tools-styles",
+      "title": "edicy-tools-styles"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-header.tpl",
       "layout_name": "template-cs-header",
       "title": "template-cs-header"
@@ -81,6 +95,13 @@
       "file": "components/template-meta.tpl",
       "layout_name": "template-meta",
       "title": "template-meta"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/site-signout.tpl",
+      "layout_name": "site-signout",
+      "title": "site-signout"
     },
     {
       "content_type": "component",
@@ -155,9 +176,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/edicy-tools-styles.tpl",
-      "layout_name": "edicy-tools-styles",
-      "title": "edicy-tools-styles"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
