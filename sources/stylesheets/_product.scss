@@ -35,6 +35,7 @@
         bottom: 0;
         left: 0;
         display: block;
+        background-color: $color-white;
         content: '';
         opacity: 0;
         transition: opacity .5s;
@@ -43,8 +44,6 @@
   }
 
   &:hover {
-    transition: $transition;
-
     .top-inner {
       // scss-lint:disable NestingDepth
       &::after {
@@ -72,14 +71,6 @@
       &:hover {
         opacity: .7;
       }
-    }
-  }
-}
-
-.item-list-page {
-  .content-item-box {
-    &:hover {
-      opacity: 0.9;
     }
   }
 }
