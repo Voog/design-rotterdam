@@ -6,22 +6,22 @@
   {% endunless %}
 
   {% for item in site.visible_menuitems %}
-        {% if site.root_item.layout_title == product_list_layout or site.root_item.layout_title == product_layout %}
-          {% if editmode %}
-            {% include "menu-item" render_hidden_categories: true %}
-          {% else %}
-            {% unless show_product_related_pages_in_main_menu %}
-              {% unless item.layout_title == product_list_layout or item.layout_title == product_layout %}
-                {% include "menu-item" %}
-              {% endunless %}
-            {% else %}
-              {% include "menu-item" %}
-            {% endunless %}
-          {% endif %}
+    {% if site.root_item.layout_title == product_list_layout %}
+      {% if editmode %}
+        {% include "menu-item" render_hidden_categories: true %}
+      {% else %}
+        {% unless show_product_related_pages_in_main_menu %}
+          {% unless item.layout_title == product_list_layout or item.layout_title == product_layout %}
+            {% include "menu-item" %}
+          {% endunless %}
         {% else %}
           {% include "menu-item" %}
-        {% endif %}
-      {% endfor %}
+        {% endunless %}
+      {% endif %}
+    {% else %}
+      {% include "menu-item" %}
+    {% endif %}
+  {% endfor %}
 
 
   {% if editmode %}
