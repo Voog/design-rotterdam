@@ -327,15 +327,6 @@ body {
   text-transform: var(--content-links-hover-text-transform);
 }
 
-.content-body .content-formatted {
-  font-size: var(--content-font-size);
-  -webkit-hyphens: var(--content-hyphens);
-      -ms-hyphens: var(--content-hyphens);
-          hyphens: var(--content-hyphens);
-  line-height: var(--content-line-height);
-  color: var(--content-color);
-}
-
 .item-list-page .item-link,
 .item-list-page .item-title {
   font-size: var(--h3-font-size);
