@@ -25,7 +25,7 @@
                 {% endif %}
               {% endfor %}
               {% else %}
-              {% include "product-list-loop" menu_items: %}
+              {% include "product-list-loop" %}
             {% endif %}
           </section>
 
