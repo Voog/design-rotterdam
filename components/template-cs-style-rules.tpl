@@ -290,16 +290,35 @@ body {
   text-transform: var(--content-submenu-active-text-transform);
 }
 
+.menu-breadcrumbs li a {
+  font-style: var(--content-submenu-font-style);
+  font-weight: var(--content-submenu-font-weight);
+  color: var(--content-submenu-color);
+  -webkit-text-decoration: var(--content-submenu-text-decoration);
+          text-decoration: var(--content-submenu-text-decoration);
+  text-transform: var(--content-submenu-text-transform);
+  opacity: .5;
+}
+.menu-breadcrumbs li.selected a:hover {
+  font-style: var(--content-submenu-hover-font-style);
+  font-weight: var(--content-submenu-hover-font-weight);
+  color: var(--content-submenu-hover-color);
+  -webkit-text-decoration: var(--content-submenu-hover-text-decoration);
+          text-decoration: var(--content-submenu-hover-text-decoration);
+  text-transform: var(--content-submenu-hover-text-transform);
+  opacity: 1;
+}
 .menu-breadcrumbs li.current a {
   font-style: var(--content-submenu-active-font-style);
   font-weight: var(--content-submenu-active-font-weight);
-  -webkit-hyphens: var(--content-submenu-hyphens);
-      -ms-hyphens: var(--content-submenu-hyphens);
-          hyphens: var(--content-submenu-hyphens);
-  line-height: var(--content-submenu-line-height);
   color: var(--content-submenu-active-color);
   -webkit-text-decoration: var(--content-submenu-active-text-decoration);
           text-decoration: var(--content-submenu-active-text-decoration);
+  text-transform: var(--content-submenu-active-text-transform);
+  opacity: 1;
+}
+.menu-breadcrumbs li.current a:hover {
+  color: var(--content-submenu-active-color);
 }
 
 .content-formatted {
