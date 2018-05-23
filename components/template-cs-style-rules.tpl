@@ -318,7 +318,16 @@ body {
   opacity: 1;
 }
 .menu-breadcrumbs li.current a:hover {
+  font-style: var(--content-submenu-active-font-style);
+  font-weight: var(--content-submenu-active-font-weight);
   color: var(--content-submenu-active-color);
+  -webkit-text-decoration: var(--content-submenu-active-text-decoration);
+          text-decoration: var(--content-submenu-active-text-decoration);
+  text-transform: var(--content-submenu-active-text-transform);
+  opacity: 1;
+}
+.menu-breadcrumbs .menu-separator {
+  color: var(--content-submenu-color);
 }
 
 .content-formatted {
