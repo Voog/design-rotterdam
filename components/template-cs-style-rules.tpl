@@ -534,6 +534,10 @@ body {
   border-bottom-color: var(--form-field-border-color);
 }
 
+.edy-buy-button-variants .form_field label {
+  color: var(--content-color);
+}
+
 .content-formatted form input,
 .form_field label,
 .content-formatted form {
