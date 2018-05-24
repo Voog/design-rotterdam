@@ -8,6 +8,10 @@
   list-style: none;
 
   li {
+    &.is-hidden {
+      display: none;
+    }
+
     a {
       font-size: 12px;
       color: rgba(0,0,0,.5);
@@ -32,14 +36,6 @@
       &:hover {
         color: rgba(0,0,0,.85);
       }
-    }
-  }
-}
-
-.menu {
-  li {
-   &.is-hidden {
-    display: none !important;
     }
   }
 }
