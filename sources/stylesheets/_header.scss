@@ -24,6 +24,26 @@
     }
   }
 
+  .item-list-page & {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    @include query($mobile) {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .item-page & {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    @include query($mobile) {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+
   @include query($mobile) {
     position: static;
 

@@ -6,10 +6,23 @@
   {% endunless %}
 
   {% for item in site.visible_menuitems %}
-    <li class="menu-item{% if item.selected? %} active{% endif %}">
-      <a{% unless item.translated? %} class="untranslated fci-editor-menuadd"{% endunless %} href="{{ item.url }}">{{ item.title }}</a>
-    </li>
+    {% if site.root_item.layout_title == product_list_layout %}
+      {% if editmode %}
+        {% include "menu-item" render_hidden_categories: true %}
+      {% else %}
+        {% unless show_product_related_pages_in_main_menu %}
+          {% unless item.layout_title == product_list_layout or item.layout_title == product_layout %}
+            {% include "menu-item" %}
+          {% endunless %}
+        {% else %}
+          {% include "menu-item" %}
+        {% endunless %}
+      {% endif %}
+    {% else %}
+      {% include "menu-item" %}
+    {% endif %}
   {% endfor %}
+
 
   {% if editmode %}
     {% if site.hidden_menuitems.size > 0 %}

@@ -19,6 +19,30 @@
       color: rgba($black, .5);
     }
 
+    .item-list-page & {
+      display: inline-block;
+      width: 100% !important;
+    }
+
+    .item-page & {
+      display: inline-block;
+      width: 100% !important;
+
+      @include query($tablet) {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      @include query($mobile) {
+        margin-bottom: 0;
+      }
+
+      .content-header {
+        margin-top: -6px;
+        margin-bottom: 10px;
+      }
+    }
+
     .content-page & {
       display: inline-block;
       width: calc(100% - 140px);
@@ -47,6 +71,14 @@
       font-size: 50px;
       line-height: 1;
       letter-spacing: -3px;
+    }
+  }
+
+  .items-body {
+    .content-header {
+      h1 {
+        letter-spacing: 0px;
+      }
     }
   }
 }
