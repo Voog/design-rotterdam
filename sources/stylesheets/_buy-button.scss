@@ -39,6 +39,10 @@
       appearance: none;
       outline: 0;
       background-color: $white;
+
+      &::-ms-expand {
+        display: none;
+      }
     }
   }
 }

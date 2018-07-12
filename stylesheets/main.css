@@ -535,6 +535,9 @@ body {
   outline: 0;
   background-color: #ffffff;
 }
+.content-formatted .edy-buy-button-variants .form_field_select::-ms-expand {
+  display: none;
+}
 
 .form_field .custom-btn-disabled {
   cursor: default;
