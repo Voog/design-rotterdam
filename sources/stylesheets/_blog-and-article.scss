@@ -9,6 +9,10 @@
 
 .post-date {
   text-transform: uppercase;
+
+  &.hide-article-date {
+    display: none;
+  }
 }
 
 .blog-page {
@@ -168,8 +172,17 @@
   .post-content {
     display: inline-block;
     width: 100%;
-    max-width: 580px;
     vertical-align: top;
+
+    &.full-width-post {
+      max-width: 100%;
+
+      @media screen and (min-width: $tablet) {
+        .post-page .post-content {
+          max-width: 100%;
+        }
+      }
+    }
   }
 
   .post-excerpt,
@@ -198,6 +211,7 @@
 
 .add-post-container {
   position: absolute;
+  margin-left: 7px !important;
   bottom: 0;
   left: 0;
 }

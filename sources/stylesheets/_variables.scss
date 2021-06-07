@@ -2,6 +2,7 @@
 // Colors
 $white: #ffffff;
 $black: #000000;
+$voog-blue: #443df6;
 $search-color: #1B2124;
 $search-bg: #f4f4f4;
 $search-highlight: #F9EC5A;
@@ -10,6 +11,7 @@ $red: #CC0000;
 // Media queries
 $tablet: 999px;
 $mobile: 640px;
+$mobile-2: 420px;
 
 // Width
 
@@ -24,6 +26,7 @@ $color-error: #c33; //rgb(204,51,51)
 $color-notice: #3c3; // rgb(51,204,51)
 $color-disabled: #dadada;
 $color-science-blue: #06b;
+$editor-grey: #1B2124;
 
 //Transition
 $transition: 300ms;
@@ -37,6 +40,7 @@ $color-silver-2: rgb(196,196,196);
 // Fonts
 $font-one: 'Montserrat', sans-serif;
 $font-two: 'Crimson Text', serif;
+$primary-font: $font-one;
 $avenir: 'Avenir Next', 'AvenirX';
 $h1-size: 36px;
 $h2-size: 24px;
@@ -49,3 +53,10 @@ $line-height: 1.4;
 // $box-width: 400px;
 $search-height-1: 30px;
 $search-height-2: 40px;
+
+// Variables for blog settings CSS
+$zindex-settings-btn: 104;
+$zindex-settings-popover: 56501;
+$zindex-settings-editor: 57000;
+$bold: 600;
+$box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% include "template-variables" %}
 {% include "blog-article-variables" %}
+{% include "article-settings-variables" %}
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% assign blog_article = true %}
@@ -23,9 +24,12 @@
             {% assign article_date_format = "long" %}
           {% endif %}
 
-          <time class="post-date" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
+          {% if editmode or show_article_date != false %}
+            <time class="post-date{% if show_article_date == false %} hide-article-date{% endif %}" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
+          {% endif %}
+
         </header>
-        <section class="post-content" data-search-indexing-allowed="true">
+        <section class="post-content{% if show_article_comments == false %} full-width-post{% endif %}" data-search-indexing-allowed="true">
           <div class="post-excerpt content-formatted cfx" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
           <div class="post-body content-formatted cfx">{% editable article.body %}</div>
           <div class="post-body content-formatted cfx">{% content name="additional_body" bind="Article" %}</div>
@@ -33,8 +37,11 @@
             {% include "tags-article" %}
           </div>
         </section>
+        
+        {% if editmode or show_article_comments != false %}
+          {% include "comments-article" %}
+        {% endif %}
 
-        {% include "comments-article" %}
       </article>
 
       {% if article.older or article.newer %}
@@ -66,6 +73,7 @@
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "edicy-tools" %}
+  {% include "settings-popover", _articlePage: true %}
   <script type="text/javascript">site.initArticlePage({% if editmode %}false{% else %}true{% endif %});</script>
 </body>
 </html>
