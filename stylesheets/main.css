@@ -2606,6 +2606,37 @@ body {
   display: none;
 }
 
+.layout_settings-tooltip {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 6px;
+  bottom: 54px;
+  position: fixed;
+  pointer-events: none;
+  white-space: nowrap;
+  color: white;
+  background: #1B2124;
+  border: 1px solid transparent;
+  opacity: 0;
+  border-radius: 4px;
+  z-index: 56502;
+}
+
+.layout_settings-tooltip.visible {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
+  z-index: 56502;
+  -webkit-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  -o-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-transition-delay: .6s;
+       -o-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
 .layout_settings-popover {
   position: fixed;
   background: #ffffff;

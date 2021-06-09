@@ -3,11 +3,9 @@
     {%- if _blogPage == true -%}
       {% include 'settings-blog-page' %}
       {% include "edicy-tools", _isSettingsEditor: true %}
-    {%- endif -%}
-
-    {%- if _articlePage == true -%}
+    {%- elsif _articlePage == true -%}
       {% include 'settings-article-page' %}
-      {% include "edicy-tools", _isSettingsEditor: true %}
+      {% include "edicy-tools", _isSettingsEditor: true %}      
     {%- endif -%}
 
     <div class="layout_settings-arrow"></div>
@@ -26,4 +24,6 @@
       </defs>
     </svg>
   </div>
+
+  <div class='layout_settings-tooltip'>{{ 'design_settings' | lce | escape_once }}</div>
 {%- endif -%}
