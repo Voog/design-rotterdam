@@ -1,105 +1,21 @@
-var debounce = function (func, wait, immediate) {
-  var timeout;
-  return function () {
-    var context = this,
-      args = arguments;
-    var later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
+
+;(function ($) {
+  var debounce = function (func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
     };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
   };
-};
 
-var initSettingsEditorBtn = function () {
-  window.addEventListener('DOMContentLoaded', function (event) {
-    var shadowDom = document.querySelector(".edy-next-shadowdom").shadowRoot;
-    var setSettingsBtn = setInterval(function () {
-      if (shadowDom.querySelectorAll('div[class^="toolbar__"]').length) {
-        var toolbarExpandBtn = shadowDom.querySelector('div[class^="toolbar-expand"]');
-        var toolbar = shadowDom.querySelector('div[class^="toolbar__"]');
-        var settingsBtn = document.querySelector(".js-layout_settings-btn");
-        var toolbarItem = shadowDom.querySelector('div[class^="toolbar-content-item__"]');
-
-        settingsBtn.className = toolbarItem.className + ' ' + settingsBtn.className;
-
-        toolbar.insertBefore(settingsBtn, toolbarExpandBtn);
-
-        shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
-          "click",
-          function (e) {
-            if (document.querySelector('body').classList.contains('layout_settings-visible')) {
-              document.querySelector('div.editor_default').style.display = 'none';
-            }
-            document.querySelector('body').classList.toggle('layout_settings-visible');
-            e.stopImmediatePropagation();
-          }
-        );
-
-        shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
-          "mouseenter",
-          function (e) {
-            $('.layout_settings-tooltip').addClass('visible');
-            positionPopover();
-          }
-        );
-        shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
-          "mouseleave",
-          function (e) {
-            $('.layout_settings-tooltip').removeClass('visible');
-          }
-        );
-
-        var positionPopover = function () {
-          var settingsPopover = $('.js-layout_settings-popover');
-          var settingsPopoverArrow = $('.layout_settings-arrow');
-          var tooltipPopover = $('.layout_settings-tooltip');
-
-          if ($(window).width() > 768) {
-            settingsPopover.css({
-              right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)
-            });
-            tooltipPopover.css({
-              right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (tooltipPopover.width() / 2) - (settingsBtn.getBoundingClientRect().width / 2)
-            });
-            settingsPopoverArrow.css({
-              right: settingsPopover.width() / 2
-            });
-          } else {
-            settingsPopover.css({
-              right: 0
-            });
-            tooltipPopover.css({
-              right: 0
-            });
-            settingsPopoverArrow.css({
-              right: 72
-            });
-          }
-        }
-
-        $(window).resize(debounce(function () {
-          positionPopover();
-        }, 25));
-
-        positionPopover();
-        clearInterval(setSettingsBtn);
-      }
-    }, 500);
-
-    $('body').append($('.js-layout_settings-popover'));
-  });
-}
-
-window.site = $.extend(window.site || {}, {
-  initSettingsEditorBtn: initSettingsEditorBtn
-})
-
-;
-(function ($) {
   var editmode = $('html').hasClass('editmode');
 
   var toggleFlags = function () {
@@ -385,20 +301,76 @@ window.site = $.extend(window.site || {}, {
     });
   };
 
-  // ===========================================================================
-  // Function to detect if site is displayed in editmode.
-  // ===========================================================================
+  var initSettingsEditorBtn = function() {
+    window.addEventListener('DOMContentLoaded', function(event) {
+      var shadowDom = document.querySelector(".edy-next-shadowdom").shadowRoot;
+      var setSettingsBtn = setInterval(function() {
+        if (shadowDom.querySelectorAll('div[class^="toolbar__"]').length) {
+          var toolbarExpandBtn = shadowDom.querySelector('div[class^="toolbar-expand"]');
+          var toolbar = shadowDom.querySelector('div[class^="toolbar__"]');
+          var settingsBtn = document.querySelector(".js-layout_settings-btn");
+          var toolbarItem = shadowDom.querySelector('div[class^="toolbar-content-item__"]');
 
-  var editmode = function () {
-    return $('html').hasClass('editmode');
-  };
+          settingsBtn.className = toolbarItem.className + ' ' + settingsBtn.className;
+
+          toolbar.insertBefore(settingsBtn, toolbarExpandBtn);
+
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "click", function(e){
+              document.querySelector('body').classList.toggle('layout_settings-visible');
+              e.stopImmediatePropagation();
+            }
+          );
+
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseenter", function(e){
+              $('.layout_settings-tooltip').addClass('visible');
+              positionPopover();
+            }
+          );
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseleave", function(e){
+              $('.layout_settings-tooltip').removeClass('visible');
+            }
+          );
+
+          var positionPopover = function() {
+            var settingsPopover = $('.js-layout_settings-popover');
+            var settingsPopoverArrow = $('.layout_settings-arrow');
+            var tooltipPopover = $('.layout_settings-tooltip');
+
+            if ($( window ).width() > 768) {
+              settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)});
+              tooltipPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (tooltipPopover.width() / 2) - (settingsBtn.getBoundingClientRect().width / 2)});
+              settingsPopoverArrow.css({right: settingsPopover.width() / 2});
+            } else {
+              settingsPopover.css({right: 0});
+              tooltipPopover.css({right: 0});
+              settingsPopoverArrow.css({right: 72});
+            }
+          }
+
+          $(window).resize(debounce(function() {
+            positionPopover();
+          }, 25));
+
+          positionPopover();
+          clearInterval(setSettingsBtn);
+        }
+      }, 500);
+
+      $('body').append($('.js-layout_settings-popover'));
+
+    });
+  }
 
   window.site = $.extend(window.site || {}, {
     toggleFlags: toggleFlags,
     headerBgPreview: headerBgPreview,
     headerBgCommit: headerBgCommit,
     bindCustomTexteditorStyles: bindCustomTexteditorStyles,
-    bindContentItemImgDropAreas: bindContentItemImgDropAreas
+    bindContentItemImgDropAreas: bindContentItemImgDropAreas,
+    initSettingsEditorBtn: initSettingsEditorBtn
   });
 
   init();

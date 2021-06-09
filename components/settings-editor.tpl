@@ -62,7 +62,7 @@
         }
       });
 
-      $('body').on('click', function(event) {
+      $(document).on('click', function(event) {
         if (!$(event.target).closest('.js-prevent-sideclick').length) {
           $('body').removeClass('layout_settings-visible');
         };

@@ -37,6 +37,7 @@
       show_comments: show_comments,
       show_date: show_date
     }
+    
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-article-settings-btn'),
