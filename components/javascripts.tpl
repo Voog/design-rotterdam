@@ -3,6 +3,10 @@
 <script src="{{ javascripts_path }}/application.min.js?v=rotterdam-2.2.4"></script>
 {% sitejs_include %}
 
+{% if editmode %}
+  <script src="{{ javascripts_path }}/editmode.min.js"></script>
+{% endif %}
+
 {% comment %}Site search related javascript components.{% endcomment %}
 {% if site.search.enabled %}
   <script src="{{ site.static_asset_host }}/libs/edicy-search/latest/edicy-search.js"></script>

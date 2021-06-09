@@ -9,6 +9,10 @@
 
 .post-date {
   text-transform: uppercase;
+
+  &.hide-article-date {
+    display: none;
+  }
 }
 
 .blog-page {
@@ -73,17 +77,17 @@
       padding-right: 20px;
     }
 
-    .post-header + .post-content {
+    .post-header+.post-content {
       display: inherit;
       margin-left: 240px;
     }
   }
 
   .post-readmore {
-    margin: 0 70px;
+    margin-top: 10px;
 
     @media screen and (max-width: $mobile - 1) {
-      margin: 0;
+      margin-top: 10px;
     }
   }
 
@@ -92,7 +96,7 @@
     padding: .31em .75em;
     font-size: 16px;
     line-height: 1.7em;
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
     cursor: pointer;
     background: #dadada;
     border: 0;
@@ -111,13 +115,13 @@
 
   .post-content .content-formatted,
   .post-content .edy-texteditor-view {
-    & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+    &> :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
       &:last-child {
         margin-bottom: 0;
       }
     }
 
-    & > * {
+    &>* {
       margin-bottom: 20px;
     }
   }
@@ -138,11 +142,6 @@
         width: 100%;
       }
     }
-  }
-
-  .post-excerpt,
-  .post-body {
-    margin: 0 70px 20px;
   }
 }
 
@@ -168,8 +167,22 @@
   .post-content {
     display: inline-block;
     width: 100%;
-    max-width: 580px;
     vertical-align: top;
+
+    &.full-width-post {
+      max-width: 100%;
+
+
+      @media screen and (min-width: $tablet) {
+        .post-page .post-content {
+          max-width: 100%;
+        }
+      }
+
+      .tags {
+        margin-left: 0;
+      }
+    }
   }
 
   .post-excerpt,
@@ -198,6 +211,7 @@
 
 .add-post-container {
   position: absolute;
+  margin-left: 7px !important;
   bottom: 0;
   left: 0;
 }
@@ -216,7 +230,7 @@
 
   .tags-list,
   .tag-link {
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
   }
 }
 
@@ -224,17 +238,17 @@
   display: inline-block;
   padding: 12px;
   line-height: 1.8;
-  color: rgba(0,0,0,.9);
+  color: rgba(0, 0, 0, .9);
   text-transform: uppercase;
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, .05);
 
   .tag-link {
     margin-left: 10px;
 
     &.active {
       padding-bottom: 2px;
-      color: rgba(0,0,0,.9);
-      border-bottom: 2px solid rgba(0,0,0,.25);
+      color: rgba(0, 0, 0, .9);
+      border-bottom: 2px solid rgba(0, 0, 0, .25);
     }
   }
 }
@@ -244,7 +258,6 @@
   display: block;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 70px;
   font-family: $font-one;
 
   .tag-icon {
@@ -345,6 +358,7 @@
 }
 
 @include query($mobile) {
+
   // BLOG & BLOG ARTICLE
   .blog-page {
     .post {
@@ -388,9 +402,10 @@
     }
 
     .post-content {
+
       .content-formatted,
       .edy-texteditor-view {
-        & > :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
+        &> :not(.image-container):not(table):not(.embed-container):not(.table-container):not(.edy-editable) {
           margin: 0 0 20px;
         }
       }
