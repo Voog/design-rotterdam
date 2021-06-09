@@ -1901,12 +1901,12 @@ body {
 }
 
 .blog-page .post-readmore {
-  margin: 0 70px;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 639px) {
   .blog-page .post-readmore {
-    margin: 0;
+    margin-top: 10px;
   }
 }
 
@@ -1961,13 +1961,6 @@ body {
   width: 100%;
 }
 
-.post-page .post-excerpt,
-.post-page .post-body,
-.blog-page .post-excerpt,
-.blog-page .post-body {
-  margin: 0 70px 20px;
-}
-
 .post-page .post-header {
   margin-bottom: 30px;
 }
@@ -2000,6 +1993,10 @@ body {
   .post-page .post-content.full-width-post .post-page .post-content {
     max-width: 100%;
   }
+}
+
+.post-page .post-content.full-width-post .tags {
+  margin-left: 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -2075,7 +2072,6 @@ body {
   display: block;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 70px;
   font-family: "Montserrat", sans-serif;
 }
 
