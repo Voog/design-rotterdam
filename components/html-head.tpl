@@ -17,7 +17,7 @@
 
 {% comment %}STYLESHEETS{% endcomment %}
 {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
-{% stylesheet_link "main.min.css?v=rotterdam-2.2.4" %}
+{% stylesheet_link "main.min.css?v=rotterdam-2.2.5" %}
 <!--[if lt IE 9]>{% stylesheet_link "ie8.min.css?v=1" %}<![endif]-->
 
 {% comment %}Google fonts for Design Editor{% endcomment %}
