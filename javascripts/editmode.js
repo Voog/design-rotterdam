@@ -89,6 +89,38 @@
     });
   };
 
+  // Returns the suitable version of the image depending on the viewport width.
+  var getImageByWidth = function (sizes, targetWidth) {
+    var prevImage;
+
+    for (var i = 0, max = sizes.length; i < max; i++) {
+      if (sizes[i].width < targetWidth) {
+        return prevImage || sizes[i];
+      }
+      prevImage = sizes[i];
+    }
+    // Makes sure that smallest is returned if all images bigger than targetWidth.
+    return sizes[sizes.length - 1];
+  };
+
+  var headerBgImageSizesContains = function (sizes, url) {
+    for (var i = sizes.length; i--;) {
+      if (url.indexOf(sizes[i].url.trim()) > -1) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
+  var handleHeaderImageLightnessClass = function () {
+    if (headerBgCombinedLightness >= 0.5) {
+      $('.js-background-type').addClass('light-background').removeClass('dark-background');
+    } else {
+      $('.js-background-type').addClass('dark-background').removeClass('light-background');
+    }
+  };
+
   var normalizeValue = function (value) {
     if (value == null || (typeof value == 'string' && value.match(/^[\\'"]+$/))) {
       return '';
@@ -368,6 +400,9 @@
     toggleFlags: toggleFlags,
     headerBgPreview: headerBgPreview,
     headerBgCommit: headerBgCommit,
+    getImageByWidth: getImageByWidth,
+    headerBgImageSizesContains: headerBgImageSizesContains,
+    handleHeaderImageLightnessClass: handleHeaderImageLightnessClass,
     bindCustomTexteditorStyles: bindCustomTexteditorStyles,
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     initSettingsEditorBtn: initSettingsEditorBtn

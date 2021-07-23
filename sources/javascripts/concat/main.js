@@ -140,14 +140,7 @@
       event.stopPropagation();
     });
   };
-
-  var handleWindowResize = function () {
-    // Add functions that should be trgiggered while resizing the window here.
-    // Example:
-    // $(window).resize(debounce(yourFunctionName, 3000));
-  };
-
-  // Returns the suitable version of the image depending on the viewport width.
+  
   var getImageByWidth = function (sizes, targetWidth) {
     var prevImage;
 
@@ -509,7 +502,6 @@
     toggleMainMenu();
     toggleLangMenu();
     handlePopoverMenuHide();
-    handleWindowResize();
     handleSearch();
     wrapTables();
     focusCommentsWithErrors();
