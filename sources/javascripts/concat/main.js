@@ -140,7 +140,7 @@
       event.stopPropagation();
     });
   };
-  
+
   var getImageByWidth = function (sizes, targetWidth) {
     var prevImage;
 
@@ -629,6 +629,67 @@
     $headerMenu.attr('data-initial-width', $headerMenu.outerWidth(true));
   };
 
+  // ===========================================================================
+  // Helper function to limit the rate at which a function can fire.
+  // ===========================================================================
+
+  var debounce = function(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this,
+          args = arguments;
+
+      var later = function() {
+        timeout = null;
+
+        if (!immediate) {
+          func.apply(context, args);
+        }
+      };
+
+      var callNow = immediate && !timeout;
+
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+
+      if (callNow) {
+        func.apply(context, args);
+      }
+    };
+  };
+
+  // ===========================================================================
+  // Change product image position on narrower screens (mobile devices)
+  // ===========================================================================
+
+  var handleProductPageContent = function () {
+    $(document).ready(function () {
+      changeProductImagePos();
+    });
+
+    $(window).resize(debounce(function () {
+      changeProductImagePos();
+    }, 25));
+
+    var changeProductImagePos = function () {
+      var productGallery = $('.js-product-gallery');
+      var productImageContentBox = $('.js-content-item-box');
+      var productBody = $('.js-content-body');
+
+      if ($('.js-buy-btn-content .edy-buy-button-container').length >= 1) {
+        if ($(window).width() < 641) {
+          if ($('.js-buy-btn-content + .js-product-gallery').length === 0) {
+            productBody.append(productGallery);
+          }
+        } else {
+          if ($('.js-content-item-box + .js-product-gallery').length === 0) {
+            productImageContentBox.parent().append(productGallery);
+          }
+        }
+      }
+    }
+  };
+
   // Enables the usage of the initiations outside this file.
   // For example add "<script>site.initBlogPage();</script>" at the end of the "Blog & News" page to initiate blog listing view functions.
 
@@ -643,6 +704,10 @@
     bindRootItemSettings: bindRootItemSettings,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     bindSiteSearch: bindSiteSearch
+  });
+
+  window.template = $.extend(window.template || {}, {
+    handleProductPageContent: handleProductPageContent
   });
 
   init();
