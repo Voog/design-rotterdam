@@ -2,6 +2,10 @@
   margin-top: 15px;
   text-align: center;
 
+  .product-content & {
+    margin-top: 0px;
+  }
+
   .item-page & {
   margin-bottom: 30px;
   }
@@ -194,7 +198,6 @@
     }
 
     .with-image & {
-      background-color: rgba($color-black, 0.05);
       border: 0;
     }
 
@@ -411,6 +414,8 @@
 }
 
 .product-content {
+  margin-top: 16px;
+
   .edy-buy-button-container {
     padding: 24px 0;
   }

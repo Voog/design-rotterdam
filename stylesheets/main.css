@@ -3269,6 +3269,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   text-align: center;
 }
 
+.product-content .content-item-box {
+  margin-top: 0px;
+}
+
 .item-page .content-item-box {
   margin-bottom: 30px;
 }
@@ -3484,7 +3488,6 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 }
 
 .with-image .item-top .top-inner {
-  background-color: rgba(0, 0, 0, 0.05);
   border: 0;
 }
 
@@ -3727,6 +3730,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.product-content {
+  margin-top: 16px;
 }
 
 .product-content .edy-buy-button-container {

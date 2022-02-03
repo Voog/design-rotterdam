@@ -7,21 +7,21 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-{% capture bottom_content_html %}
-  {% unless editmode %}
-    {% content bind=product name="content" %}
-  {% endunless %}
-{% endcapture %}
+{%- capture bottom_content_html -%}
+  {%- unless editmode -%}
+    {%- content bind=product name="content" -%}
+  {%- endunless -%}
+{%- endcapture -%}
 
-{% assign bottom_content_size = bottom_content_html | strip | size %}
+{%- assign bottom_content_size = bottom_content_html | strip | size -%}
 
-{% capture gallery_content_html %}
-  {% unless editmode %}
-    {% content bind=product name="gallery" %}
-  {% endunless %}
-{% endcapture %}
+{%- capture gallery_content_html -%}
+  {%- unless editmode -%}
+    {%- content bind=product name="gallery" -%}
+  {%- endunless -%}
+{%- endcapture -%}
 
-{% assign gallery_content_size = gallery_content_html | strip | size %}
+{%- assign gallery_content_size = gallery_content_html | strip | size -%}
 
 <body class="item-page content-page{% if site.search.enabled %} search-enabled{% endif %}{% if editmode or site.has_many_languages? %} lang-enabled{% endif %} {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   {% include "template-svg-spritesheet" %}
@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="flex-col">
-              <div class="content-body js-content-body">
+              <div class="content-body js-product-content-right">
                 <div class="content-item-title content-formatted">
                   <h1>{%- editable product.name -%}</h1>
                 </div>
