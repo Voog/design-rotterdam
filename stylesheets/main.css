@@ -614,6 +614,7 @@ body {
 }
 
 .form_field .custom-btn-disabled {
+  color: #919191;
   cursor: default;
   background-color: #dadada;
 }
@@ -3493,6 +3494,13 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   border-width: 1px;
 }
 
+.item-top .top-inner.product-page > .item-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media screen and (min-width: 1000px) {
   .item-top .top-inner .edy-img-drop-area-placeholder {
     font-size: 22px;
@@ -3559,6 +3567,12 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 640px) {
+  .content-body .content-item-title {
+    margin-top: 32px;
+  }
+}
+
 .svg-spritesheet {
   display: none;
 }
@@ -3584,7 +3598,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 }
 
 @media screen and (min-width: 641px) {
-  .item-page .content-body {
+  .item-page .content-body:not(.js-content-body) {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -3715,6 +3729,52 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
           transform: rotate(-45deg);
 }
 
+.product-content .edy-buy-button-container {
+  padding: 24px 0;
+}
+
+.product-content .without-image .item-top {
+  background-color: rgba(0, 0, 0, 0.05);
+  background-image: url("../assets/ico-placeholder.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+
+.product-content .product-price {
+  padding: 12px 0 24px;
+}
+
+.product-content .product-price .price-separator {
+  padding: 0 4px;
+}
+
+.product-content .content-gallery {
+  padding: 24px 0;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.flex-col .content-illustrations,
+.flex-col .content-body {
+  max-width: 100%;
+}
+
+.flex-col .content-body {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+}
+
 .signout-btn-wrap {
   position: fixed;
   right: 5px;
@@ -3763,4 +3823,19 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 
 .signout-btn-wrap .signout-svg {
   margin-top: 3px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  img {
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+}
+
+/* Unset for Safari 11+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    img {
+      image-rendering: unset !important;
+    }
+  }
 }
