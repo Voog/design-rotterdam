@@ -303,7 +303,7 @@
   }
 }
 
-.content-body:not(.js-content-body) {
+.content-body:not(.js-product-content-right) {
   .item-page & {
     @media screen and (min-width: $mobile + 1) {
       flex: 1;
@@ -438,6 +438,10 @@
 
   .content-gallery {
     padding: 24px 0;
+  }
+
+  + .content-product-wide {
+    font-size: var(--content-font-size);
   }
 }
 
