@@ -36,6 +36,13 @@
           <div class="items-body product-content">
             <div class="flex-col">
               <div class="content-illustrations">
+
+                {%- if product.image != blank %}
+                  {% assign item_image_state = "with-image" %}
+                {% else %}
+                  {% assign item_image_state = "without-image" %}
+                {% endif -%}
+
                 <div class="content-item-box {{ item_image_state }} js-content-item-box">
                   <div class="item-top">
                     {%- if product.image != blank -%}
