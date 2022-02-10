@@ -399,11 +399,9 @@
   // Opens product admin view on product image click
 
   var handleProductImageClick = function(product_id) {
-    if (editmode) {
-      $('.product-content .product-image').click(function() {
-        window.open('/admin/ecommerce/products/' + product_id, '_blank').focus();
-      });
-    }
+    $('.product-content .product-image').click(function() {
+      window.open('/admin/ecommerce/products/' + product_id, '_blank').focus();
+    });
   };
 
   window.site = $.extend(window.site || {}, {

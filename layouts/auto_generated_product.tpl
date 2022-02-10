@@ -46,7 +46,7 @@
                 <div class="content-item-box {{ item_image_state }} js-content-item-box">
                   <div class="item-top product-image">
                     {%- if product.image != blank -%}
-                      <div class="top-inner aspect-ratio-inner product-page">
+                      <div class="top-inner aspect-ratio-inner product-page-image">
                         {%- assign image_class = "item-image not-cropped" -%}
                         {% image product.image target_width: "1280" class: image_class loading: "lazy" %}
                       </div>
