@@ -2,6 +2,10 @@
   margin-top: 15px;
   text-align: center;
 
+  .product-content & {
+    margin-top: 0px;
+  }
+
   .item-page & {
   margin-bottom: 30px;
   }
@@ -78,6 +82,10 @@
 .item-top {
   position: relative;
   @include aspect-ratio(1, 1);
+
+  .editmode & {
+    cursor: pointer;
+  }
 
   &:hover {
     .btn,
@@ -194,7 +202,6 @@
     }
 
     .with-image & {
-      background-color: rgba($color-black, 0.05);
       border: 0;
     }
 
@@ -202,6 +209,12 @@
       border-color: rgba($color-black, .1);
       border-style: solid;
       border-width: 1px;
+    }
+
+    &.product-page-image > .item-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .edy-img-drop-area-placeholder {
@@ -266,8 +279,13 @@
     margin-top: 0;
     text-transform: uppercase;
   }
-}
 
+  @media screen and (max-width: $mobile) {
+    .content-item-title {
+      margin-top: 32px;
+    }
+  }
+}
 
 .svg-spritesheet {
   display: none;
@@ -289,7 +307,7 @@
   }
 }
 
-.content-body {
+.content-body:not(.js-product-content-right) {
   .item-page & {
     @media screen and (min-width: $mobile + 1) {
       flex: 1;
@@ -396,5 +414,53 @@
       right: 4px;
       transform: rotate(-45deg);
     }
+  }
+}
+
+.product-content {
+  margin-top: 16px;
+
+  .edy-buy-button-container {
+    padding: 24px 0;
+  }
+
+  .without-image .item-top {
+    background-color: rgba(0, 0, 0, .05);
+    background-image: url('../assets/ico-placeholder.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+  }
+
+  .product-price {
+    padding: 12px 0 24px;
+
+    .price-separator {
+      padding: 0 4px;
+    }
+  }
+
+  .content-gallery {
+    padding: 24px 0;
+  }
+
+  + .content-product-wide {
+    font-size: var(--content-font-size);
+  }
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .content-illustrations,
+  .content-body {
+    max-width: 100%;
+  }
+
+  .content-body {
+    position: sticky;
+    top: 104px;
   }
 }
