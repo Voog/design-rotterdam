@@ -701,13 +701,10 @@
     getImageByWidth: getImageByWidth,
     initItemsPage: initItemsPage,
     handleHeaderColorScheme: handleHeaderColorScheme,
+    handleProductPageContent: handleProductPageContent,
     bindRootItemSettings: bindRootItemSettings,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     bindSiteSearch: bindSiteSearch
-  });
-
-  window.template = $.extend(window.template || {}, {
-    handleProductPageContent: handleProductPageContent
   });
 
   init();

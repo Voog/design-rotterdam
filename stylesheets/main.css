@@ -3370,7 +3370,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   left: 0;
 }
 
-[data-view-state="editmode"] .item-top {
+.editmode .item-top {
   cursor: pointer;
 }
 
