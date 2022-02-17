@@ -462,5 +462,6 @@
   .content-body {
     position: sticky;
     top: 104px;
+    z-index: $zindex-ca-interaction-button + 1;
   }
 }
