@@ -318,6 +318,27 @@
   }
 }
 
+.edy-product-widget-filter-sort option {
+  color: $black;
+}
+
+.dark-background {
+  .edy-product-widget-filter-name,
+  .edy-product-widget-filter-sort,
+  .edy-product-widget-filter-label,
+  .edy-product-widget-filter-search-input {
+    color: rgba(255,255,255,.8);
+  }
+
+  .edy-product-widget-filter-sort,
+  .edy-product-widget-filter-search-input {
+    opacity: .7;
+  }
+
+  .edy-product-widget-filter-label {
+    opacity: .5;
+  }
+}
 
 @include query($mobile) {
   .content-formatted {

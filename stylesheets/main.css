@@ -613,6 +613,26 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.edy-product-widget-filter-sort option {
+  color: #000000;
+}
+
+.dark-background .edy-product-widget-filter-name,
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-label,
+.dark-background .edy-product-widget-filter-search-input {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-search-input {
+  opacity: .7;
+}
+
+.dark-background .edy-product-widget-filter-label {
+  opacity: .5;
+}
+
 @media screen and (max-width: 640px) {
   .content-formatted .edy-img-container {
     margin: 0 -25px;
