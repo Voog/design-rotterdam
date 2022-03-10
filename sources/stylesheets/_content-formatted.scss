@@ -186,7 +186,8 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .custom-btn {
+  .custom-btn,
+  .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
     background: #dadada;
     border: 0;
     display: inline-block;
@@ -253,6 +254,89 @@
       line-height: 1.3;
       content: attr(data-title);
     }
+  }
+}
+
+.dark-background {
+  .edy-product-widget-grid .edy-product-widget-item {
+    .edy-product-widget-item-details-wrap {
+      .edy-product-widget-item-title,
+      .edy-product-widget-item-link {
+        color: rgba(255,255,255,.8);
+      }
+
+      .edy-product-widget-item-price,
+      .edy-product-widget-item-description {
+        color: rgba(255,255,255,.6);
+      }
+    }
+
+    .edy-product-widget-item-top-outer .edy-product-widget-item-top.edy-product-widget-item-without-image {
+      border: 1px solid rgba(255,255,255,.5);
+    }
+
+    .edy-product-widget-item-details-flex-wrap {
+      .edy-product-widget-item-out-of-stock,
+      .edy-product-widget-item-btn {
+        color: rgba(255,255,255,.8);
+      }
+    }
+
+    &:hover {
+      .edy-product-widget-item-price {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.dark-background {
+  .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap {
+    .edy-product-widget-item-header {
+      .edy-product-widget-item-title {
+        .edy-product-widget-item-link {
+          color: rgba(255,255,255,.8);
+        }
+      }
+
+      .edy-product-widget-item-price {
+        color: rgba(255,255,255,.6);
+      }
+
+      .edy-product-widget-item-out-of-stock {
+        color: rgba(255,255,255,.8);
+      }
+    }
+
+    .edy-product-widget-item-description {
+      color: rgba(255,255,255,.8);
+    }
+
+    .edy-product-widget-item-without-image {
+      border: 1px solid rgba(255,255,255,.5);
+    }
+  }
+}
+
+.edy-product-widget-filter-sort option {
+  color: $black;
+}
+
+.dark-background {
+  .edy-product-widget-filter-name,
+  .edy-product-widget-filter-sort,
+  .edy-product-widget-filter-label,
+  .edy-product-widget-filter-search-input {
+    color: rgba(255,255,255,.8);
+  }
+
+  .edy-product-widget-filter-sort,
+  .edy-product-widget-filter-search-input {
+    opacity: .7;
+  }
+
+  .edy-product-widget-filter-label {
+    opacity: .5;
   }
 }
 
