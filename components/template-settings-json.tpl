@@ -1,3 +1,3 @@
 {
-  "version": "rotterdam-2.3.1"
+  "version": "rotterdam-2.3.2"
 }
