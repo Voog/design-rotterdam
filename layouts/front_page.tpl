@@ -22,7 +22,8 @@
       </div>
 
       <div class="wrap js-topbar-init">
-        <section class="content-body content-formatted cfx" data-search-indexing-allowed="true">{% content name="default" %}</section>
+        {%- assign content_default_title = "content" | lce -%}
+        <section class="content-body content-formatted cfx" data-search-indexing-allowed="true">{% content name="default" title=content_default_title %}</section>
       </div>
     </main>
     {% include "footer" %}
