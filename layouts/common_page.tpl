@@ -12,14 +12,15 @@
   <div class="container">
     {% include "header" %}
     <section class="content-header content-formatted cfx" data-search-indexing-allowed="true">
-      {%- assign page_title_content_title = "title" | lce -%}
-      {%- assign page_title_content_title_tooltip = "content_tooltip_current_page_title" | lce -%}
-      {% content name="slogan" title=page_title_content_title title_tooltip=page_title_content_title_tooltip %}
+      {%- assign content_default_title = "content" | lce -%}
+      {%- assign content_default_title_tooltip = "content_tooltip_specific_page" | lce -%}
+      {% content name="slogan" title=content_default_title title_tooltip=content_default_title_tooltip %}
     </section>
     <main class="content" role="main">
       {% include "sidebar-left" %}
-      {%- assign content_default_title = "content" | lce -%}
-      <section class="content-body content-formatted" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% content title=content_default_title %}</section>
+      {%- assign bottom_content_title = "additional_content" | lce -%}
+      {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
+      <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content title=bottom_content_title title_tooltip=bottom_content_title_tooltip %}</section>
     </main>
     {% include "footer" %}
   </div>
