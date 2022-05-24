@@ -257,10 +257,6 @@ body {
   margin: 0 auto;
 }
 
-.header-banner .edy-empty-bordered {
-  padding: 56px 40px 52px;
-}
-
 .common-page .edy-img-container {
   margin-left: -80px;
 }
@@ -3837,6 +3833,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 
 .product-content + .content-product-wide {
   font-size: var(--content-font-size);
+}
+
+.product-content .product-cross-page-info {
+  margin-bottom: 32px;
 }
 
 .flex-col {

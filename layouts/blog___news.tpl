@@ -13,7 +13,9 @@
   <div class="container" data-search-indexing-allowed="false">
     {% include "header" %}
     <main class="content" role="main">
-      <section class="content-formatted post-intro-content" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% content %}</section>
+      {%- assign content_default_title = "content" | lce -%}
+      {%- assign content_default_title_tooltip = "content_tooltip_specific_page" | lce -%}
+      <section class="content-formatted post-intro-content" data-search-indexing-allowed="true">{% content title=content_default_title title_tooltip=content_default_title_tooltip %}</section>
       {% if editmode or site.has_language_tags? %}
         <div class="blog-header">
           {% include "tags-blog" %}
@@ -49,7 +51,7 @@
     </main>
     {% include "footer" %}
   </div>
-  
+
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "edicy-tools" %}
