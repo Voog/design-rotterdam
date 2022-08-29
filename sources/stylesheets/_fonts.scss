@@ -1,505 +1,504 @@
 @font-face {
   font-family: 'Anonymous Pro';
-  src: url('../assets/AnonymousPro-Regular.ttf') format('truetype');
+  src: url('../assets/anonymous-pro-v21-latin-ext_greek_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Anonymous Pro';
-  src: url('../assets/AnonymousPro-Italic.ttf') format('truetype');
+  src: url('../assets/anonymous-pro-v21-latin-ext_greek_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Anonymous Pro';
-  src: url('../assets/AnonymousPro-Bold.ttf') format('truetype');
+  src: url('../assets/anonymous-pro-v21-latin-ext_greek_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Anonymous Pro';
-  src: url('../assets/AnonymousPro-BoldItalic.ttf') format('truetype');
+  src: url('../assets/anonymous-pro-v21-latin-ext_greek_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Arvo';
-  src: url('../assets/Arvo-Regular.ttf') format('truetype');
+  src: url('../assets/arvo-v20-latin-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Arvo';
-  src: url('../assets/Arvo-Italic.ttf') format('truetype');
+  src: url('../assets/arvo-v20-latin-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Arvo';
-  src: url('../assets/Arvo-Bold.ttf') format('truetype');
+  src: url('../assets/arvo-v20-latin-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Arvo';
-  src: url('../assets/Arvo-BoldItalic.ttf') format('truetype');
+  src: url('../assets/arvo-v20-latin-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Cousine';
-  src: url('../assets/Cousine-Regular.ttf') format('truetype');
+  src: url('../assets/cousine-v25-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Cousine';
-  src: url('../assets/Cousine-Italic.ttf') format('truetype');
+  src: url('../assets/cousine-v25-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Cousine';
-  src: url('../assets/Cousine-Bold.ttf') format('truetype');
+  src: url('../assets/cousine-v25-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Cousine';
-  src: url('../assets/Cousine-BoldItalic.ttf') format('truetype');
+  src: url('../assets/cousine-v25-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Crimson Text';
-  src: url('../assets/CrimsonText-Regular.ttf') format('truetype');
+  src: url('../assets/crimson-text-v19-vietnamese_latin-ext-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Crimson Text';
-  src: url('../assets/CrimsonText-Italic.ttf') format('truetype');
+  src: url('../assets/crimson-text-v19-vietnamese_latin-ext-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Crimson Text';
-  src: url('../assets/CrimsonText-Bold.ttf') format('truetype');
+  src: url('../assets/crimson-text-v19-vietnamese_latin-ext-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Crimson Text';
-  src: url('../assets/CrimsonText-BoldItalic.ttf') format('truetype');
+  src: url('../assets/crimson-text-v19-vietnamese_latin-ext-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../assets/FiraSans-Regular.ttf') format('truetype');
-  font-weight: normal;
+  src: url('../assets/fira-sans-v16-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../assets/FiraSans-Italic.ttf') format('truetype');
-  font-weight: normal;
+  src: url('../assets/fira-sans-v16-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../assets/FiraSans-Bold.ttf') format('truetype');
+  src: url('../assets/fira-sans-v16-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../assets/FiraSans-BoldItalic.ttf') format('truetype');
+  src: url('../assets/fira-sans-v16-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url('../assets/Lato-Regular.ttf') format('truetype');
+  src: url('../assets/lato-v23-latin-ext-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url('../assets/Lato-Italic.ttf') format('truetype');
+  src: url('../assets/lato-v23-latin-ext-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url('../assets/Lato-Bold.ttf') format('truetype');
+  src: url('../assets/lato-v23-latin-ext-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url('../assets/Lato-BoldItalic.ttf') format('truetype');
+  src: url('../assets/lato-v23-latin-ext-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/Lora-Regular.ttf') format('truetype');
+  src: url('../assets/lora-v26-vietnamese_latin-ext_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/Lora-Italic.ttf') format('truetype');
+  src: url('../assets/lora-v26-vietnamese_latin-ext_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/Lora-Bold.ttf') format('truetype');
+  src: url('../assets/lora-v26-vietnamese_latin-ext_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/Lora-BoldItalic.ttf') format('truetype');
+  src: url('../assets/lora-v26-vietnamese_latin-ext_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Motserrat';
-  src: url('../assets/Motserrat-Regular.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../assets/montserrat-v25-vietnamese_latin-ext_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'Motserrat';
-  src: url('../assets/Motserrat-Italic.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../assets/montserrat-v25-vietnamese_latin-ext_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Motserrat';
-  src: url('../assets/Motserrat-Bold.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../assets/montserrat-v25-vietnamese_latin-ext_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Motserrat';
-  src: url('../assets/Motserrat-BoldItalic.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('../assets/montserrat-v25-vietnamese_latin-ext_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Noto Serif';
-  src: url('../assets/NotoSerif-Regular.ttf') format('truetype');
+  src: url('../assets/noto-serif-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Noto Serif';
-  src: url('../assets/NotoSerif-Italic.ttf') format('truetype');
+  src: url('../assets/noto-serif-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Noto Serif';
-  src: url('../assets/NotoSerif-Bold.ttf') format('truetype');
+  src: url('../assets/noto-serif-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Noto Serif';
-  src: url('../assets/NotoSerif-BoldItalic.ttf') format('truetype');
+  src: url('../assets/noto-serif-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../assets/OpenSans-Regular.ttf') format('truetype');
+  src: url('../assets/open-sans-v34-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../assets/OpenSans-Italic.ttf') format('truetype');
+  src: url('../assets/open-sans-v34-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../assets/OpenSans-Bold.ttf') format('truetype');
+  src: url('../assets/open-sans-v34-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../assets/OpenSans-BoldItalic.ttf') format('truetype');
+  src: url('../assets/open-sans-v34-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../assets/PlayfairDisplay-Regular.ttf') format('truetype');
+  src: url('../assets/playfair-display-v30-vietnamese_latin-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../assets/PlayfairDisplay-Italic.ttf') format('truetype');
+  src: url('../assets/playfair-display-v30-vietnamese_latin-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../assets/PlayfairDisplay-Bold.ttf') format('truetype');
+  src: url('../assets/playfair-display-v30-vietnamese_latin-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('../assets/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  src: url('../assets/playfair-display-v30-vietnamese_latin-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'PT Sans';
-  src: url('../assets/PTSans-Regular.ttf') format('truetype');
+  src: url('../assets/pt-sans-v17-latin-ext_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'PT Sans';
-  src: url('../assets/PTSans-Italic.ttf') format('truetype');
+  src: url('../assets/pt-sans-v17-latin-ext_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'PT Sans';
-  src: url('../assets/PTSans-Bold.ttf') format('truetype');
+  src: url('../assets/pt-sans-v17-latin-ext_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'PT Sans';
-  src: url('../assets/PTSans-BoldItalic.ttf') format('truetype');
+  src: url('../assets/pt-sans-v17-latin-ext_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'PT Serif';
-  src: url('../assets/PTSerif-Regular.ttf') format('truetype');
+  src: url('../assets/pt-serif-v17-latin-ext_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'PT Serif';
-  src: url('../assets/PTSerif-Italic.ttf') format('truetype');
+  src: url('../assets/pt-serif-v17-latin-ext_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'PT Serif';
-  src: url('../assets/PTSerif-Bold.ttf') format('truetype');
+  src: url('../assets/pt-serif-v17-latin-ext_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'PT Serif';
-  src: url('../assets/PTSerif-BoldItalic.ttf') format('truetype');
+  src: url('../assets/pt-serif-v17-latin-ext_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../assets/Raleway-Regular.ttf') format('truetype');
+  src: url('../assets/raleway-v28-vietnamese_latin-ext_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../assets/Raleway-Italic.ttf') format('truetype');
+  src: url('../assets/raleway-v28-vietnamese_latin-ext_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../assets/Raleway-Bold.ttf') format('truetype');
+  src: url('../assets/raleway-v28-vietnamese_latin-ext_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../assets/Raleway-BoldItalic.ttf') format('truetype');
+  src: url('../assets/raleway-v28-vietnamese_latin-ext_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Regular.ttf') format('truetype');
+  src: url('../assets/roboto-v30-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Italic.ttf') format('truetype');
+  src: url('../assets/roboto-v30-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Bold.ttf') format('truetype');
+  src: url('../assets/roboto-v30-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-BoldItalic.ttf') format('truetype');
+  src: url('../assets/roboto-v30-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('../assets/RobotoMono-Regular.ttf') format('truetype');
+  src: url('../assets/roboto-mono-v22-vietnamese_latin-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('../assets/RobotoMono-Italic.ttf') format('truetype');
+  src: url('../assets/roboto-mono-v22-vietnamese_latin-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('../assets/RobotoMono-Bold.ttf') format('truetype');
+  src: url('../assets/roboto-mono-v22-vietnamese_latin-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('../assets/RobotoMono-BoldItalic.ttf') format('truetype');
+  src: url('../assets/roboto-mono-v22-vietnamese_latin-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Roboto Slab';
-  src: url('../assets/RobotoSlab-Regular.ttf') format('truetype');
+  src: url('../assets/roboto-slab-v24-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto Slab';
-  src: url('../assets/RobotoSlab-Bold.ttf') format('truetype');
+  src: url('../assets/roboto-slab-v24-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('../assets/SourceSansPro-Regular.ttf') format('truetype');
+  src: url('../assets/source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('../assets/SourceSansPro-Italic.ttf') format('truetype');
+  src: url('../assets/source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('../assets/SourceSansPro-Bold.ttf') format('truetype');
+  src: url('../assets/source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Source Sans Pro';
-  src: url('../assets/SourceSansPro-BoldItalic.ttf') format('truetype');
+  src: url('../assets/source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('../assets/Ubuntu-Regular.ttf') format('truetype');
+  src: url('../assets/ubuntu-v20-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('../assets/Ubuntu-Italic.ttf') format('truetype');
+  src: url('../assets/ubuntu-v20-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('../assets/Ubuntu-Bold.ttf') format('truetype');
+  src: url('../assets/ubuntu-v20-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('../assets/Ubuntu-BoldItalic.ttf') format('truetype');
+  src: url('../assets/ubuntu-v20-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Ubuntu Mono';
-  src: url('../assets/UbuntuMono-Regular.ttf') format('truetype');
+  src: url('../assets/ubuntu-mono-v15-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Ubuntu Mono';
-  src: url('../assets/UbuntuMono-Italic.ttf') format('truetype');
+  src: url('../assets/ubuntu-mono-v15-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Ubuntu Mono';
-  src: url('../assets/UbuntuMono-Bold.ttf') format('truetype');
+  src: url('../assets/ubuntu-mono-v15-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Ubuntu Mono';
-  src: url('../assets/UbuntuMono-BoldItalic.ttf') format('truetype');
+  src: url('../assets/ubuntu-mono-v15-latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-700italic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
 }
