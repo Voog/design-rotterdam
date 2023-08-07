@@ -6,6 +6,8 @@
   {% include "html-head" items_page: true %}
   {% include "edicy-tools-variables" %}
   {% include "edicy-tools-styles" %}
+
+  {% sd_product %}
 </head>
 
 {%- capture bottom_content_html -%}
