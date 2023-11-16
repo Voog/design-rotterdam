@@ -435,8 +435,14 @@
   .product-price {
     padding: 12px 0 24px;
 
-    .price-separator {
-      padding: 0 4px;
+    .product-price-original {
+      display: inline-block;
+      opacity: .4;
+      padding-right: 4px;
+    }
+
+    .product-price-final {
+      display: inline-block;
     }
   }
 

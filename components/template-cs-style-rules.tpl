@@ -570,6 +570,13 @@ body {
   opacity: .75;
 }
 
+.content-formatted .edy-buy-button-price-container .edy-buy-button-effective-price,
+.content-formatted .edy-buy-button-price-container .edy-buy-button-price-original,
+.comment-form .edy-buy-button-price-container .edy-buy-button-effective-price,
+.comment-form .edy-buy-button-price-container .edy-buy-button-price-original {
+  color: var(--content-color);
+}
+
 .content-formatted table td,
 .comment-form table td {
   border-bottom-color: var(--table-border-color);
