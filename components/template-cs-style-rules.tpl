@@ -210,6 +210,9 @@ body {
   font-size: var(--content-area-product-price__font-size);
   font-weight: var(--content-area-product-price__font-weight);
   font-style: var(--content-area-product-price__font-style);
+}
+
+.product-content .product-price .product-price-final {
   -webkit-text-decoration: var(--content-area-product-price__text-decoration);
           text-decoration: var(--content-area-product-price__text-decoration);
 }
