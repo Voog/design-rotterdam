@@ -265,7 +265,6 @@
         color: rgba(255,255,255,.8);
       }
 
-      .edy-product-widget-item-price,
       .edy-product-widget-item-description {
         color: rgba(255,255,255,.6);
       }
@@ -299,10 +298,6 @@
         }
       }
 
-      .edy-product-widget-item-price {
-        color: rgba(255,255,255,.6);
-      }
-
       .edy-product-widget-item-out-of-stock {
         color: rgba(255,255,255,.8);
       }
@@ -323,11 +318,16 @@
 }
 
 .dark-background {
+  .edy-product-widget-item-price-final,
   .edy-product-widget-filter-name,
   .edy-product-widget-filter-sort,
   .edy-product-widget-filter-label,
   .edy-product-widget-filter-search-input {
     color: rgba(255,255,255,.8);
+  }
+
+  .edy-product-widget-item-price-original {
+    color: rgba(255,255,255,.4);
   }
 
   .edy-product-widget-filter-sort,

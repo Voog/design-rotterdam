@@ -210,6 +210,9 @@ body {
   font-size: var(--content-area-product-price__font-size);
   font-weight: var(--content-area-product-price__font-weight);
   font-style: var(--content-area-product-price__font-style);
+}
+
+.product-content .product-price .product-price-final {
   -webkit-text-decoration: var(--content-area-product-price__text-decoration);
           text-decoration: var(--content-area-product-price__text-decoration);
 }
@@ -568,6 +571,13 @@ body {
 .comment-form .form_submit input:hover,
 .comment-form .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover {
   opacity: .75;
+}
+
+.content-formatted .edy-buy-button-price-container .edy-buy-button-effective-price,
+.content-formatted .edy-buy-button-price-container .edy-buy-button-price-original,
+.comment-form .edy-buy-button-price-container .edy-buy-button-effective-price,
+.comment-form .edy-buy-button-price-container .edy-buy-button-price-original {
+  color: var(--content-color);
 }
 
 .content-formatted table td,

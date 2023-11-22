@@ -81,12 +81,32 @@
                   <h1>{%- editable product.name -%}</h1>
                 </div>
 
-                <div class="product-price">
-                  {%- if product.price_max_with_tax != product.price_min_with_tax -%}
-                    {{ product.price_min_with_tax | money_with_currency: product.currency -}}
-                      <span class="price-separator">–</span>
+                {%- capture original_price -%}
+                  {% if product.price_min_with_tax != product.price_max_with_tax -%}
+                    {{- product.price_min_with_tax | money_with_currency: product.currency -}}
+                    <span> – </span>
                   {%- endif -%}
-                  {{ product.price_max_with_tax | money_with_currency: product.currency }}
+                  {{- product.price_max_with_tax | money_with_currency: product.currency -}}
+                {%- endcapture -%}
+
+                <div class="product-price">
+                  {% if product.on_sale? -%}
+                    <s class="product-price-original">
+                      {{- original_price -}}
+                    </s>
+                  {% endif -%}
+
+                  <span class="product-price-final">
+                    {%- if product.on_sale? -%}
+                      {% if product.effective_price_min_with_tax != product.effective_price_max_with_tax %}
+                        {{- product.effective_price_min_with_tax | money_with_currency: product.currency -}}
+                        <span> – </span>
+                      {%- endif -%}
+                      {{- product.effective_price_max_with_tax | money_with_currency: product.currency -}}
+                    {% else %}
+                      {{ original_price }}
+                    {% endif -%}
+                  </span>
                 </div>
 
                 <div class="content-formatted" data-search-indexing-allowed="true">

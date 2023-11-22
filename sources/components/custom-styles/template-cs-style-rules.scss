@@ -250,8 +250,12 @@ body {
     font-size: var(--content-area-product-price__font-size);
     font-weight: var(--content-area-product-price__font-weight);
     font-style: var(--content-area-product-price__font-style);
-    text-decoration: var(--content-area-product-price__text-decoration);
+
+    .product-price-final {
+      text-decoration: var(--content-area-product-price__text-decoration);
+    }
   }
+
   .product-description {
     color: var(--content-area-product-description__color);
     font-size: var(--content-area-product-description__font-size);
@@ -259,6 +263,7 @@ body {
     font-style: var(--content-area-product-description__font-style);
     text-decoration: var(--content-area-product-description__text-decoration);
   }
+
   .content-item-title h1 {
     color: var(--content-area-product-title__color);
     font-size: var(--content-area-product-title__font-size);
@@ -454,7 +459,7 @@ body {
 
 // Item-link
 .item-list-page .item-link,
-.item-list-page .item-title, {
+.item-list-page .item-title {
   font-size: var(--h3-font-size);
   line-height: var(--h3-line-height);
   font-weight: var(--h3-font-weight);
@@ -615,7 +620,7 @@ body {
   .custom-btn,
   .form_submit input,
   .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
-    &, 
+    &,
     &:hover {
       font-size: var(--button-font-size);
       font-style: var(--button-font-style);
@@ -642,6 +647,13 @@ body {
   .form_submit input:hover,
   .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover {
     opacity: .75;
+  }
+
+  .edy-buy-button-price-container {
+    .edy-buy-button-effective-price,
+    .edy-buy-button-price-original {
+      color: var(--content-color);
+    }
   }
 
   table td {

@@ -571,7 +571,6 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-price,
 .dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-description {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -593,10 +592,6 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-header .edy-product-widget-item-price {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-header .edy-product-widget-item-out-of-stock {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -613,11 +608,16 @@ body {
   color: #000000;
 }
 
+.dark-background .edy-product-widget-item-price-final,
 .dark-background .edy-product-widget-filter-name,
 .dark-background .edy-product-widget-filter-sort,
 .dark-background .edy-product-widget-filter-label,
 .dark-background .edy-product-widget-filter-search-input {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-background .edy-product-widget-item-price-original {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .dark-background .edy-product-widget-filter-sort,
@@ -648,6 +648,10 @@ body {
 
 .content-formatted .edy-buy-button-container .form_field {
   padding-top: 12px;
+}
+
+.content-formatted .edy-buy-button-container .edy-buy-button-price-container .edy-buy-button-price-original {
+  opacity: .4;
 }
 
 .content-formatted .edy-buy-button-variants .form_field {
@@ -3823,8 +3827,14 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   padding: 12px 0 24px;
 }
 
-.product-content .product-price .price-separator {
-  padding: 0 4px;
+.product-content .product-price .product-price-original {
+  display: inline-block;
+  opacity: .4;
+  padding-right: 4px;
+}
+
+.product-content .product-price .product-price-final {
+  display: inline-block;
 }
 
 .product-content .content-gallery {
