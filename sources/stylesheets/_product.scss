@@ -83,8 +83,10 @@
   position: relative;
   @include aspect-ratio(1, 1);
 
-  .editmode & {
-    cursor: pointer;
+  &:not(.without-pointer) {
+    .editmode & {
+      cursor: pointer;
+    }
   }
 
   &:hover {
@@ -424,12 +426,16 @@
     padding: 24px 0;
   }
 
-  .without-image .item-top {
+  .without-images .item-top {
     background-color: rgba(0, 0, 0, .05);
     background-image: url('../assets/ico-placeholder.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40px;
+  }
+
+  .product-gallery {
+    font-size: initial;
   }
 
   .product-price {

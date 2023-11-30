@@ -3441,7 +3441,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   left: 0;
 }
 
-.editmode .item-top {
+.editmode .item-top:not(.without-pointer) {
   cursor: pointer;
 }
 
@@ -3815,12 +3815,16 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   padding: 24px 0;
 }
 
-.product-content .without-image .item-top {
+.product-content .without-images .item-top {
   background-color: rgba(0, 0, 0, 0.05);
   background-image: url("../assets/ico-placeholder.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px;
+}
+
+.product-content .product-gallery {
+  font-size: initial;
 }
 
 .product-content .product-price {
